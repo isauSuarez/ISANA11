@@ -17,6 +17,7 @@ public class NuevoCliente extends javax.swing.JFrame {
      */
     public NuevoCliente() {
         initComponents();
+        new Ejecutivo_Vinculacion_Controladores.ControladorNuevoCliente(this);
         this.setSize(610, 550); // Fuerza el tamaño exacto
         this.setLocationRelativeTo(null); // Centra la ventana en tu monitor
         
@@ -32,14 +33,12 @@ public class NuevoCliente extends javax.swing.JFrame {
     private void initComponents() {
 
         JLBRegistrarTecnico = new javax.swing.JLabel();
-        JLBApellido = new javax.swing.JLabel();
         JLBATelefono = new javax.swing.JLabel();
         JLBCorreo = new javax.swing.JLabel();
         JLBNombre = new javax.swing.JLabel();
         JBNGuardar = new javax.swing.JButton();
         JBNCancelar = new javax.swing.JButton();
         JTFNombre = new javax.swing.JTextField();
-        JTFApellido = new javax.swing.JTextField();
         JTFTelefono = new javax.swing.JTextField();
         JTFCorreo = new javax.swing.JTextField();
 
@@ -50,12 +49,7 @@ public class NuevoCliente extends javax.swing.JFrame {
         JLBRegistrarTecnico.setForeground(new java.awt.Color(102, 102, 102));
         JLBRegistrarTecnico.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         JLBRegistrarTecnico.setText("Registrar Cliente:");
-        getContentPane().add(JLBRegistrarTecnico, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 20, 210, 30));
-
-        JLBApellido.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
-        JLBApellido.setForeground(new java.awt.Color(153, 153, 153));
-        JLBApellido.setText("Apellido (s)");
-        getContentPane().add(JLBApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, 90, 40));
+        getContentPane().add(JLBRegistrarTecnico, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 20, 240, 30));
 
         JLBATelefono.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
         JLBATelefono.setForeground(new java.awt.Color(153, 153, 153));
@@ -98,11 +92,6 @@ public class NuevoCliente extends javax.swing.JFrame {
         JTFNombre.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         JTFNombre.setText("Nombre (s)");
         getContentPane().add(JTFNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, 390, 40));
-
-        JTFApellido.setForeground(new java.awt.Color(153, 153, 153));
-        JTFApellido.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        JTFApellido.setText("Apellido (s)");
-        getContentPane().add(JTFApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 170, 390, 40));
 
         JTFTelefono.setForeground(new java.awt.Color(153, 153, 153));
         JTFTelefono.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -165,11 +154,9 @@ public class NuevoCliente extends javax.swing.JFrame {
     public javax.swing.JButton JBNCancelar;
     public javax.swing.JButton JBNGuardar;
     public javax.swing.JLabel JLBATelefono;
-    public javax.swing.JLabel JLBApellido;
     public javax.swing.JLabel JLBCorreo;
     public javax.swing.JLabel JLBNombre;
     public javax.swing.JLabel JLBRegistrarTecnico;
-    public javax.swing.JTextField JTFApellido;
     public javax.swing.JTextField JTFCorreo;
     public javax.swing.JTextField JTFNombre;
     public javax.swing.JTextField JTFTelefono;

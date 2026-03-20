@@ -15,6 +15,8 @@ public class NuevaPoliza extends javax.swing.JFrame {
      */
     public NuevaPoliza() {
         initComponents();
+        new Ejecutivo_Vinculacion_Controladores.ControladorNuevaPoliza(this);
+        
         this.setSize(490, 525); // Fuerza el tamaño exacto
         this.setLocationRelativeTo(null); // Centra la ventana en tu monitor
     }
@@ -64,7 +66,7 @@ public class NuevaPoliza extends javax.swing.JFrame {
         getContentPane().add(JLBNombre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, 330, -1));
 
         JCBClientes.setForeground(new java.awt.Color(153, 153, 153));
-        JCBClientes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pólizas" }));
+        JCBClientes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cliente" }));
         JCBClientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JCBClientesActionPerformed(evt);
