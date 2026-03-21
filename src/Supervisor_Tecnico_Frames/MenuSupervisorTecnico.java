@@ -15,10 +15,12 @@ public class MenuSupervisorTecnico extends javax.swing.JFrame {
      */
     public MenuSupervisorTecnico() {
         initComponents();
-        this.setSize(435, 400); // Fuerza el tamaño exacto
+        this.setSize(800, 600); // Fuerza el tamaño exacto
+        this.setResizable(false);
         this.setLocationRelativeTo(null); // Centra la ventana en tu monitor
         JMBSupervisorTecnico.add(javax.swing.Box.createHorizontalGlue(), 2);
     }
+    
     
     
 
