@@ -31,6 +31,7 @@ public class NuevaPoliza extends javax.swing.JFrame {
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
+        JPFondo = new ImagenPanel_EV("/imagenes/FondoETS.jpg");
         JLBRegistrarTecnico = new javax.swing.JLabel();
         JLBNombre = new javax.swing.JLabel();
         JLBNombre1 = new javax.swing.JLabel();
@@ -44,26 +45,29 @@ public class NuevaPoliza extends javax.swing.JFrame {
         JLBNombre5 = new javax.swing.JLabel();
         JBNSiguiente = new javax.swing.JButton();
         JBNCancelar = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        JPFondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         JLBRegistrarTecnico.setFont(new java.awt.Font("Montserrat", 1, 24)); // NOI18N
         JLBRegistrarTecnico.setForeground(new java.awt.Color(102, 102, 102));
         JLBRegistrarTecnico.setText("Nueva Póliza");
-        getContentPane().add(JLBRegistrarTecnico, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, -1, -1));
+        JPFondo.add(JLBRegistrarTecnico, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 30, -1, -1));
 
         JLBNombre.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
         JLBNombre.setForeground(new java.awt.Color(153, 153, 153));
         JLBNombre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         JLBNombre.setText("Seleccione al cliente que desea");
-        getContentPane().add(JLBNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 70, 330, -1));
+        JPFondo.add(JLBNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 80, 330, -1));
 
         JLBNombre1.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
         JLBNombre1.setForeground(new java.awt.Color(153, 153, 153));
         JLBNombre1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         JLBNombre1.setText("adquirir una nueva póliza");
-        getContentPane().add(JLBNombre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, 330, -1));
+        JPFondo.add(JLBNombre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, 330, -1));
 
         JCBClientes.setForeground(new java.awt.Color(153, 153, 153));
         JCBClientes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cliente" }));
@@ -72,12 +76,12 @@ public class NuevaPoliza extends javax.swing.JFrame {
                 JCBClientesActionPerformed(evt);
             }
         });
-        getContentPane().add(JCBClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 370, 40));
+        JPFondo.add(JCBClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, 390, 40));
 
         JLBNombre2.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
         JLBNombre2.setForeground(new java.awt.Color(153, 153, 153));
         JLBNombre2.setText("Plan que desea contratar");
-        getContentPane().add(JLBNombre2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, -1, -1));
+        JPFondo.add(JLBNombre2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 220, -1, -1));
 
         buttonGroup1.add(JRBEscencial);
         JRBEscencial.addActionListener(new java.awt.event.ActionListener() {
@@ -85,25 +89,25 @@ public class NuevaPoliza extends javax.swing.JFrame {
                 JRBEscencialActionPerformed(evt);
             }
         });
-        getContentPane().add(JRBEscencial, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 240, -1, -1));
+        JPFondo.add(JRBEscencial, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 260, -1, -1));
 
         buttonGroup1.add(JRBProfesional);
-        getContentPane().add(JRBProfesional, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 280, -1, -1));
+        JPFondo.add(JRBProfesional, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 300, -1, -1));
 
         buttonGroup1.add(JRBEmpresarial);
-        getContentPane().add(JRBEmpresarial, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 320, -1, -1));
+        JPFondo.add(JRBEmpresarial, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 340, -1, -1));
 
         JLBNombre3.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
         JLBNombre3.setText("Escencial");
-        getContentPane().add(JLBNombre3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 120, 20));
+        JPFondo.add(JLBNombre3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 260, 120, 20));
 
         JLBNombre4.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
         JLBNombre4.setText("Profesional");
-        getContentPane().add(JLBNombre4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, 120, 20));
+        JPFondo.add(JLBNombre4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 300, 120, 20));
 
         JLBNombre5.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
         JLBNombre5.setText("Empresarial");
-        getContentPane().add(JLBNombre5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 320, 120, 20));
+        JPFondo.add(JLBNombre5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 340, 120, 20));
 
         JBNSiguiente.setBackground(new java.awt.Color(0, 153, 102));
         JBNSiguiente.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
@@ -115,7 +119,7 @@ public class NuevaPoliza extends javax.swing.JFrame {
                 JBNSiguienteActionPerformed(evt);
             }
         });
-        getContentPane().add(JBNSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 370, 224, 42));
+        JPFondo.add(JBNSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 410, 224, 42));
 
         JBNCancelar.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
         JBNCancelar.setText("Cancelar");
@@ -125,7 +129,12 @@ public class NuevaPoliza extends javax.swing.JFrame {
                 JBNCancelarActionPerformed(evt);
             }
         });
-        getContentPane().add(JBNCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 430, 90, 30));
+        JPFondo.add(JBNCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 440, 90, 30));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo ETS 75 px.png"))); // NOI18N
+        JPFondo.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, -1, -1));
+
+        getContentPane().add(JPFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -6, 510, 510));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -192,9 +201,11 @@ public class NuevaPoliza extends javax.swing.JFrame {
     public javax.swing.JLabel JLBNombre4;
     public javax.swing.JLabel JLBNombre5;
     public javax.swing.JLabel JLBRegistrarTecnico;
+    private javax.swing.JPanel JPFondo;
     public javax.swing.JRadioButton JRBEmpresarial;
     public javax.swing.JRadioButton JRBEscencial;
     public javax.swing.JRadioButton JRBProfesional;
     private javax.swing.ButtonGroup buttonGroup1;
+    public javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 }

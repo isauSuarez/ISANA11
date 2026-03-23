@@ -28,6 +28,7 @@ public class NuevaPoliza2 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        JPFondo = new ImagenPanel_EV("/imagenes/FondoETS.jpg");
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -41,41 +42,44 @@ public class NuevaPoliza2 extends javax.swing.JFrame {
         JCBFechaVencimiento = new javax.swing.JComboBox<>();
         JBNRegistrar = new javax.swing.JButton();
         JBNCancelar = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        JPFondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         jLabel1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(102, 102, 102));
         jLabel1.setText("Registrar Póliza");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, -1, -1));
+        JPFondo.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(153, 153, 153));
         jLabel2.setText("Empresa");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 100, 40));
+        JPFondo.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 100, 40));
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(153, 153, 153));
         jLabel3.setText("Dirección");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 110, 40));
+        JPFondo.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 110, 40));
 
         jLabel4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(153, 153, 153));
         jLabel4.setText("Telefono");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 100, 40));
+        JPFondo.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 100, 40));
 
         jLabel5.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(153, 153, 153));
         jLabel5.setText("Correo");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 100, 40));
+        JPFondo.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 100, 40));
 
         jLabel6.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(153, 153, 153));
         jLabel6.setText("Fecha de vencimiento");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, 200, 40));
+        JPFondo.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, 200, 40));
 
         JTFEmpresa.setForeground(new java.awt.Color(153, 153, 153));
         JTFEmpresa.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -85,22 +89,22 @@ public class NuevaPoliza2 extends javax.swing.JFrame {
                 JTFEmpresaActionPerformed(evt);
             }
         });
-        getContentPane().add(JTFEmpresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 70, 390, 40));
+        JPFondo.add(JTFEmpresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 70, 390, 40));
 
         JTFDireccion.setForeground(new java.awt.Color(153, 153, 153));
         JTFDireccion.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         JTFDireccion.setText("Dirección");
-        getContentPane().add(JTFDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 390, 40));
+        JPFondo.add(JTFDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 390, 40));
 
         JTFTelefono.setForeground(new java.awt.Color(153, 153, 153));
         JTFTelefono.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         JTFTelefono.setText("Telefono");
-        getContentPane().add(JTFTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 390, 40));
+        JPFondo.add(JTFTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 390, 40));
 
         JTFCorreo.setForeground(new java.awt.Color(153, 153, 153));
         JTFCorreo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         JTFCorreo.setText("Correo");
-        getContentPane().add(JTFCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 280, 390, 40));
+        JPFondo.add(JTFCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 280, 390, 40));
 
         JCBFechaVencimiento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Fecha" }));
         JCBFechaVencimiento.addActionListener(new java.awt.event.ActionListener() {
@@ -108,19 +112,24 @@ public class NuevaPoliza2 extends javax.swing.JFrame {
                 JCBFechaVencimientoActionPerformed(evt);
             }
         });
-        getContentPane().add(JCBFechaVencimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 350, 320, 40));
+        JPFondo.add(JCBFechaVencimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 350, 320, 40));
 
         JBNRegistrar.setBackground(new java.awt.Color(0, 153, 102));
         JBNRegistrar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         JBNRegistrar.setForeground(new java.awt.Color(255, 255, 255));
         JBNRegistrar.setText("Registrar");
         JBNRegistrar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        getContentPane().add(JBNRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 430, 224, 42));
+        JPFondo.add(JBNRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 430, 224, 42));
 
         JBNCancelar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         JBNCancelar.setText("Cancelar");
         JBNCancelar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        getContentPane().add(JBNCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 460, 90, 30));
+        JPFondo.add(JBNCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 460, 90, 30));
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo ETS 75 px.png"))); // NOI18N
+        JPFondo.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 420, -1, -1));
+
+        getContentPane().add(JPFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 610, 520));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -175,6 +184,7 @@ public class NuevaPoliza2 extends javax.swing.JFrame {
     public javax.swing.JButton JBNCancelar;
     public javax.swing.JButton JBNRegistrar;
     public javax.swing.JComboBox<String> JCBFechaVencimiento;
+    private javax.swing.JPanel JPFondo;
     public javax.swing.JTextField JTFCorreo;
     public javax.swing.JTextField JTFDireccion;
     public javax.swing.JTextField JTFEmpresa;
@@ -185,5 +195,6 @@ public class NuevaPoliza2 extends javax.swing.JFrame {
     public javax.swing.JLabel jLabel4;
     public javax.swing.JLabel jLabel5;
     public javax.swing.JLabel jLabel6;
+    public javax.swing.JLabel jLabel7;
     // End of variables declaration//GEN-END:variables
 }
