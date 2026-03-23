@@ -37,15 +37,13 @@ public class NuevoTecnico extends javax.swing.JFrame {
         JTFApellido = new javax.swing.JTextField();
         JLBATelefono = new javax.swing.JLabel();
         JTFTelefono = new javax.swing.JTextField();
-        JLBCorreo = new javax.swing.JLabel();
-        JTFCorreo = new javax.swing.JTextField();
         JLBEspecialidad = new javax.swing.JLabel();
         JCBEspecialidades = new javax.swing.JComboBox<>();
         JBNGuardar = new javax.swing.JButton();
         JBNCancelar = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        JTFcontraseña = new javax.swing.JTextField();
+        JLBLogo = new javax.swing.JLabel();
+        JLBCorreo1 = new javax.swing.JLabel();
+        JTFCorreo1 = new javax.swing.JTextField();
 
         jLabel2.setText("jLabel2");
 
@@ -73,6 +71,11 @@ public class NuevoTecnico extends javax.swing.JFrame {
                 JTFNombreActionPerformed(evt);
             }
         });
+        JTFNombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                JTFNombreKeyTyped(evt);
+            }
+        });
         getContentPane().add(JTFNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 90, 410, 40));
 
         JLBApellido.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
@@ -87,6 +90,11 @@ public class NuevoTecnico extends javax.swing.JFrame {
         JTFApellido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTFApellidoActionPerformed(evt);
+            }
+        });
+        JTFApellido.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                JTFApellidoKeyTyped(evt);
             }
         });
         getContentPane().add(JTFApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, 410, 40));
@@ -105,28 +113,17 @@ public class NuevoTecnico extends javax.swing.JFrame {
                 JTFTelefonoActionPerformed(evt);
             }
         });
-        getContentPane().add(JTFTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, 410, 40));
-
-        JLBCorreo.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
-        JLBCorreo.setForeground(new java.awt.Color(153, 153, 153));
-        JLBCorreo.setText("Correo");
-        getContentPane().add(JLBCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 100, 40));
-
-        JTFCorreo.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        JTFCorreo.setForeground(new java.awt.Color(153, 153, 153));
-        JTFCorreo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        JTFCorreo.setBorder(null);
-        JTFCorreo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JTFCorreoActionPerformed(evt);
+        JTFTelefono.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                JTFTelefonoKeyTyped(evt);
             }
         });
-        getContentPane().add(JTFCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 300, 410, 40));
+        getContentPane().add(JTFTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, 410, 40));
 
         JLBEspecialidad.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
         JLBEspecialidad.setForeground(new java.awt.Color(153, 153, 153));
         JLBEspecialidad.setText("Especialidad");
-        getContentPane().add(JLBEspecialidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 100, 30));
+        getContentPane().add(JLBEspecialidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 390, 100, 30));
 
         JCBEspecialidades.setFont(new java.awt.Font("Montserrat ExtraLight", 1, 12)); // NOI18N
         JCBEspecialidades.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Soporte técnico general", "Soporte de redes", "Soporte de impresoras", "Soporte de portatiles", "Soporte de equipos", "Cableado estructurado" }));
@@ -136,7 +133,7 @@ public class NuevoTecnico extends javax.swing.JFrame {
                 JCBEspecialidadesActionPerformed(evt);
             }
         });
-        getContentPane().add(JCBEspecialidades, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 420, 340, 40));
+        getContentPane().add(JCBEspecialidades, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 380, 340, 40));
 
         JBNGuardar.setBackground(new java.awt.Color(0, 153, 102));
         JBNGuardar.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
@@ -160,18 +157,29 @@ public class NuevoTecnico extends javax.swing.JFrame {
         });
         getContentPane().add(JBNCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 480, 90, 30));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo ETS 75 px.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 460, -1, -1));
+        JLBLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo ETS 75 px.png"))); // NOI18N
+        getContentPane().add(JLBLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 460, -1, -1));
 
-        jLabel3.setText("Contraseña");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, -1, -1));
+        JLBCorreo1.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        JLBCorreo1.setForeground(new java.awt.Color(153, 153, 153));
+        JLBCorreo1.setText("Correo");
+        getContentPane().add(JLBCorreo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 100, 40));
 
-        JTFcontraseña.addActionListener(new java.awt.event.ActionListener() {
+        JTFCorreo1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        JTFCorreo1.setForeground(new java.awt.Color(153, 153, 153));
+        JTFCorreo1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        JTFCorreo1.setBorder(null);
+        JTFCorreo1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JTFcontraseñaActionPerformed(evt);
+                JTFCorreo1ActionPerformed(evt);
             }
         });
-        getContentPane().add(JTFcontraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 380, 400, -1));
+        JTFCorreo1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                JTFCorreo1KeyTyped(evt);
+            }
+        });
+        getContentPane().add(JTFCorreo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 300, 410, 40));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -184,29 +192,80 @@ public class NuevoTecnico extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_JBNCancelarActionPerformed
 
-    private void JTFCorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFCorreoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_JTFCorreoActionPerformed
-
     private void JTFNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFNombreActionPerformed
         // TODO add your handling code here:
+        JTFNombre.addActionListener(e -> JTFApellido.requestFocus());
     }//GEN-LAST:event_JTFNombreActionPerformed
 
     private void JTFApellidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFApellidoActionPerformed
         // TODO add your handling code here:
+        JTFApellido.addActionListener(e -> JTFTelefono.requestFocus());
     }//GEN-LAST:event_JTFApellidoActionPerformed
 
     private void JTFTelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFTelefonoActionPerformed
         // TODO add your handling code here:
+        JTFTelefono.addActionListener(e -> JTFCorreo1.requestFocus());
     }//GEN-LAST:event_JTFTelefonoActionPerformed
 
     private void JBNGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBNGuardarActionPerformed
         // TODO add your handling code here:
+        // En el evento actionPerformed de JBNGuardar (Clic o Enter)
+        if (JTFNombre.getText().trim().isEmpty()
+                || JTFApellido.getText().trim().isEmpty()
+                || JTFTelefono.getText().trim().isEmpty()
+                || JTFCorreo1.getText().trim().isEmpty()) {
+
+            javax.swing.JOptionPane.showMessageDialog(this, " Todos los campos son obligatorios.", "Error de Registro", javax.swing.JOptionPane.WARNING_MESSAGE);
+
+        } else if (JTFTelefono.getText().length() < 10) {
+            javax.swing.JOptionPane.showMessageDialog(this, "El teléfono debe tener 10 dígitos.", "Dato incompleto", javax.swing.JOptionPane.ERROR_MESSAGE);
+
+        } else {
+            javax.swing.JOptionPane.showMessageDialog(this, "¡Técnico registrado con éxito!", "Gracias", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+
+            JTFNombre.setText("");
+            JTFApellido.setText("");
+            JTFTelefono.setText("");
+            JTFCorreo1.setText("");
+            JTFNombre.requestFocus();
+        }
     }//GEN-LAST:event_JBNGuardarActionPerformed
 
-    private void JTFcontraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFcontraseñaActionPerformed
+    private void JTFCorreo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFCorreo1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_JTFcontraseñaActionPerformed
+        JTFCorreo1.addActionListener(e -> JCBEspecialidades.requestFocus());
+    }//GEN-LAST:event_JTFCorreo1ActionPerformed
+
+    private void JTFNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTFNombreKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if (!(Character.isLetter(c) || c == ' ' || Character.isISOControl(c)) || JTFNombre.getText().length() >= 50) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_JTFNombreKeyTyped
+
+    private void JTFApellidoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTFApellidoKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if (!(Character.isLetter(c) || c == ' ' || Character.isISOControl(c)) || JTFNombre.getText().length() >= 50) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_JTFApellidoKeyTyped
+
+    private void JTFTelefonoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTFTelefonoKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if (!Character.isDigit(c) || JTFTelefono.getText().length() >= 10) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_JTFTelefonoKeyTyped
+
+    private void JTFCorreo1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTFCorreo1KeyTyped
+        // TODO add your handling code here:
+        if (JTFCorreo1.getText().length() >= 100) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_JTFCorreo1KeyTyped
 
     /**
      * @param args the command line arguments
@@ -249,17 +308,15 @@ public class NuevoTecnico extends javax.swing.JFrame {
     public javax.swing.JComboBox<String> JCBEspecialidades;
     public javax.swing.JLabel JLBATelefono;
     public javax.swing.JLabel JLBApellido;
-    public javax.swing.JLabel JLBCorreo;
+    public javax.swing.JLabel JLBCorreo1;
     public javax.swing.JLabel JLBEspecialidad;
+    public javax.swing.JLabel JLBLogo;
     public javax.swing.JLabel JLBNombre;
     public javax.swing.JLabel JLBRegistrarTecnico;
     public javax.swing.JTextField JTFApellido;
-    public javax.swing.JTextField JTFCorreo;
+    public javax.swing.JTextField JTFCorreo1;
     public javax.swing.JTextField JTFNombre;
     public javax.swing.JTextField JTFTelefono;
-    public javax.swing.JTextField JTFcontraseña;
-    public javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 }

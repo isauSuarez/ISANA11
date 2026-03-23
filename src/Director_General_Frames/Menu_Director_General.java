@@ -66,10 +66,10 @@ public class Menu_Director_General extends javax.swing.JFrame {
         jLabel2.setText("Director General");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, 240, -1));
 
-        JBNReportes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/tickets mini.png"))); // NOI18N
+        JBNReportes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos90/reportetickets90.png"))); // NOI18N
         getContentPane().add(JBNReportes, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, 90, 110));
 
-        JBNPersonal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/CLIENTE MINI.png"))); // NOI18N
+        JBNPersonal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos90/reportecliente90.png"))); // NOI18N
         JBNPersonal.setToolTipText("");
         getContentPane().add(JBNPersonal, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 130, 90, 110));
 

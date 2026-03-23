@@ -35,8 +35,8 @@ public class ControladorNuevoTecnico implements ActionListener {
         String nombres = vista.JTFNombre.getText().trim();
         String apellidos = vista.JTFApellido.getText().trim();
         String telefono = vista.JTFTelefono.getText().trim();
-        String correo = vista.JTFCorreo.getText().trim();
-        String password = vista.JTFcontraseña.getText().trim();
+        String correo = vista.JTFCorreo1.getText().trim();
+        String password = "test123";
         String especialidad = vista.JCBEspecialidades.getSelectedItem().toString().trim();
         String rol = "Tecnico";
 
@@ -111,8 +111,7 @@ public class ControladorNuevoTecnico implements ActionListener {
         vista.JTFNombre.setText("");
         vista.JTFApellido.setText("");
         vista.JTFTelefono.setText("");
-        vista.JTFCorreo.setText("");
-        vista.JTFcontraseña.setText("");
+        vista.JTFCorreo1.setText("");
         vista.JCBEspecialidades.setSelectedIndex(0);
     }
 

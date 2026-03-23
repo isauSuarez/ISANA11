@@ -40,7 +40,7 @@ public class ModificarCliente extends javax.swing.JFrame {
         JTFCorreo = new javax.swing.JTextField();
         JTFNombre = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        JTFNumPoliza = new javax.swing.JTextField();
+        JTFCorreoBusqueda = new javax.swing.JTextField();
         JBNBuscar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -147,16 +147,18 @@ public class ModificarCliente extends javax.swing.JFrame {
         jLabel2.setText("Modificar cliente");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, 240, -1));
 
-        JTFNumPoliza.setForeground(new java.awt.Color(153, 153, 153));
-        JTFNumPoliza.setText("                         Número de póliza");
-        JTFNumPoliza.setMinimumSize(new java.awt.Dimension(350, 40));
-        JTFNumPoliza.setPreferredSize(new java.awt.Dimension(350, 40));
-        JTFNumPoliza.addActionListener(new java.awt.event.ActionListener() {
+        JTFCorreoBusqueda.setForeground(new java.awt.Color(153, 153, 153));
+        JTFCorreoBusqueda.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        JTFCorreoBusqueda.setText("Correo registrado");
+        JTFCorreoBusqueda.setActionCommand("<Not Set>");
+        JTFCorreoBusqueda.setMinimumSize(new java.awt.Dimension(350, 40));
+        JTFCorreoBusqueda.setPreferredSize(new java.awt.Dimension(350, 40));
+        JTFCorreoBusqueda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JTFNumPolizaActionPerformed(evt);
+                JTFCorreoBusquedaActionPerformed(evt);
             }
         });
-        getContentPane().add(JTFNumPoliza, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 90, 290, -1));
+        getContentPane().add(JTFCorreoBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 90, 290, -1));
 
         JBNBuscar.setBackground(new java.awt.Color(0, 153, 102));
         JBNBuscar.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
@@ -197,9 +199,9 @@ public class ModificarCliente extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_JTFNombreActionPerformed
 
-    private void JTFNumPolizaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFNumPolizaActionPerformed
+    private void JTFCorreoBusquedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFCorreoBusquedaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_JTFNumPolizaActionPerformed
+    }//GEN-LAST:event_JTFCorreoBusquedaActionPerformed
 
     private void JBNBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBNBuscarActionPerformed
         // TODO add your handling code here:
@@ -250,8 +252,8 @@ public class ModificarCliente extends javax.swing.JFrame {
     public javax.swing.JLabel JLBNombre;
     public javax.swing.JTextField JTFApellido;
     public javax.swing.JTextField JTFCorreo;
+    public javax.swing.JTextField JTFCorreoBusqueda;
     public javax.swing.JTextField JTFNombre;
-    public javax.swing.JTextField JTFNumPoliza;
     public javax.swing.JTextField JTFTelefono;
     public javax.swing.JLabel jLabel1;
     public javax.swing.JLabel jLabel2;

@@ -15,7 +15,7 @@ public class MenuSupervisorTecnico extends javax.swing.JFrame {
      */
     public MenuSupervisorTecnico() {
         initComponents();
-        this.setSize(435, 400); // Fuerza el tamaño exacto
+        this.setSize(450, 380); // Fuerza el tamaño exacto
         this.setLocationRelativeTo(null); // Centra la ventana en tu monitor
         JMBSupervisorTecnico.add(javax.swing.Box.createHorizontalGlue(), 2);
     }
@@ -33,9 +33,9 @@ public class MenuSupervisorTecnico extends javax.swing.JFrame {
 
         JLBBienvenido = new javax.swing.JLabel();
         JLBSupervisorTecnico = new javax.swing.JLabel();
-        JBNNuevoTicket = new javax.swing.JButton();
-        JBNAsignarTicket = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        JBNAsignarTicket = new javax.swing.JButton();
+        JBNNuevoTicket = new javax.swing.JButton();
         JMBSupervisorTecnico = new javax.swing.JMenuBar();
         JMNSTTickets = new javax.swing.JMenu();
         JMINuevoTicket = new javax.swing.JMenuItem();
@@ -62,14 +62,15 @@ public class MenuSupervisorTecnico extends javax.swing.JFrame {
         JLBSupervisorTecnico.setText("Supervisor Técnico");
         getContentPane().add(JLBSupervisorTecnico, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, -1, -1));
 
-        JBNNuevoTicket.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Nuevo Ticke.png"))); // NOI18N
-        getContentPane().add(JBNNuevoTicket, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, -1, -1));
-
-        JBNAsignarTicket.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Asignar Ticket.png"))); // NOI18N
-        getContentPane().add(JBNAsignarTicket, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 150, 79, -1));
-
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ETS MINI2.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 242, -1, -1));
+
+        JBNAsignarTicket.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos90/asignarticket90.png"))); // NOI18N
+        JBNAsignarTicket.setToolTipText("");
+        getContentPane().add(JBNAsignarTicket, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, -1, -1));
+
+        JBNNuevoTicket.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos90/nuevoticket90.png"))); // NOI18N
+        getContentPane().add(JBNNuevoTicket, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 140, -1, -1));
 
         JMBSupervisorTecnico.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
 

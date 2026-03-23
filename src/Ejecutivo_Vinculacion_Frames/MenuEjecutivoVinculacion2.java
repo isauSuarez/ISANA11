@@ -15,6 +15,9 @@ public class MenuEjecutivoVinculacion2 extends javax.swing.JFrame {
      */
     public MenuEjecutivoVinculacion2() {
         initComponents();
+        this.setSize(450, 380); // Fuerza el tamaño exacto
+        this.setLocationRelativeTo(null); // Centra la ventana en tu monitor
+        JMBEjecutivoVinculacion.add(javax.swing.Box.createHorizontalGlue(), 2);
     }
 
     /**
@@ -56,7 +59,10 @@ public class MenuEjecutivoVinculacion2 extends javax.swing.JFrame {
         JLBEjecutivoVinculacion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         JLBEjecutivoVinculacion.setText("Ejecutivo de Vinculación");
 
+        JBNNuevaPoliza.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos90/nuevapoliza90.png"))); // NOI18N
         JBNNuevaPoliza.setToolTipText("");
+
+        JBNNuevoCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos90/nuevocliente90.png"))); // NOI18N
 
         JMBEjecutivoVinculacion.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
 

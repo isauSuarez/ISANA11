@@ -9,7 +9,7 @@ public class Conexion {
     
     private static final String URL = "jdbc:mysql://localhost:3306/ets_soporte?useSSL=false&serverTimezone=UTC";
     private static final String USER = "root";
-    private static final String PASS = "JTi1100..";
+    private static final String PASS = "3802";
 
     public static Connection getConexion() throws SQLException {
         Connection con = DriverManager.getConnection(URL, USER, PASS);

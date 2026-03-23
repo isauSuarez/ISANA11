@@ -53,7 +53,7 @@ public class Menu_Tecnico extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo ETS 75 px.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 200, -1, -1));
 
-        JBNMisTickets.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Mis Tickets.png"))); // NOI18N
+        JBNMisTickets.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos90/mistickets90.png"))); // NOI18N
         getContentPane().add(JBNMisTickets, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, -1, -1));
 
         JMBTecnico.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N

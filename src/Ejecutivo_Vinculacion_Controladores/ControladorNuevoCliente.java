@@ -32,6 +32,7 @@ public class ControladorNuevoCliente implements ActionListener {
 
     private void guardarCliente() {
         String nombre = vista.JTFNombre.getText().trim();
+        String apellido = vista.JTFApellido.getText().trim();
         String telefono = vista.JTFTelefono.getText().trim();
         String correo = vista.JTFCorreo.getText().trim();
 
@@ -41,7 +42,7 @@ public class ControladorNuevoCliente implements ActionListener {
         }
 
         String sqlVerificar = "SELECT idCliente FROM cliente WHERE correoC = ?";
-        String sqlInsertar = "INSERT INTO cliente (nombreC, telefonoC, correoC, fechaAltaC) VALUES (?, ?, ?, CURDATE())";
+        String sqlInsertar = "INSERT INTO cliente (nombreC, apellidoC, telefonoC, correoC, fechaAltaC) VALUES (?, ?, ?, ?, CURDATE())";
 
         try (Connection con = Conexion.getConexion();
              PreparedStatement psVerificar = con.prepareStatement(sqlVerificar);
@@ -58,8 +59,9 @@ public class ControladorNuevoCliente implements ActionListener {
             }
 
             psInsertar.setString(1, nombre);
-            psInsertar.setString(2, telefono);
-            psInsertar.setString(3, correo);
+            psInsertar.setString(2, apellido);
+            psInsertar.setString(3, telefono);
+            psInsertar.setString(4, correo);
 
             int filas = psInsertar.executeUpdate();
 
@@ -80,6 +82,7 @@ public class ControladorNuevoCliente implements ActionListener {
 
     private void limpiarCampos() {
         vista.JTFNombre.setText("");
+        vista.JTFApellido.setText("");
         vista.JTFTelefono.setText("");
         vista.JTFCorreo.setText("");
     }
