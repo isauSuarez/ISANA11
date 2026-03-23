@@ -66,8 +66,7 @@ public class ControladorNuevaPoliza2 implements ActionListener {
             return;
         }
 
-        // Temporal: mientras no manejes sesión del empleado logueado
-        int idEmpleado = 1;
+           int idEmpleado = 1;
 
         String sql = "INSERT INTO poliza "
                 + "(idCliente, idEmpleado, nombreEmpresaP, direccionServicioP, estadoP, tipoPlanP, fechaInicioP, fechaVencimientoP) "
@@ -89,13 +88,13 @@ public class ControladorNuevaPoliza2 implements ActionListener {
             int filas = ps.executeUpdate();
 
             if (filas > 0) {
-                System.out.println("Póliza registrada correctamente.");
+                System.out.println("Poliza registrada correctamente.");
                 System.out.println("Cliente: " + nombreCliente);
                 System.out.println("Empresa: " + empresa);
                 System.out.println("Plan: " + planSeleccionado);
 
                 JOptionPane.showMessageDialog(vista,
-                        "Póliza registrada correctamente.");
+                        "Poliza registrada correctamente.");
 
                 limpiarCampos();
                 volverAPaso1();

@@ -15,6 +15,7 @@ public class ConsultarConsumos extends javax.swing.JFrame {
      */
     public ConsultarConsumos() {
         initComponents();
+        new Director_General_Controladores.ControladorReporteConsumos(this);
     }
 
     /**
@@ -47,7 +48,7 @@ public class ConsultarConsumos extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "idPoliza", "idCliente", "Nombre Cliente", "Max. Presencial", "Max. Remoto", "Max. Asesoria", "Consumido Pres.", "Consumido Rem", "Consumido Ase."
+                "Cliente", "Empresa", "Tipo de Plan", "Consumo Pres.", "Restante Pres.", "Consumo Rem", "Restante Rem", "Consumo Ase", "Restante Ase"
             }
         ));
         JTBConsumos.setShowGrid(true);
@@ -91,19 +92,17 @@ public class ConsultarConsumos extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 227, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel2)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel2)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(JBNRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30))))
+                        .addGap(18, 18, 18))))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void JBNRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBNRegresarActionPerformed
@@ -147,7 +146,7 @@ public class ConsultarConsumos extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton JBNRegresar;
-    private javax.swing.JTable JTBConsumos;
+    public javax.swing.JTable JTBConsumos;
     public javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     public javax.swing.JScrollPane jScrollPane1;

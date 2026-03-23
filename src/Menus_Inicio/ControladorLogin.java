@@ -55,7 +55,7 @@ public class ControladorLogin implements ActionListener {
         try (Connection con = Conexion.getConexion();
              PreparedStatement ps = con.prepareStatement(sql)) {
 
-            System.out.println("Conexión correcta. Validando acceso...");
+            System.out.println("Conexion correcta. Validando acceso...");
 
             ps.setString(1, correo);
             ps.setString(2, password);

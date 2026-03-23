@@ -58,7 +58,7 @@ public class ControladorNuevoTecnico implements ActionListener {
              PreparedStatement psVerificar = con.prepareStatement(sqlVerificar);
              PreparedStatement psInsertar = con.prepareStatement(sqlInsertar)) {
 
-            System.out.println("Conexión correcta. Validando nuevo técnico...");
+            System.out.println("Conexion correcta. Validando nuevo tecnico...");
 
             psVerificar.setString(1, correo);
             try (ResultSet rs = psVerificar.executeQuery()) {
@@ -82,7 +82,7 @@ public class ControladorNuevoTecnico implements ActionListener {
             int filas = psInsertar.executeUpdate();
 
             if (filas > 0) {
-                System.out.println("Técnico registrado correctamente.");
+                System.out.println("Tecnico registrado correctamente.");
                 System.out.println("Nombre: " + nombres + " " + apellidos);
                 System.out.println("Especialidad: " + especialidad);
 

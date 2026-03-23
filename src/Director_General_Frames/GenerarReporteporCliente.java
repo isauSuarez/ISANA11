@@ -15,6 +15,7 @@ public class GenerarReporteporCliente extends javax.swing.JFrame {
      */
     public GenerarReporteporCliente() {
         initComponents();
+        new Director_General_Controladores.ControladorReporteCliente(this);
     }
 
     /**
@@ -52,13 +53,13 @@ public class GenerarReporteporCliente extends javax.swing.JFrame {
 
         JTBClientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "idCliente", "Nombre Cliente", "idPoliza", "Fecha Inicio", "Fecha Vencimiento", "idTicket", "Status", "Modalidad Atencion", "Correo", "Telefono", "Solicitante"
+                "Nombre Cliente", "Solicitante", "Empresa", "Modalidad Atencion", "Status", "Correo", "Telefono"
             }
         ));
         JTBClientes.setShowGrid(true);
@@ -84,23 +85,20 @@ public class GenerarReporteporCliente extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(44, 44, 44)
-                        .addComponent(JBNRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel2)
-                        .addGap(38, 38, 38))))
+                    .addComponent(JBNRegresar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(38, 38, 38))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void JBNRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBNRegresarActionPerformed
@@ -144,7 +142,7 @@ public class GenerarReporteporCliente extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton JBNRegresar;
-    private javax.swing.JTable JTBClientes;
+    public javax.swing.JTable JTBClientes;
     public javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     public javax.swing.JScrollPane jScrollPane2;

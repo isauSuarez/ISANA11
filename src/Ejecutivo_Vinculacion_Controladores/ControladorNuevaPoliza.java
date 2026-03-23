@@ -94,7 +94,6 @@ public class ControladorNuevaPoliza implements ActionListener {
 
         String clienteSeleccionado = vista.JCBClientes.getSelectedItem().toString();
 
-        // Formato esperado: "3 - Abarrotes San Juan"
         String[] partes = clienteSeleccionado.split(" - ", 2);
 
         int idCliente = Integer.parseInt(partes[0]);
@@ -106,7 +105,7 @@ public class ControladorNuevaPoliza implements ActionListener {
 
         NuevaPoliza2 vista2 = new NuevaPoliza2();
 
-        // Este constructor lo harás en el segundo controlador
+  
         new ControladorNuevaPoliza2(vista2, idCliente, nombreCliente, planSeleccionado);
 
         vista2.setVisible(true);
