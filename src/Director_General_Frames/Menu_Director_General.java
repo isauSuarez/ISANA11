@@ -4,6 +4,8 @@
  */
 package Director_General_Frames;
 
+import Director_General_Frames.ImagenPanel_DG;
+
 /**
  *
  * @author Alejandro
@@ -70,7 +72,7 @@ public class Menu_Director_General extends javax.swing.JFrame {
         jLabel2.setText("Director General");
         JPFondo.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 800, -1));
 
-        JBNPersonal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos90/reportecliente90.png"))); // NOI18N
+        JBNPersonal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/CLIENTE MINI.png"))); // NOI18N
         JBNPersonal.setToolTipText("");
         JBNPersonal.setMaximumSize(new java.awt.Dimension(130, 130));
         JBNPersonal.setMinimumSize(new java.awt.Dimension(130, 130));
