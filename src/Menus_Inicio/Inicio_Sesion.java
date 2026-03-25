@@ -38,6 +38,7 @@ public class Inicio_Sesion extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        JPFondo = new ImagenPanel_MC("/imagenes/FondoETS.jpg");
         lblLogoInicio = new javax.swing.JLabel();
         lblBienvenido = new javax.swing.JLabel();
         txtUsuario = new javax.swing.JTextField();
@@ -49,6 +50,7 @@ public class Inicio_Sesion extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
         setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblLogoInicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/LogoEts.png"))); // NOI18N
 
@@ -121,55 +123,58 @@ public class Inicio_Sesion extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(100, 100, 100)
+        javax.swing.GroupLayout JPFondoLayout = new javax.swing.GroupLayout(JPFondo);
+        JPFondo.setLayout(JPFondoLayout);
+        JPFondoLayout.setHorizontalGroup(
+            JPFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 470, Short.MAX_VALUE)
+            .addGroup(JPFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(JPFondoLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addGroup(JPFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(JPFondoLayout.createSequentialGroup()
+                            .addGap(60, 60, 60)
+                            .addComponent(lblLogoInicio)
+                            .addGap(15, 15, 15)
+                            .addComponent(lblBienvenido))
+                        .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(pwdContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(JPFondoLayout.createSequentialGroup()
+                            .addGap(123, 123, 123)
+                            .addComponent(btnAcceder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(JPFondoLayout.createSequentialGroup()
+                            .addGap(113, 113, 113)
+                            .addComponent(lblInstrucciones, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(JPFondoLayout.createSequentialGroup()
+                            .addGap(356, 356, 356)
+                            .addComponent(lblAyuda)))
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        JPFondoLayout.setVerticalGroup(
+            JPFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 390, Short.MAX_VALUE)
+            .addGroup(JPFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(JPFondoLayout.createSequentialGroup()
+                    .addGap(0, 35, Short.MAX_VALUE)
+                    .addGroup(JPFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(lblLogoInicio)
-                        .addGap(15, 15, 15)
-                        .addComponent(lblBienvenido))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addComponent(pwdContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(163, 163, 163)
-                        .addComponent(btnAcceder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(153, 153, 153)
-                        .addComponent(lblInstrucciones, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(28, 28, 28))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(lblAyuda)
-                .addContainerGap())
+                        .addGroup(JPFondoLayout.createSequentialGroup()
+                            .addGap(20, 20, 20)
+                            .addComponent(lblBienvenido)))
+                    .addGap(34, 34, 34)
+                    .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(30, 30, 30)
+                    .addComponent(pwdContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(26, 26, 26)
+                    .addComponent(btnAcceder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(15, 15, 15)
+                    .addComponent(lblInstrucciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(6, 6, 6)
+                    .addComponent(lblAyuda)
+                    .addGap(0, 35, Short.MAX_VALUE)))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblLogoInicio)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(lblBienvenido)))
-                .addGap(34, 34, 34)
-                .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addComponent(pwdContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
-                .addComponent(btnAcceder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(15, 15, 15)
-                .addComponent(lblInstrucciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblAyuda)
-                .addContainerGap())
-        );
+
+        getContentPane().add(JPFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 390));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -262,11 +267,12 @@ public class Inicio_Sesion extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel JPFondo;
     public javax.swing.JButton btnAcceder;
     public javax.swing.JLabel lblAyuda;
     public javax.swing.JLabel lblBienvenido;
     public javax.swing.JLabel lblInstrucciones;
-    private javax.swing.JLabel lblLogoInicio;
+    public javax.swing.JLabel lblLogoInicio;
     public javax.swing.JPasswordField pwdContrasena;
     public javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables

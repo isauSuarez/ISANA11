@@ -15,7 +15,8 @@ public class Menu_Director_General extends javax.swing.JFrame {
      */
     public Menu_Director_General() {
         initComponents();
-        this.setSize(450, 380); // Fuerza el tamaño exacto
+        this.setSize(800, 600); // Fuerza el tamaño exacto
+        this.setResizable(false);
         this.setLocationRelativeTo(null); // Centra la ventana en tu monitor
         jMenuBar1.add(javax.swing.Box.createHorizontalGlue(), 2);
     }
@@ -30,11 +31,12 @@ public class Menu_Director_General extends javax.swing.JFrame {
     private void initComponents() {
 
         jMenuItem1 = new javax.swing.JMenuItem();
+        JPFondo = new ImagenPanel_DG("/imagenes/FondoETS.jpg");
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        JBNReportes = new javax.swing.JButton();
         JBNPersonal = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        JBNReportes = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         JMIReporteTecnico = new javax.swing.JMenuItem();
@@ -54,27 +56,36 @@ public class Menu_Director_General extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Montserrat", 1, 24)); // NOI18N
+        JPFondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Montserrat", 1, 48)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(102, 102, 102));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("¡Bienvenido!");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 20, 240, -1));
+        JPFondo.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 800, -1));
 
-        jLabel2.setFont(new java.awt.Font("Montserrat", 1, 24)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Montserrat", 1, 48)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(102, 102, 102));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Director General");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, 240, -1));
-
-        JBNReportes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos90/reportetickets90.png"))); // NOI18N
-        getContentPane().add(JBNReportes, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, 90, 110));
+        JPFondo.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 800, -1));
 
         JBNPersonal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos90/reportecliente90.png"))); // NOI18N
         JBNPersonal.setToolTipText("");
-        getContentPane().add(JBNPersonal, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 130, 90, 110));
+        JBNPersonal.setMaximumSize(new java.awt.Dimension(130, 130));
+        JBNPersonal.setMinimumSize(new java.awt.Dimension(130, 130));
+        JBNPersonal.setPreferredSize(new java.awt.Dimension(130, 130));
+        JPFondo.add(JBNPersonal, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 240, 140, 150));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo ETS 75 px.png"))); // NOI18N
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, -1, -1));
+        JPFondo.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        JBNReportes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/tickets mini.png"))); // NOI18N
+        JBNReportes.setMaximumSize(new java.awt.Dimension(130, 130));
+        JBNReportes.setMinimumSize(new java.awt.Dimension(130, 130));
+        JPFondo.add(JBNReportes, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 240, 140, 150));
+
+        getContentPane().add(JPFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 540));
 
         jMenuBar1.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
 
@@ -163,6 +174,7 @@ public class Menu_Director_General extends javax.swing.JFrame {
     public javax.swing.JMenuItem JMIReportePoliza;
     public javax.swing.JMenuItem JMIReporteTecnico;
     public javax.swing.JMenu JMNCerrarSesion;
+    private javax.swing.JPanel JPFondo;
     public javax.swing.JLabel jLabel1;
     public javax.swing.JLabel jLabel2;
     public javax.swing.JLabel jLabel3;
