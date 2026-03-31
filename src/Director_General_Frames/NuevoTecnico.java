@@ -79,6 +79,11 @@ public class NuevoTecnico extends javax.swing.JFrame {
                 JTFNombreActionPerformed(evt);
             }
         });
+        JTFNombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                JTFNombreKeyTyped(evt);
+            }
+        });
         JPFondo.add(JTFNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 90, 410, 40));
 
         JLBApellido.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
@@ -94,6 +99,11 @@ public class NuevoTecnico extends javax.swing.JFrame {
         JTFApellido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTFApellidoActionPerformed(evt);
+            }
+        });
+        JTFApellido.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                JTFApellidoKeyTyped(evt);
             }
         });
         JPFondo.add(JTFApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, 410, 40));
@@ -113,6 +123,11 @@ public class NuevoTecnico extends javax.swing.JFrame {
                 JTFTelefonoActionPerformed(evt);
             }
         });
+        JTFTelefono.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                JTFTelefonoKeyTyped(evt);
+            }
+        });
         JPFondo.add(JTFTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, 410, 40));
 
         JLBCorreo.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
@@ -128,6 +143,11 @@ public class NuevoTecnico extends javax.swing.JFrame {
         JTFCorreo1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTFCorreo1ActionPerformed(evt);
+            }
+        });
+        JTFCorreo1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                JTFCorreo1KeyTyped(evt);
             }
         });
         JPFondo.add(JTFCorreo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 300, 410, 40));
@@ -204,27 +224,71 @@ public class NuevoTecnico extends javax.swing.JFrame {
 
     private void JTFCorreo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFCorreo1ActionPerformed
         // TODO add your handling code here:
+        JTFCorreo1.addActionListener(e -> JCBEspecialidades.requestFocus());
     }//GEN-LAST:event_JTFCorreo1ActionPerformed
 
     private void JTFNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFNombreActionPerformed
         // TODO add your handling code here:
+        JTFNombre.addActionListener(e -> JTFApellido.requestFocus());
     }//GEN-LAST:event_JTFNombreActionPerformed
 
     private void JTFApellidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFApellidoActionPerformed
         // TODO add your handling code here:
+        JTFApellido.addActionListener(e -> JTFTelefono.requestFocus());
     }//GEN-LAST:event_JTFApellidoActionPerformed
 
     private void JTFTelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFTelefonoActionPerformed
         // TODO add your handling code here:
+        JTFTelefono.addActionListener(e -> JTFCorreo1.requestFocus());
     }//GEN-LAST:event_JTFTelefonoActionPerformed
 
     private void JBNGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBNGuardarActionPerformed
         // TODO add your handling code here:
+        String correo = JTFCorreo1.getText().trim();
+        String tel = JTFTelefono.getText().trim();
+
+        if (tel.length() < 10) {
+            javax.swing.JOptionPane.showMessageDialog(this, "El teléfono debe tener 10 dígitos.", "Error de formato", javax.swing.JOptionPane.ERROR_MESSAGE);
+
+        } else if (!correo.contains("@") || !correo.contains(".")) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Error de formato, asegurate que el correo tenga '@' y un dominio.", "Correo inválido", javax.swing.JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_JBNGuardarActionPerformed
 
     private void JTFcontraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFcontraseñaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_JTFcontraseñaActionPerformed
+
+    private void JTFNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTFNombreKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if (!(Character.isLetter(c) || c == ' ' || Character.isISOControl(c)) || JTFNombre.getText().length() >= 50) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_JTFNombreKeyTyped
+
+    private void JTFApellidoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTFApellidoKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if (!(Character.isLetter(c) || c == ' ' || Character.isISOControl(c)) || JTFNombre.getText().length() >= 50) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_JTFApellidoKeyTyped
+
+    private void JTFTelefonoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTFTelefonoKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if (!Character.isDigit(c) || JTFTelefono.getText().length() >= 10) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_JTFTelefonoKeyTyped
+
+    private void JTFCorreo1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTFCorreo1KeyTyped
+        // TODO add your handling code here:
+        if (JTFCorreo1.getText().length() >= 100) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_JTFCorreo1KeyTyped
 
     /**
      * @param args the command line arguments
