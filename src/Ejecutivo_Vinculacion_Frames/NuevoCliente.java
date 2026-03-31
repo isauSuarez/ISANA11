@@ -97,6 +97,14 @@ public class NuevoCliente extends javax.swing.JFrame {
         JTFNombre.setForeground(new java.awt.Color(153, 153, 153));
         JTFNombre.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         JTFNombre.setText("Nombre (s)");
+        JTFNombre.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                JTFNombreFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                JTFNombreFocusLost(evt);
+            }
+        });
         JTFNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTFNombreActionPerformed(evt);
@@ -112,6 +120,14 @@ public class NuevoCliente extends javax.swing.JFrame {
         JTFTelefono.setForeground(new java.awt.Color(153, 153, 153));
         JTFTelefono.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         JTFTelefono.setText("Telefono");
+        JTFTelefono.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                JTFTelefonoFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                JTFTelefonoFocusLost(evt);
+            }
+        });
         JTFTelefono.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTFTelefonoActionPerformed(evt);
@@ -127,6 +143,14 @@ public class NuevoCliente extends javax.swing.JFrame {
         JTFCorreo.setForeground(new java.awt.Color(153, 153, 153));
         JTFCorreo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         JTFCorreo.setText("Correo");
+        JTFCorreo.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                JTFCorreoFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                JTFCorreoFocusLost(evt);
+            }
+        });
         JTFCorreo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTFCorreoActionPerformed(evt);
@@ -151,13 +175,13 @@ public class NuevoCliente extends javax.swing.JFrame {
     private void JBNGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBNGuardarActionPerformed
         // TODO add your handling code here:
         String correo = JTFCorreo.getText().trim();
+        String tel = JTFTelefono.getText().trim();
 
-        if (JTFTelefono.getText().length() < 10) {
+        if (tel.length() < 10) {
             javax.swing.JOptionPane.showMessageDialog(this, "El teléfono debe tener 10 dígitos.", "Error de formato", javax.swing.JOptionPane.ERROR_MESSAGE);
 
         } else if (!correo.contains("@") || !correo.contains(".")) {
-            javax.swing.JOptionPane.showMessageDialog(this, "Formato invalido: el correo debe tener un '@' y un dominio.", "Correo inválido", javax.swing.JOptionPane.ERROR_MESSAGE);
-
+            javax.swing.JOptionPane.showMessageDialog(this, "Error de formato, asegurate que el correo contenga '@' y un dominio.", "Correo inválido", javax.swing.JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_JBNGuardarActionPerformed
 
@@ -232,6 +256,70 @@ public class NuevoCliente extends javax.swing.JFrame {
             }
         });
     }//GEN-LAST:event_JTFCorreoKeyTyped
+
+    private void JTFNombreFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFNombreFocusGained
+        // TODO add your handling code here:
+        if (JTFNombre.getText().equals("Nombre (s)")) {
+            JTFNombre.setText("");
+            JTFNombre.setForeground(new java.awt.Color(205, 205, 205)); 
+        }    
+    }//GEN-LAST:event_JTFNombreFocusGained
+
+    private void JTFNombreFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFNombreFocusLost
+        // TODO add your handling code here:
+        if (JTFNombre.getText().isEmpty()) {
+            JTFNombre.setText("Nombre (s)");
+            JTFNombre.setForeground(new java.awt.Color(153, 153, 153)); 
+        }
+        
+        /**
+         Para apellido
+         *      **añade focus gained**
+                if (JTFApellido.getText().equals("Apellido (s)")) {
+                JTFApellido.setText("");
+                JTFApellido.setForeground(new java.awt.Color(205, 205, 205));
+                }
+            
+            *   **añade focus lost**
+                if (JTFApellido.getText().isEmpty()) {
+                JTFApellido.setText("Apellido (s)");
+                JTFApellido.setForeground(new java.awt.Color(153, 153, 153));
+                }
+         */
+        
+    }//GEN-LAST:event_JTFNombreFocusLost
+
+    private void JTFTelefonoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFTelefonoFocusGained
+        // TODO add your handling code here:
+        if (JTFTelefono.getText().equals("Telefono")) {
+            JTFTelefono.setText("");
+            JTFTelefono.setForeground(new java.awt.Color(205, 205, 205));
+        }
+    }//GEN-LAST:event_JTFTelefonoFocusGained
+
+    private void JTFTelefonoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFTelefonoFocusLost
+        // TODO add your handling code here:
+        if (JTFTelefono.getText().isEmpty()) {
+            JTFTelefono.setText("Telefono");
+            JTFTelefono.setForeground(new java.awt.Color(153, 153, 153));
+        }
+    }//GEN-LAST:event_JTFTelefonoFocusLost
+
+    private void JTFCorreoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFCorreoFocusGained
+        // TODO add your handling code here:
+        if (JTFCorreo.getText().equals("Correo")) {
+            JTFCorreo.setText("");
+            JTFCorreo.setForeground(new java.awt.Color(205, 205, 205));
+        }
+    }//GEN-LAST:event_JTFCorreoFocusGained
+
+    private void JTFCorreoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFCorreoFocusLost
+        // TODO add your handling code here:
+        if (JTFCorreo.getText().isEmpty()) {
+            JTFCorreo.setText("Correo");
+            JTFCorreo.setForeground(new java.awt.Color(153, 153, 153));
+        }
+    }//GEN-LAST:event_JTFCorreoFocusLost
 
     /**
      * @param args the command line arguments

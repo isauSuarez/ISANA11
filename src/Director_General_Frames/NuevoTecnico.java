@@ -251,7 +251,7 @@ public class NuevoTecnico extends javax.swing.JFrame {
             javax.swing.JOptionPane.showMessageDialog(this, "El teléfono debe tener 10 dígitos.", "Error de formato", javax.swing.JOptionPane.ERROR_MESSAGE);
 
         } else if (!correo.contains("@") || !correo.contains(".")) {
-            javax.swing.JOptionPane.showMessageDialog(this, "Error de formato, asegurate que el correo tenga '@' y un dominio.", "Correo inválido", javax.swing.JOptionPane.ERROR_MESSAGE);
+            javax.swing.JOptionPane.showMessageDialog(this, "Error de formato, asegurate que el correo contenga '@' y un dominio.", "Correo inválido", javax.swing.JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_JBNGuardarActionPerformed
 

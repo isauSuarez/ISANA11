@@ -102,6 +102,11 @@ public class ModificarCliente extends javax.swing.JFrame {
                 JTFApellidoActionPerformed(evt);
             }
         });
+        JTFApellido.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                JTFApellidoKeyTyped(evt);
+            }
+        });
         getContentPane().add(JTFApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 240, 340, -1));
 
         JTFTelefono.setForeground(new java.awt.Color(153, 153, 153));
@@ -112,6 +117,11 @@ public class ModificarCliente extends javax.swing.JFrame {
         JTFTelefono.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTFTelefonoActionPerformed(evt);
+            }
+        });
+        JTFTelefono.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                JTFTelefonoKeyTyped(evt);
             }
         });
         getContentPane().add(JTFTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 310, 340, -1));
@@ -126,6 +136,11 @@ public class ModificarCliente extends javax.swing.JFrame {
                 JTFCorreoActionPerformed(evt);
             }
         });
+        JTFCorreo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                JTFCorreoKeyTyped(evt);
+            }
+        });
         getContentPane().add(JTFCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 380, 340, -1));
 
         JTFNombre.setForeground(new java.awt.Color(153, 153, 153));
@@ -137,6 +152,11 @@ public class ModificarCliente extends javax.swing.JFrame {
         JTFNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTFNombreActionPerformed(evt);
+            }
+        });
+        JTFNombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                JTFNombreKeyTyped(evt);
             }
         });
         getContentPane().add(JTFNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, 340, -1));
@@ -153,9 +173,22 @@ public class ModificarCliente extends javax.swing.JFrame {
         JTFCorreoBusqueda.setActionCommand("<Not Set>");
         JTFCorreoBusqueda.setMinimumSize(new java.awt.Dimension(350, 40));
         JTFCorreoBusqueda.setPreferredSize(new java.awt.Dimension(350, 40));
+        JTFCorreoBusqueda.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                JTFCorreoBusquedaFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                JTFCorreoBusquedaFocusLost(evt);
+            }
+        });
         JTFCorreoBusqueda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTFCorreoBusquedaActionPerformed(evt);
+            }
+        });
+        JTFCorreoBusqueda.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                JTFCorreoBusquedaKeyTyped(evt);
             }
         });
         getContentPane().add(JTFCorreoBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 90, 290, -1));
@@ -185,27 +218,88 @@ public class ModificarCliente extends javax.swing.JFrame {
 
     private void JTFApellidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFApellidoActionPerformed
         // TODO add your handling code here:
+        JTFApellido.addActionListener(e -> JTFTelefono.requestFocus());
     }//GEN-LAST:event_JTFApellidoActionPerformed
 
     private void JTFTelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFTelefonoActionPerformed
         // TODO add your handling code here:
+        JTFTelefono.addActionListener(e -> JTFCorreo.requestFocus());
     }//GEN-LAST:event_JTFTelefonoActionPerformed
 
     private void JTFCorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFCorreoActionPerformed
         // TODO add your handling code here:
+        JTFCorreo.addActionListener(e -> JBNGuardar.doClick());
     }//GEN-LAST:event_JTFCorreoActionPerformed
 
     private void JTFNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFNombreActionPerformed
         // TODO add your handling code here:
+        JTFNombre.addActionListener(e -> JTFApellido.requestFocus());
     }//GEN-LAST:event_JTFNombreActionPerformed
 
     private void JTFCorreoBusquedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFCorreoBusquedaActionPerformed
         // TODO add your handling code here:
+        JTFCorreoBusqueda.addActionListener(e -> JBNBuscar.doClick());
     }//GEN-LAST:event_JTFCorreoBusquedaActionPerformed
 
     private void JBNBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBNBuscarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_JBNBuscarActionPerformed
+
+    private void JTFCorreoBusquedaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFCorreoBusquedaFocusGained
+        // TODO add your handling code here:
+        if (JTFCorreoBusqueda.getText().equals("Correo registrado")) {
+            JTFCorreoBusqueda.setText("");
+            JTFCorreoBusqueda.setForeground(new java.awt.Color(205, 205, 205));
+        }
+    }//GEN-LAST:event_JTFCorreoBusquedaFocusGained
+
+    private void JTFCorreoBusquedaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFCorreoBusquedaFocusLost
+        // TODO add your handling code here:
+        if (JTFCorreoBusqueda.getText().isEmpty()) {
+            JTFCorreoBusqueda.setText("Correo registrado");
+            JTFCorreoBusqueda.setForeground(new java.awt.Color(153, 153, 153));
+        }
+    }//GEN-LAST:event_JTFCorreoBusquedaFocusLost
+
+    private void JTFNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTFNombreKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        javax.swing.JTextField field = (javax.swing.JTextField) evt.getSource();
+        if (!(Character.isLetter(c) || c == ' ' || Character.isISOControl(c)) || field.getText().length() >= 50) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_JTFNombreKeyTyped
+
+    private void JTFApellidoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTFApellidoKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        javax.swing.JTextField field = (javax.swing.JTextField) evt.getSource();
+        if (!(Character.isLetter(c) || c == ' ' || Character.isISOControl(c)) || field.getText().length() >= 50) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_JTFApellidoKeyTyped
+
+    private void JTFTelefonoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTFTelefonoKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if (!Character.isDigit(c) || JTFTelefono.getText().length() >= 10) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_JTFTelefonoKeyTyped
+
+    private void JTFCorreoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTFCorreoKeyTyped
+        // TODO add your handling code here:
+        if (((javax.swing.JTextField) evt.getSource()).getText().length() >= 100) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_JTFCorreoKeyTyped
+
+    private void JTFCorreoBusquedaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTFCorreoBusquedaKeyTyped
+        // TODO add your handling code here:
+        if (((javax.swing.JTextField) evt.getSource()).getText().length() >= 100) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_JTFCorreoBusquedaKeyTyped
 
     /**
      * @param args the command line arguments
