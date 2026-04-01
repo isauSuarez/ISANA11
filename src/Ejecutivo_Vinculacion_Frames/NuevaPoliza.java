@@ -46,6 +46,7 @@ public class NuevaPoliza extends javax.swing.JFrame {
         JBNSiguiente = new javax.swing.JButton();
         JBNCancelar = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -76,7 +77,7 @@ public class NuevaPoliza extends javax.swing.JFrame {
                 JCBClientesActionPerformed(evt);
             }
         });
-        JPFondo.add(JCBClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, 390, 40));
+        JPFondo.add(JCBClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, 390, 40));
 
         JLBNombre2.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
         JLBNombre2.setForeground(new java.awt.Color(153, 153, 153));
@@ -133,6 +134,7 @@ public class NuevaPoliza extends javax.swing.JFrame {
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo ETS 75 px.png"))); // NOI18N
         JPFondo.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, -1, -1));
+        JPFondo.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, 300, -1));
 
         getContentPane().add(JPFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -6, 510, 510));
 
@@ -207,5 +209,6 @@ public class NuevaPoliza extends javax.swing.JFrame {
     public javax.swing.JRadioButton JRBProfesional;
     private javax.swing.ButtonGroup buttonGroup1;
     public javax.swing.JLabel jLabel3;
+    public javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

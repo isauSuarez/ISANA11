@@ -119,6 +119,11 @@ public class NuevaPoliza2 extends javax.swing.JFrame {
         JBNRegistrar.setForeground(new java.awt.Color(255, 255, 255));
         JBNRegistrar.setText("Registrar");
         JBNRegistrar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        JBNRegistrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBNRegistrarActionPerformed(evt);
+            }
+        });
         JPFondo.add(JBNRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 430, 224, 42));
 
         JBNCancelar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -141,6 +146,10 @@ public class NuevaPoliza2 extends javax.swing.JFrame {
     private void JTFEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFEmpresaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_JTFEmpresaActionPerformed
+
+    private void JBNRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBNRegistrarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JBNRegistrarActionPerformed
 
     /**
      * @param args the command line arguments

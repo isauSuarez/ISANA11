@@ -51,68 +51,63 @@ public class ControladorNuevaPoliza2 implements ActionListener {
     }
 
     private void registrarPoliza() {
-        String empresa = vista.JTFEmpresa.getText().trim();
-        String direccion = vista.JTFDireccion.getText().trim();
-        String telefono = vista.JTFTelefono.getText().trim();
-        String correo = vista.JTFCorreo.getText().trim();
-        String fechaVencimientoTexto = vista.JCBFechaVencimiento.getSelectedItem().toString();
+    String empresa = vista.JTFEmpresa.getText().trim();
+    String direccion = vista.JTFDireccion.getText().trim();
+    String telefono = vista.JTFTelefono.getText().trim();
+    String correo = vista.JTFCorreo.getText().trim();
+    String fechaVencimientoTexto = vista.JCBFechaVencimiento.getSelectedItem().toString();
 
-        if (empresa.isEmpty() || direccion.isEmpty() || telefono.isEmpty() || correo.isEmpty()
-                || fechaVencimientoTexto.equals("Fecha")) {
+    if (empresa.isEmpty() || direccion.isEmpty() || telefono.isEmpty() || correo.isEmpty()
+            || fechaVencimientoTexto.equals("Fecha")) {
+        JOptionPane.showMessageDialog(vista,
+                "Llene todos los campos.",
+                "Aviso",
+                JOptionPane.WARNING_MESSAGE);
+        return;
+    }
+
+    int idEmpleado = 1;
+
+    String sql = "INSERT INTO poliza "
+            + "(idCliente, idEmpleado, nombreEmpresaP, direccionServicioP, correoP, telefonoP, estadoP, fechaInicioP, fechaVencimientoP) "
+            + "VALUES (?, ?, ?, ?, ?, ?, ?, CURDATE(), ?)";
+
+    try (Connection con = Conexion.getConexion();
+         PreparedStatement ps = con.prepareStatement(sql)) {
+
+        System.out.println("Conexión correcta. Registrando póliza...");
+
+        ps.setInt(1, idCliente);
+        ps.setInt(2, idEmpleado);
+        ps.setString(3, empresa);
+        ps.setString(4, direccion);
+        ps.setString(5, correo);
+        ps.setString(6, telefono);
+        ps.setString(7, "Activa");
+        ps.setDate(8, java.sql.Date.valueOf(LocalDate.parse(fechaVencimientoTexto)));
+
+        int filas = ps.executeUpdate();
+
+        if (filas > 0) {
+            System.out.println("Póliza registrada correctamente.");
+            JOptionPane.showMessageDialog(vista, "Póliza registrada correctamente.");
+            limpiarCampos();
+            volverAPaso1();
+        } else {
             JOptionPane.showMessageDialog(vista,
-                    "Llene todos los campos.",
-                    "Aviso",
-                    JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-
-           int idEmpleado = 1;
-
-        String sql = "INSERT INTO poliza "
-                + "(idCliente, idEmpleado, nombreEmpresaP, direccionServicioP, estadoP, tipoPlanP, fechaInicioP, fechaVencimientoP) "
-                + "VALUES (?, ?, ?, ?, ?, ?, CURDATE(), ?)";
-
-        try (Connection con = Conexion.getConexion();
-             PreparedStatement ps = con.prepareStatement(sql)) {
-
-            System.out.println("Conexión correcta. Registrando póliza...");
-
-            ps.setInt(1, idCliente);
-            ps.setInt(2, idEmpleado);
-            ps.setString(3, empresa);
-            ps.setString(4, direccion);
-            ps.setString(5, "Activa");
-            ps.setString(6, planSeleccionado);
-            ps.setDate(7, java.sql.Date.valueOf(LocalDate.parse(fechaVencimientoTexto)));
-
-            int filas = ps.executeUpdate();
-
-            if (filas > 0) {
-                System.out.println("Poliza registrada correctamente.");
-                System.out.println("Cliente: " + nombreCliente);
-                System.out.println("Empresa: " + empresa);
-                System.out.println("Plan: " + planSeleccionado);
-
-                JOptionPane.showMessageDialog(vista,
-                        "Poliza registrada correctamente.");
-
-                limpiarCampos();
-                volverAPaso1();
-            } else {
-                JOptionPane.showMessageDialog(vista,
-                        "No se pudo registrar la póliza.",
-                        "Error",
-                        JOptionPane.ERROR_MESSAGE);
-            }
-
-        } catch (SQLException ex) {
-            System.out.println("Error al registrar póliza: " + ex.getMessage());
-            JOptionPane.showMessageDialog(vista,
-                    "Hubo un error con la BD: " + ex.getMessage(),
+                    "No se pudo registrar la póliza.",
                     "Error",
                     JOptionPane.ERROR_MESSAGE);
         }
+
+    } catch (SQLException ex) {
+        System.out.println("Error al registrar póliza: " + ex.getMessage());
+        JOptionPane.showMessageDialog(vista,
+                "Hubo un error con la BD: " + ex.getMessage(),
+                "Error",
+                JOptionPane.ERROR_MESSAGE);
     }
+}
 
     private void limpiarCampos() {
         vista.JTFEmpresa.setText("");
