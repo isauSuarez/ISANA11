@@ -43,6 +43,7 @@ public class NuevaPoliza2 extends javax.swing.JFrame {
         JBNRegistrar = new javax.swing.JButton();
         JBNCancelar = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
+        jtftest = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -84,9 +85,22 @@ public class NuevaPoliza2 extends javax.swing.JFrame {
         JTFEmpresa.setForeground(new java.awt.Color(153, 153, 153));
         JTFEmpresa.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         JTFEmpresa.setText("Empresa");
+        JTFEmpresa.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                JTFEmpresaFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                JTFEmpresaFocusLost(evt);
+            }
+        });
         JTFEmpresa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTFEmpresaActionPerformed(evt);
+            }
+        });
+        JTFEmpresa.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                JTFEmpresaKeyTyped(evt);
             }
         });
         JPFondo.add(JTFEmpresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 70, 390, 40));
@@ -94,16 +108,50 @@ public class NuevaPoliza2 extends javax.swing.JFrame {
         JTFDireccion.setForeground(new java.awt.Color(153, 153, 153));
         JTFDireccion.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         JTFDireccion.setText("Dirección");
+        JTFDireccion.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                JTFDireccionFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                JTFDireccionFocusLost(evt);
+            }
+        });
+        JTFDireccion.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                JTFDireccionKeyTyped(evt);
+            }
+        });
         JPFondo.add(JTFDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 390, 40));
 
         JTFTelefono.setForeground(new java.awt.Color(153, 153, 153));
         JTFTelefono.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         JTFTelefono.setText("Telefono");
+        JTFTelefono.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                JTFTelefonoFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                JTFTelefonoFocusLost(evt);
+            }
+        });
+        JTFTelefono.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                JTFTelefonoKeyTyped(evt);
+            }
+        });
         JPFondo.add(JTFTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 390, 40));
 
         JTFCorreo.setForeground(new java.awt.Color(153, 153, 153));
         JTFCorreo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         JTFCorreo.setText("Correo");
+        JTFCorreo.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                JTFCorreoFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                JTFCorreoFocusLost(evt);
+            }
+        });
         JPFondo.add(JTFCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 280, 390, 40));
 
         JCBFechaVencimiento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Fecha" }));
@@ -134,6 +182,21 @@ public class NuevaPoliza2 extends javax.swing.JFrame {
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo ETS 75 px.png"))); // NOI18N
         JPFondo.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 420, -1, -1));
 
+        jtftest.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jtftestFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jtftestFocusLost(evt);
+            }
+        });
+        jtftest.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtftestActionPerformed(evt);
+            }
+        });
+        JPFondo.add(jtftest, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 120, 160, -1));
+
         getContentPane().add(JPFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 610, 520));
 
         pack();
@@ -151,6 +214,44 @@ public class NuevaPoliza2 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_JBNRegistrarActionPerformed
 
+    private void jtftestFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jtftestFocusGained
+        // TODO add your handling code here:
+                        if (jtftest.getText().equals("Direccion")) {
+            jtftest.setText("");
+            jtftest.setForeground(new java.awt.Color(205, 205, 205)); 
+        }
+    }//GEN-LAST:event_jtftestFocusGained
+
+    private void jtftestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtftestActionPerformed
+        // TODO add your handling code here:
+
+        
+    }//GEN-LAST:event_jtftestActionPerformed
+
+    private void jtftestFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jtftestFocusLost
+        // TODO add your handling code here:
+           
+                if (jtftest.getText().isEmpty()) {
+            jtftest.setText("test");
+            jtftest.setForeground(new java.awt.Color(153, 153, 153)); 
+        }
+        
+    }//GEN-LAST:event_jtftestFocusLost
+
+        private void JTFDireccionFocusGained (java. awt.event. FocusEvent evt){ 
+        if (JTFDireccion.getText().equals("test")) {
+            JTFDireccion.setText("");
+            JTFDireccion.setForeground(new java.awt.Color(205, 205, 205)); 
+        } 
+    }
+    
+    private void JTFDireccionFocusLost (java. awt.event. FocusEvent evt){ 
+                if (JTFDireccion.getText().isEmpty()) {
+            JTFDireccion.setText("Direccion");
+            JTFDireccion.setForeground(new java.awt.Color(153, 153, 153)); 
+        }
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -204,5 +305,6 @@ public class NuevaPoliza2 extends javax.swing.JFrame {
     public javax.swing.JLabel jLabel5;
     public javax.swing.JLabel jLabel6;
     public javax.swing.JLabel jLabel7;
+    public javax.swing.JTextField jtftest;
     // End of variables declaration//GEN-END:variables
 }

@@ -35,6 +35,8 @@ public class Nuevo_Usuario extends javax.swing.JFrame {
         JBNSiguiente = new javax.swing.JButton();
         JBNCancelar = new javax.swing.JButton();
         lblInstruccionesNU1 = new javax.swing.JLabel();
+        JTFcliente = new javax.swing.JTextField();
+        JTFempresa = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -62,7 +64,12 @@ public class Nuevo_Usuario extends javax.swing.JFrame {
         JCBClientes.setForeground(new java.awt.Color(153, 153, 153));
         JCBClientes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Clientes registrados..." }));
         JCBClientes.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        getContentPane().add(JCBClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 350, 50));
+        JCBClientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JCBClientesActionPerformed(evt);
+            }
+        });
+        getContentPane().add(JCBClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 150, 180, 50));
 
         JBNSiguiente.setBackground(new java.awt.Color(0, 153, 102));
         JBNSiguiente.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -87,10 +94,21 @@ public class Nuevo_Usuario extends javax.swing.JFrame {
         lblInstruccionesNU1.setText("Seleccione al cliente que autoriza el uso de");
         lblInstruccionesNU1.setToolTipText("");
         getContentPane().add(lblInstruccionesNU1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 400, 30));
+        getContentPane().add(JTFcliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, 120, -1));
+
+        JTFempresa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        getContentPane().add(JTFempresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 220, 270, 20));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void JCBClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCBClientesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JCBClientesActionPerformed
+
+    
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -130,6 +148,8 @@ public class Nuevo_Usuario extends javax.swing.JFrame {
     public javax.swing.JButton JBNCancelar;
     public javax.swing.JButton JBNSiguiente;
     public javax.swing.JComboBox<String> JCBClientes;
+    public javax.swing.JTextField JTFcliente;
+    private javax.swing.JComboBox<String> JTFempresa;
     public javax.swing.JLabel jLabel1;
     public javax.swing.JLabel lblInstruccionesNU;
     public javax.swing.JLabel lblInstruccionesNU1;
