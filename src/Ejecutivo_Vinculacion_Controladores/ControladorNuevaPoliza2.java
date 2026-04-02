@@ -26,38 +26,38 @@ public class ControladorNuevaPoliza2 implements ActionListener {
         this.nombreCliente = nombreCliente;
         this.planSeleccionado = planSeleccionado;
 
-        this.vista.JBNRegistrar.addActionListener(this);
-        this.vista.JBNCancelar.addActionListener(this);
+        this.vista.JBNRegistrar1.addActionListener(this);
+        this.vista.JBNCancelar1.addActionListener(this);
 
         cargarFechasVencimiento();
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == vista.JBNRegistrar) {
+        if (e.getSource() == vista.JBNRegistrar1) {
             registrarPoliza();
-        } else if (e.getSource() == vista.JBNCancelar) {
+        } else if (e.getSource() == vista.JBNCancelar1) {
             volverAPaso1();
         }
     }
 
     private void cargarFechasVencimiento() {
-        vista.JCBFechaVencimiento.removeAllItems();
-        vista.JCBFechaVencimiento.addItem("Fecha");
+        vista.JCBFechaVencimiento1.removeAllItems();
+        vista.JCBFechaVencimiento1.addItem("Fecha");
 
         LocalDate hoy = LocalDate.now();
 
         for (int i = 1; i <= 12; i++) {
-            vista.JCBFechaVencimiento.addItem(hoy.plusMonths(i).toString());
+            vista.JCBFechaVencimiento1.addItem(hoy.plusMonths(i).toString());
         }
     }
 
 private void registrarPoliza() {
-    String empresa = vista.JTFEmpresa.getText().trim();
-    String direccion = vista.JTFDireccion.getText().trim();
-    String telefono = vista.JTFTelefono.getText().trim();
-    String correo = vista.JTFCorreo.getText().trim();
-    String fechaVencimientoTexto = vista.JCBFechaVencimiento.getSelectedItem().toString();
+    String empresa = vista.JTFEmpresa1.getText().trim();
+    String direccion = vista.JTFDireccion1.getText().trim();
+    String telefono = vista.JTFTelefono1.getText().trim();
+    String correo = vista.JTFCorreo1.getText().trim();
+    String fechaVencimientoTexto = vista.JCBFechaVencimiento1.getSelectedItem().toString();
 
     if (empresa.isEmpty() || direccion.isEmpty() || telefono.isEmpty() || correo.isEmpty()
             || fechaVencimientoTexto.equals("Fecha")) {
@@ -194,11 +194,11 @@ private void registrarPoliza() {
 }
 
     private void limpiarCampos() {
-        vista.JTFEmpresa.setText("");
-        vista.JTFDireccion.setText("");
-        vista.JTFTelefono.setText("");
-        vista.JTFCorreo.setText("");
-        vista.JCBFechaVencimiento.setSelectedIndex(0);
+        vista.JTFEmpresa1.setText("");
+        vista.JTFDireccion1.setText("");
+        vista.JTFTelefono1.setText("");
+        vista.JTFCorreo1.setText("");
+        vista.JCBFechaVencimiento1.setSelectedIndex(0);
     }
 
     private void volverAPaso1() {

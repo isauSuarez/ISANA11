@@ -29,21 +29,20 @@ public class NuevaPoliza2 extends javax.swing.JFrame {
     private void initComponents() {
 
         JPFondo = new ImagenPanel_EV("/imagenes/FondoETS.jpg");
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        JTFEmpresa = new javax.swing.JTextField();
-        JTFDireccion = new javax.swing.JTextField();
-        JTFTelefono = new javax.swing.JTextField();
-        JTFCorreo = new javax.swing.JTextField();
-        JCBFechaVencimiento = new javax.swing.JComboBox<>();
-        JBNRegistrar = new javax.swing.JButton();
-        JBNCancelar = new javax.swing.JButton();
-        jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        JTFEmpresa1 = new javax.swing.JTextField();
+        JTFDireccion1 = new javax.swing.JTextField();
+        JTFTelefono1 = new javax.swing.JTextField();
+        JTFCorreo1 = new javax.swing.JTextField();
+        JCBFechaVencimiento1 = new javax.swing.JComboBox<>();
+        JBNRegistrar1 = new javax.swing.JButton();
+        JBNCancelar1 = new javax.swing.JButton();
+        jLabel14 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -52,155 +51,194 @@ public class NuevaPoliza2 extends javax.swing.JFrame {
 
         JPFondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel1.setText("Registrar Póliza");
-        JPFondo.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, -1, -1));
-
-        jLabel2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel2.setText("Empresa");
-        JPFondo.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 100, 40));
-
-        jLabel3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel3.setText("Dirección");
-        JPFondo.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 110, 40));
-
-        jLabel4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel4.setText("Telefono");
-        JPFondo.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 100, 40));
-
-        jLabel5.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel5.setText("Correo");
-        JPFondo.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 100, 40));
-
-        jLabel6.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel6.setText("Fecha de vencimiento");
-        JPFondo.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, 200, 40));
-
-        JTFEmpresa.setForeground(new java.awt.Color(153, 153, 153));
-        JTFEmpresa.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        JTFEmpresa.setText("Empresa");
-        JTFEmpresa.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                JTFEmpresaFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                JTFEmpresaFocusLost(evt);
-            }
-        });
-        JTFEmpresa.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JTFEmpresaActionPerformed(evt);
-            }
-        });
-        JTFEmpresa.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                JTFEmpresaKeyTyped(evt);
-            }
-        });
-        JPFondo.add(JTFEmpresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 70, 390, 40));
-
-        JTFDireccion.setForeground(new java.awt.Color(153, 153, 153));
-        JTFDireccion.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        JTFDireccion.setText("Dirección");
-        JTFDireccion.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                JTFDireccionFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                JTFDireccionFocusLost(evt);
-            }
-        });
-        JTFDireccion.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                JTFDireccionKeyTyped(evt);
-            }
-        });
-        JPFondo.add(JTFDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 390, 40));
-
-        JTFTelefono.setForeground(new java.awt.Color(153, 153, 153));
-        JTFTelefono.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        JTFTelefono.setText("Telefono");
-        JTFTelefono.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                JTFTelefonoFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                JTFTelefonoFocusLost(evt);
-            }
-        });
-        JTFTelefono.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                JTFTelefonoKeyTyped(evt);
-            }
-        });
-        JPFondo.add(JTFTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 390, 40));
-
-        JTFCorreo.setForeground(new java.awt.Color(153, 153, 153));
-        JTFCorreo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        JTFCorreo.setText("Correo");
-        JTFCorreo.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                JTFCorreoFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                JTFCorreoFocusLost(evt);
-            }
-        });
-        JPFondo.add(JTFCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 280, 390, 40));
-
-        JCBFechaVencimiento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Fecha" }));
-        JCBFechaVencimiento.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JCBFechaVencimientoActionPerformed(evt);
-            }
-        });
-        JPFondo.add(JCBFechaVencimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 350, 320, 40));
-
-        JBNRegistrar.setBackground(new java.awt.Color(0, 153, 102));
-        JBNRegistrar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        JBNRegistrar.setForeground(new java.awt.Color(255, 255, 255));
-        JBNRegistrar.setText("Registrar");
-        JBNRegistrar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        JBNRegistrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JBNRegistrarActionPerformed(evt);
-            }
-        });
-        JPFondo.add(JBNRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 430, 224, 42));
-
-        JBNCancelar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        JBNCancelar.setText("Cancelar");
-        JBNCancelar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        JPFondo.add(JBNCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 460, 90, 30));
-
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo ETS 75 px.png"))); // NOI18N
-        JPFondo.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 420, -1, -1));
-
         jLabel8.setText("jLabel8");
         JPFondo.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 30, -1, -1));
+
+        jLabel9.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel9.setText("Empresa");
+        JPFondo.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 100, 40));
+
+        jLabel10.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel10.setText("Dirección");
+        JPFondo.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 110, 40));
+
+        jLabel11.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel11.setText("Telefono");
+        JPFondo.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 100, 40));
+
+        jLabel12.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel12.setText("Correo");
+        JPFondo.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 100, 40));
+
+        jLabel13.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel13.setText("Fecha de vencimiento");
+        JPFondo.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, 200, 40));
+
+        JTFEmpresa1.setForeground(new java.awt.Color(153, 153, 153));
+        JTFEmpresa1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        JTFEmpresa1.setText("Empresa");
+        JTFEmpresa1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                JTFEmpresa1FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                JTFEmpresa1FocusLost(evt);
+            }
+        });
+        JTFEmpresa1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JTFEmpresa1ActionPerformed(evt);
+            }
+        });
+        JTFEmpresa1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                JTFEmpresa1KeyTyped(evt);
+            }
+        });
+        JPFondo.add(JTFEmpresa1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 70, 390, 40));
+
+        JTFDireccion1.setForeground(new java.awt.Color(153, 153, 153));
+        JTFDireccion1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        JTFDireccion1.setText("Dirección");
+        JTFDireccion1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                JTFDireccion1FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                JTFDireccion1FocusLost(evt);
+            }
+        });
+        JTFDireccion1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                JTFDireccion1KeyTyped(evt);
+            }
+        });
+        JPFondo.add(JTFDireccion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 390, 40));
+
+        JTFTelefono1.setForeground(new java.awt.Color(153, 153, 153));
+        JTFTelefono1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        JTFTelefono1.setText("Telefono");
+        JTFTelefono1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                JTFTelefono1FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                JTFTelefono1FocusLost(evt);
+            }
+        });
+        JTFTelefono1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                JTFTelefono1KeyTyped(evt);
+            }
+        });
+        JPFondo.add(JTFTelefono1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 390, 40));
+
+        JTFCorreo1.setForeground(new java.awt.Color(153, 153, 153));
+        JTFCorreo1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        JTFCorreo1.setText("Correo");
+        JTFCorreo1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                JTFCorreo1FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                JTFCorreo1FocusLost(evt);
+            }
+        });
+        JPFondo.add(JTFCorreo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 280, 390, 40));
+
+        JCBFechaVencimiento1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Fecha" }));
+        JCBFechaVencimiento1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JCBFechaVencimiento1ActionPerformed(evt);
+            }
+        });
+        JPFondo.add(JCBFechaVencimiento1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 350, 320, 40));
+
+        JBNRegistrar1.setBackground(new java.awt.Color(0, 153, 102));
+        JBNRegistrar1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        JBNRegistrar1.setForeground(new java.awt.Color(255, 255, 255));
+        JBNRegistrar1.setText("Registrar");
+        JBNRegistrar1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        JBNRegistrar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBNRegistrar1ActionPerformed(evt);
+            }
+        });
+        JPFondo.add(JBNRegistrar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 430, 224, 42));
+
+        JBNCancelar1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        JBNCancelar1.setText("Cancelar");
+        JBNCancelar1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        JPFondo.add(JBNCancelar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 460, 90, 30));
+
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo ETS 75 px.png"))); // NOI18N
+        JPFondo.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 420, -1, -1));
 
         getContentPane().add(JPFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 610, 520));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void JCBFechaVencimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCBFechaVencimientoActionPerformed
+    private void JTFEmpresa1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFEmpresa1FocusGained
         // TODO add your handling code here:
-    }//GEN-LAST:event_JCBFechaVencimientoActionPerformed
+    }//GEN-LAST:event_JTFEmpresa1FocusGained
 
-    private void JTFEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFEmpresaActionPerformed
+    private void JTFEmpresa1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFEmpresa1FocusLost
         // TODO add your handling code here:
-    }//GEN-LAST:event_JTFEmpresaActionPerformed
+    }//GEN-LAST:event_JTFEmpresa1FocusLost
 
-    private void JBNRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBNRegistrarActionPerformed
+    private void JTFEmpresa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFEmpresa1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_JBNRegistrarActionPerformed
+    }//GEN-LAST:event_JTFEmpresa1ActionPerformed
+
+    private void JTFEmpresa1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTFEmpresa1KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JTFEmpresa1KeyTyped
+
+    private void JTFDireccion1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFDireccion1FocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JTFDireccion1FocusGained
+
+    private void JTFDireccion1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFDireccion1FocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JTFDireccion1FocusLost
+
+    private void JTFDireccion1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTFDireccion1KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JTFDireccion1KeyTyped
+
+    private void JTFTelefono1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFTelefono1FocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JTFTelefono1FocusGained
+
+    private void JTFTelefono1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFTelefono1FocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JTFTelefono1FocusLost
+
+    private void JTFTelefono1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTFTelefono1KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JTFTelefono1KeyTyped
+
+    private void JTFCorreo1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFCorreo1FocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JTFCorreo1FocusGained
+
+    private void JTFCorreo1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFCorreo1FocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JTFCorreo1FocusLost
+
+    private void JCBFechaVencimiento1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCBFechaVencimiento1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JCBFechaVencimiento1ActionPerformed
+
+    private void JBNRegistrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBNRegistrar1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JBNRegistrar1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -240,21 +278,20 @@ public class NuevaPoliza2 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton JBNCancelar;
-    public javax.swing.JButton JBNRegistrar;
-    public javax.swing.JComboBox<String> JCBFechaVencimiento;
+    public javax.swing.JButton JBNCancelar1;
+    public javax.swing.JButton JBNRegistrar1;
+    public javax.swing.JComboBox<String> JCBFechaVencimiento1;
     private javax.swing.JPanel JPFondo;
-    public javax.swing.JTextField JTFCorreo;
-    public javax.swing.JTextField JTFDireccion;
-    public javax.swing.JTextField JTFEmpresa;
-    public javax.swing.JTextField JTFTelefono;
-    public javax.swing.JLabel jLabel1;
-    public javax.swing.JLabel jLabel2;
-    public javax.swing.JLabel jLabel3;
-    public javax.swing.JLabel jLabel4;
-    public javax.swing.JLabel jLabel5;
-    public javax.swing.JLabel jLabel6;
-    public javax.swing.JLabel jLabel7;
+    public javax.swing.JTextField JTFCorreo1;
+    public javax.swing.JTextField JTFDireccion1;
+    public javax.swing.JTextField JTFEmpresa1;
+    public javax.swing.JTextField JTFTelefono1;
+    public javax.swing.JLabel jLabel10;
+    public javax.swing.JLabel jLabel11;
+    public javax.swing.JLabel jLabel12;
+    public javax.swing.JLabel jLabel13;
+    public javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel8;
+    public javax.swing.JLabel jLabel9;
     // End of variables declaration//GEN-END:variables
 }
