@@ -96,7 +96,7 @@ public class ControladorNuevaPoliza implements ActionListener {
 
     private void activarFiltroTiempoReal() {
         // Cambia jTextField1 por el nombre real si luego lo renombras
-        vista.jTextField1.getDocument().addDocumentListener(new DocumentListener() {
+        vista.JTFBusqueda.getDocument().addDocumentListener(new DocumentListener() {
             @Override
             public void insertUpdate(DocumentEvent e) {
                 filtrarClientes();
@@ -115,7 +115,7 @@ public class ControladorNuevaPoliza implements ActionListener {
     }
 
     private void filtrarClientes() {
-        String texto = vista.jTextField1.getText().trim().toLowerCase();
+        String texto = vista.JTFBusqueda.getText().trim().toLowerCase();
 
         vista.JCBClientes.removeAllItems();
         vista.JCBClientes.addItem("Seleccione un cliente");

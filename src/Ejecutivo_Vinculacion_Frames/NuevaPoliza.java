@@ -45,7 +45,7 @@ public class NuevaPoliza extends javax.swing.JFrame {
         JBNSiguiente = new javax.swing.JButton();
         JBNCancelar = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        JTFBusqueda = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -133,7 +133,28 @@ public class NuevaPoliza extends javax.swing.JFrame {
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo ETS 75 px.png"))); // NOI18N
         JPFondo.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, -1, -1));
-        JPFondo.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, 300, -1));
+
+        JTFBusqueda.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        JTFBusqueda.setText("Ingrese las iniciales del cliente");
+        JTFBusqueda.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                JTFBusquedaFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                JTFBusquedaFocusLost(evt);
+            }
+        });
+        JTFBusqueda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JTFBusquedaActionPerformed(evt);
+            }
+        });
+        JTFBusqueda.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                JTFBusquedaKeyTyped(evt);
+            }
+        });
+        JPFondo.add(JTFBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, 300, -1));
 
         getContentPane().add(JPFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -6, 510, 510));
 
@@ -155,6 +176,38 @@ public class NuevaPoliza extends javax.swing.JFrame {
     private void JBNCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBNCancelarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_JBNCancelarActionPerformed
+
+    private void JTFBusquedaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFBusquedaFocusGained
+        // TODO add your handling code here:
+        if (JTFBusqueda.getText().equals("Ingrese las iniciales del cliente")) {
+            JTFBusqueda.setText("");
+            JTFBusqueda.setForeground(new java.awt.Color(205, 205, 205));
+        }
+    }//GEN-LAST:event_JTFBusquedaFocusGained
+
+    private void JTFBusquedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFBusquedaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JTFBusquedaActionPerformed
+
+    private void JTFBusquedaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFBusquedaFocusLost
+        // TODO add your handling code here:
+        if (JTFBusqueda.getText().isEmpty()) {
+            JTFBusqueda.setText("Ingrese las iniciales del cliente");
+            JTFBusqueda.setForeground(new java.awt.Color(153, 153, 153));
+        }
+    }//GEN-LAST:event_JTFBusquedaFocusLost
+
+    private void JTFBusquedaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTFBusquedaKeyTyped
+        // TODO add your handling code here:
+        JTFBusqueda.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                char c = evt.getKeyChar();
+                if (!(Character.isLetter(c) || c == ' ' || Character.isISOControl(c)) || JTFBusqueda.getText().length() >= 50) {
+                    evt.consume();
+                }
+            }
+            });
+    }//GEN-LAST:event_JTFBusquedaKeyTyped
 
     /**
      * @param args the command line arguments
@@ -206,8 +259,8 @@ public class NuevaPoliza extends javax.swing.JFrame {
     public javax.swing.JRadioButton JRBEmpresarial;
     public javax.swing.JRadioButton JRBEscencial;
     public javax.swing.JRadioButton JRBProfesional;
+    public javax.swing.JTextField JTFBusqueda;
     private javax.swing.ButtonGroup buttonGroup1;
     public javax.swing.JLabel jLabel3;
-    public javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
