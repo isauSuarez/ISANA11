@@ -34,6 +34,8 @@ public class CancelarPolizaN extends javax.swing.JFrame {
         JTFNumPoliza = new javax.swing.JTextField();
         JBNCancelar = new javax.swing.JButton();
         JBNConfirmar = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        JTAinfo = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -63,7 +65,7 @@ public class CancelarPolizaN extends javax.swing.JFrame {
                 JTFNumPolizaActionPerformed(evt);
             }
         });
-        getContentPane().add(JTFNumPoliza, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 170, 300, 40));
+        getContentPane().add(JTFNumPoliza, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 160, 180, 40));
 
         JBNCancelar.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
         JBNCancelar.setText("Cancelar");
@@ -73,7 +75,7 @@ public class CancelarPolizaN extends javax.swing.JFrame {
                 JBNCancelarActionPerformed(evt);
             }
         });
-        getContentPane().add(JBNCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 290, 100, 30));
+        getContentPane().add(JBNCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 300, 100, 30));
 
         JBNConfirmar.setBackground(new java.awt.Color(0, 153, 102));
         JBNConfirmar.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
@@ -85,7 +87,13 @@ public class CancelarPolizaN extends javax.swing.JFrame {
                 JBNConfirmarActionPerformed(evt);
             }
         });
-        getContentPane().add(JBNConfirmar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, 160, 40));
+        getContentPane().add(JBNConfirmar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 290, 160, 40));
+
+        JTAinfo.setColumns(20);
+        JTAinfo.setRows(5);
+        jScrollPane1.setViewportView(JTAinfo);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 210, 260, 70));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -140,9 +148,11 @@ public class CancelarPolizaN extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton JBNCancelar;
     public javax.swing.JButton JBNConfirmar;
+    public javax.swing.JTextArea JTAinfo;
     public javax.swing.JTextField JTFNumPoliza;
     public javax.swing.JLabel jLabel1;
     public javax.swing.JLabel jLabel2;
     public javax.swing.JLabel jLabel3;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

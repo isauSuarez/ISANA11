@@ -15,7 +15,6 @@ public class NuevaPoliza extends javax.swing.JFrame {
      */
     public NuevaPoliza() {
         initComponents();
-        new Ejecutivo_Vinculacion_Controladores.ControladorNuevaPoliza(this);
         
         this.setSize(490, 525); // Fuerza el tamaño exacto
         this.setLocationRelativeTo(null); // Centra la ventana en tu monitor
