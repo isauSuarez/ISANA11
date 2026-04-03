@@ -36,7 +36,7 @@ public class Nuevo_Usuario extends javax.swing.JFrame {
         JBNCancelar = new javax.swing.JButton();
         lblInstruccionesNU1 = new javax.swing.JLabel();
         JTFcliente = new javax.swing.JTextField();
-        JTFempresa = new javax.swing.JComboBox<>();
+        JTEmpresa = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -96,8 +96,8 @@ public class Nuevo_Usuario extends javax.swing.JFrame {
         getContentPane().add(lblInstruccionesNU1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 400, 30));
         getContentPane().add(JTFcliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, 120, -1));
 
-        JTFempresa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        getContentPane().add(JTFempresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 220, 270, 20));
+        JTEmpresa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        getContentPane().add(JTEmpresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 220, 270, 20));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -148,8 +148,8 @@ public class Nuevo_Usuario extends javax.swing.JFrame {
     public javax.swing.JButton JBNCancelar;
     public javax.swing.JButton JBNSiguiente;
     public javax.swing.JComboBox<String> JCBClientes;
+    public javax.swing.JComboBox<String> JTEmpresa;
     public javax.swing.JTextField JTFcliente;
-    private javax.swing.JComboBox<String> JTFempresa;
     public javax.swing.JLabel jLabel1;
     public javax.swing.JLabel lblInstruccionesNU;
     public javax.swing.JLabel lblInstruccionesNU1;

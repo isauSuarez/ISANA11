@@ -17,7 +17,7 @@ public class MenuEjecutivoVinculacion2 extends javax.swing.JFrame {
         initComponents();
         this.setSize(450, 380); // Fuerza el tamaño exacto
         this.setLocationRelativeTo(null); // Centra la ventana en tu monitor
-        JMBEjecutivoVinculacion.add(javax.swing.Box.createHorizontalGlue(), 2);
+        JMBEjecutivoVinculacion.add(javax.swing.Box.createHorizontalGlue(), 3);
     }
 
     /**
@@ -43,7 +43,9 @@ public class MenuEjecutivoVinculacion2 extends javax.swing.JFrame {
         JMIEditarPoliza = new javax.swing.JMenuItem();
         JMIRenovarPoliza = new javax.swing.JMenuItem();
         JMICancelarPoliza = new javax.swing.JMenuItem();
+        JMNUsuarios = new javax.swing.JMenu();
         JMINuevoUsuario = new javax.swing.JMenuItem();
+        JMIEditarUsuario = new javax.swing.JMenuItem();
         JMNCerrarSesion = new javax.swing.JMenu();
         JMICerrarSesion = new javax.swing.JMenuItem();
 
@@ -90,15 +92,22 @@ public class MenuEjecutivoVinculacion2 extends javax.swing.JFrame {
         JMICancelarPoliza.setText("Cancelar Poliza");
         JMNPolizas.add(JMICancelarPoliza);
 
+        JMBEjecutivoVinculacion.add(JMNPolizas);
+
+        JMNUsuarios.setText("Usuarios");
+
         JMINuevoUsuario.setText("Nuevo usuario");
         JMINuevoUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JMINuevoUsuarioActionPerformed(evt);
             }
         });
-        JMNPolizas.add(JMINuevoUsuario);
+        JMNUsuarios.add(JMINuevoUsuario);
 
-        JMBEjecutivoVinculacion.add(JMNPolizas);
+        JMIEditarUsuario.setText("Editar Usuario");
+        JMNUsuarios.add(JMIEditarUsuario);
+
+        JMBEjecutivoVinculacion.add(JMNUsuarios);
 
         JMNCerrarSesion.setText("Cerrar Sesión");
         JMNCerrarSesion.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
@@ -204,6 +213,7 @@ public class MenuEjecutivoVinculacion2 extends javax.swing.JFrame {
     public javax.swing.JMenuItem JMICancelarPoliza;
     public javax.swing.JMenuItem JMICerrarSesion;
     public javax.swing.JMenuItem JMIEditarPoliza;
+    public javax.swing.JMenuItem JMIEditarUsuario;
     public javax.swing.JMenuItem JMIModificarCliente;
     public javax.swing.JMenuItem JMINuevaPoliza;
     public javax.swing.JMenuItem JMINuevoCliente;
@@ -212,5 +222,6 @@ public class MenuEjecutivoVinculacion2 extends javax.swing.JFrame {
     public javax.swing.JMenu JMNCerrarSesion;
     public javax.swing.JMenu JMNClientes;
     public javax.swing.JMenu JMNPolizas;
+    private javax.swing.JMenu JMNUsuarios;
     // End of variables declaration//GEN-END:variables
 }
