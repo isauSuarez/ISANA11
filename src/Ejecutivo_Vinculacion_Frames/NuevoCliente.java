@@ -19,7 +19,6 @@ public class NuevoCliente extends javax.swing.JFrame {
      */
     public NuevoCliente() {
         initComponents();
-        new Ejecutivo_Vinculacion_Controladores.ControladorNuevoCliente(this);
         this.setSize(610, 550); // Fuerza el tamaño exacto
         this.setLocationRelativeTo(null); // Centra la ventana en tu monitor
         
@@ -45,6 +44,8 @@ public class NuevoCliente extends javax.swing.JFrame {
         JTFTelefono = new javax.swing.JTextField();
         JTFCorreo = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        JTFApellido = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -60,12 +61,12 @@ public class NuevoCliente extends javax.swing.JFrame {
         JLBATelefono.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
         JLBATelefono.setForeground(new java.awt.Color(153, 153, 153));
         JLBATelefono.setText("Telefono");
-        JPFondo.add(JLBATelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 100, 50));
+        JPFondo.add(JLBATelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, 100, 50));
 
         JLBCorreo.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
         JLBCorreo.setForeground(new java.awt.Color(153, 153, 153));
         JLBCorreo.setText("Correo");
-        JPFondo.add(JLBCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 300, 100, 50));
+        JPFondo.add(JLBCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, 100, 50));
 
         JLBNombre.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
         JLBNombre.setForeground(new java.awt.Color(153, 153, 153));
@@ -138,7 +139,7 @@ public class NuevoCliente extends javax.swing.JFrame {
                 JTFTelefonoKeyTyped(evt);
             }
         });
-        JPFondo.add(JTFTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, 420, 50));
+        JPFondo.add(JTFTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 260, 420, 50));
 
         JTFCorreo.setForeground(new java.awt.Color(153, 153, 153));
         JTFCorreo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -161,10 +162,17 @@ public class NuevoCliente extends javax.swing.JFrame {
                 JTFCorreoKeyTyped(evt);
             }
         });
-        JPFondo.add(JTFCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 300, 420, 50));
+        JPFondo.add(JTFCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 330, 420, 50));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo ETS 75 px.png"))); // NOI18N
         JPFondo.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 450, -1, -1));
+
+        jLabel1.setText("apellido");
+        JPFondo.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 210, -1, -1));
+
+        JTFApellido.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        JTFApellido.setText("apellido");
+        JPFondo.add(JTFApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, 420, 40));
 
         getContentPane().add(JPFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 4, 660, 540));
 
@@ -174,15 +182,7 @@ public class NuevoCliente extends javax.swing.JFrame {
 
     private void JBNGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBNGuardarActionPerformed
         // TODO add your handling code here:
-        String correo = JTFCorreo.getText().trim();
-        String tel = JTFTelefono.getText().trim();
-
-        if (tel.length() < 10) {
-            javax.swing.JOptionPane.showMessageDialog(this, "El teléfono debe tener 10 dígitos.", "Error de formato", javax.swing.JOptionPane.ERROR_MESSAGE);
-
-        } else if (!correo.contains("@") || !correo.contains(".")) {
-            javax.swing.JOptionPane.showMessageDialog(this, "Error de formato, asegurate que el correo contenga '@' y un dominio.", "Correo inválido", javax.swing.JOptionPane.ERROR_MESSAGE);
-        }
+ 
     }//GEN-LAST:event_JBNGuardarActionPerformed
 
     private void JBNCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBNCancelarActionPerformed
@@ -364,9 +364,11 @@ public class NuevoCliente extends javax.swing.JFrame {
     public javax.swing.JLabel JLBNombre;
     public javax.swing.JLabel JLBRegistrarCliente;
     private javax.swing.JPanel JPFondo;
+    public javax.swing.JTextField JTFApellido;
     public javax.swing.JTextField JTFCorreo;
     public javax.swing.JTextField JTFNombre;
     public javax.swing.JTextField JTFTelefono;
+    private javax.swing.JLabel jLabel1;
     public javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 }
