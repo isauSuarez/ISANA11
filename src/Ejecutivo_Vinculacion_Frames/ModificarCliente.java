@@ -38,10 +38,11 @@ public class ModificarCliente extends javax.swing.JFrame {
         JTFApellido = new javax.swing.JTextField();
         JTFTelefono = new javax.swing.JTextField();
         JTFCorreo = new javax.swing.JTextField();
-        JTFNombre = new javax.swing.JTextField();
+        JTFnombre = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         JTFCorreoBusqueda = new javax.swing.JTextField();
         JBNBuscar = new javax.swing.JButton();
+        JTFTelefonoBusqueda = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -143,23 +144,23 @@ public class ModificarCliente extends javax.swing.JFrame {
         });
         getContentPane().add(JTFCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 380, 340, -1));
 
-        JTFNombre.setForeground(new java.awt.Color(153, 153, 153));
-        JTFNombre.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        JTFNombre.setText("Nombre (s)");
-        JTFNombre.setToolTipText("");
-        JTFNombre.setMinimumSize(new java.awt.Dimension(350, 40));
-        JTFNombre.setPreferredSize(new java.awt.Dimension(350, 40));
-        JTFNombre.addActionListener(new java.awt.event.ActionListener() {
+        JTFnombre.setForeground(new java.awt.Color(153, 153, 153));
+        JTFnombre.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        JTFnombre.setText("Nombre (s)");
+        JTFnombre.setToolTipText("");
+        JTFnombre.setMinimumSize(new java.awt.Dimension(350, 40));
+        JTFnombre.setPreferredSize(new java.awt.Dimension(350, 40));
+        JTFnombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JTFNombreActionPerformed(evt);
+                JTFnombreActionPerformed(evt);
             }
         });
-        JTFNombre.addKeyListener(new java.awt.event.KeyAdapter() {
+        JTFnombre.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                JTFNombreKeyTyped(evt);
+                JTFnombreKeyTyped(evt);
             }
         });
-        getContentPane().add(JTFNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, 340, -1));
+        getContentPane().add(JTFnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, 340, -1));
 
         jLabel2.setFont(new java.awt.Font("Montserrat", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(102, 102, 102));
@@ -191,7 +192,7 @@ public class ModificarCliente extends javax.swing.JFrame {
                 JTFCorreoBusquedaKeyTyped(evt);
             }
         });
-        getContentPane().add(JTFCorreoBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 90, 290, -1));
+        getContentPane().add(JTFCorreoBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 90, 290, 30));
 
         JBNBuscar.setBackground(new java.awt.Color(0, 153, 102));
         JBNBuscar.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
@@ -203,7 +204,12 @@ public class ModificarCliente extends javax.swing.JFrame {
                 JBNBuscarActionPerformed(evt);
             }
         });
-        getContentPane().add(JBNBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 120, 40));
+        getContentPane().add(JBNBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, 120, 40));
+
+        JTFTelefonoBusqueda.setForeground(new java.awt.Color(102, 102, 102));
+        JTFTelefonoBusqueda.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        JTFTelefonoBusqueda.setText("Telefono");
+        getContentPane().add(JTFTelefonoBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 130, 290, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -231,10 +237,10 @@ public class ModificarCliente extends javax.swing.JFrame {
         JTFCorreo.addActionListener(e -> JBNGuardar.doClick());
     }//GEN-LAST:event_JTFCorreoActionPerformed
 
-    private void JTFNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFNombreActionPerformed
+    private void JTFnombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFnombreActionPerformed
         // TODO add your handling code here:
-        JTFNombre.addActionListener(e -> JTFApellido.requestFocus());
-    }//GEN-LAST:event_JTFNombreActionPerformed
+        JTFnombre.addActionListener(e -> JTFApellido.requestFocus());
+    }//GEN-LAST:event_JTFnombreActionPerformed
 
     private void JTFCorreoBusquedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFCorreoBusquedaActionPerformed
         // TODO add your handling code here:
@@ -261,14 +267,14 @@ public class ModificarCliente extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_JTFCorreoBusquedaFocusLost
 
-    private void JTFNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTFNombreKeyTyped
+    private void JTFnombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTFnombreKeyTyped
         // TODO add your handling code here:
         char c = evt.getKeyChar();
         javax.swing.JTextField field = (javax.swing.JTextField) evt.getSource();
         if (!(Character.isLetter(c) || c == ' ' || Character.isISOControl(c)) || field.getText().length() >= 50) {
             evt.consume();
         }
-    }//GEN-LAST:event_JTFNombreKeyTyped
+    }//GEN-LAST:event_JTFnombreKeyTyped
 
     private void JTFApellidoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTFApellidoKeyTyped
         // TODO add your handling code here:
@@ -347,8 +353,9 @@ public class ModificarCliente extends javax.swing.JFrame {
     public javax.swing.JTextField JTFApellido;
     public javax.swing.JTextField JTFCorreo;
     public javax.swing.JTextField JTFCorreoBusqueda;
-    public javax.swing.JTextField JTFNombre;
     public javax.swing.JTextField JTFTelefono;
+    public javax.swing.JTextField JTFTelefonoBusqueda;
+    public javax.swing.JTextField JTFnombre;
     public javax.swing.JLabel jLabel1;
     public javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables

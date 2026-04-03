@@ -33,15 +33,14 @@ public class NuevoUsuario2 extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
         JTFNombre = new javax.swing.JTextField();
         JTFLocacion = new javax.swing.JTextField();
         JTFTelefono = new javax.swing.JTextField();
         JTFCorreo = new javax.swing.JTextField();
         JBNGuardar = new javax.swing.JButton();
         JBNCancelar = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        JLSPolizas = new javax.swing.JList<>();
+        jLabel2 = new javax.swing.JLabel();
+        JTFApelido = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -60,22 +59,17 @@ public class NuevoUsuario2 extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(153, 153, 153));
         jLabel6.setText("Locación:");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, 110, 40));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 110, 40));
 
         jLabel7.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(153, 153, 153));
         jLabel7.setText("Teléfono: ");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, 110, 40));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, 110, 40));
 
         jLabel8.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(153, 153, 153));
         jLabel8.setText("Correo:");
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, 110, 40));
-
-        jLabel9.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel9.setText("Póliza en que autoriza:");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 360, 190, 60));
 
         JTFNombre.setForeground(new java.awt.Color(153, 153, 153));
         JTFNombre.setText("Nombre");
@@ -93,7 +87,7 @@ public class NuevoUsuario2 extends javax.swing.JFrame {
                 JTFLocacionActionPerformed(evt);
             }
         });
-        getContentPane().add(JTFLocacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, 380, 42));
+        getContentPane().add(JTFLocacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 380, 42));
 
         JTFTelefono.setForeground(new java.awt.Color(153, 153, 153));
         JTFTelefono.setText("Teléfono");
@@ -102,7 +96,7 @@ public class NuevoUsuario2 extends javax.swing.JFrame {
                 JTFTelefonoActionPerformed(evt);
             }
         });
-        getContentPane().add(JTFTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 220, 380, 42));
+        getContentPane().add(JTFTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 370, 380, 42));
 
         JTFCorreo.setForeground(new java.awt.Color(153, 153, 153));
         JTFCorreo.setText("Correo electrónico");
@@ -135,11 +129,9 @@ public class NuevoUsuario2 extends javax.swing.JFrame {
         });
         getContentPane().add(JBNCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 530, 90, 30));
 
-        jScrollPane1.setForeground(new java.awt.Color(153, 153, 153));
-
-        jScrollPane1.setViewportView(JLSPolizas);
-
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 360, 300, 100));
+        jLabel2.setText("Apellido");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, -1, -1));
+        getContentPane().add(JTFApelido, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, 370, 30));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -206,17 +198,16 @@ public class NuevoUsuario2 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton JBNCancelar;
     public javax.swing.JButton JBNGuardar;
-    private javax.swing.JList<String> JLSPolizas;
+    public javax.swing.JTextField JTFApelido;
     public javax.swing.JTextField JTFCorreo;
     public javax.swing.JTextField JTFLocacion;
     public javax.swing.JTextField JTFNombre;
     public javax.swing.JTextField JTFTelefono;
     public javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     public javax.swing.JLabel jLabel5;
     public javax.swing.JLabel jLabel6;
     public javax.swing.JLabel jLabel7;
     public javax.swing.JLabel jLabel8;
-    public javax.swing.JLabel jLabel9;
-    public javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

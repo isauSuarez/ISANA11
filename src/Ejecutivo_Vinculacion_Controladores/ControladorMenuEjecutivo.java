@@ -12,6 +12,7 @@ package Ejecutivo_Vinculacion_Controladores;
 import Menus_Inicio.ControladorLogin;
 import Ejecutivo_Vinculacion_Controladores.ControladorEditarPoliza;
 import Ejecutivo_Vinculacion_Controladores.ControladorModificarCliente;
+import Ejecutivo_Vinculacion_Controladores.ControladorModificarUsuario;
 import Ejecutivo_Vinculacion_Controladores.ControladorNuevoCliente;
 import Ejecutivo_Vinculacion_Controladores.ControladorNuevaPoliza;
 import Ejecutivo_Vinculacion_Controladores.ControladorNuevoUsuario;
@@ -23,6 +24,7 @@ import Ejecutivo_Vinculacion_Frames.ModificarCliente;
 import Ejecutivo_Vinculacion_Frames.RenovarPoliza;
 import Ejecutivo_Vinculacion_Frames.NuevoCliente;
 import Ejecutivo_Vinculacion_Frames.EditarPoliza;
+import Ejecutivo_Vinculacion_Frames.ModificarUsuario;
 import Ejecutivo_Vinculacion_Frames.Nuevo_Usuario;
 import Menus_Inicio.Inicio_Sesion;
 import java.awt.event.ActionEvent;
@@ -48,6 +50,7 @@ public class ControladorMenuEjecutivo implements ActionListener {
         this.vistaMenu.JMIRenovarPoliza.addActionListener(this);
         this.vistaMenu.JMICerrarSesion.addActionListener(this);
         this.vistaMenu.JMINuevoUsuario.addActionListener(this);
+        this.vistaMenu.JMIEditarUsuario.addActionListener(this);
     }
 
     @Override
@@ -110,5 +113,16 @@ public class ControladorMenuEjecutivo implements ActionListener {
             vistaLogin.setVisible(true);
             vistaMenu.dispose();
         }
+        
+        else if (e.getSource() == vistaMenu.JMIEditarUsuario){
+                    ModificarUsuario vista = new ModificarUsuario();
+                new ControladorModificarUsuario(vista);
+                vista.setVisible(true);
+                vistaMenu.dispose();
+        }
+        
+        
+        
+        
     }
 }
