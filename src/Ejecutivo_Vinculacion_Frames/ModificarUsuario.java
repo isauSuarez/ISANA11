@@ -64,17 +64,93 @@ public class ModificarUsuario extends javax.swing.JFrame {
 
         jLabel6.setText("Telefono");
 
-        JTFnombre.setText("nombre");
+        JTFnombre.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        JTFnombre.setText("Nombre (s)");
+        JTFnombre.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                JTFnombreFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                JTFnombreFocusLost(evt);
+            }
+        });
+        JTFnombre.addActionListener(this::JTFnombreActionPerformed);
+        JTFnombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                JTFnombreKeyTyped(evt);
+            }
+        });
 
-        JTFapellido.setText("apellido");
+        JTFapellido.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        JTFapellido.setText("Apellido (s)");
+        JTFapellido.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                JTFapellidoFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                JTFapellidoFocusLost(evt);
+            }
+        });
+        JTFapellido.addActionListener(this::JTFapellidoActionPerformed);
+        JTFapellido.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                JTFapellidoKeyTyped(evt);
+            }
+        });
 
-        JTFlocacion.setText("locacion");
+        JTFlocacion.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        JTFlocacion.setText("Locación");
+        JTFlocacion.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                JTFlocacionFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                JTFlocacionFocusLost(evt);
+            }
+        });
+        JTFlocacion.addActionListener(this::JTFlocacionActionPerformed);
+        JTFlocacion.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                JTFlocacionKeyTyped(evt);
+            }
+        });
 
-        JTFcorreo.setText("correo");
+        JTFcorreo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        JTFcorreo.setText("Correo");
+        JTFcorreo.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                JTFcorreoFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                JTFcorreoFocusLost(evt);
+            }
+        });
+        JTFcorreo.addActionListener(this::JTFcorreoActionPerformed);
+        JTFcorreo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                JTFcorreoKeyTyped(evt);
+            }
+        });
 
-        JTFtelefono.setText("telefono");
+        JTFtelefono.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        JTFtelefono.setText("Telefono");
+        JTFtelefono.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                JTFtelefonoFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                JTFtelefonoFocusLost(evt);
+            }
+        });
+        JTFtelefono.addActionListener(this::JTFtelefonoActionPerformed);
+        JTFtelefono.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                JTFtelefonoKeyTyped(evt);
+            }
+        });
 
         JBTguardar.setText("guardar");
+        JBTguardar.addActionListener(this::JBTguardarActionPerformed);
 
         JBTcancelar.setText("cancelar");
 
@@ -89,6 +165,14 @@ public class ModificarUsuario extends javax.swing.JFrame {
         });
 
         JTFempresa.setText("empresa");
+        JTFempresa.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                JTFempresaFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                JTFempresaFocusLost(evt);
+            }
+        });
 
         JCBcliente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -218,6 +302,183 @@ public class ModificarUsuario extends javax.swing.JFrame {
             JTFcliente.setForeground(new java.awt.Color(153, 153, 153));
         }
     }//GEN-LAST:event_JTFclienteFocusLost
+
+    private void JTFempresaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFempresaFocusGained
+        // TODO add your handling code here:
+        if (JTFempresa.getText().equals("Empresa")) {
+            JTFempresa.setText("");
+            JTFempresa.setForeground(new java.awt.Color(205, 205, 205));
+        }
+    }//GEN-LAST:event_JTFempresaFocusGained
+
+    private void JTFempresaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFempresaFocusLost
+        // TODO add your handling code here:
+        if (JTFempresa.getText().isEmpty()) {
+            JTFempresa.setText("Empresa");
+            JTFempresa.setForeground(new java.awt.Color(153, 153, 153));
+        }
+    }//GEN-LAST:event_JTFempresaFocusLost
+
+    private void JTFapellidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFapellidoActionPerformed
+        // TODO add your handling code here:
+        JTFapellido.addActionListener(e -> JTFlocacion.requestFocus());
+
+    }//GEN-LAST:event_JTFapellidoActionPerformed
+
+    private void JTFnombreFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFnombreFocusGained
+        // TODO add your handling code here:
+        if (JTFnombre.getText().equals("Nombre (s)")) {
+            JTFnombre.setText("");
+            JTFnombre.setForeground(new java.awt.Color(205, 205, 205));
+        }
+    }//GEN-LAST:event_JTFnombreFocusGained
+
+    private void JTFnombreFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFnombreFocusLost
+        // TODO add your handling code here:
+        if (JTFnombre.getText().isEmpty()) {
+            JTFnombre.setText("Nombre (s)");
+            JTFnombre.setForeground(new java.awt.Color(153, 153, 153));
+        }
+    }//GEN-LAST:event_JTFnombreFocusLost
+
+    private void JTFapellidoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFapellidoFocusGained
+        // TODO add your handling code here:
+        if (JTFapellido.getText().equals("Apellido (s)")) {
+            JTFapellido.setText("");
+            JTFapellido.setForeground(new java.awt.Color(205, 205, 205));
+        }
+    }//GEN-LAST:event_JTFapellidoFocusGained
+
+    private void JTFapellidoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFapellidoFocusLost
+        // TODO add your handling code here:
+        if (JTFapellido.getText().isEmpty()) {
+            JTFapellido.setText("Apellido (s)");
+            JTFapellido.setForeground(new java.awt.Color(153, 153, 153));
+        }
+    }//GEN-LAST:event_JTFapellidoFocusLost
+
+    private void JTFlocacionFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFlocacionFocusGained
+        // TODO add your handling code here:
+        if (JTFlocacion.getText().equals("Locación")) {
+            JTFlocacion.setText("");
+            JTFlocacion.setForeground(new java.awt.Color(205, 205, 205));
+        }
+    }//GEN-LAST:event_JTFlocacionFocusGained
+
+    private void JTFlocacionFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFlocacionFocusLost
+        // TODO add your handling code here:
+        if (JTFlocacion.getText().isEmpty()) {
+            JTFlocacion.setText("Locación");
+            JTFlocacion.setForeground(new java.awt.Color(153, 153, 153));
+        }
+    }//GEN-LAST:event_JTFlocacionFocusLost
+
+    private void JTFcorreoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFcorreoFocusGained
+        // TODO add your handling code here:
+        if (JTFcorreo.getText().equals("Correo")) {
+            JTFcorreo.setText("");
+            JTFcorreo.setForeground(new java.awt.Color(205, 205, 205));
+        }
+    }//GEN-LAST:event_JTFcorreoFocusGained
+
+    private void JTFcorreoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFcorreoFocusLost
+        // TODO add your handling code here:
+        if (JTFcorreo.getText().isEmpty()) {
+            JTFcorreo.setText("Correo");
+            JTFcorreo.setForeground(new java.awt.Color(153, 153, 153));
+        }
+    }//GEN-LAST:event_JTFcorreoFocusLost
+
+    private void JTFtelefonoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFtelefonoFocusGained
+        // TODO add your handling code here:
+        if (JTFtelefono.getText().equals("Telefono")) {
+            JTFtelefono.setText("");
+            JTFtelefono.setForeground(new java.awt.Color(205, 205, 205));
+        }
+    }//GEN-LAST:event_JTFtelefonoFocusGained
+
+    private void JTFtelefonoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFtelefonoFocusLost
+        // TODO add your handling code here:
+        if (JTFtelefono.getText().isEmpty()) {
+            JTFtelefono.setText("Telefono");
+            JTFtelefono.setForeground(new java.awt.Color(153, 153, 153));
+        }
+    }//GEN-LAST:event_JTFtelefonoFocusLost
+
+    private void JTFnombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFnombreActionPerformed
+        // TODO add your handling code here:
+        JTFnombre.addActionListener(e -> JTFapellido.requestFocus());
+
+    }//GEN-LAST:event_JTFnombreActionPerformed
+
+    private void JTFlocacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFlocacionActionPerformed
+        // TODO add your handling code here:
+        JTFlocacion.addActionListener(e -> JTFcorreo.requestFocus());
+    }//GEN-LAST:event_JTFlocacionActionPerformed
+
+    private void JTFcorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFcorreoActionPerformed
+        // TODO add your handling code here:
+        JTFcorreo.addActionListener(e -> JTFtelefono.requestFocus());
+    }//GEN-LAST:event_JTFcorreoActionPerformed
+
+    private void JTFtelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFtelefonoActionPerformed
+        // TODO add your handling code here:
+        JTFtelefono.addActionListener(e -> JBTguardar.doClick());
+
+    }//GEN-LAST:event_JTFtelefonoActionPerformed
+
+    private void JTFnombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTFnombreKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        javax.swing.JTextField field = (javax.swing.JTextField) evt.getSource();
+        if (!(Character.isLetter(c) || c == ' ' || Character.isISOControl(c)) || field.getText().length() >= 50) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_JTFnombreKeyTyped
+
+    private void JTFapellidoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTFapellidoKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        javax.swing.JTextField field = (javax.swing.JTextField) evt.getSource();
+        if (!(Character.isLetter(c) || c == ' ' || Character.isISOControl(c)) || field.getText().length() >= 50) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_JTFapellidoKeyTyped
+
+    private void JTFlocacionKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTFlocacionKeyTyped
+        // TODO add your handling code here:
+        if (((javax.swing.JTextField) evt.getSource()).getText().length() >= 100) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_JTFlocacionKeyTyped
+
+    private void JTFcorreoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTFcorreoKeyTyped
+        // TODO add your handling code here:
+        if (((javax.swing.JTextField) evt.getSource()).getText().length() >= 100) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_JTFcorreoKeyTyped
+
+    private void JTFtelefonoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTFtelefonoKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if (!Character.isDigit(c) || JTFtelefono.getText().length() >= 10) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_JTFtelefonoKeyTyped
+
+    private void JBTguardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTguardarActionPerformed
+        // TODO add your handling code here:
+        String correo = JTFcorreo.getText().trim();
+        String tel = JTFtelefono.getText().trim();
+
+        if (tel.length() < 10) {
+            javax.swing.JOptionPane.showMessageDialog(this, "El teléfono debe tener 10 dígitos.", "Error de formato", javax.swing.JOptionPane.ERROR_MESSAGE);
+
+        } else if (!correo.contains("@") || !correo.contains(".")) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Error de formato, asegurate que el correo contenga '@' y un dominio.", "Correo inválido", javax.swing.JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_JBTguardarActionPerformed
 
     /**
      * @param args the command line arguments
