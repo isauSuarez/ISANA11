@@ -79,6 +79,14 @@ public class ModificarUsuario extends javax.swing.JFrame {
         JBTcancelar.setText("cancelar");
 
         JTFcliente.setText("Usuario");
+        JTFcliente.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                JTFclienteFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                JTFclienteFocusLost(evt);
+            }
+        });
 
         JTFempresa.setText("empresa");
 
@@ -194,6 +202,22 @@ public class ModificarUsuario extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void JTFclienteFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFclienteFocusGained
+        // TODO add your handling code here:
+        if (JTFcliente.getText().equals("Usuario")) {
+            JTFcliente.setText("");
+            JTFcliente.setForeground(new java.awt.Color(205, 205, 205));
+        }
+    }//GEN-LAST:event_JTFclienteFocusGained
+
+    private void JTFclienteFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFclienteFocusLost
+        // TODO add your handling code here:
+        if (JTFcliente.getText().isEmpty()) {
+            JTFcliente.setText("Usuario");
+            JTFcliente.setForeground(new java.awt.Color(153, 153, 153));
+        }
+    }//GEN-LAST:event_JTFclienteFocusLost
 
     /**
      * @param args the command line arguments
