@@ -113,6 +113,11 @@ public class NuevaPoliza2 extends javax.swing.JFrame {
                 JTFDireccion1FocusLost(evt);
             }
         });
+        JTFDireccion1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JTFDireccion1ActionPerformed(evt);
+            }
+        });
         JTFDireccion1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 JTFDireccion1KeyTyped(evt);
@@ -131,6 +136,11 @@ public class NuevaPoliza2 extends javax.swing.JFrame {
                 JTFTelefono1FocusLost(evt);
             }
         });
+        JTFTelefono1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JTFTelefono1ActionPerformed(evt);
+            }
+        });
         JTFTelefono1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 JTFTelefono1KeyTyped(evt);
@@ -147,6 +157,16 @@ public class NuevaPoliza2 extends javax.swing.JFrame {
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
                 JTFCorreo1FocusLost(evt);
+            }
+        });
+        JTFCorreo1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JTFCorreo1ActionPerformed(evt);
+            }
+        });
+        JTFCorreo1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                JTFCorreo1KeyTyped(evt);
             }
         });
         JPFondo.add(JTFCorreo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 280, 390, 40));
@@ -186,50 +206,93 @@ public class NuevaPoliza2 extends javax.swing.JFrame {
 
     private void JTFEmpresa1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFEmpresa1FocusGained
         // TODO add your handling code here:
+        if (JTFEmpresa1.getText().equals("Empresa")) {
+            JTFEmpresa1.setText("");
+            JTFEmpresa1.setForeground(new java.awt.Color(255, 255, 255));
+        }
     }//GEN-LAST:event_JTFEmpresa1FocusGained
 
     private void JTFEmpresa1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFEmpresa1FocusLost
         // TODO add your handling code here:
+        if (JTFEmpresa1.getText().isEmpty()) {
+            JTFEmpresa1.setText("Empresa");
+            JTFEmpresa1.setForeground(new java.awt.Color(153, 153, 153));
+        }
     }//GEN-LAST:event_JTFEmpresa1FocusLost
 
     private void JTFEmpresa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFEmpresa1ActionPerformed
         // TODO add your handling code here:
+        JTFEmpresa1.addActionListener(e -> JTFDireccion1.requestFocus());
     }//GEN-LAST:event_JTFEmpresa1ActionPerformed
 
     private void JTFEmpresa1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTFEmpresa1KeyTyped
         // TODO add your handling code here:
+        if (((javax.swing.JTextField) evt.getSource()).getText().length() >= 100) {
+            evt.consume();
+        }
     }//GEN-LAST:event_JTFEmpresa1KeyTyped
 
     private void JTFDireccion1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFDireccion1FocusGained
         // TODO add your handling code here:
+        if (JTFDireccion1.getText().equals("Dirección")) {
+            JTFDireccion1.setText("");
+            JTFDireccion1.setForeground(new java.awt.Color(255, 255, 255));
+        }
     }//GEN-LAST:event_JTFDireccion1FocusGained
 
     private void JTFDireccion1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFDireccion1FocusLost
         // TODO add your handling code here:
+        if (JTFDireccion1.getText().isEmpty()) {
+            JTFDireccion1.setText("Dirección");
+            JTFDireccion1.setForeground(new java.awt.Color(153, 153, 153));
+        }
     }//GEN-LAST:event_JTFDireccion1FocusLost
 
     private void JTFDireccion1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTFDireccion1KeyTyped
         // TODO add your handling code here:
+        if (((javax.swing.JTextField) evt.getSource()).getText().length() >= 100) {
+            evt.consume();
+        }
     }//GEN-LAST:event_JTFDireccion1KeyTyped
 
     private void JTFTelefono1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFTelefono1FocusGained
         // TODO add your handling code here:
+        if (JTFTelefono1.getText().equals("Telefono")) {
+            JTFTelefono1.setText("");
+            JTFTelefono1.setForeground(new java.awt.Color(255, 255, 255));
+        }
     }//GEN-LAST:event_JTFTelefono1FocusGained
 
     private void JTFTelefono1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFTelefono1FocusLost
         // TODO add your handling code here:
+        if (JTFTelefono1.getText().isEmpty()) {
+            JTFTelefono1.setText("Telefono");
+            JTFTelefono1.setForeground(new java.awt.Color(153, 153, 153));
+        }
     }//GEN-LAST:event_JTFTelefono1FocusLost
 
     private void JTFTelefono1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTFTelefono1KeyTyped
         // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if (!Character.isDigit(c) || JTFTelefono1.getText().length() >= 10) {
+            evt.consume();
+        }
     }//GEN-LAST:event_JTFTelefono1KeyTyped
 
     private void JTFCorreo1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFCorreo1FocusGained
         // TODO add your handling code here:
+        if (JTFCorreo1.getText().equals("Correo")) {
+            JTFCorreo1.setText("");
+            JTFCorreo1.setForeground(new java.awt.Color(255, 255, 255));
+        }
     }//GEN-LAST:event_JTFCorreo1FocusGained
 
     private void JTFCorreo1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFCorreo1FocusLost
         // TODO add your handling code here:
+        if (JTFCorreo1.getText().isEmpty()) {
+            JTFCorreo1.setText("Correo");
+            JTFCorreo1.setForeground(new java.awt.Color(153, 153, 153));
+        }
     }//GEN-LAST:event_JTFCorreo1FocusLost
 
     private void JCBFechaVencimiento1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCBFechaVencimiento1ActionPerformed
@@ -238,7 +301,38 @@ public class NuevaPoliza2 extends javax.swing.JFrame {
 
     private void JBNRegistrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBNRegistrar1ActionPerformed
         // TODO add your handling code here:
+        String correo = JTFCorreo1.getText().trim();
+        String tel = JTFTelefono1.getText().trim();
+
+        if (tel.length() < 10) {
+            javax.swing.JOptionPane.showMessageDialog(this, "El teléfono debe tener 10 dígitos.", "Error de formato", javax.swing.JOptionPane.ERROR_MESSAGE);
+
+        } else if (!correo.contains("@") || !correo.contains(".")) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Error de formato, asegurate que el correo contenga '@' y un dominio.", "Correo inválido", javax.swing.JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_JBNRegistrar1ActionPerformed
+
+    private void JTFDireccion1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFDireccion1ActionPerformed
+        // TODO add your handling code here:
+        JTFDireccion1.addActionListener(e -> JTFTelefono1.requestFocus());
+    }//GEN-LAST:event_JTFDireccion1ActionPerformed
+
+    private void JTFTelefono1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFTelefono1ActionPerformed
+        // TODO add your handling code here:
+        JTFTelefono1.addActionListener(e -> JTFCorreo1.requestFocus());
+    }//GEN-LAST:event_JTFTelefono1ActionPerformed
+
+    private void JTFCorreo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFCorreo1ActionPerformed
+        // TODO add your handling code here:
+        JTFCorreo1.addActionListener(e -> JCBFechaVencimiento1.requestFocus());
+    }//GEN-LAST:event_JTFCorreo1ActionPerformed
+
+    private void JTFCorreo1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTFCorreo1KeyTyped
+        // TODO add your handling code here:
+        if (((javax.swing.JTextField) evt.getSource()).getText().length() >= 50) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_JTFCorreo1KeyTyped
 
     /**
      * @param args the command line arguments
