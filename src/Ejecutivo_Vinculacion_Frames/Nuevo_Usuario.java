@@ -94,7 +94,23 @@ public class Nuevo_Usuario extends javax.swing.JFrame {
         lblInstruccionesNU1.setText("Seleccione al cliente que autoriza el uso de");
         lblInstruccionesNU1.setToolTipText("");
         getContentPane().add(lblInstruccionesNU1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 400, 30));
-        getContentPane().add(JTFcliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, 120, -1));
+
+        JTFcliente.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        JTFcliente.setText("Nombre ");
+        JTFcliente.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                JTFclienteFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                JTFclienteFocusLost(evt);
+            }
+        });
+        JTFcliente.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                JTFclienteKeyTyped(evt);
+            }
+        });
+        getContentPane().add(JTFcliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, 120, 30));
 
         JTEmpresa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         getContentPane().add(JTEmpresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 220, 270, 20));
@@ -105,6 +121,31 @@ public class Nuevo_Usuario extends javax.swing.JFrame {
     private void JCBClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCBClientesActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_JCBClientesActionPerformed
+
+    private void JTFclienteFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFclienteFocusGained
+        // TODO add your handling code here:
+        if (JTFcliente.getText().equals("Nombre")) {
+            JTFcliente.setText("");
+            JTFcliente.setForeground(new java.awt.Color(205, 205, 205));
+        }
+    }//GEN-LAST:event_JTFclienteFocusGained
+
+    private void JTFclienteFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFclienteFocusLost
+        // TODO add your handling code here:
+        if (JTFcliente.getText().isEmpty()) {
+            JTFcliente.setText("Nombre");
+            JTFcliente.setForeground(new java.awt.Color(153, 153, 153));
+        }
+    }//GEN-LAST:event_JTFclienteFocusLost
+
+    private void JTFclienteKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTFclienteKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        javax.swing.JTextField field = (javax.swing.JTextField) evt.getSource();
+        if (!(Character.isLetter(c) || c == ' ' || Character.isISOControl(c)) || field.getText().length() >= 50) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_JTFclienteKeyTyped
 
     
     

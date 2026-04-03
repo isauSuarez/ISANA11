@@ -60,6 +60,14 @@ public class CancelarPolizaN extends javax.swing.JFrame {
 
         JTFNumPoliza.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         JTFNumPoliza.setText("Núm. Poliza");
+        JTFNumPoliza.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                JTFNumPolizaFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                JTFNumPolizaFocusLost(evt);
+            }
+        });
         JTFNumPoliza.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTFNumPolizaActionPerformed(evt);
@@ -109,6 +117,22 @@ public class CancelarPolizaN extends javax.swing.JFrame {
     private void JBNConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBNConfirmarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_JBNConfirmarActionPerformed
+
+    private void JTFNumPolizaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFNumPolizaFocusGained
+        // TODO add your handling code here:
+        if (JTFNumPoliza.getText().equals("Núm. Poliza")) {
+            JTFNumPoliza.setText("");
+            JTFNumPoliza.setForeground(new java.awt.Color(205, 205, 205));
+        }
+    }//GEN-LAST:event_JTFNumPolizaFocusGained
+
+    private void JTFNumPolizaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFNumPolizaFocusLost
+        // TODO add your handling code here:
+        if (JTFNumPoliza.getText().isEmpty()) {
+            JTFNumPoliza.setText("Núm. Poliza");
+            JTFNumPoliza.setForeground(new java.awt.Color(153, 153, 153));
+        }
+    }//GEN-LAST:event_JTFNumPolizaFocusLost
 
     /**
      * @param args the command line arguments

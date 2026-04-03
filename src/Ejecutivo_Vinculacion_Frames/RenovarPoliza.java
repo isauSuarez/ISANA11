@@ -137,9 +137,22 @@ public class RenovarPoliza extends javax.swing.JFrame {
         JTFCliente1.setForeground(new java.awt.Color(153, 153, 153));
         JTFCliente1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         JTFCliente1.setText("Cliente");
+        JTFCliente1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                JTFCliente1FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                JTFCliente1FocusLost(evt);
+            }
+        });
         JTFCliente1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTFCliente1ActionPerformed(evt);
+            }
+        });
+        JTFCliente1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                JTFCliente1KeyTyped(evt);
             }
         });
         getContentPane().add(JTFCliente1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 140, 210, 40));
@@ -215,6 +228,29 @@ public class RenovarPoliza extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_JCBEmpresaItemStateChanged
+
+    private void JTFCliente1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFCliente1FocusGained
+        // TODO add your handling code here:
+        if (JTFCliente1.getText().equals("Cliente")) {
+            JTFCliente1.setText("");
+            JTFCliente1.setForeground(new java.awt.Color(205, 205, 205));
+        }
+    }//GEN-LAST:event_JTFCliente1FocusGained
+
+    private void JTFCliente1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFCliente1FocusLost
+        // TODO add your handling code here:
+        if (JTFCliente1.getText().isEmpty()) {
+            JTFCliente1.setText("Cliente");
+            JTFCliente1.setForeground(new java.awt.Color(153, 153, 153));
+        }
+    }//GEN-LAST:event_JTFCliente1FocusLost
+
+    private void JTFCliente1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTFCliente1KeyTyped
+        // TODO add your handling code here:
+        if (((javax.swing.JTextField) evt.getSource()).getText().length() >= 100) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_JTFCliente1KeyTyped
 
     /**
      * @param args the command line arguments

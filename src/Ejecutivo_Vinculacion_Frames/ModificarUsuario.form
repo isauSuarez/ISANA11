@@ -242,7 +242,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="JTFcliente">
       <Properties>
-        <Property name="text" type="java.lang.String" value="cliente"/>
+        <Property name="text" type="java.lang.String" value="Usuario"/>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -274,7 +274,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel7">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Cliente"/>
+        <Property name="text" type="java.lang.String" value="Usuario"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel8">

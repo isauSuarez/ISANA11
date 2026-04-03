@@ -172,6 +172,24 @@ public class NuevoCliente extends javax.swing.JFrame {
 
         JTFApellido.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         JTFApellido.setText("apellido");
+        JTFApellido.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                JTFApellidoFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                JTFApellidoFocusLost(evt);
+            }
+        });
+        JTFApellido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JTFApellidoActionPerformed(evt);
+            }
+        });
+        JTFApellido.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                JTFApellidoKeyTyped(evt);
+            }
+        });
         JPFondo.add(JTFApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, 420, 40));
 
         getContentPane().add(JPFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 4, 660, 540));
@@ -182,6 +200,15 @@ public class NuevoCliente extends javax.swing.JFrame {
 
     private void JBNGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBNGuardarActionPerformed
         // TODO add your handling code here:
+        String correo = JTFCorreo.getText().trim();
+        String tel = JTFTelefono.getText().trim();
+
+        if (tel.length() < 10) {
+            javax.swing.JOptionPane.showMessageDialog(this, "El teléfono debe tener 10 dígitos.", "Error de formato", javax.swing.JOptionPane.ERROR_MESSAGE);
+
+        } else if (!correo.contains("@") || !correo.contains(".")) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Error de formato, asegurate que el correo contenga '@' y un dominio.", "Correo inválido", javax.swing.JOptionPane.ERROR_MESSAGE);
+        }
  
     }//GEN-LAST:event_JBNGuardarActionPerformed
 
@@ -191,7 +218,7 @@ public class NuevoCliente extends javax.swing.JFrame {
 
     private void JTFNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFNombreActionPerformed
         // TODO add your handling code here:
-        //JTFNombre.addActionListener(e -> JTFApellido.requestFocus());
+        JTFNombre.addActionListener(e -> JTFApellido.requestFocus());
         
         
         //Esta va en apellido
@@ -320,6 +347,39 @@ public class NuevoCliente extends javax.swing.JFrame {
             JTFCorreo.setForeground(new java.awt.Color(153, 153, 153));
         }
     }//GEN-LAST:event_JTFCorreoFocusLost
+
+    private void JTFApellidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFApellidoActionPerformed
+        // TODO add your handling code here:
+        JTFApellido.addActionListener(e -> JTFTelefono.requestFocus());
+    }//GEN-LAST:event_JTFApellidoActionPerformed
+
+    private void JTFApellidoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFApellidoFocusGained
+        // TODO add your handling code here:
+        if (JTFApellido.getText().equals("Apellido (s)")) {
+            JTFApellido.setText("");
+            JTFApellido.setForeground(new java.awt.Color(205, 205, 205));
+        }
+    }//GEN-LAST:event_JTFApellidoFocusGained
+
+    private void JTFApellidoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFApellidoFocusLost
+        // TODO add your handling code here:
+        if (JTFApellido.getText().isEmpty()) {
+            JTFApellido.setText("Apellido (s)");
+            JTFApellido.setForeground(new java.awt.Color(153, 153, 153));
+        }
+    }//GEN-LAST:event_JTFApellidoFocusLost
+
+    private void JTFApellidoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTFApellidoKeyTyped
+        // TODO add your handling code here:
+        JTFApellido.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                char c = evt.getKeyChar();
+                if (!(Character.isLetter(c) || c == ' ' || Character.isISOControl(c)) || JTFApellido.getText().length() >= 50) {
+                    evt.consume();
+                }
+            }
+        });
+    }//GEN-LAST:event_JTFApellidoKeyTyped
 
     /**
      * @param args the command line arguments
