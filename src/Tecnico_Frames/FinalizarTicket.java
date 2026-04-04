@@ -49,6 +49,7 @@ public class FinalizarTicket extends javax.swing.JFrame {
         JTFTipo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         JTFTipo.setText("Tipo");
         JTFTipo.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        JTFTipo.setEnabled(false);
         JTFTipo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTFTipoActionPerformed(evt);
@@ -67,6 +68,24 @@ public class FinalizarTicket extends javax.swing.JFrame {
         JTANotas.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         JTANotas.setText("Detalles sobre los trabajos realizados para futuras aclaraciones");
         JTANotas.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        JTANotas.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                JTANotasFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                JTANotasFocusLost(evt);
+            }
+        });
+        JTANotas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JTANotasActionPerformed(evt);
+            }
+        });
+        JTANotas.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                JTANotasKeyTyped(evt);
+            }
+        });
         getContentPane().add(JTANotas, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 550, 100));
 
         JLBAsignarTecnico.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
@@ -85,6 +104,7 @@ public class FinalizarTicket extends javax.swing.JFrame {
         JTFEmpresa.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         JTFEmpresa.setText("Empresa");
         JTFEmpresa.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        JTFEmpresa.setEnabled(false);
         getContentPane().add(JTFEmpresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 180, 40));
 
         JLBDescripcion2.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
@@ -103,6 +123,7 @@ public class FinalizarTicket extends javax.swing.JFrame {
         JTADetalles.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         JTADetalles.setText("Descripción de los servicios a realizar y detalles puntuales");
         JTADetalles.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        JTADetalles.setEnabled(false);
         getContentPane().add(JTADetalles, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 550, 90));
 
         JBNCancelar.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
@@ -158,6 +179,34 @@ public class FinalizarTicket extends javax.swing.JFrame {
     private void JCBFinalizadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCBFinalizadoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_JCBFinalizadoActionPerformed
+
+    private void JTANotasFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTANotasFocusGained
+        // TODO add your handling code here:
+        if (JTANotas.getText().equals("Detalles sobre los trabajos realizados para futuras aclaraciones")) {
+            JTANotas.setText("");
+            JTANotas.setForeground(new java.awt.Color(255, 255, 255));
+        }
+    }//GEN-LAST:event_JTANotasFocusGained
+
+    private void JTANotasFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTANotasFocusLost
+        // TODO add your handling code here:
+        if (JTANotas.getText().isEmpty()) {
+            JTANotas.setText("Detalles sobre los trabajos realizados para futuras aclaraciones");
+            JTANotas.setForeground(new java.awt.Color(153, 153, 153));
+        }
+    }//GEN-LAST:event_JTANotasFocusLost
+
+    private void JTANotasKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTANotasKeyTyped
+        // TODO add your handling code here:
+        if (((javax.swing.JTextField) evt.getSource()).getText().length() >= 350) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_JTANotasKeyTyped
+
+    private void JTANotasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTANotasActionPerformed
+        // TODO add your handling code here:
+        JTANotas.addActionListener(e ->  JCBFinalizado.requestFocus());
+    }//GEN-LAST:event_JTANotasActionPerformed
 
     /**
      * @param args the command line arguments

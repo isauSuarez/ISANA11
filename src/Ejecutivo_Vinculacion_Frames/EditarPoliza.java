@@ -377,7 +377,7 @@ public class EditarPoliza extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (JTFNumPoliza.getText().equals("Número de póliza")) {
             JTFNumPoliza.setText("");
-            JTFNumPoliza.setForeground(new java.awt.Color(255, 255, 255));
+            JTFNumPoliza.setForeground(new java.awt.Color(205, 205, 205));
         }
     }//GEN-LAST:event_JTFNumPolizaFocusGained
 
