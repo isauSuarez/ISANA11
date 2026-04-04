@@ -15,7 +15,8 @@ public class MenuEjecutivoVinculacion2 extends javax.swing.JFrame {
      */
     public MenuEjecutivoVinculacion2() {
         initComponents();
-        this.setSize(450, 380); // Fuerza el tamaño exacto
+        this.setSize(800, 600); // Fuerza el tamaño exacto
+        this.setResizable(false);
         this.setLocationRelativeTo(null); // Centra la ventana en tu monitor
         JMBEjecutivoVinculacion.add(javax.swing.Box.createHorizontalGlue(), 3);
     }
@@ -29,6 +30,8 @@ public class MenuEjecutivoVinculacion2 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        JPFondo = new ImagenPanel_EV("/imagenes/FondoETS.jpg");
+        jLabel1 = new javax.swing.JLabel();
         JLBBienvenido = new javax.swing.JLabel();
         JLBEjecutivoVinculacion = new javax.swing.JLabel();
         JBNNuevaPoliza = new javax.swing.JButton();
@@ -50,21 +53,34 @@ public class MenuEjecutivoVinculacion2 extends javax.swing.JFrame {
         JMICerrarSesion = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        JLBBienvenido.setFont(new java.awt.Font("Montserrat", 1, 24)); // NOI18N
-        JLBBienvenido.setForeground(new java.awt.Color(153, 153, 153));
+        JPFondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo ETS 75 px.png"))); // NOI18N
+        JPFondo.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, 80));
+
+        JLBBienvenido.setFont(new java.awt.Font("Montserrat", 1, 48)); // NOI18N
+        JLBBienvenido.setForeground(new java.awt.Color(102, 102, 102));
         JLBBienvenido.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         JLBBienvenido.setText("¡Bienvenido!");
+        JPFondo.add(JLBBienvenido, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 780, 60));
 
-        JLBEjecutivoVinculacion.setFont(new java.awt.Font("Montserrat", 1, 24)); // NOI18N
-        JLBEjecutivoVinculacion.setForeground(new java.awt.Color(153, 153, 153));
+        JLBEjecutivoVinculacion.setFont(new java.awt.Font("Montserrat", 1, 48)); // NOI18N
+        JLBEjecutivoVinculacion.setForeground(new java.awt.Color(102, 102, 102));
         JLBEjecutivoVinculacion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         JLBEjecutivoVinculacion.setText("Ejecutivo de Vinculación");
+        JPFondo.add(JLBEjecutivoVinculacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 780, 60));
 
         JBNNuevaPoliza.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos90/nuevapoliza90.png"))); // NOI18N
         JBNNuevaPoliza.setToolTipText("");
+        JPFondo.add(JBNNuevaPoliza, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 250, 140, 150));
 
         JBNNuevoCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos90/nuevocliente90.png"))); // NOI18N
+        JPFondo.add(JBNNuevoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 250, 140, 150));
+        JPFondo.add(JLBLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 500, -1, -1));
+
+        getContentPane().add(JPFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 810, 540));
 
         JMBEjecutivoVinculacion.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
 
@@ -118,44 +134,6 @@ public class MenuEjecutivoVinculacion2 extends javax.swing.JFrame {
         JMBEjecutivoVinculacion.add(JMNCerrarSesion);
 
         setJMenuBar(JMBEjecutivoVinculacion);
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(105, 105, 105)
-                        .addComponent(JBNNuevoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(50, 50, 50)
-                        .addComponent(JBNNuevaPoliza, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(64, 64, 64)
-                        .addComponent(JLBEjecutivoVinculacion, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(JLBLogo))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(99, 99, 99)
-                        .addComponent(JLBBienvenido, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(65, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addComponent(JLBBienvenido)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(JLBEjecutivoVinculacion)
-                .addGap(28, 28, 28)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(JBNNuevoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(JBNNuevaPoliza, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
-                .addComponent(JLBLogo)
-                .addGap(17, 17, 17))
-        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -223,5 +201,7 @@ public class MenuEjecutivoVinculacion2 extends javax.swing.JFrame {
     public javax.swing.JMenu JMNClientes;
     public javax.swing.JMenu JMNPolizas;
     private javax.swing.JMenu JMNUsuarios;
+    private javax.swing.JPanel JPFondo;
+    public javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

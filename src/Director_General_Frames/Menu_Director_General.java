@@ -64,28 +64,33 @@ public class Menu_Director_General extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(102, 102, 102));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("¡Bienvenido!");
-        JPFondo.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 800, -1));
+        JPFondo.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 780, -1));
 
         jLabel2.setFont(new java.awt.Font("Montserrat", 1, 48)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(102, 102, 102));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Director General");
-        JPFondo.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 800, -1));
+        JPFondo.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 780, -1));
 
-        JBNPersonal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/CLIENTE MINI.png"))); // NOI18N
+        JBNPersonal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos90/reportecliente90.png"))); // NOI18N
         JBNPersonal.setToolTipText("");
         JBNPersonal.setMaximumSize(new java.awt.Dimension(130, 130));
         JBNPersonal.setMinimumSize(new java.awt.Dimension(130, 130));
         JBNPersonal.setPreferredSize(new java.awt.Dimension(130, 130));
-        JPFondo.add(JBNPersonal, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 240, 140, 150));
+        JPFondo.add(JBNPersonal, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 250, 140, 150));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo ETS 75 px.png"))); // NOI18N
         JPFondo.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
-        JBNReportes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/tickets mini.png"))); // NOI18N
+        JBNReportes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos90/reportetickets90.png"))); // NOI18N
         JBNReportes.setMaximumSize(new java.awt.Dimension(130, 130));
         JBNReportes.setMinimumSize(new java.awt.Dimension(130, 130));
-        JPFondo.add(JBNReportes, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 240, 140, 150));
+        JBNReportes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBNReportesActionPerformed(evt);
+            }
+        });
+        JPFondo.add(JBNReportes, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 250, 140, 150));
 
         getContentPane().add(JPFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 540));
 
@@ -126,6 +131,10 @@ public class Menu_Director_General extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void JBNReportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBNReportesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JBNReportesActionPerformed
 
     /**
      * @param args the command line arguments

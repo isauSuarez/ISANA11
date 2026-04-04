@@ -17,6 +17,7 @@ public class Menu_Carga extends javax.swing.JFrame {
         javax.swing.UIManager.put("nimbusOrange", new java.awt.Color(39, 174, 96)); //este fuerza el color verde de la barra
         
         initComponents();
+                this.setSize(500, 350); // Fuerza el tamaño exacto
         this.setLocationRelativeTo(null); // Centra la ventana en tu monitor
         iniciarCarga();
     }
@@ -78,54 +79,27 @@ public class Menu_Carga extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/LogoEts.png"))); // NOI18N
+        JPFondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblTitulo.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/LogoEts.png"))); // NOI18N
+        JPFondo.add(lblLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 80, 80));
+
+        lblTitulo.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
         lblTitulo.setForeground(new java.awt.Color(102, 102, 102));
         lblTitulo.setText("<html>Expert<br>Technical<br>Support</html>");
+        JPFondo.add(lblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 60, 170, 130));
 
         pgbCarga.setForeground(new java.awt.Color(39, 174, 96));
         pgbCarga.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(39, 174, 96)));
         pgbCarga.setStringPainted(true);
+        JPFondo.add(pgbCarga, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 210, 310, 40));
 
         lblEstadoCarga.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         lblEstadoCarga.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblEstadoCarga.setText("Cargando base de datos...");
+        JPFondo.add(lblEstadoCarga, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 260, 221, -1));
 
-        javax.swing.GroupLayout JPFondoLayout = new javax.swing.GroupLayout(JPFondo);
-        JPFondo.setLayout(JPFondoLayout);
-        JPFondoLayout.setHorizontalGroup(
-            JPFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 450, Short.MAX_VALUE)
-            .addGroup(JPFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(JPFondoLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addGroup(JPFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(JPFondoLayout.createSequentialGroup()
-                            .addComponent(lblLogo)
-                            .addGap(12, 12, 12)
-                            .addComponent(lblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(pgbCarga, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(lblEstadoCarga, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        JPFondoLayout.setVerticalGroup(
-            JPFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 350, Short.MAX_VALUE)
-            .addGroup(JPFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(JPFondoLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addGroup(JPFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(lblLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(lblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(38, 38, 38)
-                    .addComponent(pgbCarga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(18, 18, 18)
-                    .addComponent(lblEstadoCarga)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-
-        getContentPane().add(JPFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 350));
+        getContentPane().add(JPFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 350));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

@@ -15,8 +15,9 @@ public class MenuSupervisorTecnico extends javax.swing.JFrame {
      */
     public MenuSupervisorTecnico() {
         initComponents();
-        this.setSize(450, 380); // Fuerza el tamaño exacto
-        this.setLocationRelativeTo(null); // Centra la ventana en tu monitor
+        this.setSize(800, 600); // Fuerza el tamaño exacto
+        this.setResizable(false);
+        this.setLocationRelativeTo(null); // Centra la ventana en tu monitor 
         JMBSupervisorTecnico.add(javax.swing.Box.createHorizontalGlue(), 2);
     }
     
@@ -32,6 +33,7 @@ public class MenuSupervisorTecnico extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        JPFondo = new ImagenPanel_ST("/imagenes/FondoETS.jpg");
         JLBBienvenido = new javax.swing.JLabel();
         JLBSupervisorTecnico = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -51,27 +53,36 @@ public class MenuSupervisorTecnico extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        JLBBienvenido.setFont(new java.awt.Font("Montserrat", 1, 24)); // NOI18N
+        JPFondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        JLBBienvenido.setFont(new java.awt.Font("Montserrat", 1, 48)); // NOI18N
         JLBBienvenido.setForeground(new java.awt.Color(102, 102, 102));
         JLBBienvenido.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         JLBBienvenido.setText("¡Bienvenido!");
-        getContentPane().add(JLBBienvenido, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, 220, -1));
+        JPFondo.add(JLBBienvenido, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 770, 60));
 
-        JLBSupervisorTecnico.setFont(new java.awt.Font("Montserrat", 1, 24)); // NOI18N
+        JLBSupervisorTecnico.setFont(new java.awt.Font("Montserrat", 1, 48)); // NOI18N
         JLBSupervisorTecnico.setForeground(new java.awt.Color(102, 102, 102));
         JLBSupervisorTecnico.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         JLBSupervisorTecnico.setText("Supervisor Técnico");
-        getContentPane().add(JLBSupervisorTecnico, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, -1, -1));
+        JPFondo.add(JLBSupervisorTecnico, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 780, 60));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ETS MINI2.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 242, -1, -1));
+        JPFondo.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
         JBNAsignarTicket.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos90/asignarticket90.png"))); // NOI18N
         JBNAsignarTicket.setToolTipText("");
-        getContentPane().add(JBNAsignarTicket, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, -1, -1));
+        JBNAsignarTicket.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBNAsignarTicketActionPerformed(evt);
+            }
+        });
+        JPFondo.add(JBNAsignarTicket, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 250, 140, 150));
 
         JBNNuevoTicket.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos90/nuevoticket90.png"))); // NOI18N
-        getContentPane().add(JBNNuevoTicket, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 140, -1, -1));
+        JPFondo.add(JBNNuevoTicket, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 250, 140, 150));
+
+        getContentPane().add(JPFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 810, 540));
 
         JMBSupervisorTecnico.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
 
@@ -115,6 +126,10 @@ public class MenuSupervisorTecnico extends javax.swing.JFrame {
     private void JMINuevoTicketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMINuevoTicketActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_JMINuevoTicketActionPerformed
+
+    private void JBNAsignarTicketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBNAsignarTicketActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JBNAsignarTicketActionPerformed
 
     /**
      * @param args the command line arguments
@@ -167,6 +182,7 @@ public class MenuSupervisorTecnico extends javax.swing.JFrame {
     public javax.swing.JMenu JMNSTCerrarSesion;
     public javax.swing.JMenu JMNSTTecnicos;
     public javax.swing.JMenu JMNSTTickets;
+    private javax.swing.JPanel JPFondo;
     public javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

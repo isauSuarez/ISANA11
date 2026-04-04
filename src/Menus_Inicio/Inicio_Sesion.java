@@ -24,7 +24,7 @@ public class Inicio_Sesion extends javax.swing.JFrame {
             initComponents();
            new Menus_Inicio.ControladorLogin(this);
         
-        this.setSize(450, 400); // Fuerza el tamaño exacto
+        this.setSize(450, 450); // Fuerza el tamaño exacto
         this.setLocationRelativeTo(null); // Centra la ventana en tu monitor
         pwdContrasena.setEchoChar((char) 0);
     }
@@ -52,11 +52,15 @@ public class Inicio_Sesion extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblLogoInicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/LogoEts.png"))); // NOI18N
+        JPFondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblBienvenido.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        lblLogoInicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/LogoEts.png"))); // NOI18N
+        JPFondo.add(lblLogoInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 70, -1, -1));
+
+        lblBienvenido.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
         lblBienvenido.setForeground(new java.awt.Color(102, 102, 102));
         lblBienvenido.setText("¡Bienvenido!");
+        JPFondo.add(lblBienvenido, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 90, -1, -1));
 
         txtUsuario.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         txtUsuario.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -76,6 +80,7 @@ public class Inicio_Sesion extends javax.swing.JFrame {
                 txtUsuarioActionPerformed(evt);
             }
         });
+        JPFondo.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 350, -1));
 
         pwdContrasena.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         pwdContrasena.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -95,6 +100,7 @@ public class Inicio_Sesion extends javax.swing.JFrame {
                 pwdContrasenaActionPerformed(evt);
             }
         });
+        JPFondo.add(pwdContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 350, -1));
 
         btnAcceder.setBackground(new java.awt.Color(59, 129, 88));
         btnAcceder.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
@@ -109,10 +115,12 @@ public class Inicio_Sesion extends javax.swing.JFrame {
                 btnAccederActionPerformed(evt);
             }
         });
+        JPFondo.add(btnAcceder, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 270, -1, -1));
 
         lblInstrucciones.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         lblInstrucciones.setForeground(new java.awt.Color(153, 153, 153));
-        lblInstrucciones.setText("<html><div style='text-align: center;'>Ingresa tu usuario <br>y contraseña</div></html>");
+        lblInstrucciones.setText("Ingresa tu usuario y contraseña");
+        JPFondo.add(lblInstrucciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 320, 200, -1));
 
         lblAyuda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/signo-de-pregunta.png"))); // NOI18N
         lblAyuda.setToolTipText("Si olvidaste tu contraseña, contacta al administrador de sistemas.");
@@ -122,59 +130,9 @@ public class Inicio_Sesion extends javax.swing.JFrame {
                 lblAyudaMouseClicked(evt);
             }
         });
+        JPFondo.add(lblAyuda, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 380, -1, -1));
 
-        javax.swing.GroupLayout JPFondoLayout = new javax.swing.GroupLayout(JPFondo);
-        JPFondo.setLayout(JPFondoLayout);
-        JPFondoLayout.setHorizontalGroup(
-            JPFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 470, Short.MAX_VALUE)
-            .addGroup(JPFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(JPFondoLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addGroup(JPFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(JPFondoLayout.createSequentialGroup()
-                            .addGap(60, 60, 60)
-                            .addComponent(lblLogoInicio)
-                            .addGap(15, 15, 15)
-                            .addComponent(lblBienvenido))
-                        .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(pwdContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(JPFondoLayout.createSequentialGroup()
-                            .addGap(123, 123, 123)
-                            .addComponent(btnAcceder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(JPFondoLayout.createSequentialGroup()
-                            .addGap(113, 113, 113)
-                            .addComponent(lblInstrucciones, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(JPFondoLayout.createSequentialGroup()
-                            .addGap(356, 356, 356)
-                            .addComponent(lblAyuda)))
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        JPFondoLayout.setVerticalGroup(
-            JPFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 390, Short.MAX_VALUE)
-            .addGroup(JPFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(JPFondoLayout.createSequentialGroup()
-                    .addGap(0, 35, Short.MAX_VALUE)
-                    .addGroup(JPFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(lblLogoInicio)
-                        .addGroup(JPFondoLayout.createSequentialGroup()
-                            .addGap(20, 20, 20)
-                            .addComponent(lblBienvenido)))
-                    .addGap(34, 34, 34)
-                    .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(30, 30, 30)
-                    .addComponent(pwdContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(26, 26, 26)
-                    .addComponent(btnAcceder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(15, 15, 15)
-                    .addComponent(lblInstrucciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(6, 6, 6)
-                    .addComponent(lblAyuda)
-                    .addGap(0, 35, Short.MAX_VALUE)))
-        );
-
-        getContentPane().add(JPFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 390));
+        getContentPane().add(JPFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 420));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

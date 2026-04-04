@@ -15,6 +15,9 @@ public class Menu_Tecnico extends javax.swing.JFrame {
      */
     public Menu_Tecnico() {
         initComponents();
+        this.setSize(800, 600); // Fuerza el tamaño exacto
+        this.setResizable(false);
+        this.setLocationRelativeTo(null); // Centra la ventana en tu monitor 
          JMBTecnico.add(javax.swing.Box.createHorizontalGlue(), 2);
     }
 
@@ -27,6 +30,7 @@ public class Menu_Tecnico extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        JPFondo = new ImagenPanel_T("/imagenes/FondoETS.jpg");
         JLBBienvenido = new javax.swing.JLabel();
         JLBSoporteTecnico = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -40,21 +44,27 @@ public class Menu_Tecnico extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        JLBBienvenido.setFont(new java.awt.Font("Montserrat", 1, 24)); // NOI18N
+        JPFondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        JLBBienvenido.setFont(new java.awt.Font("Montserrat", 1, 48)); // NOI18N
+        JLBBienvenido.setForeground(new java.awt.Color(102, 102, 102));
         JLBBienvenido.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         JLBBienvenido.setText("¡Bienvenido!");
-        getContentPane().add(JLBBienvenido, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 30, 200, -1));
+        JPFondo.add(JLBBienvenido, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 780, 60));
 
-        JLBSoporteTecnico.setFont(new java.awt.Font("Montserrat", 1, 24)); // NOI18N
+        JLBSoporteTecnico.setFont(new java.awt.Font("Montserrat", 1, 48)); // NOI18N
+        JLBSoporteTecnico.setForeground(new java.awt.Color(102, 102, 102));
         JLBSoporteTecnico.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         JLBSoporteTecnico.setText("Soporte Técnico");
-        getContentPane().add(JLBSoporteTecnico, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 70, 200, -1));
+        JPFondo.add(JLBSoporteTecnico, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 780, 60));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo ETS 75 px.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 200, -1, -1));
+        JPFondo.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
         JBNMisTickets.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos90/mistickets90.png"))); // NOI18N
-        getContentPane().add(JBNMisTickets, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, -1, -1));
+        JPFondo.add(JBNMisTickets, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 240, 140, 150));
+
+        getContentPane().add(JPFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 810, 540));
 
         JMBTecnico.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
 
@@ -132,6 +142,7 @@ public class Menu_Tecnico extends javax.swing.JFrame {
     public javax.swing.JMenuItem JMIMisTickets;
     public javax.swing.JMenu JMNSTCerrarSesion;
     public javax.swing.JMenu JMNTTickets;
+    private javax.swing.JPanel JPFondo;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
