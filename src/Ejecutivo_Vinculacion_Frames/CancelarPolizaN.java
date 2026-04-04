@@ -15,7 +15,8 @@ public class CancelarPolizaN extends javax.swing.JFrame {
      */
     public CancelarPolizaN() {
         initComponents();
-        this.setSize(475, 400); // Fuerza el tamaño exacto
+        this.setSize(550, 500); // Fuerza el tamaño exacto
+        this.setResizable(false);
         this.setLocationRelativeTo(null); // Centra la ventana en tu monitor
     }
 
@@ -30,34 +31,29 @@ public class CancelarPolizaN extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         JTFNumPoliza = new javax.swing.JTextField();
         JBNCancelar = new javax.swing.JButton();
         JBNConfirmar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         JTAinfo = new javax.swing.JTextArea();
+        lblLogoInicio = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Montserrat", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(102, 102, 102));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Cancelar Póliza");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 20, 260, 40));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 530, 40));
 
-        jLabel2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(153, 153, 153));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Ingrese el numero de póliza");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 300, 20));
+        jLabel2.setText("Ingrese el numero de póliza que sera cancelado.");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 530, 20));
 
-        jLabel3.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("que sera cancelado.");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, 300, 20));
-
+        JTFNumPoliza.setForeground(new java.awt.Color(102, 102, 102));
         JTFNumPoliza.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         JTFNumPoliza.setText("Núm. Poliza");
         JTFNumPoliza.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -73,35 +69,38 @@ public class CancelarPolizaN extends javax.swing.JFrame {
                 JTFNumPolizaActionPerformed(evt);
             }
         });
-        getContentPane().add(JTFNumPoliza, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 160, 180, 40));
+        getContentPane().add(JTFNumPoliza, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, 330, 40));
 
         JBNCancelar.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
         JBNCancelar.setText("Cancelar");
-        JBNCancelar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        JBNCancelar.setBorder(null);
         JBNCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JBNCancelarActionPerformed(evt);
             }
         });
-        getContentPane().add(JBNCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 300, 100, 30));
+        getContentPane().add(JBNCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 420, 100, 30));
 
         JBNConfirmar.setBackground(new java.awt.Color(0, 153, 102));
         JBNConfirmar.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
         JBNConfirmar.setForeground(new java.awt.Color(255, 255, 255));
         JBNConfirmar.setText("Confirmar");
-        JBNConfirmar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        JBNConfirmar.setBorder(null);
         JBNConfirmar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JBNConfirmarActionPerformed(evt);
             }
         });
-        getContentPane().add(JBNConfirmar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 290, 160, 40));
+        getContentPane().add(JBNConfirmar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 370, 160, 40));
 
         JTAinfo.setColumns(20);
         JTAinfo.setRows(5);
         jScrollPane1.setViewportView(JTAinfo);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 210, 260, 70));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 510, 160));
+
+        lblLogoInicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Logo ETS 75 px.png"))); // NOI18N
+        getContentPane().add(lblLogoInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 380, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -176,7 +175,7 @@ public class CancelarPolizaN extends javax.swing.JFrame {
     public javax.swing.JTextField JTFNumPoliza;
     public javax.swing.JLabel jLabel1;
     public javax.swing.JLabel jLabel2;
-    public javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
+    public javax.swing.JLabel lblLogoInicio;
     // End of variables declaration//GEN-END:variables
 }

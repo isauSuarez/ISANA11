@@ -17,8 +17,9 @@ public class ModificarUsuario extends javax.swing.JFrame {
      */
     public ModificarUsuario() {
         initComponents();
-                this.setSize(525, 600); // Fuerza el tamaño exacto
-              this.setLocationRelativeTo(null); // Centra la ventana en tu monitor
+        this.setSize(700, 700); // Fuerza el tamaño exacto
+        this.setResizable(false);
+        this.setLocationRelativeTo(null); // Centra la ventana en tu monitor
     }
 
     /**
@@ -30,12 +31,12 @@ public class ModificarUsuario extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        JPFondo = new ImagenPanel_EV("/imagenes/FondoETS.jpg");
+        JLBNombre = new javax.swing.JLabel();
+        JLBApellido = new javax.swing.JLabel();
+        JLBLocacion = new javax.swing.JLabel();
+        JLBCorreo = new javax.swing.JLabel();
+        JLBTelefono = new javax.swing.JLabel();
         JTFnombre = new javax.swing.JTextField();
         JTFapellido = new javax.swing.JTextField();
         JTFlocacion = new javax.swing.JTextField();
@@ -46,26 +47,52 @@ public class ModificarUsuario extends javax.swing.JFrame {
         JTFcliente = new javax.swing.JTextField();
         JTFempresa = new javax.swing.JTextField();
         JCBcliente = new javax.swing.JComboBox<>();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        JLBUsuario = new javax.swing.JLabel();
+        JLBEmpresa = new javax.swing.JLabel();
         JCBempresa = new javax.swing.JComboBox<>();
+        JLBTitulo = new javax.swing.JLabel();
+        JLBLogo = new javax.swing.JLabel();
+        jSeparator3 = new javax.swing.JSeparator();
+        JLBBusqueda = new javax.swing.JLabel();
+        jSeparator2 = new javax.swing.JSeparator();
+        jSeparator1 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("Modificar Usuario");
+        JPFondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setText("Nombre ");
+        JLBNombre.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        JLBNombre.setForeground(new java.awt.Color(102, 102, 102));
+        JLBNombre.setText("Nombre ");
+        JPFondo.add(JLBNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 100, 40));
 
-        jLabel3.setText("Apellido");
+        JLBApellido.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        JLBApellido.setForeground(new java.awt.Color(102, 102, 102));
+        JLBApellido.setText("Apellido");
+        JPFondo.add(JLBApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, 100, 40));
 
-        jLabel4.setText("locacion");
+        JLBLocacion.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        JLBLocacion.setForeground(new java.awt.Color(102, 102, 102));
+        JLBLocacion.setText("Locación");
+        JPFondo.add(JLBLocacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 440, 100, 40));
 
-        jLabel5.setText("Correo");
+        JLBCorreo.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        JLBCorreo.setForeground(new java.awt.Color(102, 102, 102));
+        JLBCorreo.setText("Correo");
+        JPFondo.add(JLBCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 510, 100, 40));
 
-        jLabel6.setText("Telefono");
+        JLBTelefono.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        JLBTelefono.setForeground(new java.awt.Color(102, 102, 102));
+        JLBTelefono.setText("Telefono");
+        JPFondo.add(JLBTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 100, 40));
 
+        JTFnombre.setForeground(new java.awt.Color(153, 153, 153));
         JTFnombre.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         JTFnombre.setText("Nombre (s)");
+        JTFnombre.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(200, 200, 200), 1, true));
+        JTFnombre.setMinimumSize(new java.awt.Dimension(350, 40));
+        JTFnombre.setPreferredSize(new java.awt.Dimension(350, 40));
         JTFnombre.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 JTFnombreFocusGained(evt);
@@ -80,9 +107,14 @@ public class ModificarUsuario extends javax.swing.JFrame {
                 JTFnombreKeyTyped(evt);
             }
         });
+        JPFondo.add(JTFnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 230, 530, -1));
 
+        JTFapellido.setForeground(new java.awt.Color(153, 153, 153));
         JTFapellido.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         JTFapellido.setText("Apellido (s)");
+        JTFapellido.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(200, 200, 200), 1, true));
+        JTFapellido.setMinimumSize(new java.awt.Dimension(350, 40));
+        JTFapellido.setPreferredSize(new java.awt.Dimension(350, 40));
         JTFapellido.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 JTFapellidoFocusGained(evt);
@@ -97,9 +129,14 @@ public class ModificarUsuario extends javax.swing.JFrame {
                 JTFapellidoKeyTyped(evt);
             }
         });
+        JPFondo.add(JTFapellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 370, 530, -1));
 
+        JTFlocacion.setForeground(new java.awt.Color(153, 153, 153));
         JTFlocacion.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         JTFlocacion.setText("Locación");
+        JTFlocacion.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(200, 200, 200), 1, true));
+        JTFlocacion.setMinimumSize(new java.awt.Dimension(350, 40));
+        JTFlocacion.setPreferredSize(new java.awt.Dimension(350, 40));
         JTFlocacion.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 JTFlocacionFocusGained(evt);
@@ -114,9 +151,14 @@ public class ModificarUsuario extends javax.swing.JFrame {
                 JTFlocacionKeyTyped(evt);
             }
         });
+        JPFondo.add(JTFlocacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 440, 530, -1));
 
+        JTFcorreo.setForeground(new java.awt.Color(153, 153, 153));
         JTFcorreo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         JTFcorreo.setText("Correo");
+        JTFcorreo.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(200, 200, 200), 1, true));
+        JTFcorreo.setMinimumSize(new java.awt.Dimension(350, 40));
+        JTFcorreo.setPreferredSize(new java.awt.Dimension(350, 40));
         JTFcorreo.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 JTFcorreoFocusGained(evt);
@@ -131,9 +173,14 @@ public class ModificarUsuario extends javax.swing.JFrame {
                 JTFcorreoKeyTyped(evt);
             }
         });
+        JPFondo.add(JTFcorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 510, 530, -1));
 
+        JTFtelefono.setForeground(new java.awt.Color(153, 153, 153));
         JTFtelefono.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         JTFtelefono.setText("Telefono");
+        JTFtelefono.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(200, 200, 200), 1, true));
+        JTFtelefono.setMinimumSize(new java.awt.Dimension(350, 40));
+        JTFtelefono.setPreferredSize(new java.awt.Dimension(350, 40));
         JTFtelefono.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 JTFtelefonoFocusGained(evt);
@@ -148,13 +195,25 @@ public class ModificarUsuario extends javax.swing.JFrame {
                 JTFtelefonoKeyTyped(evt);
             }
         });
+        JPFondo.add(JTFtelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 300, 530, -1));
 
-        JBTguardar.setText("guardar");
+        JBTguardar.setBackground(new java.awt.Color(0, 153, 102));
+        JBTguardar.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        JBTguardar.setForeground(new java.awt.Color(255, 255, 255));
+        JBTguardar.setText("Guardar");
+        JBTguardar.setBorder(null);
         JBTguardar.addActionListener(this::JBTguardarActionPerformed);
+        JPFondo.add(JBTguardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 580, 224, 42));
 
-        JBTcancelar.setText("cancelar");
+        JBTcancelar.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        JBTcancelar.setText("Cancelar");
+        JBTcancelar.setBorder(null);
+        JPFondo.add(JBTcancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 610, 90, 30));
 
+        JTFcliente.setForeground(new java.awt.Color(153, 153, 153));
+        JTFcliente.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         JTFcliente.setText("Usuario");
+        JTFcliente.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(200, 200, 200), 1, true));
         JTFcliente.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 JTFclienteFocusGained(evt);
@@ -163,8 +222,12 @@ public class ModificarUsuario extends javax.swing.JFrame {
                 JTFclienteFocusLost(evt);
             }
         });
+        JPFondo.add(JTFcliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 100, 200, 30));
 
+        JTFempresa.setForeground(new java.awt.Color(153, 153, 153));
+        JTFempresa.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         JTFempresa.setText("Empresa");
+        JTFempresa.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(200, 200, 200), 1, true));
         JTFempresa.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 JTFempresaFocusGained(evt);
@@ -174,116 +237,55 @@ public class ModificarUsuario extends javax.swing.JFrame {
             }
         });
         JTFempresa.addActionListener(this::JTFempresaActionPerformed);
+        JPFondo.add(JTFempresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 100, 200, 30));
 
-        JCBcliente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        JCBcliente.setForeground(new java.awt.Color(153, 153, 153));
+        JCBcliente.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        JCBcliente.addActionListener(this::JCBclienteActionPerformed);
+        JPFondo.add(JCBcliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, 200, 30));
 
-        jLabel7.setText("Usuario");
+        JLBUsuario.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
+        JLBUsuario.setForeground(new java.awt.Color(102, 102, 102));
+        JLBUsuario.setText("Usuario");
+        JPFondo.add(JLBUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, 60, 30));
 
-        jLabel8.setText("Empresa");
+        JLBEmpresa.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
+        JLBEmpresa.setForeground(new java.awt.Color(102, 102, 102));
+        JLBEmpresa.setText("Empresa");
+        JPFondo.add(JLBEmpresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 100, 70, 30));
 
-        JCBempresa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        JCBempresa.setForeground(new java.awt.Color(153, 153, 153));
+        JCBempresa.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        JPFondo.add(JCBempresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 150, 200, 30));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGap(252, 252, 252)
-                        .addComponent(JBTguardar, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel4)
-                                .addComponent(jLabel3))
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel6))
-                        .addGap(50, 50, 50)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(JTFnombre)
-                            .addComponent(JTFapellido)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(JTFtelefono, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(JTFlocacion, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(JTFcorreo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(0, 120, Short.MAX_VALUE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(91, 91, 91)
-                                        .addComponent(jLabel7))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(63, 63, 63)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(JCBcliente, 0, 128, Short.MAX_VALUE)
-                                            .addComponent(JTFcliente))))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(31, 31, 31)
-                                        .addComponent(jLabel8))
-                                    .addComponent(JTFempresa)
-                                    .addComponent(JCBempresa, 0, 115, Short.MAX_VALUE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(113, 113, 113)))
-                .addComponent(JBTcancelar)
-                .addGap(48, 48, 48))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(JTFcliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel8)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(JTFempresa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(JCBcliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(JCBempresa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 92, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(JTFnombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(45, 45, 45)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(JTFapellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(42, 42, 42)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
-                    .addComponent(JTFlocacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(47, 47, 47)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5)
-                    .addComponent(JTFcorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(33, 33, 33)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(JTFtelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(48, 48, 48)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(JBTguardar)
-                    .addComponent(JBTcancelar))
-                .addGap(61, 61, 61))
-        );
+        JLBTitulo.setFont(new java.awt.Font("Montserrat", 1, 24)); // NOI18N
+        JLBTitulo.setForeground(new java.awt.Color(102, 102, 102));
+        JLBTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        JLBTitulo.setText("Modificar Usuario");
+        JPFondo.add(JLBTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 680, -1));
+
+        JLBLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo ETS 75 px.png"))); // NOI18N
+        JPFondo.add(JLBLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 590, -1, -1));
+
+        jSeparator3.setAlignmentX(1.0F);
+        jSeparator3.setAlignmentY(1.0F);
+        JPFondo.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 30, 10));
+
+        JLBBusqueda.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        JLBBusqueda.setForeground(new java.awt.Color(102, 102, 102));
+        JLBBusqueda.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        JLBBusqueda.setText("Busqueda de Usuario (por Nombre y Empresa)");
+        JPFondo.add(JLBBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 350, 40));
+
+        jSeparator2.setAlignmentX(1.0F);
+        jSeparator2.setAlignmentY(1.0F);
+        JPFondo.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 70, 310, 10));
+
+        jSeparator1.setAlignmentX(1.0F);
+        jSeparator1.setAlignmentY(1.0F);
+        JPFondo.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 690, 10));
+
+        getContentPane().add(JPFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -485,6 +487,10 @@ public class ModificarUsuario extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_JTFempresaActionPerformed
 
+    private void JCBclienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCBclienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JCBclienteActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -515,6 +521,17 @@ public class ModificarUsuario extends javax.swing.JFrame {
     public javax.swing.JButton JBTguardar;
     public javax.swing.JComboBox<String> JCBcliente;
     public javax.swing.JComboBox<String> JCBempresa;
+    private javax.swing.JLabel JLBApellido;
+    public javax.swing.JLabel JLBBusqueda;
+    private javax.swing.JLabel JLBCorreo;
+    private javax.swing.JLabel JLBEmpresa;
+    private javax.swing.JLabel JLBLocacion;
+    public javax.swing.JLabel JLBLogo;
+    private javax.swing.JLabel JLBNombre;
+    private javax.swing.JLabel JLBTelefono;
+    public javax.swing.JLabel JLBTitulo;
+    private javax.swing.JLabel JLBUsuario;
+    private javax.swing.JPanel JPFondo;
     public javax.swing.JTextField JTFapellido;
     public javax.swing.JTextField JTFcliente;
     public javax.swing.JTextField JTFcorreo;
@@ -522,13 +539,8 @@ public class ModificarUsuario extends javax.swing.JFrame {
     public javax.swing.JTextField JTFlocacion;
     public javax.swing.JTextField JTFnombre;
     public javax.swing.JTextField JTFtelefono;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
     // End of variables declaration//GEN-END:variables
 }
