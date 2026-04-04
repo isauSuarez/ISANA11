@@ -28,67 +28,43 @@ public class ModificarTicket extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        JBNSiguienteJLS1 = new javax.swing.JButton();
-        JTFNumeroTicket = new javax.swing.JTextField();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        JLSTickets = new javax.swing.JList<>();
+        JTFUsuario = new javax.swing.JTextField();
         JLBLogo = new javax.swing.JLabel();
         JBNCancelar = new javax.swing.JButton();
         JLBEditarTicket = new javax.swing.JLabel();
         JLBDescripcion1 = new javax.swing.JLabel();
         JLBDescripcion2 = new javax.swing.JLabel();
-        JBNSiguienteJLS2 = new javax.swing.JButton();
-        JBNSiguienteJLS3 = new javax.swing.JButton();
-
-        JBNSiguienteJLS1.setBackground(new java.awt.Color(0, 153, 102));
-        JBNSiguienteJLS1.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
-        JBNSiguienteJLS1.setForeground(new java.awt.Color(255, 255, 255));
-        JBNSiguienteJLS1.setText("Siguiente");
-        JBNSiguienteJLS1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(39, 174, 96), 1, true));
-        JBNSiguienteJLS1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        JBNSiguienteJLS1.setOpaque(true);
-        JBNSiguienteJLS1.setPreferredSize(new java.awt.Dimension(100, 25));
-        JBNSiguienteJLS1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JBNSiguienteJLS1ActionPerformed(evt);
-            }
-        });
+        JBNSiguienteLS3 = new javax.swing.JButton();
+        JCBEmpresa = new javax.swing.JComboBox<>();
+        JCBTicket = new javax.swing.JComboBox<>();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        JCBUsuario = new javax.swing.JComboBox<>();
+        JTFEmpresa = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        JTFNumeroTicket.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
-        JTFNumeroTicket.setForeground(new java.awt.Color(153, 153, 153));
-        JTFNumeroTicket.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        JTFNumeroTicket.setText("Numero de Ticket");
-        JTFNumeroTicket.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        JTFNumeroTicket.setPreferredSize(new java.awt.Dimension(150, 30));
-        JTFNumeroTicket.addFocusListener(new java.awt.event.FocusAdapter() {
+        JTFUsuario.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        JTFUsuario.setForeground(new java.awt.Color(153, 153, 153));
+        JTFUsuario.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        JTFUsuario.setText("usuario");
+        JTFUsuario.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        JTFUsuario.setPreferredSize(new java.awt.Dimension(150, 30));
+        JTFUsuario.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                JTFNumeroTicketFocusGained(evt);
+                JTFUsuarioFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                JTFNumeroTicketFocusLost(evt);
+                JTFUsuarioFocusLost(evt);
             }
         });
-        JTFNumeroTicket.addActionListener(new java.awt.event.ActionListener() {
+        JTFUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JTFNumeroTicketActionPerformed(evt);
+                JTFUsuarioActionPerformed(evt);
             }
         });
-        getContentPane().add(JTFNumeroTicket, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 380, 40));
-
-        JLSTickets.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        JLSTickets.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
-        JLSTickets.setForeground(new java.awt.Color(153, 153, 153));
-        JLSTickets.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "56 Macias y asociados", "57 Pajas y forrajes", "58 Mama cocina casera", "59 Melanie lashes" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane1.setViewportView(JLSTickets);
-
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, 380, 130));
+        getContentPane().add(JTFUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 150, 120, 40));
 
         JLBLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo ETS 75 px.png"))); // NOI18N
         getContentPane().add(JLBLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 430, -1, -1));
@@ -120,72 +96,67 @@ public class ModificarTicket extends javax.swing.JFrame {
         JLBDescripcion2.setText("El numero de ticket a editar");
         getContentPane().add(JLBDescripcion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 300, -1));
 
-        JBNSiguienteJLS2.setBackground(new java.awt.Color(0, 153, 102));
-        JBNSiguienteJLS2.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
-        JBNSiguienteJLS2.setForeground(new java.awt.Color(255, 255, 255));
-        JBNSiguienteJLS2.setText("Siguiente");
-        JBNSiguienteJLS2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(39, 174, 96), 1, true));
-        JBNSiguienteJLS2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        JBNSiguienteJLS2.setOpaque(true);
-        JBNSiguienteJLS2.setPreferredSize(new java.awt.Dimension(100, 25));
-        JBNSiguienteJLS2.addActionListener(new java.awt.event.ActionListener() {
+        JBNSiguienteLS3.setBackground(new java.awt.Color(0, 153, 102));
+        JBNSiguienteLS3.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        JBNSiguienteLS3.setForeground(new java.awt.Color(255, 255, 255));
+        JBNSiguienteLS3.setText("Siguiente");
+        JBNSiguienteLS3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(39, 174, 96), 1, true));
+        JBNSiguienteLS3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        JBNSiguienteLS3.setOpaque(true);
+        JBNSiguienteLS3.setPreferredSize(new java.awt.Dimension(100, 25));
+        JBNSiguienteLS3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JBNSiguienteJLS2ActionPerformed(evt);
+                JBNSiguienteLS3ActionPerformed(evt);
             }
         });
-        getContentPane().add(JBNSiguienteJLS2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 200, 200, 42));
+        getContentPane().add(JBNSiguienteLS3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 420, 200, 42));
 
-        JBNSiguienteJLS3.setBackground(new java.awt.Color(0, 153, 102));
-        JBNSiguienteJLS3.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
-        JBNSiguienteJLS3.setForeground(new java.awt.Color(255, 255, 255));
-        JBNSiguienteJLS3.setText("Siguiente");
-        JBNSiguienteJLS3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(39, 174, 96), 1, true));
-        JBNSiguienteJLS3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        JBNSiguienteJLS3.setOpaque(true);
-        JBNSiguienteJLS3.setPreferredSize(new java.awt.Dimension(100, 25));
-        JBNSiguienteJLS3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JBNSiguienteJLS3ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(JBNSiguienteJLS3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 420, 200, 42));
+        JCBEmpresa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        getContentPane().add(JCBEmpresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 210, 180, 40));
+
+        JCBTicket.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        getContentPane().add(JCBTicket, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 300, 210, 40));
+
+        jLabel1.setText("usuario que lo solicito");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 150, -1));
+
+        jLabel3.setText("Ticket a editar");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, -1, -1));
+
+        JCBUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        getContentPane().add(JCBUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 152, 180, 40));
+
+        JTFEmpresa.setText("empresa");
+        getContentPane().add(JTFEmpresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 210, 120, 40));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void JTFNumeroTicketFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFNumeroTicketFocusGained
-        if (JTFNumeroTicket.getText().equals("Usuario")) {
-            JTFNumeroTicket.setText("");
-            JTFNumeroTicket.setForeground(new java.awt.Color(51, 51, 51)); // Letra oscura al escribir
+    private void JTFUsuarioFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFUsuarioFocusGained
+        if (JTFUsuario.getText().equals("Usuario")) {
+            JTFUsuario.setText("");
+            JTFUsuario.setForeground(new java.awt.Color(51, 51, 51)); // Letra oscura al escribir
         }
-    }//GEN-LAST:event_JTFNumeroTicketFocusGained
+    }//GEN-LAST:event_JTFUsuarioFocusGained
 
-    private void JTFNumeroTicketFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFNumeroTicketFocusLost
-        if (JTFNumeroTicket.getText().isEmpty()) {
-            JTFNumeroTicket.setText("Usuario");
-            JTFNumeroTicket.setForeground(new java.awt.Color(153, 153, 153)); // Vuelve al gris claro
+    private void JTFUsuarioFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFUsuarioFocusLost
+        if (JTFUsuario.getText().isEmpty()) {
+            JTFUsuario.setText("Usuario");
+            JTFUsuario.setForeground(new java.awt.Color(153, 153, 153)); // Vuelve al gris claro
         }
-    }//GEN-LAST:event_JTFNumeroTicketFocusLost
+    }//GEN-LAST:event_JTFUsuarioFocusLost
 
-    private void JTFNumeroTicketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFNumeroTicketActionPerformed
+    private void JTFUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFUsuarioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_JTFNumeroTicketActionPerformed
+    }//GEN-LAST:event_JTFUsuarioActionPerformed
 
     private void JBNCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBNCancelarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_JBNCancelarActionPerformed
 
-    private void JBNSiguienteJLS1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBNSiguienteJLS1ActionPerformed
+    private void JBNSiguienteLS3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBNSiguienteLS3ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_JBNSiguienteJLS1ActionPerformed
-
-    private void JBNSiguienteJLS2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBNSiguienteJLS2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_JBNSiguienteJLS2ActionPerformed
-
-    private void JBNSiguienteJLS3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBNSiguienteJLS3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_JBNSiguienteJLS3ActionPerformed
+    }//GEN-LAST:event_JBNSiguienteLS3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -225,15 +196,17 @@ public class ModificarTicket extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton JBNCancelar;
-    private javax.swing.JButton JBNSiguienteJLS1;
-    public javax.swing.JButton JBNSiguienteJLS2;
-    public javax.swing.JButton JBNSiguienteJLS3;
+    public javax.swing.JButton JBNSiguienteLS3;
+    public javax.swing.JComboBox<String> JCBEmpresa;
+    public javax.swing.JComboBox<String> JCBTicket;
+    public javax.swing.JComboBox<String> JCBUsuario;
     public javax.swing.JLabel JLBDescripcion1;
     public javax.swing.JLabel JLBDescripcion2;
     public javax.swing.JLabel JLBEditarTicket;
     public javax.swing.JLabel JLBLogo;
-    private javax.swing.JList<String> JLSTickets;
-    public javax.swing.JTextField JTFNumeroTicket;
-    public javax.swing.JScrollPane jScrollPane1;
+    public javax.swing.JTextField JTFEmpresa;
+    public javax.swing.JTextField JTFUsuario;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 }

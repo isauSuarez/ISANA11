@@ -15,7 +15,7 @@ public class ModificarTicket2 extends javax.swing.JFrame {
      */
     public ModificarTicket2() {
         initComponents();
-        this.setSize(675, 550); // Fuerza el tamaño exacto
+        this.setSize(775, 650); // Fuerza el tamaño exacto
         this.setLocationRelativeTo(null); // Centra la ventana en tu monitor
     }
 
@@ -28,21 +28,27 @@ public class ModificarTicket2 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        RBGTipoServicio = new javax.swing.ButtonGroup();
         JLBDescripcion = new javax.swing.JLabel();
         JTADescripcion = new javax.swing.JTextField();
         JLBDescripcion3 = new javax.swing.JLabel();
-        JCBTecnico = new javax.swing.JComboBox<>();
+        JCBTecnico = new javax.swing.JComboBox();
         JLBLogo = new javax.swing.JLabel();
         JLBAsignarTecnico = new javax.swing.JLabel();
         JBNCancelar = new javax.swing.JButton();
         JLBDescripcion1 = new javax.swing.JLabel();
         JTFEmpresa = new javax.swing.JTextField();
-        JLBDescripcion2 = new javax.swing.JLabel();
-        JTFTipo = new javax.swing.JTextField();
-        JLBDescripcion4 = new javax.swing.JLabel();
-        JCBUsuario = new javax.swing.JComboBox<>();
         JCBFinalizado = new javax.swing.JCheckBox();
         JBNSiguienteJLS3 = new javax.swing.JButton();
+        JTFConcepto = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        JLBNombre2 = new javax.swing.JLabel();
+        JRBPresencial1 = new javax.swing.JRadioButton();
+        JRBRemoto = new javax.swing.JRadioButton();
+        JRBAsesoria = new javax.swing.JRadioButton();
+        JLBNombre3 = new javax.swing.JLabel();
+        JLBNombre4 = new javax.swing.JLabel();
+        JLBNombre5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -50,13 +56,13 @@ public class ModificarTicket2 extends javax.swing.JFrame {
         JLBDescripcion.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
         JLBDescripcion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         JLBDescripcion.setText("Detalles del ticket:");
-        getContentPane().add(JLBDescripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 210, 125, -1));
+        getContentPane().add(JLBDescripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 300, 125, -1));
 
         JTADescripcion.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
         JTADescripcion.setForeground(new java.awt.Color(153, 153, 153));
         JTADescripcion.setText("Descripción de los servicios a realizar y detalles puntuales");
         JTADescripcion.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        getContentPane().add(JTADescripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 600, 129));
+        getContentPane().add(JTADescripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, 600, 129));
 
         JLBDescripcion3.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
         JLBDescripcion3.setForeground(new java.awt.Color(153, 153, 153));
@@ -65,7 +71,7 @@ public class ModificarTicket2 extends javax.swing.JFrame {
 
         JCBTecnico.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
         JCBTecnico.setForeground(new java.awt.Color(153, 153, 153));
-        JCBTecnico.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ascencio", " " }));
+        JCBTecnico.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Ascencio", " " }));
         JCBTecnico.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         JCBTecnico.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -75,12 +81,12 @@ public class ModificarTicket2 extends javax.swing.JFrame {
         getContentPane().add(JCBTecnico, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, 170, 40));
 
         JLBLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo ETS 75 px.png"))); // NOI18N
-        getContentPane().add(JLBLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 446, -1, -1));
+        getContentPane().add(JLBLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 570, -1, -1));
 
         JLBAsignarTecnico.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         JLBAsignarTecnico.setForeground(new java.awt.Color(102, 102, 102));
         JLBAsignarTecnico.setText("Editar Ticket");
-        getContentPane().add(JLBAsignarTecnico, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, -1, -1));
+        getContentPane().add(JLBAsignarTecnico, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 20, -1, -1));
 
         JBNCancelar.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
         JBNCancelar.setText("Cancelar");
@@ -90,7 +96,7 @@ public class ModificarTicket2 extends javax.swing.JFrame {
                 JBNCancelarActionPerformed(evt);
             }
         });
-        getContentPane().add(JBNCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 470, 80, 29));
+        getContentPane().add(JBNCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 560, 80, 29));
 
         JLBDescripcion1.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
         JLBDescripcion1.setForeground(new java.awt.Color(153, 153, 153));
@@ -109,39 +115,6 @@ public class ModificarTicket2 extends javax.swing.JFrame {
         });
         getContentPane().add(JTFEmpresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 80, 170, 40));
 
-        JLBDescripcion2.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
-        JLBDescripcion2.setForeground(new java.awt.Color(153, 153, 153));
-        JLBDescripcion2.setText("Modalidad");
-        getContentPane().add(JLBDescripcion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 80, 90, 40));
-
-        JTFTipo.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
-        JTFTipo.setForeground(new java.awt.Color(153, 153, 153));
-        JTFTipo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        JTFTipo.setText("Remoto");
-        JTFTipo.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        JTFTipo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JTFTipoActionPerformed(evt);
-            }
-        });
-        getContentPane().add(JTFTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 80, 170, 40));
-
-        JLBDescripcion4.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
-        JLBDescripcion4.setForeground(new java.awt.Color(153, 153, 153));
-        JLBDescripcion4.setText("Usuario");
-        getContentPane().add(JLBDescripcion4, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 140, 90, 40));
-
-        JCBUsuario.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
-        JCBUsuario.setForeground(new java.awt.Color(153, 153, 153));
-        JCBUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Maldonado" }));
-        JCBUsuario.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        JCBUsuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JCBUsuarioActionPerformed(evt);
-            }
-        });
-        getContentPane().add(JCBUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 140, 170, 40));
-
         JCBFinalizado.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
         JCBFinalizado.setText("  ¿Ticket Finalizado?");
         JCBFinalizado.addActionListener(new java.awt.event.ActionListener() {
@@ -149,7 +122,7 @@ public class ModificarTicket2 extends javax.swing.JFrame {
                 JCBFinalizadoActionPerformed(evt);
             }
         });
-        getContentPane().add(JCBFinalizado, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 390, 170, -1));
+        getContentPane().add(JCBFinalizado, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 490, 220, -1));
 
         JBNSiguienteJLS3.setBackground(new java.awt.Color(0, 153, 102));
         JBNSiguienteJLS3.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
@@ -164,7 +137,45 @@ public class ModificarTicket2 extends javax.swing.JFrame {
                 JBNSiguienteJLS3ActionPerformed(evt);
             }
         });
-        getContentPane().add(JBNSiguienteJLS3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 430, 200, 42));
+        getContentPane().add(JBNSiguienteJLS3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 540, 200, 42));
+
+        JTFConcepto.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        JTFConcepto.setText("concepto");
+        getContentPane().add(JTFConcepto, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 250, 400, -1));
+
+        jLabel1.setText("Concepto");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 250, -1, -1));
+
+        JLBNombre2.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        JLBNombre2.setForeground(new java.awt.Color(153, 153, 153));
+        JLBNombre2.setText("Tipo de Servicio");
+        getContentPane().add(JLBNombre2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 120, -1, -1));
+
+        RBGTipoServicio.add(JRBPresencial1);
+        JRBPresencial1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JRBPresencial1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(JRBPresencial1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 100, -1, -1));
+
+        RBGTipoServicio.add(JRBRemoto);
+        getContentPane().add(JRBRemoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 120, -1, -1));
+
+        RBGTipoServicio.add(JRBAsesoria);
+        getContentPane().add(JRBAsesoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 140, -1, -1));
+
+        JLBNombre3.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        JLBNombre3.setText("Presencial");
+        getContentPane().add(JLBNombre3, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 100, 120, 20));
+
+        JLBNombre4.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        JLBNombre4.setText("Remoto");
+        getContentPane().add(JLBNombre4, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 120, 120, 20));
+
+        JLBNombre5.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        JLBNombre5.setText("Asesoria");
+        getContentPane().add(JLBNombre5, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 140, 120, 20));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -177,17 +188,9 @@ public class ModificarTicket2 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_JBNCancelarActionPerformed
 
-    private void JTFTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFTipoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_JTFTipoActionPerformed
-
     private void JTFEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFEmpresaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_JTFEmpresaActionPerformed
-
-    private void JCBUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCBUsuarioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_JCBUsuarioActionPerformed
 
     private void JCBFinalizadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCBFinalizadoActionPerformed
         // TODO add your handling code here:
@@ -196,6 +199,10 @@ public class ModificarTicket2 extends javax.swing.JFrame {
     private void JBNSiguienteJLS3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBNSiguienteJLS3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_JBNSiguienteJLS3ActionPerformed
+
+    private void JRBPresencial1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRBPresencial1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JRBPresencial1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -236,17 +243,23 @@ public class ModificarTicket2 extends javax.swing.JFrame {
     public javax.swing.JButton JBNCancelar;
     public javax.swing.JButton JBNSiguienteJLS3;
     public javax.swing.JCheckBox JCBFinalizado;
-    public javax.swing.JComboBox<String> JCBTecnico;
-    public javax.swing.JComboBox<String> JCBUsuario;
+    public javax.swing.JComboBox JCBTecnico;
     public javax.swing.JLabel JLBAsignarTecnico;
     public javax.swing.JLabel JLBDescripcion;
     public javax.swing.JLabel JLBDescripcion1;
-    public javax.swing.JLabel JLBDescripcion2;
     public javax.swing.JLabel JLBDescripcion3;
-    public javax.swing.JLabel JLBDescripcion4;
     public javax.swing.JLabel JLBLogo;
+    public javax.swing.JLabel JLBNombre2;
+    public javax.swing.JLabel JLBNombre3;
+    public javax.swing.JLabel JLBNombre4;
+    public javax.swing.JLabel JLBNombre5;
+    public javax.swing.JRadioButton JRBAsesoria;
+    public javax.swing.JRadioButton JRBPresencial1;
+    public javax.swing.JRadioButton JRBRemoto;
     public javax.swing.JTextField JTADescripcion;
+    public javax.swing.JTextField JTFConcepto;
     public javax.swing.JTextField JTFEmpresa;
-    public javax.swing.JTextField JTFTipo;
+    private javax.swing.ButtonGroup RBGTipoServicio;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
