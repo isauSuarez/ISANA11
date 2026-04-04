@@ -164,7 +164,7 @@ public class ModificarUsuario extends javax.swing.JFrame {
             }
         });
 
-        JTFempresa.setText("empresa");
+        JTFempresa.setText("Empresa");
         JTFempresa.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 JTFempresaFocusGained(evt);
@@ -173,6 +173,7 @@ public class ModificarUsuario extends javax.swing.JFrame {
                 JTFempresaFocusLost(evt);
             }
         });
+        JTFempresa.addActionListener(this::JTFempresaActionPerformed);
 
         JCBcliente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -479,6 +480,10 @@ public class ModificarUsuario extends javax.swing.JFrame {
             javax.swing.JOptionPane.showMessageDialog(this, "Error de formato, asegurate que el correo contenga '@' y un dominio.", "Correo inválido", javax.swing.JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_JBTguardarActionPerformed
+
+    private void JTFempresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFempresaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JTFempresaActionPerformed
 
     /**
      * @param args the command line arguments

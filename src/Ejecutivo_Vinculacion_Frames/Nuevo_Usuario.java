@@ -96,7 +96,7 @@ public class Nuevo_Usuario extends javax.swing.JFrame {
         getContentPane().add(lblInstruccionesNU1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 400, 30));
 
         JTFcliente.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        JTFcliente.setText("Nombre ");
+        JTFcliente.setText("Nombre");
         JTFcliente.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 JTFclienteFocusGained(evt);

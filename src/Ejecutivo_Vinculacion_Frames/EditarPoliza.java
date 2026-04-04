@@ -79,8 +79,17 @@ public class EditarPoliza extends javax.swing.JFrame {
         getContentPane().add(JBNCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 510, 90, 30));
 
         JTFNumPoliza.setForeground(new java.awt.Color(153, 153, 153));
-        JTFNumPoliza.setText("                         Número de póliza");
+        JTFNumPoliza.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        JTFNumPoliza.setText("Número de póliza");
         JTFNumPoliza.setPreferredSize(new java.awt.Dimension(350, 40));
+        JTFNumPoliza.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                JTFNumPolizaFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                JTFNumPolizaFocusLost(evt);
+            }
+        });
         JTFNumPoliza.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTFNumPolizaActionPerformed(evt);
@@ -363,6 +372,22 @@ public class EditarPoliza extends javax.swing.JFrame {
             evt.consume();
         }
     }//GEN-LAST:event_JTFCorreoKeyTyped
+
+    private void JTFNumPolizaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFNumPolizaFocusGained
+        // TODO add your handling code here:
+        if (JTFNumPoliza.getText().equals("Número de póliza")) {
+            JTFNumPoliza.setText("");
+            JTFNumPoliza.setForeground(new java.awt.Color(255, 255, 255));
+        }
+    }//GEN-LAST:event_JTFNumPolizaFocusGained
+
+    private void JTFNumPolizaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFNumPolizaFocusLost
+        // TODO add your handling code here:
+        if (JTFNumPoliza.getText().isEmpty()) {
+            JTFNumPoliza.setText("Número de póliza");
+            JTFNumPoliza.setForeground(new java.awt.Color(153, 153, 153));
+        }
+    }//GEN-LAST:event_JTFNumPolizaFocusLost
 
     /**
      * @param args the command line arguments

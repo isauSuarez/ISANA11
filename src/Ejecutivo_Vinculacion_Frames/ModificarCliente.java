@@ -445,7 +445,7 @@ public class ModificarCliente extends javax.swing.JFrame {
 
     private void JTFCorreoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFCorreoFocusGained
         // TODO add your handling code here:
-        if (JTFCorreo.getText().equals("Correo")) {
+        if (JTFCorreo.getText().equals("Correo electrónico")) {
             JTFCorreo.setText("");
             JTFCorreo.setForeground(new java.awt.Color(205, 205, 205));
         }
