@@ -118,7 +118,7 @@ public class ControladorModificarTicket2 implements ActionListener {
                     String usuario = rs.getString("usuario");
                     String empresa = rs.getString("nombreEmpresaP");
 
-                    vista.JTFEmpresa.setText(empresa + " + " + usuario);
+                    vista.JTFEmpresa.setText(usuario  + " - " + empresa);
                     vista.JTFEmpresa.setEditable(false);
 
                     vista.JTFConcepto.setText(rs.getString("conceptoT"));

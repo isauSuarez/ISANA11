@@ -40,6 +40,8 @@ public class NuevoTicket2 extends javax.swing.JFrame {
         JBNCancelar = new javax.swing.JButton();
         JBNguardar = new javax.swing.JButton();
         JTFdescripcion = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        JCBtecnico = new javax.swing.JComboBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -58,7 +60,7 @@ public class NuevoTicket2 extends javax.swing.JFrame {
         JTFEmpresa.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
         JTFEmpresa.setForeground(new java.awt.Color(153, 153, 153));
         JTFEmpresa.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        JTFEmpresa.setText("Empresa + usuario");
+        JTFEmpresa.setText("usuario - Empresa  ");
         JTFEmpresa.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         JTFEmpresa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -100,7 +102,7 @@ public class NuevoTicket2 extends javax.swing.JFrame {
         JLBDescripcion3.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
         JLBDescripcion3.setForeground(new java.awt.Color(153, 153, 153));
         JLBDescripcion3.setText("Concepto");
-        getContentPane().add(JLBDescripcion3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 100, 40));
+        getContentPane().add(JLBDescripcion3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 100, 40));
 
         JLBLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo ETS 75 px.png"))); // NOI18N
         getContentPane().add(JLBLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 430, -1, -1));
@@ -132,7 +134,13 @@ public class NuevoTicket2 extends javax.swing.JFrame {
 
         JTFdescripcion.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         JTFdescripcion.setText("Titulo descriptivo del ticket");
-        getContentPane().add(JTFdescripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 152, 350, 30));
+        getContentPane().add(JTFdescripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, 200, 30));
+
+        jLabel1.setText("Tecnico ");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 140, -1, -1));
+
+        JCBtecnico.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        getContentPane().add(JCBtecnico, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 160, 180, 30));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -191,6 +199,9 @@ public class NuevoTicket2 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton JBNCancelar;
     public javax.swing.JButton JBNguardar;
+    public javax.swing.JComboBox JCBTecnico;
+    public javax.swing.JComboBox JCBTecnico1;
+    public javax.swing.JComboBox JCBtecnico;
     private javax.swing.JLabel JLBAsignarTecnico;
     public javax.swing.JLabel JLBDescripcion;
     public javax.swing.JLabel JLBDescripcion1;
@@ -201,5 +212,6 @@ public class NuevoTicket2 extends javax.swing.JFrame {
     public javax.swing.JTextField JTFEmpresa;
     public javax.swing.JTextField JTFTipo;
     public javax.swing.JTextField JTFdescripcion;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

@@ -8,7 +8,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Types;
 import javax.swing.JOptionPane;
 
 public class ControladorNuevoTicket2 implements ActionListener {
@@ -30,17 +32,70 @@ public class ControladorNuevoTicket2 implements ActionListener {
         this.nombreEmpresa = nombreEmpresa;
         this.modalidadSeleccionada = modalidadSeleccionada;
 
-        this.vista.JBNguardar.addActionListener(this); // botón Guardar
-        this.vista.JBNCancelar.addActionListener(this);     // botón Cancelar
+        this.vista.JBNguardar.addActionListener(this);
+        this.vista.JBNCancelar.addActionListener(this);
 
         cargarDatosIniciales();
+        cargarTecnicos();
+    }
+
+    private static class TecnicoItem {
+        private int idEmpleado;
+        private String nombreCompleto;
+
+        public TecnicoItem(int idEmpleado, String nombreCompleto) {
+            this.idEmpleado = idEmpleado;
+            this.nombreCompleto = nombreCompleto;
+        }
+
+        public int getIdEmpleado() {
+            return idEmpleado;
+        }
+
+        @Override
+        public String toString() {
+            return nombreCompleto;
+        }
     }
 
     private void cargarDatosIniciales() {
-        vista.JTFEmpresa.setText(nombreUsuario  + " - " + nombreEmpresa );
+        vista.JTFEmpresa.setText(nombreUsuario + " - " + nombreEmpresa);
         vista.JTFTipo.setText(modalidadSeleccionada);
-vista.JTFEmpresa.setEnabled(false);
-vista.JTFTipo.setEnabled(false);
+
+        vista.JTFEmpresa.setEnabled(false);
+        vista.JTFTipo.setEnabled(false);
+    }
+
+    private void cargarTecnicos() {
+        String sql = "SELECT idEmpleado, CONCAT(nombresEmp, ' ', apellidosEmp) AS tecnico " +
+                     "FROM empleado " +
+                     "WHERE rolEmp = 'Tecnico' " +
+                     "ORDER BY nombresEmp, apellidosEmp";
+
+        try (Connection con = Conexion.getConexion();
+             PreparedStatement ps = con.prepareStatement(sql);
+             ResultSet rs = ps.executeQuery()) {
+
+            vista.JCBtecnico.removeAllItems();
+            vista.JCBtecnico.addItem("Sin asignar");
+
+            while (rs.next()) {
+                TecnicoItem item = new TecnicoItem(
+                        rs.getInt("idEmpleado"),
+                        rs.getString("tecnico")
+                );
+                vista.JCBtecnico.addItem(item);
+            }
+
+            System.out.println("Técnicos cargados correctamente.");
+
+        } catch (SQLException ex) {
+            System.out.println("Error al cargar técnicos: " + ex.getMessage());
+            JOptionPane.showMessageDialog(vista,
+                    "No se pudieron cargar los técnicos.",
+                    "Error",
+                    JOptionPane.ERROR_MESSAGE);
+        }
     }
 
     @Override
@@ -64,9 +119,24 @@ vista.JTFTipo.setEnabled(false);
             return;
         }
 
+        Object seleccionado = vista.JCBtecnico.getSelectedItem();
+        Integer idEmpleado = null;
+
+        if (seleccionado instanceof TecnicoItem) {
+            idEmpleado = ((TecnicoItem) seleccionado).getIdEmpleado();
+        }
+        
+                if (!(seleccionado instanceof TecnicoItem)) {
+            JOptionPane.showMessageDialog(vista,
+                    "Seleccione un técnico para asignar el ticket.",
+                    "Aviso",
+                    JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
         String sql = "INSERT INTO ticket "
-                + "(idPoliza, idUsuario, conceptoT, descripcionT, statusT, modalidadAtencionT, fechaCreacionT) "
-                + "VALUES (?, ?, ?, ?, ?, ?, CURDATE())";
+                + "(idPoliza, idUsuario, idEmpleado, conceptoT, descripcionT, statusT, modalidadAtencionT, fechaCreacionT) "
+                + "VALUES (?, ?, ?, ?, ?, ?, ?, CURDATE())";
 
         try (Connection con = Conexion.getConexion();
              PreparedStatement ps = con.prepareStatement(sql)) {
@@ -75,10 +145,17 @@ vista.JTFTipo.setEnabled(false);
 
             ps.setInt(1, idPoliza);
             ps.setInt(2, idUsuario);
-            ps.setString(3, concepto);
-            ps.setString(4, descripcion);
-            ps.setString(5, "Abierto");
-            ps.setString(6, modalidadSeleccionada);
+
+            if (idEmpleado == null) {
+                ps.setNull(3, Types.INTEGER);
+            } else {
+                ps.setInt(3, idEmpleado);
+            }
+
+            ps.setString(4, concepto);
+            ps.setString(5, descripcion);
+            ps.setString(6, "Proceso");
+            ps.setString(7, modalidadSeleccionada);
 
             int filas = ps.executeUpdate();
 

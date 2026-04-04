@@ -113,7 +113,7 @@ public class ModificarTicket2 extends javax.swing.JFrame {
                 JTFEmpresaActionPerformed(evt);
             }
         });
-        getContentPane().add(JTFEmpresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 80, 170, 40));
+        getContentPane().add(JTFEmpresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 80, 230, 40));
 
         JCBFinalizado.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
         JCBFinalizado.setText("  ¿Ticket Finalizado?");
@@ -149,7 +149,7 @@ public class ModificarTicket2 extends javax.swing.JFrame {
         JLBNombre2.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
         JLBNombre2.setForeground(new java.awt.Color(153, 153, 153));
         JLBNombre2.setText("Tipo de Servicio");
-        getContentPane().add(JLBNombre2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 120, -1, -1));
+        getContentPane().add(JLBNombre2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 140, -1, -1));
 
         RBGTipoServicio.add(JRBPresencial1);
         JRBPresencial1.addActionListener(new java.awt.event.ActionListener() {
@@ -157,25 +157,25 @@ public class ModificarTicket2 extends javax.swing.JFrame {
                 JRBPresencial1ActionPerformed(evt);
             }
         });
-        getContentPane().add(JRBPresencial1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 100, -1, -1));
+        getContentPane().add(JRBPresencial1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 120, -1, -1));
 
         RBGTipoServicio.add(JRBRemoto);
-        getContentPane().add(JRBRemoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 120, -1, -1));
+        getContentPane().add(JRBRemoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 140, -1, -1));
 
         RBGTipoServicio.add(JRBAsesoria);
-        getContentPane().add(JRBAsesoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 140, -1, -1));
+        getContentPane().add(JRBAsesoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 160, -1, -1));
 
         JLBNombre3.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
         JLBNombre3.setText("Presencial");
-        getContentPane().add(JLBNombre3, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 100, 120, 20));
+        getContentPane().add(JLBNombre3, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 120, 120, 20));
 
         JLBNombre4.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
         JLBNombre4.setText("Remoto");
-        getContentPane().add(JLBNombre4, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 120, 120, 20));
+        getContentPane().add(JLBNombre4, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 140, 120, 20));
 
         JLBNombre5.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
         JLBNombre5.setText("Asesoria");
-        getContentPane().add(JLBNombre5, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 140, 120, 20));
+        getContentPane().add(JLBNombre5, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 160, 120, 20));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
