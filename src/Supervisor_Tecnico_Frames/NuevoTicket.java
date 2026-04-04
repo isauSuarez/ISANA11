@@ -15,7 +15,7 @@ public class NuevoTicket extends javax.swing.JFrame {
      */
     public NuevoTicket() {
         initComponents();
-        this.setLocationRelativeTo(null); // Centra la ventana en tu monitor
+        //this.setLocationRelativeTo(null); // Centra la ventana en tu monitor
     }
 
     /**
@@ -32,17 +32,18 @@ public class NuevoTicket extends javax.swing.JFrame {
         JLBDescripcion1 = new javax.swing.JLabel();
         JLBDescripcion2 = new javax.swing.JLabel();
         JLBDescripcion3 = new javax.swing.JLabel();
-        JTFNumeroDePoliza = new javax.swing.JTextField();
         JBNCancelar = new javax.swing.JButton();
         JLBLogo = new javax.swing.JLabel();
         JBNSiguienteJLS3 = new javax.swing.JButton();
         JLBNombre2 = new javax.swing.JLabel();
-        JRBEscencial = new javax.swing.JRadioButton();
-        JRBProfesional = new javax.swing.JRadioButton();
-        JRBEmpresarial = new javax.swing.JRadioButton();
+        JRBPresencial = new javax.swing.JRadioButton();
+        JRBRemoto = new javax.swing.JRadioButton();
+        JRBAsesoria = new javax.swing.JRadioButton();
         JLBNombre3 = new javax.swing.JLabel();
         JLBNombre4 = new javax.swing.JLabel();
         JLBNombre5 = new javax.swing.JLabel();
+        JTFusuario = new javax.swing.JTextField();
+        JCBUsuario = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -72,17 +73,6 @@ public class NuevoTicket extends javax.swing.JFrame {
         JLBDescripcion3.setText("de atención requerida");
         getContentPane().add(JLBDescripcion3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 120, 290, 20));
 
-        JTFNumeroDePoliza.setFont(new java.awt.Font("Montserrat ExtraLight", 1, 12)); // NOI18N
-        JTFNumeroDePoliza.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        JTFNumeroDePoliza.setText("Numero de poliza");
-        JTFNumeroDePoliza.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        JTFNumeroDePoliza.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JTFNumeroDePolizaActionPerformed(evt);
-            }
-        });
-        getContentPane().add(JTFNumeroDePoliza, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, 310, 50));
-
         JBNCancelar.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
         JBNCancelar.setText("Cancelar");
         JBNCancelar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
@@ -94,7 +84,7 @@ public class NuevoTicket extends javax.swing.JFrame {
         JBNSiguienteJLS3.setBackground(new java.awt.Color(0, 153, 102));
         JBNSiguienteJLS3.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
         JBNSiguienteJLS3.setForeground(new java.awt.Color(255, 255, 255));
-        JBNSiguienteJLS3.setText("Guardar");
+        JBNSiguienteJLS3.setText("Continuar");
         JBNSiguienteJLS3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(39, 174, 96), 1, true));
         JBNSiguienteJLS3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         JBNSiguienteJLS3.setOpaque(true);
@@ -111,41 +101,45 @@ public class NuevoTicket extends javax.swing.JFrame {
         JLBNombre2.setText("Tipo de Servicio");
         getContentPane().add(JLBNombre2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 220, -1, -1));
 
-        JRBEscencial.addActionListener(new java.awt.event.ActionListener() {
+        JRBPresencial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JRBEscencialActionPerformed(evt);
+                JRBPresencialActionPerformed(evt);
             }
         });
-        getContentPane().add(JRBEscencial, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 260, -1, -1));
-        getContentPane().add(JRBProfesional, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 300, -1, -1));
-        getContentPane().add(JRBEmpresarial, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 340, -1, -1));
+        getContentPane().add(JRBPresencial, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 260, -1, -1));
+        getContentPane().add(JRBRemoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 300, -1, -1));
+        getContentPane().add(JRBAsesoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 340, -1, -1));
 
         JLBNombre3.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
-        JLBNombre3.setText("Escencial");
+        JLBNombre3.setText("Presencial");
         getContentPane().add(JLBNombre3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 260, 120, 20));
 
         JLBNombre4.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
-        JLBNombre4.setText("Profesional");
+        JLBNombre4.setText("Remoto");
         getContentPane().add(JLBNombre4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 300, 120, 20));
 
         JLBNombre5.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
-        JLBNombre5.setText("Empresarial");
+        JLBNombre5.setText("Asesoria");
         getContentPane().add(JLBNombre5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 340, 120, 20));
 
-        pack();
-    }// </editor-fold>//GEN-END:initComponents
+        JTFusuario.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        JTFusuario.setText("Usuario");
+        getContentPane().add(JTFusuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, 120, -1));
 
-    private void JTFNumeroDePolizaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFNumeroDePolizaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_JTFNumeroDePolizaActionPerformed
+        JCBUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        getContentPane().add(JCBUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 180, 150, -1));
+
+        pack();
+        setLocationRelativeTo(null);
+    }// </editor-fold>//GEN-END:initComponents
 
     private void JBNSiguienteJLS3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBNSiguienteJLS3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_JBNSiguienteJLS3ActionPerformed
 
-    private void JRBEscencialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRBEscencialActionPerformed
+    private void JRBPresencialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRBPresencialActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_JRBEscencialActionPerformed
+    }//GEN-LAST:event_JRBPresencialActionPerformed
 
     /**
      * @param args the command line arguments
@@ -189,6 +183,7 @@ public class NuevoTicket extends javax.swing.JFrame {
     private javax.swing.ButtonGroup JBGTipoServicio;
     public javax.swing.JButton JBNCancelar;
     public javax.swing.JButton JBNSiguienteJLS3;
+    public javax.swing.JComboBox<String> JCBUsuario;
     public javax.swing.JLabel JLBDescripcion1;
     public javax.swing.JLabel JLBDescripcion2;
     public javax.swing.JLabel JLBDescripcion3;
@@ -198,9 +193,9 @@ public class NuevoTicket extends javax.swing.JFrame {
     public javax.swing.JLabel JLBNombre4;
     public javax.swing.JLabel JLBNombre5;
     public javax.swing.JLabel JLBNuevoTicket;
-    public javax.swing.JRadioButton JRBEmpresarial;
-    public javax.swing.JRadioButton JRBEscencial;
-    public javax.swing.JRadioButton JRBProfesional;
-    public javax.swing.JTextField JTFNumeroDePoliza;
+    public javax.swing.JRadioButton JRBAsesoria;
+    public javax.swing.JRadioButton JRBPresencial;
+    public javax.swing.JRadioButton JRBRemoto;
+    public javax.swing.JTextField JTFusuario;
     // End of variables declaration//GEN-END:variables
 }

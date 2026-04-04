@@ -36,10 +36,10 @@ public class NuevoTicket2 extends javax.swing.JFrame {
         JLBDescripcion = new javax.swing.JLabel();
         JTADescripcion = new javax.swing.JTextField();
         JLBDescripcion3 = new javax.swing.JLabel();
-        JCBUsuario = new javax.swing.JComboBox<>();
         JLBLogo = new javax.swing.JLabel();
         JBNCancelar = new javax.swing.JButton();
-        JBNSiguienteJLS3 = new javax.swing.JButton();
+        JBNguardar = new javax.swing.JButton();
+        JTFdescripcion = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -58,19 +58,19 @@ public class NuevoTicket2 extends javax.swing.JFrame {
         JTFEmpresa.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
         JTFEmpresa.setForeground(new java.awt.Color(153, 153, 153));
         JTFEmpresa.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        JTFEmpresa.setText("Empresa");
+        JTFEmpresa.setText("Empresa + usuario");
         JTFEmpresa.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         JTFEmpresa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTFEmpresaActionPerformed(evt);
             }
         });
-        getContentPane().add(JTFEmpresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 80, 170, 40));
+        getContentPane().add(JTFEmpresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 80, 230, 40));
 
         JLBDescripcion2.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
         JLBDescripcion2.setForeground(new java.awt.Color(153, 153, 153));
         JLBDescripcion2.setText("Modalidad");
-        getContentPane().add(JLBDescripcion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 80, 80, 40));
+        getContentPane().add(JLBDescripcion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 50, 80, 40));
 
         JTFTipo.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
         JTFTipo.setForeground(new java.awt.Color(153, 153, 153));
@@ -92,25 +92,15 @@ public class NuevoTicket2 extends javax.swing.JFrame {
 
         JTADescripcion.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
         JTADescripcion.setForeground(new java.awt.Color(153, 153, 153));
+        JTADescripcion.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         JTADescripcion.setText("Descripción de los servicios a realizar y detalles puntuales");
         JTADescripcion.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         getContentPane().add(JTADescripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, 540, 160));
 
         JLBDescripcion3.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
         JLBDescripcion3.setForeground(new java.awt.Color(153, 153, 153));
-        JLBDescripcion3.setText("Usuario solicitante:");
-        getContentPane().add(JLBDescripcion3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 160, 40));
-
-        JCBUsuario.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
-        JCBUsuario.setForeground(new java.awt.Color(153, 153, 153));
-        JCBUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Usuario", "Usuario", "User" }));
-        JCBUsuario.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        JCBUsuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JCBUsuarioActionPerformed(evt);
-            }
-        });
-        getContentPane().add(JCBUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 150, 370, 40));
+        JLBDescripcion3.setText("Concepto");
+        getContentPane().add(JLBDescripcion3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 100, 40));
 
         JLBLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo ETS 75 px.png"))); // NOI18N
         getContentPane().add(JLBLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 430, -1, -1));
@@ -125,20 +115,24 @@ public class NuevoTicket2 extends javax.swing.JFrame {
         });
         getContentPane().add(JBNCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 460, 90, 30));
 
-        JBNSiguienteJLS3.setBackground(new java.awt.Color(0, 153, 102));
-        JBNSiguienteJLS3.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
-        JBNSiguienteJLS3.setForeground(new java.awt.Color(255, 255, 255));
-        JBNSiguienteJLS3.setText("Guardar");
-        JBNSiguienteJLS3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(39, 174, 96), 1, true));
-        JBNSiguienteJLS3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        JBNSiguienteJLS3.setOpaque(true);
-        JBNSiguienteJLS3.setPreferredSize(new java.awt.Dimension(100, 25));
-        JBNSiguienteJLS3.addActionListener(new java.awt.event.ActionListener() {
+        JBNguardar.setBackground(new java.awt.Color(0, 153, 102));
+        JBNguardar.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        JBNguardar.setForeground(new java.awt.Color(255, 255, 255));
+        JBNguardar.setText("Guardar");
+        JBNguardar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(39, 174, 96), 1, true));
+        JBNguardar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        JBNguardar.setOpaque(true);
+        JBNguardar.setPreferredSize(new java.awt.Dimension(100, 25));
+        JBNguardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JBNSiguienteJLS3ActionPerformed(evt);
+                JBNguardarActionPerformed(evt);
             }
         });
-        getContentPane().add(JBNSiguienteJLS3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 430, 200, 42));
+        getContentPane().add(JBNguardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 430, 200, 42));
+
+        JTFdescripcion.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        JTFdescripcion.setText("Titulo descriptivo del ticket");
+        getContentPane().add(JTFdescripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 152, 350, 30));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -147,17 +141,13 @@ public class NuevoTicket2 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_JTFTipoActionPerformed
 
-    private void JCBUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCBUsuarioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_JCBUsuarioActionPerformed
-
     private void JBNCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBNCancelarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_JBNCancelarActionPerformed
 
-    private void JBNSiguienteJLS3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBNSiguienteJLS3ActionPerformed
+    private void JBNguardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBNguardarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_JBNSiguienteJLS3ActionPerformed
+    }//GEN-LAST:event_JBNguardarActionPerformed
 
     private void JTFEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFEmpresaActionPerformed
         // TODO add your handling code here:
@@ -200,8 +190,7 @@ public class NuevoTicket2 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton JBNCancelar;
-    public javax.swing.JButton JBNSiguienteJLS3;
-    public javax.swing.JComboBox<String> JCBUsuario;
+    public javax.swing.JButton JBNguardar;
     private javax.swing.JLabel JLBAsignarTecnico;
     public javax.swing.JLabel JLBDescripcion;
     public javax.swing.JLabel JLBDescripcion1;
@@ -211,5 +200,6 @@ public class NuevoTicket2 extends javax.swing.JFrame {
     public javax.swing.JTextField JTADescripcion;
     public javax.swing.JTextField JTFEmpresa;
     public javax.swing.JTextField JTFTipo;
+    public javax.swing.JTextField JTFdescripcion;
     // End of variables declaration//GEN-END:variables
 }

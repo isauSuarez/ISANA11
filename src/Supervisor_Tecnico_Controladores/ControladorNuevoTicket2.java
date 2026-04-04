@@ -1,77 +1,125 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Supervisor_Tecnico_Controladores;
 
-/**
- *
- * @author glomy
- */
-
-import Supervisor_Tecnico_Controladores.ControladorMenuSupervisor;
-import Supervisor_Tecnico_Frames.NuevoTicket2;
-import Supervisor_Tecnico_Frames.MenuSupervisorTecnico;
 import Conexion_BD.Conexion;
+import Supervisor_Tecnico_Frames.MenuSupervisorTecnico;
+import Supervisor_Tecnico_Frames.NuevoTicket;
+import Supervisor_Tecnico_Frames.NuevoTicket2;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 public class ControladorNuevoTicket2 implements ActionListener {
-    
-    private NuevoTicket2 vista2;
 
-    public ControladorNuevoTicket2(NuevoTicket2 vista2) {
-        this.vista2 = vista2;
-        
-        this.vista2.JBNSiguienteJLS3.addActionListener(this); // Asumiendo que es el botón Guardar
-        this.vista2.JBNCancelar.addActionListener(this);
+    private NuevoTicket2 vista;
+    private int idUsuario;
+    private int idPoliza;
+    private String nombreUsuario;
+    private String nombreEmpresa;
+    private String modalidadSeleccionada;
+
+    public ControladorNuevoTicket2(NuevoTicket2 vista, int idUsuario, int idPoliza,
+                                   String nombreUsuario, String nombreEmpresa,
+                                   String modalidadSeleccionada) {
+        this.vista = vista;
+        this.idUsuario = idUsuario;
+        this.idPoliza = idPoliza;
+        this.nombreUsuario = nombreUsuario;
+        this.nombreEmpresa = nombreEmpresa;
+        this.modalidadSeleccionada = modalidadSeleccionada;
+
+        this.vista.JBNguardar.addActionListener(this); // botón Guardar
+        this.vista.JBNCancelar.addActionListener(this);     // botón Cancelar
+
+        cargarDatosIniciales();
+    }
+
+    private void cargarDatosIniciales() {
+        vista.JTFEmpresa.setText(nombreUsuario  + " - " + nombreEmpresa );
+        vista.JTFTipo.setText(modalidadSeleccionada);
+vista.JTFEmpresa.setEnabled(false);
+vista.JTFTipo.setEnabled(false);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        
-        // Botón GUARDAR
-        if (e.getSource() == vista2.JBNSiguienteJLS3) {
-            String empresa = vista2.JTFEmpresa.getText();
-            String tipo = vista2.JTFTipo.getText();
-            String descripcion = vista2.JTADescripcion.getText();
-            
-            // Validación
-            if (empresa.isEmpty() || tipo.isEmpty() || descripcion.isEmpty() || descripcion.equals("Descripción de los servicios a realizar y detalles puntuales")) {
-                JOptionPane.showMessageDialog(vista2, "Complete todos los detalles del ticket.", "Aviso", JOptionPane.WARNING_MESSAGE);
-                return;
-            }
-            
-            // Aquí Query a SQL: INSERT INTO ticket (descripcionT, statusT, modalidadAtencionT, fechaCreacionT...) VALUES (...)
-            try {
-                Connection con = Conexion.getConexion();
-                if(con != null) {
-                    // String sql = "INSERT INTO ticket (...) VALUES (...)";
-                    // PreparedStatement ps = con.prepareStatement(sql);
-                    // ps.executeUpdate();
-                    System.out.println("Guardando en BD...");
-                }
-            } catch (Exception ex) {
-                System.out.println("Aún no hay BD conectada.");
-            }
-
-            JOptionPane.showMessageDialog(vista2, "¡Ticket creado exitosamente!");
-            volverAlMenu();
-        }
-        
-        // Botón CANCELAR
-        else if (e.getSource() == vista2.JBNCancelar) {
-            volverAlMenu();
+        if (e.getSource() == vista.JBNguardar) {
+            registrarTicket();
+        } else if (e.getSource() == vista.JBNCancelar) {
+            volverAPaso1();
         }
     }
-    
+
+    private void registrarTicket() {
+        String concepto = vista.JTFdescripcion.getText().trim();
+        String descripcion = vista.JTADescripcion.getText().trim();
+
+        if (concepto.isEmpty() || descripcion.isEmpty()) {
+            JOptionPane.showMessageDialog(vista,
+                    "Complete el concepto y la descripción del ticket.",
+                    "Aviso",
+                    JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        String sql = "INSERT INTO ticket "
+                + "(idPoliza, idUsuario, conceptoT, descripcionT, statusT, modalidadAtencionT, fechaCreacionT) "
+                + "VALUES (?, ?, ?, ?, ?, ?, CURDATE())";
+
+        try (Connection con = Conexion.getConexion();
+             PreparedStatement ps = con.prepareStatement(sql)) {
+
+            System.out.println("Conexión correcta. Registrando ticket...");
+
+            ps.setInt(1, idPoliza);
+            ps.setInt(2, idUsuario);
+            ps.setString(3, concepto);
+            ps.setString(4, descripcion);
+            ps.setString(5, "Abierto");
+            ps.setString(6, modalidadSeleccionada);
+
+            int filas = ps.executeUpdate();
+
+            if (filas > 0) {
+                System.out.println("Ticket registrado correctamente.");
+                System.out.println("Usuario: " + nombreUsuario);
+                System.out.println("Empresa: " + nombreEmpresa);
+                System.out.println("Modalidad: " + modalidadSeleccionada);
+                System.out.println("Concepto: " + concepto);
+
+                JOptionPane.showMessageDialog(vista,
+                        "Ticket registrado correctamente.");
+
+                volverAlMenu();
+            } else {
+                JOptionPane.showMessageDialog(vista,
+                        "No se pudo registrar el ticket.",
+                        "Error",
+                        JOptionPane.ERROR_MESSAGE);
+            }
+
+        } catch (SQLException ex) {
+            System.out.println("Error al registrar ticket: " + ex.getMessage());
+            JOptionPane.showMessageDialog(vista,
+                    "Hubo un error con la BD: " + ex.getMessage(),
+                    "Error",
+                    JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+    private void volverAPaso1() {
+        NuevoTicket vistaPaso1 = new NuevoTicket();
+        new ControladorNuevoTicket(vistaPaso1);
+        vistaPaso1.setVisible(true);
+        vista.dispose();
+    }
+
     private void volverAlMenu() {
         MenuSupervisorTecnico menu = new MenuSupervisorTecnico();
-        ControladorMenuSupervisor ctrlMenu = new ControladorMenuSupervisor(menu);
+        new ControladorMenuSupervisor(menu);
         menu.setVisible(true);
-        vista2.dispose();
+        vista.dispose();
     }
 }
