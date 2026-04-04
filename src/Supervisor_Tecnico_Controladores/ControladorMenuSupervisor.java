@@ -2,9 +2,8 @@ package Supervisor_Tecnico_Controladores;
 
 import Menus_Inicio.ControladorLogin;
 import Menus_Inicio.Inicio_Sesion;
-import Supervisor_Tecnico_Frames.AsignarTicket;
 import Supervisor_Tecnico_Frames.MenuSupervisorTecnico;
-import Supervisor_Tecnico_Frames.ModificarTecnico;
+import Supervisor_Tecnico_Frames.ModificarTecnico2;
 import Supervisor_Tecnico_Frames.ModificarTicket;
 import Supervisor_Tecnico_Frames.NuevoTicket;
 import java.awt.event.ActionEvent;
@@ -18,10 +17,7 @@ public class ControladorMenuSupervisor implements ActionListener {
         this.vistaMenu = vistaMenu;
 
         this.vistaMenu.JBNNuevoTicket.addActionListener(this);
-        this.vistaMenu.JBNAsignarTicket.addActionListener(this);
-
         this.vistaMenu.JMINuevoTicket.addActionListener(this);
-        this.vistaMenu.JMIAsignarTicket.addActionListener(this);
         this.vistaMenu.JMIEditarTicket.addActionListener(this);
         this.vistaMenu.JMIEditarTecnico.addActionListener(this);
         this.vistaMenu.JMICerrarSesion.addActionListener(this);
@@ -37,13 +33,6 @@ public class ControladorMenuSupervisor implements ActionListener {
             vistaMenu.dispose();
         }
 
-        else if (e.getSource() == vistaMenu.JBNAsignarTicket || e.getSource() == vistaMenu.JMIAsignarTicket) {
-            AsignarTicket vista = new AsignarTicket();
-            new ControladorAsignarTicket(vista);
-            vista.setVisible(true);
-            vistaMenu.dispose();
-        }
-
         else if (e.getSource() == vistaMenu.JMIEditarTicket) {
             ModificarTicket vista = new ModificarTicket();
             new ControladorModificarTicket(vista);
@@ -52,8 +41,8 @@ public class ControladorMenuSupervisor implements ActionListener {
         }
 
         else if (e.getSource() == vistaMenu.JMIEditarTecnico) {
-            ModificarTecnico vista = new ModificarTecnico();
-            new ControladorModificarTecnico(vista);
+            ModificarTecnico2 vista = new ModificarTecnico2();
+            new ControladorModificarTecnico2(vista);
             vista.setVisible(true);
             vistaMenu.dispose();
         }

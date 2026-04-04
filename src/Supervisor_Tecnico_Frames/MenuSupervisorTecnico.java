@@ -42,7 +42,6 @@ public class MenuSupervisorTecnico extends javax.swing.JFrame {
         JMBSupervisorTecnico = new javax.swing.JMenuBar();
         JMNSTTickets = new javax.swing.JMenu();
         JMINuevoTicket = new javax.swing.JMenuItem();
-        JMIAsignarTicket = new javax.swing.JMenuItem();
         JMIEditarTicket = new javax.swing.JMenuItem();
         JMNSTTecnicos = new javax.swing.JMenu();
         JMIEditarTecnico = new javax.swing.JMenuItem();
@@ -95,9 +94,6 @@ public class MenuSupervisorTecnico extends javax.swing.JFrame {
             }
         });
         JMNSTTickets.add(JMINuevoTicket);
-
-        JMIAsignarTicket.setText("Asignar Ticket");
-        JMNSTTickets.add(JMIAsignarTicket);
 
         JMIEditarTicket.setText("Editar Ticket");
         JMNSTTickets.add(JMIEditarTicket);
@@ -174,7 +170,6 @@ public class MenuSupervisorTecnico extends javax.swing.JFrame {
     public javax.swing.JLabel JLBBienvenido;
     public javax.swing.JLabel JLBSupervisorTecnico;
     private javax.swing.JMenuBar JMBSupervisorTecnico;
-    public javax.swing.JMenuItem JMIAsignarTicket;
     public javax.swing.JMenuItem JMICerrarSesion;
     public javax.swing.JMenuItem JMIEditarTecnico;
     public javax.swing.JMenuItem JMIEditarTicket;
