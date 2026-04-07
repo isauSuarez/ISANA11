@@ -1,39 +1,46 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Tecnico_Controladores;
 
-/**
- *
- * @author glomy
- */
-
-import Tecnico_Controladores.ControladorMisTickets;
+import Menus_Inicio.ControladorLogin;
+import Menus_Inicio.Inicio_Sesion;
+import Menus_Inicio.SesionEmpleado;
 import Tecnico_Frames.Menu_Tecnico;
 import Tecnico_Frames.MisTickets;
-import Menus_Inicio.Inicio_Sesion;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class ControladorMenuTecnico implements ActionListener {
-    private Menu_Tecnico vistaMenu;
 
-    public ControladorMenuTecnico(Menu_Tecnico vistaMenu) {
+    private Menu_Tecnico vistaMenu;
+    private int idEmpleado;
+
+    public ControladorMenuTecnico(Menu_Tecnico vistaMenu, int idEmpleado) {
         this.vistaMenu = vistaMenu;
+        this.idEmpleado = idEmpleado;
+
         this.vistaMenu.JBNMisTickets.addActionListener(this);
         this.vistaMenu.JMIMisTickets.addActionListener(this);
         this.vistaMenu.JMICerrarSesion.addActionListener(this);
+    }
+
+    // Constructor adicional para no romper llamadas viejas
+    public ControladorMenuTecnico(Menu_Tecnico vistaMenu) {
+        this(vistaMenu, SesionEmpleado.getIdEmpleado());
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == vistaMenu.JBNMisTickets || e.getSource() == vistaMenu.JMIMisTickets) {
             MisTickets vista = new MisTickets();
-            new ControladorMisTickets(vista);
+            new ControladorMisTickets(vista, idEmpleado);
             vista.setVisible(true);
             vistaMenu.dispose();
+        } 
+        else if (e.getSource() == vistaMenu.JMICerrarSesion) {
+            SesionEmpleado.cerrarSesion();
+            Inicio_Sesion login = new Inicio_Sesion();
+            new ControladorLogin(login);
+            login.setVisible(true);
+            vistaMenu.dispose();
         }
-        // Lógica para cerrar sesión...
     }
 }

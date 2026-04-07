@@ -15,7 +15,7 @@ public class MisTickets extends javax.swing.JFrame {
      */
     public MisTickets() {
         initComponents();
-        this.setSize(495, 550); // Fuerza el tamaño exacto
+        this.setSize(595, 650); // Fuerza el tamaño exacto
         this.setLocationRelativeTo(null); // Centra la ventana en tu monitor
     }
 
@@ -28,37 +28,45 @@ public class MisTickets extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        JCBTicketsA = new javax.swing.JComboBox<>();
         JLBMisTickets = new javax.swing.JLabel();
         JCBTicketsR = new javax.swing.JComboBox<>();
-        JCBTicketsP = new javax.swing.JComboBox<>();
         JBNCancelar = new javax.swing.JButton();
-        JBNSiguienteJLS4 = new javax.swing.JButton();
-        JBNSiguienteJLS3 = new javax.swing.JButton();
-        JBNSiguienteJLS2 = new javax.swing.JButton();
+        JBNSiguienteLS4 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        JLBNombre2 = new javax.swing.JLabel();
+        JRBPresencial2 = new javax.swing.JRadioButton();
+        JRBRemoto = new javax.swing.JRadioButton();
+        JRBAsesoria = new javax.swing.JRadioButton();
+        JLBNombre3 = new javax.swing.JLabel();
+        JLBNombre4 = new javax.swing.JLabel();
+        JLBNombre5 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        JRBAsignado = new javax.swing.JRadioButton();
+        JRBProceso = new javax.swing.JRadioButton();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        JRBCerrados = new javax.swing.JRadioButton();
+        jLabel6 = new javax.swing.JLabel();
+        JLBNombreTec = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        JCBTicketsA.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
-        JCBTicketsA.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tickets de asesoria", "Ticket", "Ticket", "Ticket" }));
-        JCBTicketsA.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 153, 153), 2, true));
-        getContentPane().add(JCBTicketsA, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 70, 330, 50));
-
         JLBMisTickets.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         JLBMisTickets.setForeground(new java.awt.Color(102, 102, 102));
         JLBMisTickets.setText("Mis Tickets");
-        getContentPane().add(JLBMisTickets, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, -1, -1));
+        getContentPane().add(JLBMisTickets, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 10, -1, -1));
 
         JCBTicketsR.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
-        JCBTicketsR.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tickets remotos", "Ticket", "Ticket", "Ticket" }));
         JCBTicketsR.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 153, 153), 2, true));
-        getContentPane().add(JCBTicketsR, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 200, 330, 50));
-
-        JCBTicketsP.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
-        JCBTicketsP.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tickets presenciales", "Ticket", "Ticket", "Ticket" }));
-        JCBTicketsP.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 153, 153), 2, true));
-        getContentPane().add(JCBTicketsP, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 330, 330, 50));
+        JCBTicketsR.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JCBTicketsRActionPerformed(evt);
+            }
+        });
+        getContentPane().add(JCBTicketsR, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 310, 400, 50));
 
         JBNCancelar.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
         JBNCancelar.setText("Cancelar");
@@ -68,52 +76,80 @@ public class MisTickets extends javax.swing.JFrame {
                 JBNCancelarActionPerformed(evt);
             }
         });
-        getContentPane().add(JBNCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 460, 90, 30));
+        getContentPane().add(JBNCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 470, 90, 30));
 
-        JBNSiguienteJLS4.setBackground(new java.awt.Color(0, 153, 102));
-        JBNSiguienteJLS4.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
-        JBNSiguienteJLS4.setForeground(new java.awt.Color(255, 255, 255));
-        JBNSiguienteJLS4.setText("Siguiente");
-        JBNSiguienteJLS4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(39, 174, 96), 1, true));
-        JBNSiguienteJLS4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        JBNSiguienteJLS4.setOpaque(true);
-        JBNSiguienteJLS4.setPreferredSize(new java.awt.Dimension(100, 25));
-        JBNSiguienteJLS4.addActionListener(new java.awt.event.ActionListener() {
+        JBNSiguienteLS4.setBackground(new java.awt.Color(0, 153, 102));
+        JBNSiguienteLS4.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        JBNSiguienteLS4.setForeground(new java.awt.Color(255, 255, 255));
+        JBNSiguienteLS4.setText("Siguiente");
+        JBNSiguienteLS4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(39, 174, 96), 1, true));
+        JBNSiguienteLS4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        JBNSiguienteLS4.setOpaque(true);
+        JBNSiguienteLS4.setPreferredSize(new java.awt.Dimension(100, 25));
+        JBNSiguienteLS4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JBNSiguienteJLS4ActionPerformed(evt);
+                JBNSiguienteLS4ActionPerformed(evt);
             }
         });
-        getContentPane().add(JBNSiguienteJLS4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 400, 200, 42));
+        getContentPane().add(JBNSiguienteLS4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 450, 200, 42));
 
-        JBNSiguienteJLS3.setBackground(new java.awt.Color(0, 153, 102));
-        JBNSiguienteJLS3.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
-        JBNSiguienteJLS3.setForeground(new java.awt.Color(255, 255, 255));
-        JBNSiguienteJLS3.setText("Siguiente");
-        JBNSiguienteJLS3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(39, 174, 96), 1, true));
-        JBNSiguienteJLS3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        JBNSiguienteJLS3.setOpaque(true);
-        JBNSiguienteJLS3.setPreferredSize(new java.awt.Dimension(100, 25));
-        JBNSiguienteJLS3.addActionListener(new java.awt.event.ActionListener() {
+        jLabel2.setText("Concepto del Ticket");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 280, 130, -1));
+
+        jLabel3.setText("Ticket Status");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 70, 80, 20));
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 130, 140, 50));
+
+        JLBNombre2.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        JLBNombre2.setForeground(new java.awt.Color(153, 153, 153));
+        JLBNombre2.setText("Tipo de Servicio");
+        getContentPane().add(JLBNombre2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, -1, -1));
+
+        JRBPresencial2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JBNSiguienteJLS3ActionPerformed(evt);
+                JRBPresencial2ActionPerformed(evt);
             }
         });
-        getContentPane().add(JBNSiguienteJLS3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 270, 200, 42));
+        getContentPane().add(JRBPresencial2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, -1, -1));
 
-        JBNSiguienteJLS2.setBackground(new java.awt.Color(0, 153, 102));
-        JBNSiguienteJLS2.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
-        JBNSiguienteJLS2.setForeground(new java.awt.Color(255, 255, 255));
-        JBNSiguienteJLS2.setText("Siguiente");
-        JBNSiguienteJLS2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(39, 174, 96), 1, true));
-        JBNSiguienteJLS2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        JBNSiguienteJLS2.setOpaque(true);
-        JBNSiguienteJLS2.setPreferredSize(new java.awt.Dimension(100, 25));
-        JBNSiguienteJLS2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JBNSiguienteJLS2ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(JBNSiguienteJLS2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, 200, 42));
+        getContentPane().add(JRBRemoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, -1, -1));
+
+        getContentPane().add(JRBAsesoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 190, -1, -1));
+
+        JLBNombre3.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        JLBNombre3.setText("Presencial");
+        getContentPane().add(JLBNombre3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 120, 20));
+
+        JLBNombre4.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        JLBNombre4.setText("Remoto");
+        getContentPane().add(JLBNombre4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, 120, 20));
+
+        JLBNombre5.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        JLBNombre5.setText("Asesoria");
+        getContentPane().add(JLBNombre5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, 120, 20));
+
+        jLabel1.setText("Asignados");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 110, -1, -1));
+
+        getContentPane().add(JRBAsignado, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 110, -1, -1));
+
+        getContentPane().add(JRBProceso, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 150, -1, -1));
+
+        jLabel4.setText("En Proceso");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 150, -1, -1));
+
+        jLabel5.setText("Cerrados");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 190, -1, -1));
+
+        getContentPane().add(JRBCerrados, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 190, -1, -1));
+
+        jLabel6.setText("Filtrados Adicionales");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 100, -1, -1));
+
+        JLBNombreTec.setText("Nombre");
+        getContentPane().add(JLBNombreTec, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 10, 100, 30));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -122,17 +158,17 @@ public class MisTickets extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_JBNCancelarActionPerformed
 
-    private void JBNSiguienteJLS4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBNSiguienteJLS4ActionPerformed
+    private void JBNSiguienteLS4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBNSiguienteLS4ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_JBNSiguienteJLS4ActionPerformed
+    }//GEN-LAST:event_JBNSiguienteLS4ActionPerformed
 
-    private void JBNSiguienteJLS3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBNSiguienteJLS3ActionPerformed
+    private void JCBTicketsRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCBTicketsRActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_JBNSiguienteJLS3ActionPerformed
+    }//GEN-LAST:event_JCBTicketsRActionPerformed
 
-    private void JBNSiguienteJLS2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBNSiguienteJLS2ActionPerformed
+    private void JRBPresencial2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRBPresencial2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_JBNSiguienteJLS2ActionPerformed
+    }//GEN-LAST:event_JRBPresencial2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -171,12 +207,26 @@ public class MisTickets extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton JBNCancelar;
-    public javax.swing.JButton JBNSiguienteJLS2;
-    public javax.swing.JButton JBNSiguienteJLS3;
-    public javax.swing.JButton JBNSiguienteJLS4;
-    public javax.swing.JComboBox<String> JCBTicketsA;
-    public javax.swing.JComboBox<String> JCBTicketsP;
+    public javax.swing.JButton JBNSiguienteLS4;
     public javax.swing.JComboBox<String> JCBTicketsR;
     public javax.swing.JLabel JLBMisTickets;
+    public javax.swing.JLabel JLBNombre2;
+    public javax.swing.JLabel JLBNombre3;
+    public javax.swing.JLabel JLBNombre4;
+    public javax.swing.JLabel JLBNombre5;
+    public javax.swing.JLabel JLBNombreTec;
+    public javax.swing.JRadioButton JRBAsesoria;
+    public javax.swing.JRadioButton JRBAsignado;
+    public javax.swing.JRadioButton JRBCerrados;
+    public javax.swing.JRadioButton JRBPresencial2;
+    public javax.swing.JRadioButton JRBProceso;
+    public javax.swing.JRadioButton JRBRemoto;
+    public javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     // End of variables declaration//GEN-END:variables
 }

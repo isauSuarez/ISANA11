@@ -125,9 +125,9 @@ public class Menu_Tecnico extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
-        public void run() {
+            public void run() {
             Menu_Tecnico vista = new Menu_Tecnico();
-            new Tecnico_Controladores.ControladorMenuTecnico(vista);
+            new Tecnico_Controladores.ControladorMenuTecnico(vista, 0);
             vista.setVisible(true);
         }
     });

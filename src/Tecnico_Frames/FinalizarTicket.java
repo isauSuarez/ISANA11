@@ -38,8 +38,11 @@ public class FinalizarTicket extends javax.swing.JFrame {
         JLBDescripcion3 = new javax.swing.JLabel();
         JTADetalles = new javax.swing.JTextField();
         JBNCancelar = new javax.swing.JButton();
-        JBNSiguienteJLS3 = new javax.swing.JButton();
+        JBNGuardarLS3 = new javax.swing.JButton();
+        JCBProceso = new javax.swing.JCheckBox();
         JCBFinalizado = new javax.swing.JCheckBox();
+        JTFConcepto = new javax.swing.JTextField();
+        JLBDescripcion4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -55,13 +58,13 @@ public class FinalizarTicket extends javax.swing.JFrame {
                 JTFTipoActionPerformed(evt);
             }
         });
-        getContentPane().add(JTFTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 60, 180, 40));
+        getContentPane().add(JTFTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 70, 180, 40));
 
         JLBDescripcion.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
         JLBDescripcion.setForeground(new java.awt.Color(153, 153, 153));
         JLBDescripcion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         JLBDescripcion.setText("Detalles del ticket");
-        getContentPane().add(JLBDescripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 120, 150, -1));
+        getContentPane().add(JLBDescripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 130, 150, -1));
 
         JTANotas.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
         JTANotas.setForeground(new java.awt.Color(153, 153, 153));
@@ -86,37 +89,37 @@ public class FinalizarTicket extends javax.swing.JFrame {
                 JTANotasKeyTyped(evt);
             }
         });
-        getContentPane().add(JTANotas, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 550, 100));
+        getContentPane().add(JTANotas, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 550, 90));
 
         JLBAsignarTecnico.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         JLBAsignarTecnico.setForeground(new java.awt.Color(102, 102, 102));
         JLBAsignarTecnico.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         JLBAsignarTecnico.setText("Finalizar Ticket");
-        getContentPane().add(JLBAsignarTecnico, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 540, -1));
+        getContentPane().add(JLBAsignarTecnico, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, 540, -1));
 
         JLBDescripcion1.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
         JLBDescripcion1.setForeground(new java.awt.Color(153, 153, 153));
         JLBDescripcion1.setText("Solicita");
-        getContentPane().add(JLBDescripcion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, 70, 40));
+        getContentPane().add(JLBDescripcion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 30, 70, 40));
 
         JTFEmpresa.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
         JTFEmpresa.setForeground(new java.awt.Color(153, 153, 153));
         JTFEmpresa.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        JTFEmpresa.setText("Empresa");
+        JTFEmpresa.setText("usuario - Empresa  ");
         JTFEmpresa.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         JTFEmpresa.setEnabled(false);
-        getContentPane().add(JTFEmpresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 180, 40));
+        getContentPane().add(JTFEmpresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 180, 40));
 
         JLBDescripcion2.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
         JLBDescripcion2.setForeground(new java.awt.Color(153, 153, 153));
         JLBDescripcion2.setText("Modalidad");
-        getContentPane().add(JLBDescripcion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 60, 80, 40));
+        getContentPane().add(JLBDescripcion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 30, 80, 40));
 
         JLBDescripcion3.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
         JLBDescripcion3.setForeground(new java.awt.Color(153, 153, 153));
         JLBDescripcion3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         JLBDescripcion3.setText("Notas del tecnico");
-        getContentPane().add(JLBDescripcion3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 260, 125, -1));
+        getContentPane().add(JLBDescripcion3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 260, 230, -1));
 
         JTADetalles.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
         JTADetalles.setForeground(new java.awt.Color(153, 153, 153));
@@ -136,30 +139,58 @@ public class FinalizarTicket extends javax.swing.JFrame {
         });
         getContentPane().add(JBNCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 480, 90, 29));
 
-        JBNSiguienteJLS3.setBackground(new java.awt.Color(0, 153, 102));
-        JBNSiguienteJLS3.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
-        JBNSiguienteJLS3.setForeground(new java.awt.Color(255, 255, 255));
-        JBNSiguienteJLS3.setText("Guardar");
-        JBNSiguienteJLS3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(39, 174, 96), 1, true));
-        JBNSiguienteJLS3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        JBNSiguienteJLS3.setOpaque(true);
-        JBNSiguienteJLS3.setPreferredSize(new java.awt.Dimension(100, 25));
-        JBNSiguienteJLS3.addActionListener(new java.awt.event.ActionListener() {
+        JBNGuardarLS3.setBackground(new java.awt.Color(0, 153, 102));
+        JBNGuardarLS3.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        JBNGuardarLS3.setForeground(new java.awt.Color(255, 255, 255));
+        JBNGuardarLS3.setText("Guardar");
+        JBNGuardarLS3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(39, 174, 96), 1, true));
+        JBNGuardarLS3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        JBNGuardarLS3.setOpaque(true);
+        JBNGuardarLS3.setPreferredSize(new java.awt.Dimension(100, 25));
+        JBNGuardarLS3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JBNSiguienteJLS3ActionPerformed(evt);
+                JBNGuardarLS3ActionPerformed(evt);
             }
         });
-        getContentPane().add(JBNSiguienteJLS3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 450, 200, 42));
+        getContentPane().add(JBNGuardarLS3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 470, 200, 42));
+
+        JCBProceso.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        JCBProceso.setForeground(new java.awt.Color(153, 153, 153));
+        JCBProceso.setText("     En Proceso");
+        JCBProceso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JCBProcesoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(JCBProceso, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 410, 200, 20));
 
         JCBFinalizado.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
         JCBFinalizado.setForeground(new java.awt.Color(153, 153, 153));
-        JCBFinalizado.setText("     ¿Ticket Finalizado?");
+        JCBFinalizado.setText("     Finalizar Ticket");
         JCBFinalizado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JCBFinalizadoActionPerformed(evt);
             }
         });
-        getContentPane().add(JCBFinalizado, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 410, 200, -1));
+        getContentPane().add(JCBFinalizado, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 410, 200, -1));
+
+        JTFConcepto.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
+        JTFConcepto.setForeground(new java.awt.Color(153, 153, 153));
+        JTFConcepto.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        JTFConcepto.setText("concepto");
+        JTFConcepto.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        JTFConcepto.setEnabled(false);
+        JTFConcepto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JTFConceptoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(JTFConcepto, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 70, 180, 40));
+
+        JLBDescripcion4.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        JLBDescripcion4.setForeground(new java.awt.Color(153, 153, 153));
+        JLBDescripcion4.setText("Concepto");
+        getContentPane().add(JLBDescripcion4, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 30, 80, 40));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -172,13 +203,13 @@ public class FinalizarTicket extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_JBNCancelarActionPerformed
 
-    private void JBNSiguienteJLS3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBNSiguienteJLS3ActionPerformed
+    private void JBNGuardarLS3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBNGuardarLS3ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_JBNSiguienteJLS3ActionPerformed
+    }//GEN-LAST:event_JBNGuardarLS3ActionPerformed
 
-    private void JCBFinalizadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCBFinalizadoActionPerformed
+    private void JCBProcesoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCBProcesoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_JCBFinalizadoActionPerformed
+    }//GEN-LAST:event_JCBProcesoActionPerformed
 
     private void JTANotasFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTANotasFocusGained
         // TODO add your handling code here:
@@ -207,6 +238,14 @@ public class FinalizarTicket extends javax.swing.JFrame {
         // TODO add your handling code here:
         JTANotas.addActionListener(e ->  JCBFinalizado.requestFocus());
     }//GEN-LAST:event_JTANotasActionPerformed
+
+    private void JCBFinalizadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCBFinalizadoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JCBFinalizadoActionPerformed
+
+    private void JTFConceptoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFConceptoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JTFConceptoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -245,15 +284,18 @@ public class FinalizarTicket extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton JBNCancelar;
-    public javax.swing.JButton JBNSiguienteJLS3;
+    public javax.swing.JButton JBNGuardarLS3;
     public javax.swing.JCheckBox JCBFinalizado;
+    public javax.swing.JCheckBox JCBProceso;
     public javax.swing.JLabel JLBAsignarTecnico;
     public javax.swing.JLabel JLBDescripcion;
     public javax.swing.JLabel JLBDescripcion1;
     public javax.swing.JLabel JLBDescripcion2;
     public javax.swing.JLabel JLBDescripcion3;
+    public javax.swing.JLabel JLBDescripcion4;
     public javax.swing.JTextField JTADetalles;
     public javax.swing.JTextField JTANotas;
+    public javax.swing.JTextField JTFConcepto;
     public javax.swing.JTextField JTFEmpresa;
     public javax.swing.JTextField JTFTipo;
     // End of variables declaration//GEN-END:variables

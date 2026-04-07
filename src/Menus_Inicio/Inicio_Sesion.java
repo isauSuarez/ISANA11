@@ -22,7 +22,7 @@ public class Inicio_Sesion extends javax.swing.JFrame {
      */
     public Inicio_Sesion() {
             initComponents();
-           new Menus_Inicio.ControladorLogin(this);
+          // new Menus_Inicio.ControladorLogin(this);
         
         this.setSize(450, 450); // Fuerza el tamaño exacto
         this.setLocationRelativeTo(null); // Centra la ventana en tu monitor

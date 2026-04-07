@@ -14,6 +14,7 @@ import Ejecutivo_Vinculacion_Frames.MenuEjecutivoVinculacion2;
 import Supervisor_Tecnico_Frames.MenuSupervisorTecnico;
 import Tecnico_Frames.Menu_Tecnico;
 import Conexion_BD.Conexion;
+import Menus_Inicio.SesionEmpleado;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -31,6 +32,38 @@ public class ControladorLogin implements ActionListener {
         this.vistaLogin = vistaLogin;
         this.vistaLogin.btnAcceder.addActionListener(this);
     }
+
+        public class SesionEmpleado {
+    
+    private static int idEmpleado;
+    private static String nombreCompleto;
+    private static String rol;
+
+    public static void iniciarSesion(int id, String nombres, String apellidos, String rolEmp) {
+        idEmpleado = id;
+        nombreCompleto = nombres + " " + apellidos;
+        rol = rolEmp;
+    }
+
+    public static int getIdEmpleado() {
+        return idEmpleado;
+    }
+
+    public static String getNombreCompleto() {
+        return nombreCompleto;
+    }
+
+    public static String getRol() {
+        return rol;
+    }
+
+    public static void cerrarSesion() {
+        idEmpleado = 0;
+        nombreCompleto = null;
+        rol = null;
+    }
+}
+    
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -63,12 +96,16 @@ public class ControladorLogin implements ActionListener {
             try (ResultSet rs = ps.executeQuery()) {
 
                 if (rs.next()) {
+                         int idEmpleado = rs.getInt("idEmpleado");
                     String nombre = rs.getString("nombresEmp");
                     String apellido = rs.getString("apellidosEmp");
                     String rol = rs.getString("rolEmp");
+                          
+                        SesionEmpleado.iniciarSesion(idEmpleado, nombre, apellido, rol);
 
                     System.out.println("Login correcto.");
                     System.out.println("Empleado: " + nombre + apellido + " | Rol: " + rol);
+                    System.out.println("Sesion guardada. ID actual: " + SesionEmpleado.getIdEmpleado());
 
                     JOptionPane.showMessageDialog(vistaLogin, "¡Bienvenido, " + nombre + "!");
 
@@ -93,7 +130,7 @@ public class ControladorLogin implements ActionListener {
 
                         case "tecnico":
                             Menu_Tecnico menuTec = new Menu_Tecnico();
-                            new ControladorMenuTecnico(menuTec);
+                            new ControladorMenuTecnico(menuTec, idEmpleado);
                             menuTec.setVisible(true);
                             break;
 

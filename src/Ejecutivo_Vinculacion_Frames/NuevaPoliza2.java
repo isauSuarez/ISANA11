@@ -194,6 +194,11 @@ public class NuevaPoliza2 extends javax.swing.JFrame {
         JBNCancelar1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         JBNCancelar1.setText("Cancelar");
         JBNCancelar1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        JBNCancelar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBNCancelar1ActionPerformed(evt);
+            }
+        });
         JPFondo.add(JBNCancelar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 460, 90, 30));
 
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo ETS 75 px.png"))); // NOI18N
@@ -301,15 +306,7 @@ public class NuevaPoliza2 extends javax.swing.JFrame {
 
     private void JBNRegistrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBNRegistrar1ActionPerformed
         // TODO add your handling code here:
-        String correo = JTFCorreo1.getText().trim();
-        String tel = JTFTelefono1.getText().trim();
-
-        if (tel.length() < 10) {
-            javax.swing.JOptionPane.showMessageDialog(this, "El teléfono debe tener 10 dígitos.", "Error de formato", javax.swing.JOptionPane.ERROR_MESSAGE);
-
-        } else if (!correo.contains("@") || !correo.contains(".")) {
-            javax.swing.JOptionPane.showMessageDialog(this, "Error de formato, asegurate que el correo contenga '@' y un dominio.", "Correo inválido", javax.swing.JOptionPane.ERROR_MESSAGE);
-        }
+      
     }//GEN-LAST:event_JBNRegistrar1ActionPerformed
 
     private void JTFDireccion1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFDireccion1ActionPerformed
@@ -333,6 +330,10 @@ public class NuevaPoliza2 extends javax.swing.JFrame {
             evt.consume();
         }
     }//GEN-LAST:event_JTFCorreo1KeyTyped
+
+    private void JBNCancelar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBNCancelar1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JBNCancelar1ActionPerformed
 
     /**
      * @param args the command line arguments

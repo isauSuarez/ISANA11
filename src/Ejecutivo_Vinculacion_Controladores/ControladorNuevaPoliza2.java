@@ -68,7 +68,6 @@ private void registrarPoliza() {
         return;
     }
 
-    int idEmpleado = 1;
 
     int maxPres = 0;
     int maxRem = 0;
@@ -100,8 +99,8 @@ private void registrarPoliza() {
     }
 
     String sqlPoliza = "INSERT INTO poliza "
-            + "(idCliente, idEmpleado, nombreEmpresaP, direccionServicioP, correoP, telefonoP, estadoP, fechaInicioP, fechaVencimientoP) "
-            + "VALUES (?, ?, ?, ?, ?, ?, ?, CURDATE(), ?)";
+            + "(idCliente, nombreEmpresaP, direccionServicioP, correoP, telefonoP, estadoP, fechaInicioP, fechaVencimientoP) "
+            + "VALUES (?, ?, ?, ?, ?, ?, CURDATE(), ?)";
 
     String sqlPlan = "INSERT INTO plan "
             + "(idPoliza, nombreP, maxPres, maxRem, maxAse) "
@@ -114,13 +113,12 @@ private void registrarPoliza() {
              PreparedStatement psPlan = con.prepareStatement(sqlPlan)) {
 
             psPoliza.setInt(1, idCliente);
-            psPoliza.setInt(2, idEmpleado);
-            psPoliza.setString(3, empresa);
-            psPoliza.setString(4, direccion);
-            psPoliza.setString(5, correo);
-            psPoliza.setString(6, telefono);
-            psPoliza.setString(7, "Activa");
-            psPoliza.setDate(8, java.sql.Date.valueOf(LocalDate.parse(fechaVencimientoTexto)));
+            psPoliza.setString(2, empresa);
+            psPoliza.setString(3, direccion);
+            psPoliza.setString(4, correo);
+            psPoliza.setString(5, telefono);
+            psPoliza.setString(6, "Activa");
+            psPoliza.setDate(7, java.sql.Date.valueOf(LocalDate.parse(fechaVencimientoTexto)));
 
             int filasPoliza = psPoliza.executeUpdate();
 
