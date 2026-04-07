@@ -57,6 +57,7 @@ public class NuevoTicket2 extends javax.swing.JFrame {
         JLBDescripcion1.setText("Solicita");
         getContentPane().add(JLBDescripcion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 60, 40));
 
+        JTFEmpresa.setEditable(false);
         JTFEmpresa.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
         JTFEmpresa.setForeground(new java.awt.Color(153, 153, 153));
         JTFEmpresa.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -74,6 +75,7 @@ public class NuevoTicket2 extends javax.swing.JFrame {
         JLBDescripcion2.setText("Modalidad");
         getContentPane().add(JLBDescripcion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 50, 80, 40));
 
+        JTFTipo.setEditable(false);
         JTFTipo.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
         JTFTipo.setForeground(new java.awt.Color(153, 153, 153));
         JTFTipo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -97,6 +99,24 @@ public class NuevoTicket2 extends javax.swing.JFrame {
         JTADescripcion.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         JTADescripcion.setText("Descripción de los servicios a realizar y detalles puntuales");
         JTADescripcion.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        JTADescripcion.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                JTADescripcionFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                JTADescripcionFocusLost(evt);
+            }
+        });
+        JTADescripcion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JTADescripcionActionPerformed(evt);
+            }
+        });
+        JTADescripcion.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                JTADescripcionKeyTyped(evt);
+            }
+        });
         getContentPane().add(JTADescripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, 540, 160));
 
         JLBDescripcion3.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
@@ -134,6 +154,24 @@ public class NuevoTicket2 extends javax.swing.JFrame {
 
         JTFdescripcion.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         JTFdescripcion.setText("Titulo descriptivo del ticket");
+        JTFdescripcion.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                JTFdescripcionFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                JTFdescripcionFocusLost(evt);
+            }
+        });
+        JTFdescripcion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JTFdescripcionActionPerformed(evt);
+            }
+        });
+        JTFdescripcion.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                JTFdescripcionKeyTyped(evt);
+            }
+        });
         getContentPane().add(JTFdescripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, 200, 30));
 
         jLabel1.setText("Tecnico ");
@@ -160,6 +198,62 @@ public class NuevoTicket2 extends javax.swing.JFrame {
     private void JTFEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFEmpresaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_JTFEmpresaActionPerformed
+
+    private void JTFdescripcionFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFdescripcionFocusGained
+        // TODO add your handling code here:
+        if (JTFdescripcion.getText().equals("Titulo descriptivo del ticket")) {
+            JTFdescripcion.setText("");
+            JTFdescripcion.setForeground(new java.awt.Color(205, 205, 205));
+        }
+    }//GEN-LAST:event_JTFdescripcionFocusGained
+
+    private void JTFdescripcionFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFdescripcionFocusLost
+        // TODO add your handling code here:
+        if (JTFdescripcion.getText().isEmpty()) {
+            JTFdescripcion.setText("Titulo descriptivo del ticket");
+            JTFdescripcion.setForeground(new java.awt.Color(153, 153, 153));
+        }
+    }//GEN-LAST:event_JTFdescripcionFocusLost
+
+    private void JTFdescripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFdescripcionActionPerformed
+        // TODO add your handling code here:
+        JTFdescripcion.addActionListener(e -> JCBtecnico.requestFocus());
+    }//GEN-LAST:event_JTFdescripcionActionPerformed
+
+    private void JTADescripcionFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTADescripcionFocusGained
+        // TODO add your handling code here:
+        if (JTADescripcion.getText().equals("Descripción de los servicios a realizar y detalles puntuales")) {
+            JTADescripcion.setText("");
+            JTADescripcion.setForeground(new java.awt.Color(205, 205, 205));
+        }
+    }//GEN-LAST:event_JTADescripcionFocusGained
+
+    private void JTADescripcionFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTADescripcionFocusLost
+        // TODO add your handling code here:
+        if (JTADescripcion.getText().isEmpty()) {
+            JTADescripcion.setText("Descripción de los servicios a realizar y detalles puntuales");
+            JTADescripcion.setForeground(new java.awt.Color(153, 153, 153));
+        }
+    }//GEN-LAST:event_JTADescripcionFocusLost
+
+    private void JTADescripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTADescripcionActionPerformed
+        // TODO add your handling code here:
+        JTADescripcion.addActionListener(e -> JBNguardar.doClick());
+    }//GEN-LAST:event_JTADescripcionActionPerformed
+
+    private void JTFdescripcionKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTFdescripcionKeyTyped
+        // TODO add your handling code here:
+        if (((javax.swing.JTextField) evt.getSource()).getText().length() >= 100) {
+            evt.consume();
+            }
+    }//GEN-LAST:event_JTFdescripcionKeyTyped
+
+    private void JTADescripcionKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTADescripcionKeyTyped
+        // TODO add your handling code here:
+        if (((javax.swing.JTextArea) evt.getSource()).getText().length() >= 350) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_JTADescripcionKeyTyped
 
     /**
      * @param args the command line arguments
@@ -199,8 +293,6 @@ public class NuevoTicket2 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton JBNCancelar;
     public javax.swing.JButton JBNguardar;
-    public javax.swing.JComboBox JCBTecnico;
-    public javax.swing.JComboBox JCBTecnico1;
     public javax.swing.JComboBox JCBtecnico;
     private javax.swing.JLabel JLBAsignarTecnico;
     public javax.swing.JLabel JLBDescripcion;

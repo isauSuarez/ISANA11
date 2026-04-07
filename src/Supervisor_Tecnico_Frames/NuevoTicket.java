@@ -124,6 +124,19 @@ public class NuevoTicket extends javax.swing.JFrame {
 
         JTFusuario.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         JTFusuario.setText("Usuario");
+        JTFusuario.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                JTFusuarioFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                JTFusuarioFocusLost(evt);
+            }
+        });
+        JTFusuario.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                JTFusuarioKeyTyped(evt);
+            }
+        });
         getContentPane().add(JTFusuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, 120, -1));
 
         JCBUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -140,6 +153,31 @@ public class NuevoTicket extends javax.swing.JFrame {
     private void JRBPresencialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRBPresencialActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_JRBPresencialActionPerformed
+
+    private void JTFusuarioFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFusuarioFocusGained
+        // TODO add your handling code here:
+        if (JTFusuario.getText().equals("Usuario")) {
+            JTFusuario.setText("");
+            JTFusuario.setForeground(new java.awt.Color(205, 205, 205));
+        }
+    }//GEN-LAST:event_JTFusuarioFocusGained
+
+    private void JTFusuarioFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFusuarioFocusLost
+        // TODO add your handling code here:
+        if (JTFusuario.getText().isEmpty()) {
+            JTFusuario.setText("Usuario");
+            JTFusuario.setForeground(new java.awt.Color(153, 153, 153));
+        }
+    }//GEN-LAST:event_JTFusuarioFocusLost
+
+    private void JTFusuarioKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTFusuarioKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        javax.swing.JTextField field = (javax.swing.JTextField) evt.getSource();
+        if (!(Character.isLetter(c) || c == ' ' || Character.isISOControl(c)) || field.getText().length() >= 50) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_JTFusuarioKeyTyped
 
     /**
      * @param args the command line arguments

@@ -184,7 +184,7 @@ public class FinalizarTicket extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (JTANotas.getText().equals("Detalles sobre los trabajos realizados para futuras aclaraciones")) {
             JTANotas.setText("");
-            JTANotas.setForeground(new java.awt.Color(255, 255, 255));
+            JTANotas.setForeground(new java.awt.Color(205, 205, 205));
         }
     }//GEN-LAST:event_JTANotasFocusGained
 
