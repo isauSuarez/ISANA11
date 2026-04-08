@@ -1,6 +1,5 @@
 package Director_General_Controladores;
 
-import Director_General_Controladores.ControladorMenuDirector;
 import Conexion_BD.Conexion;
 import Director_General_Frames.Menu_Director_General;
 import Director_General_Frames.NuevoTecnico;
@@ -13,7 +12,7 @@ import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 public class ControladorNuevoTecnico implements ActionListener {
-    
+
     private NuevoTecnico vista;
 
     public ControladorNuevoTecnico(NuevoTecnico vista) {
@@ -36,16 +35,32 @@ public class ControladorNuevoTecnico implements ActionListener {
         String apellidos = vista.JTFApellido.getText().trim();
         String telefono = vista.JTFTelefono.getText().trim();
         String correo = vista.JTFCorreo1.getText().trim();
-        String password = "test123";
         String especialidad = vista.JCBEspecialidades.getSelectedItem().toString().trim();
         String rol = "Tecnico";
 
-        if (nombres.isEmpty() || apellidos.isEmpty() || telefono.isEmpty() 
-                || correo.isEmpty() || password.isEmpty()) {
+        String password = generarPasswordTemporal(nombres, apellidos);
+
+        if (nombres.isEmpty() || apellidos.isEmpty() || telefono.isEmpty() || correo.isEmpty()) {
             JOptionPane.showMessageDialog(vista,
                     "Llene todos los campos para registrar al técnico.",
                     "Aviso",
                     JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        if (telefono.length() != 10) {
+            JOptionPane.showMessageDialog(vista,
+                    "El teléfono debe tener 10 dígitos.",
+                    "Error de formato",
+                    JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        if (!correo.contains("@") || !correo.contains(".")) {
+            JOptionPane.showMessageDialog(vista,
+                    "Error de formato, asegúrate que el correo contenga '@' y un dominio.",
+                    "Correo inválido",
+                    JOptionPane.ERROR_MESSAGE);
             return;
         }
 
@@ -82,14 +97,8 @@ public class ControladorNuevoTecnico implements ActionListener {
             int filas = psInsertar.executeUpdate();
 
             if (filas > 0) {
-                System.out.println("Tecnico registrado correctamente.");
-                System.out.println("Nombre: " + nombres + " " + apellidos);
-                System.out.println("Especialidad: " + especialidad);
-
                 JOptionPane.showMessageDialog(vista,
-                        "Técnico registrado correctamente.");
-
-                limpiarCampos();
+                        "Técnico registrado correctamente.\nContraseña temporal: " + password);
                 volverAlMenu();
             } else {
                 JOptionPane.showMessageDialog(vista,
@@ -107,12 +116,9 @@ public class ControladorNuevoTecnico implements ActionListener {
         }
     }
 
-    private void limpiarCampos() {
-        vista.JTFNombre.setText("");
-        vista.JTFApellido.setText("");
-        vista.JTFTelefono.setText("");
-        vista.JTFCorreo1.setText("");
-        vista.JCBEspecialidades.setSelectedIndex(0);
+    private String generarPasswordTemporal(String nombres, String apellidos) {
+        String base = (nombres + apellidos).toLowerCase().replaceAll("\\s+", "");
+        return base + "123";
     }
 
     private void volverAlMenu() {

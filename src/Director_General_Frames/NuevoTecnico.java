@@ -48,7 +48,6 @@ public class NuevoTecnico extends javax.swing.JFrame {
         JBNCancelar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        JTFcontraseña = new javax.swing.JTextField();
 
         jLabel2.setText("jLabel2");
 
@@ -198,17 +197,6 @@ public class NuevoTecnico extends javax.swing.JFrame {
         jLabel3.setText("Contraseña");
         JPFondo.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, 110, 40));
 
-        JTFcontraseña.setBackground(new java.awt.Color(204, 204, 204));
-        JTFcontraseña.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        JTFcontraseña.setForeground(new java.awt.Color(255, 255, 255));
-        JTFcontraseña.setBorder(null);
-        JTFcontraseña.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JTFcontraseñaActionPerformed(evt);
-            }
-        });
-        JPFondo.add(JTFcontraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 370, 410, 40));
-
         getContentPane().add(JPFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 590, 650));
 
         pack();
@@ -244,20 +232,8 @@ public class NuevoTecnico extends javax.swing.JFrame {
 
     private void JBNGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBNGuardarActionPerformed
         // TODO add your handling code here:
-        String correo = JTFCorreo1.getText().trim();
-        String tel = JTFTelefono.getText().trim();
 
-        if (tel.length() < 10) {
-            javax.swing.JOptionPane.showMessageDialog(this, "El teléfono debe tener 10 dígitos.", "Error de formato", javax.swing.JOptionPane.ERROR_MESSAGE);
-
-        } else if (!correo.contains("@") || !correo.contains(".")) {
-            javax.swing.JOptionPane.showMessageDialog(this, "Error de formato, asegurate que el correo contenga '@' y un dominio.", "Correo inválido", javax.swing.JOptionPane.ERROR_MESSAGE);
-        }
     }//GEN-LAST:event_JBNGuardarActionPerformed
-
-    private void JTFcontraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFcontraseñaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_JTFcontraseñaActionPerformed
 
     private void JTFNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTFNombreKeyTyped
         // TODO add your handling code here:
@@ -340,7 +316,6 @@ public class NuevoTecnico extends javax.swing.JFrame {
     public javax.swing.JTextField JTFCorreo1;
     public javax.swing.JTextField JTFNombre;
     public javax.swing.JTextField JTFTelefono;
-    public javax.swing.JTextField JTFcontraseña;
     public javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

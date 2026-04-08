@@ -38,6 +38,8 @@ public class Menu_Tecnico extends javax.swing.JFrame {
         JMBTecnico = new javax.swing.JMenuBar();
         JMNTTickets = new javax.swing.JMenu();
         JMIMisTickets = new javax.swing.JMenuItem();
+        JMNOpciones = new javax.swing.JMenu();
+        JIMTCambioPass = new javax.swing.JMenuItem();
         JMNSTCerrarSesion = new javax.swing.JMenu();
         JMICerrarSesion = new javax.swing.JMenuItem();
 
@@ -79,6 +81,13 @@ public class Menu_Tecnico extends javax.swing.JFrame {
         JMNTTickets.add(JMIMisTickets);
 
         JMBTecnico.add(JMNTTickets);
+
+        JMNOpciones.setText("Opciones");
+
+        JIMTCambioPass.setText("Cambiar Contraseña");
+        JMNOpciones.add(JIMTCambioPass);
+
+        JMBTecnico.add(JMNOpciones);
 
         JMNSTCerrarSesion.setText("Cerrar Sesión");
 
@@ -135,11 +144,13 @@ public class Menu_Tecnico extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton JBNMisTickets;
+    public javax.swing.JMenuItem JIMTCambioPass;
     private javax.swing.JLabel JLBBienvenido;
     private javax.swing.JLabel JLBSoporteTecnico;
     private javax.swing.JMenuBar JMBTecnico;
     public javax.swing.JMenuItem JMICerrarSesion;
     public javax.swing.JMenuItem JMIMisTickets;
+    public javax.swing.JMenu JMNOpciones;
     public javax.swing.JMenu JMNSTCerrarSesion;
     public javax.swing.JMenu JMNTTickets;
     private javax.swing.JPanel JPFondo;

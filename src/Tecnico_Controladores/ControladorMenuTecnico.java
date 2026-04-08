@@ -2,7 +2,7 @@ package Tecnico_Controladores;
 
 import Menus_Inicio.ControladorLogin;
 import Menus_Inicio.Inicio_Sesion;
-import Menus_Inicio.SesionEmpleado;
+import Tecnico_Frames.CambioPass;
 import Tecnico_Frames.Menu_Tecnico;
 import Tecnico_Frames.MisTickets;
 import java.awt.event.ActionEvent;
@@ -19,12 +19,12 @@ public class ControladorMenuTecnico implements ActionListener {
 
         this.vistaMenu.JBNMisTickets.addActionListener(this);
         this.vistaMenu.JMIMisTickets.addActionListener(this);
+        this.vistaMenu.JIMTCambioPass.addActionListener(this);
         this.vistaMenu.JMICerrarSesion.addActionListener(this);
     }
 
-    // Constructor adicional para no romper llamadas viejas
     public ControladorMenuTecnico(Menu_Tecnico vistaMenu) {
-        this(vistaMenu, SesionEmpleado.getIdEmpleado());
+        this(vistaMenu, 0);
     }
 
     @Override
@@ -34,9 +34,16 @@ public class ControladorMenuTecnico implements ActionListener {
             new ControladorMisTickets(vista, idEmpleado);
             vista.setVisible(true);
             vistaMenu.dispose();
-        } 
+        }
+
+        else if (e.getSource() == vistaMenu.JIMTCambioPass) {
+            CambioPass vista = new CambioPass();
+            new ControladorCambioPass(vista, idEmpleado);
+            vista.setVisible(true);
+            vistaMenu.dispose();
+        }
+
         else if (e.getSource() == vistaMenu.JMICerrarSesion) {
-            SesionEmpleado.cerrarSesion();
             Inicio_Sesion login = new Inicio_Sesion();
             new ControladorLogin(login);
             login.setVisible(true);
