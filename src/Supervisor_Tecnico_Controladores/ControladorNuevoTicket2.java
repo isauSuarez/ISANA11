@@ -109,7 +109,7 @@ public class ControladorNuevoTicket2 implements ActionListener {
 
     private void registrarTicket() {
         String concepto = vista.JTFdescripcion.getText().trim();
-        String descripcion = vista.JTADescripcion.getText().trim();
+        String descripcion = vista.JTADescripcion2.getText().trim();
 
         if (concepto.isEmpty() || descripcion.isEmpty()) {
             JOptionPane.showMessageDialog(vista,
@@ -154,7 +154,7 @@ public class ControladorNuevoTicket2 implements ActionListener {
 
             ps.setString(4, concepto);
             ps.setString(5, descripcion);
-            ps.setString(6, "Proceso");
+            ps.setString(6, "Asignado");
             ps.setString(7, modalidadSeleccionada);
 
             int filas = ps.executeUpdate();

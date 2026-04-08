@@ -32,17 +32,25 @@ public class GenerarReportePóliza extends javax.swing.JFrame {
         JTBPolizas = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
         JBNRegresar = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jTextField1 = new javax.swing.JTextField();
-        jComboBox3 = new javax.swing.JComboBox<>();
+        JCBStatusPoliza = new javax.swing.JComboBox<>();
+        JCBTipoPlan = new javax.swing.JComboBox<>();
+        JTFBuscador = new javax.swing.JTextField();
+        JCBFechaInicio = new javax.swing.JComboBox<>();
+        JCBFechaFin = new javax.swing.JComboBox<>();
+        JBNBuscador = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        JCBSeleccionador = new javax.swing.JComboBox<>();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTree1 = new javax.swing.JTree();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Montserrat", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(153, 153, 153));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Generar reporte póliza ");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, 562, -1));
 
         JTBPolizas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -58,7 +66,10 @@ public class GenerarReportePóliza extends javax.swing.JFrame {
         JTBPolizas.setShowGrid(true);
         jScrollPane1.setViewportView(JTBPolizas);
 
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 180, 930, 190));
+
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo ETS 75 px.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 420, -1, -1));
 
         JBNRegresar.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
         JBNRegresar.setText("Regresar");
@@ -68,63 +79,80 @@ public class GenerarReportePóliza extends javax.swing.JFrame {
                 JBNRegresarActionPerformed(evt);
             }
         });
+        getContentPane().add(JBNRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 460, 79, 29));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Activa", "Cancelada" }));
+        JCBStatusPoliza.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Activa", "Cancelada" }));
+        JCBStatusPoliza.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JCBStatusPolizaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(JCBStatusPoliza, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 150, 70, 20));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Esencial", "Profesional", "Empresarial" }));
+        JCBTipoPlan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Esencial", "Profesional", "Empresarial" }));
+        getContentPane().add(JCBTipoPlan, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 150, 90, 20));
+        getContentPane().add(JTFBuscador, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 150, 210, 20));
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nombre ", "Correo" }));
+        JCBFechaInicio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        JCBFechaInicio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JCBFechaInicioActionPerformed(evt);
+            }
+        });
+        getContentPane().add(JCBFechaInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 150, 100, 20));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane1)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(JBNRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(17, 17, 17))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(17, 17, 17)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(230, 230, 230)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 562, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextField1)
-                    .addComponent(jComboBox3, 0, 155, Short.MAX_VALUE))
-                .addGap(197, 197, 197))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(9, 9, 9)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(JBNRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(14, 14, 14))))
-        );
+        JCBFechaFin.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        getContentPane().add(JCBFechaFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 150, 80, 20));
+
+        JBNBuscador.setText("Buscar");
+        getContentPane().add(JBNBuscador, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 150, 80, 30));
+
+        jLabel3.setText("Buscar por nombre o correo");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 120, 160, 20));
+
+        JCBSeleccionador.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        JCBSeleccionador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JCBSeleccionadorActionPerformed(evt);
+            }
+        });
+        getContentPane().add(JCBSeleccionador, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 120, 110, 20));
+
+        javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("root");
+        javax.swing.tree.DefaultMutableTreeNode treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Etado de Poliza");
+        javax.swing.tree.DefaultMutableTreeNode treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Activa");
+        treeNode2.add(treeNode3);
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Inactivas");
+        treeNode2.add(treeNode3);
+        treeNode1.add(treeNode2);
+        treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Tipo de Plan");
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Escencial");
+        treeNode2.add(treeNode3);
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Empresarial");
+        treeNode2.add(treeNode3);
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Profecional");
+        treeNode2.add(treeNode3);
+        treeNode1.add(treeNode2);
+        treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Fechas de Inicio");
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Mas Actual");
+        treeNode2.add(treeNode3);
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Mas antigua");
+        treeNode2.add(treeNode3);
+        treeNode1.add(treeNode2);
+        treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Fechas de Vencimiento");
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Mas pronta");
+        treeNode2.add(treeNode3);
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Mas lejana");
+        treeNode2.add(treeNode3);
+        treeNode1.add(treeNode2);
+        treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Clientes");
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("A a Z");
+        treeNode2.add(treeNode3);
+        treeNode1.add(treeNode2);
+        jTree1.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
+        jScrollPane2.setViewportView(jTree1);
+
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 180, -1));
 
         pack();
         setLocationRelativeTo(null);
@@ -133,6 +161,18 @@ public class GenerarReportePóliza extends javax.swing.JFrame {
     private void JBNRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBNRegresarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_JBNRegresarActionPerformed
+
+    private void JCBSeleccionadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCBSeleccionadorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JCBSeleccionadorActionPerformed
+
+    private void JCBFechaInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCBFechaInicioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JCBFechaInicioActionPerformed
+
+    private void JCBStatusPolizaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCBStatusPolizaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JCBStatusPolizaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -170,14 +210,20 @@ public class GenerarReportePóliza extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton JBNBuscador;
     public javax.swing.JButton JBNRegresar;
+    public javax.swing.JComboBox<String> JCBFechaFin;
+    public javax.swing.JComboBox<String> JCBFechaInicio;
+    public javax.swing.JComboBox<String> JCBSeleccionador;
+    public javax.swing.JComboBox<String> JCBStatusPoliza;
+    public javax.swing.JComboBox<String> JCBTipoPlan;
     public javax.swing.JTable JTBPolizas;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
+    public javax.swing.JTextField JTFBuscador;
     public javax.swing.JLabel jLabel1;
     public javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     public javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTree jTree1;
     // End of variables declaration//GEN-END:variables
 }

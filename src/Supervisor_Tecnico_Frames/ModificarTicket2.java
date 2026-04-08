@@ -60,8 +60,14 @@ public class ModificarTicket2 extends javax.swing.JFrame {
 
         JTADescripcion.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
         JTADescripcion.setForeground(new java.awt.Color(153, 153, 153));
+        JTADescripcion.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         JTADescripcion.setText("Descripción de los servicios a realizar y detalles puntuales");
         JTADescripcion.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        JTADescripcion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JTADescripcionActionPerformed(evt);
+            }
+        });
         getContentPane().add(JTADescripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, 600, 129));
 
         JLBDescripcion3.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
@@ -203,6 +209,10 @@ public class ModificarTicket2 extends javax.swing.JFrame {
     private void JRBPresencial1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRBPresencial1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_JRBPresencial1ActionPerformed
+
+    private void JTADescripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTADescripcionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JTADescripcionActionPerformed
 
     /**
      * @param args the command line arguments
