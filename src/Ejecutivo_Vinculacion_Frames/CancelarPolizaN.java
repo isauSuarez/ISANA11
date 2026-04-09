@@ -37,6 +37,7 @@ public class CancelarPolizaN extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         JTAinfo = new javax.swing.JTextArea();
         lblLogoInicio = new javax.swing.JLabel();
+        JBNConsultar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -91,16 +92,28 @@ public class CancelarPolizaN extends javax.swing.JFrame {
                 JBNConfirmarActionPerformed(evt);
             }
         });
-        getContentPane().add(JBNConfirmar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 370, 160, 40));
+        getContentPane().add(JBNConfirmar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 390, 160, 40));
 
         JTAinfo.setColumns(20);
         JTAinfo.setRows(5);
         jScrollPane1.setViewportView(JTAinfo);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 510, 160));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 510, 160));
 
         lblLogoInicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Logo ETS 75 px.png"))); // NOI18N
         getContentPane().add(lblLogoInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 380, -1, -1));
+
+        JBNConsultar.setBackground(new java.awt.Color(0, 153, 102));
+        JBNConsultar.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        JBNConsultar.setForeground(new java.awt.Color(255, 255, 255));
+        JBNConsultar.setText("Consultar");
+        JBNConsultar.setBorder(null);
+        JBNConsultar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBNConsultarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(JBNConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 160, 160, 40));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -132,6 +145,10 @@ public class CancelarPolizaN extends javax.swing.JFrame {
             JTFNumPoliza.setForeground(new java.awt.Color(153, 153, 153));
         }
     }//GEN-LAST:event_JTFNumPolizaFocusLost
+
+    private void JBNConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBNConsultarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JBNConsultarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -171,6 +188,7 @@ public class CancelarPolizaN extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton JBNCancelar;
     public javax.swing.JButton JBNConfirmar;
+    public javax.swing.JButton JBNConsultar;
     public javax.swing.JTextArea JTAinfo;
     public javax.swing.JTextField JTFNumPoliza;
     public javax.swing.JLabel jLabel1;

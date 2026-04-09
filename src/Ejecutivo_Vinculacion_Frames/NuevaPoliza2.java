@@ -213,7 +213,7 @@ public class NuevaPoliza2 extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (JTFEmpresa1.getText().equals("Empresa")) {
             JTFEmpresa1.setText("");
-            JTFEmpresa1.setForeground(new java.awt.Color(255, 255, 255));
+            JTFEmpresa1.setForeground(new java.awt.Color(205, 205, 205));
         }
     }//GEN-LAST:event_JTFEmpresa1FocusGained
 
@@ -241,7 +241,7 @@ public class NuevaPoliza2 extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (JTFDireccion1.getText().equals("Dirección")) {
             JTFDireccion1.setText("");
-            JTFDireccion1.setForeground(new java.awt.Color(255, 255, 255));
+            JTFDireccion1.setForeground(new java.awt.Color(205, 205, 205));
         }
     }//GEN-LAST:event_JTFDireccion1FocusGained
 
@@ -264,7 +264,7 @@ public class NuevaPoliza2 extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (JTFTelefono1.getText().equals("Telefono")) {
             JTFTelefono1.setText("");
-            JTFTelefono1.setForeground(new java.awt.Color(255, 255, 255));
+            JTFTelefono1.setForeground(new java.awt.Color(205, 205, 205));
         }
     }//GEN-LAST:event_JTFTelefono1FocusGained
 
@@ -288,7 +288,7 @@ public class NuevaPoliza2 extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (JTFCorreo1.getText().equals("Correo")) {
             JTFCorreo1.setText("");
-            JTFCorreo1.setForeground(new java.awt.Color(255, 255, 255));
+            JTFCorreo1.setForeground(new java.awt.Color(205, 205, 205));
         }
     }//GEN-LAST:event_JTFCorreo1FocusGained
 

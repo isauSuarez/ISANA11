@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package isana.pkg11;
+import Menus_Inicio.Menu_Carga;
 
 /**
  *
@@ -15,6 +16,9 @@ public class ISANA11 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Menu_Carga ventanaCarga = new Menu_Carga();
+        ventanaCarga.setVisible(true);
+        ventanaCarga.setLocationRelativeTo(null);
     }
     
 }

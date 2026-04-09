@@ -416,11 +416,17 @@ private void guardarRenovacion() {
 
             if (filasPoliza > 0 && filasPlan > 0) {
                 con.commit();
-                JOptionPane.showMessageDialog(vista, "Póliza renovada correctamente.");
-                cargarInfoPoliza(idPolizaSeleccionada);
+                JOptionPane.showMessageDialog(vista,
+                        "Póliza renovada correctamente.",
+                        "Éxito",
+                        JOptionPane.INFORMATION_MESSAGE);
+                volverAlMenu(); 
             } else {
                 con.rollback();
-                JOptionPane.showMessageDialog(vista, "No se pudo renovar la póliza.");
+                JOptionPane.showMessageDialog(vista,
+                        "No se pudo renovar la póliza.",
+                        "Error",
+                        JOptionPane.ERROR_MESSAGE);
             }
 
         } catch (SQLException ex) {
@@ -429,9 +435,12 @@ private void guardarRenovacion() {
         }
 
     } catch (SQLException ex) {
-        JOptionPane.showMessageDialog(vista, "Error en BD: " + ex.getMessage());
+            JOptionPane.showMessageDialog(vista,
+                    "Error en BD: " + ex.getMessage(),
+                    "Error Crítico",
+                    JOptionPane.ERROR_MESSAGE);
+        }
     }
-}
     
     
 }

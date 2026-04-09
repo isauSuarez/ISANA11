@@ -26,6 +26,7 @@ public class ControladorCancelarPoliza implements ActionListener {
         this.vista.JBNConfirmar.addActionListener(this);
         this.vista.JBNCancelar.addActionListener(this);
         this.vista.JTFNumPoliza.addActionListener(this); // Enter en el campo
+        this.vista.JBNConsultar.addActionListener(this);
     }
     
         private void buscarPoliza() {
@@ -180,14 +181,14 @@ public class ControladorCancelarPoliza implements ActionListener {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            if (e.getSource() == vista.JTFNumPoliza) {
-                buscarPoliza();
-            } else if (e.getSource() == vista.JBNConfirmar) {
-                confirmarCancelacion();
-            } else if (e.getSource() == vista.JBNCancelar) {
-                volverAlMenu();
-            }
+            if (e.getSource() == vista.JTFNumPoliza || e.getSource() == vista.JBNConsultar) {
+            buscarPoliza();
+        } else if (e.getSource() == vista.JBNConfirmar) {
+            confirmarCancelacion();
+        } else if (e.getSource() == vista.JBNCancelar) {
+            volverAlMenu();
         }
+    }
 
    
 

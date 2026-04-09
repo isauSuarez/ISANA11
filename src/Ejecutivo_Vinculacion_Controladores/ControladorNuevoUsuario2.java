@@ -10,6 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
+import Ejecutivo_Vinculacion_Frames.MenuEjecutivoVinculacion2;
 
 public class ControladorNuevoUsuario2 implements ActionListener {
 
@@ -54,6 +55,22 @@ public class ControladorNuevoUsuario2 implements ActionListener {
                     "Complete todos los campos.",
                     "Aviso",
                     JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        
+        if (telefono.length() != 10) {
+            JOptionPane.showMessageDialog(vista,
+                    "El teléfono debe tener 10 dígitos.",
+                    "Error de formato",
+                    JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        if (!correo.contains("@") || !correo.contains(".")) {
+            JOptionPane.showMessageDialog(vista,
+                    "Correo inválido. Asegúrate de incluir '@' y dominio.",
+                    "Error de formato",
+                    JOptionPane.ERROR_MESSAGE);
             return;
         }
 
@@ -104,7 +121,8 @@ public class ControladorNuevoUsuario2 implements ActionListener {
                 System.out.println("ID Póliza: " + idPoliza);
 
                 limpiarCampos();
-                volverAPaso1();
+                volverAlMenu();
+                //volverAPaso1();*
             } else {
                 JOptionPane.showMessageDialog(vista,
                         "No se pudo registrar el usuario.",
@@ -176,6 +194,13 @@ public class ControladorNuevoUsuario2 implements ActionListener {
         vista.JTFCorreo.setText("");
         vista.JTFTelefono.setText("");
     }
+    
+    private void volverAlMenu() {
+    MenuEjecutivoVinculacion2 menu = new MenuEjecutivoVinculacion2();
+    new ControladorMenuEjecutivo(menu);
+    menu.setVisible(true);
+    vista.dispose(); 
+}
 
     private void volverAPaso1() {
         Nuevo_Usuario vistaPaso1 = new Nuevo_Usuario();
@@ -183,4 +208,5 @@ public class ControladorNuevoUsuario2 implements ActionListener {
         vistaPaso1.setVisible(true);
         vista.dispose();
     }
+
 }

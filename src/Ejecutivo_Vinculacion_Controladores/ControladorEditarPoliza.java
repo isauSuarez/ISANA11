@@ -111,6 +111,22 @@ public void actionPerformed(ActionEvent e) {
                 JOptionPane.WARNING_MESSAGE);
         return;
     }
+    
+        if (telefono.length() != 10) {
+            JOptionPane.showMessageDialog(vista,
+                    "El teléfono debe tener 10 dígitos.",
+                    "Error de formato",
+                    JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        if (!correo.contains("@") || !correo.contains(".")) {
+            JOptionPane.showMessageDialog(vista,
+                    "Correo inválido. Asegúrate de incluir '@' y dominio.",
+                    "Error de formato",
+                    JOptionPane.ERROR_MESSAGE);
+            return;
+        }
 
     int idPoliza;
 
@@ -145,6 +161,7 @@ public void actionPerformed(ActionEvent e) {
             JOptionPane.showMessageDialog(vista,
                     "Póliza actualizada correctamente.");
             System.out.println("Póliza actualizada: " + idPoliza);
+            cancelarEdicion();
         } else {
             JOptionPane.showMessageDialog(vista,
                     "No se encontró la póliza para actualizar.",

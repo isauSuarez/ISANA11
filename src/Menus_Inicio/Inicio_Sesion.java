@@ -139,6 +139,7 @@ public class Inicio_Sesion extends javax.swing.JFrame {
 
     private void txtUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioActionPerformed
         // TODO add your handling code here:
+        txtUsuario.addActionListener(e -> pwdContrasena.requestFocus());
     }//GEN-LAST:event_txtUsuarioActionPerformed
 
     private void lblAyudaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAyudaMouseClicked
@@ -151,6 +152,7 @@ public class Inicio_Sesion extends javax.swing.JFrame {
 
     private void pwdContrasenaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pwdContrasenaActionPerformed
         // TODO add your handling code here:
+        pwdContrasena.addActionListener(e -> btnAcceder.doClick());
     }//GEN-LAST:event_pwdContrasenaActionPerformed
 
     private void txtUsuarioFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtUsuarioFocusGained

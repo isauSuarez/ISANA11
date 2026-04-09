@@ -40,7 +40,7 @@ public class ControladorModificarCliente implements ActionListener {
             vista.JTFCorreoBusqueda.setText("Correo registrado");
             vista.JTFCorreoBusqueda.setForeground(Color.GRAY);
 
-            vista.JTFTelefonoBusqueda.setText("Telefono");
+            vista.JTFTelefonoBusqueda.setText("Telefono registrado");
             vista.JTFTelefonoBusqueda.setForeground(Color.GRAY);
         }
 

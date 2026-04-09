@@ -105,6 +105,11 @@ public class EditarPoliza extends javax.swing.JFrame {
                 JTFNumPolizaActionPerformed(evt);
             }
         });
+        JTFNumPoliza.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                JTFNumPolizaKeyTyped(evt);
+            }
+        });
         JPFondo.add(JTFNumPoliza, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 480, 40));
 
         jLabel3.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
@@ -207,13 +212,12 @@ public class EditarPoliza extends javax.swing.JFrame {
 
         JTFEmpresa.setForeground(new java.awt.Color(102, 102, 102));
         JTFEmpresa.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        JTFEmpresa.setText("Nombre (s)");
+        JTFEmpresa.setText("Empresa");
+        JTFEmpresa.setToolTipText("");
         JTFEmpresa.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(200, 200, 200), 1, true));
         JTFEmpresa.setMargin(new java.awt.Insets(5, 10, 5, 10));
         JTFEmpresa.setMinimumSize(new java.awt.Dimension(66, 28));
         JTFEmpresa.setPreferredSize(new java.awt.Dimension(350, 40));
-        JTFEmpresa.setRequestFocusEnabled(false);
-        JTFEmpresa.setVerifyInputWhenFocusTarget(false);
         JTFEmpresa.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 JTFEmpresaFocusGained(evt);
@@ -302,15 +306,6 @@ public class EditarPoliza extends javax.swing.JFrame {
 
     private void JBNGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBNGuardarActionPerformed
         // TODO add your handling code here:
-        String correo = JTFCorreo.getText().trim();
-        String tel = JTFTelefono.getText().trim();
-
-        if (tel.length() < 10) {
-            javax.swing.JOptionPane.showMessageDialog(this, "El teléfono debe tener 10 dígitos.", "Error de formato", javax.swing.JOptionPane.ERROR_MESSAGE);
-
-        } else if (!correo.contains("@") || !correo.contains(".")) {
-            javax.swing.JOptionPane.showMessageDialog(this, "Error de formato, asegurate que el correo contenga '@' y un dominio.", "Correo inválido", javax.swing.JOptionPane.ERROR_MESSAGE);
-        }
     }//GEN-LAST:event_JBNGuardarActionPerformed
 
     private void JTFNumPolizaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFNumPolizaActionPerformed
@@ -426,6 +421,14 @@ public class EditarPoliza extends javax.swing.JFrame {
             JTFNumPoliza.setForeground(new java.awt.Color(153, 153, 153));
         }
     }//GEN-LAST:event_JTFNumPolizaFocusLost
+
+    private void JTFNumPolizaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTFNumPolizaKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if (!Character.isDigit(c) || JTFNumPoliza.getText().length() >= 10) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_JTFNumPolizaKeyTyped
 
     /**
      * @param args the command line arguments

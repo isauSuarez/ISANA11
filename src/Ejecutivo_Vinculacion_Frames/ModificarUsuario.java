@@ -222,7 +222,7 @@ public class ModificarUsuario extends javax.swing.JFrame {
                 JTFclienteFocusLost(evt);
             }
         });
-        JPFondo.add(JTFcliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 100, 200, 30));
+        JPFondo.add(JTFcliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 100, 200, 30));
 
         JTFempresa.setForeground(new java.awt.Color(153, 153, 153));
         JTFempresa.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -237,26 +237,26 @@ public class ModificarUsuario extends javax.swing.JFrame {
             }
         });
         JTFempresa.addActionListener(this::JTFempresaActionPerformed);
-        JPFondo.add(JTFempresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 100, 200, 30));
+        JPFondo.add(JTFempresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, 200, 30));
 
         JCBcliente.setForeground(new java.awt.Color(153, 153, 153));
         JCBcliente.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         JCBcliente.addActionListener(this::JCBclienteActionPerformed);
-        JPFondo.add(JCBcliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, 200, 30));
+        JPFondo.add(JCBcliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 150, 200, 30));
 
         JLBUsuario.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
         JLBUsuario.setForeground(new java.awt.Color(102, 102, 102));
         JLBUsuario.setText("Usuario");
-        JPFondo.add(JLBUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, 60, 30));
+        JPFondo.add(JLBUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 100, 60, 30));
 
         JLBEmpresa.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
         JLBEmpresa.setForeground(new java.awt.Color(102, 102, 102));
         JLBEmpresa.setText("Empresa");
-        JPFondo.add(JLBEmpresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 100, 70, 30));
+        JPFondo.add(JLBEmpresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 70, 30));
 
         JCBempresa.setForeground(new java.awt.Color(153, 153, 153));
         JCBempresa.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        JPFondo.add(JCBempresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 150, 200, 30));
+        JPFondo.add(JCBempresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, 200, 30));
 
         JLBTitulo.setFont(new java.awt.Font("Montserrat", 1, 24)); // NOI18N
         JLBTitulo.setForeground(new java.awt.Color(102, 102, 102));
@@ -472,15 +472,6 @@ public class ModificarUsuario extends javax.swing.JFrame {
 
     private void JBTguardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTguardarActionPerformed
         // TODO add your handling code here:
-        String correo = JTFcorreo.getText().trim();
-        String tel = JTFtelefono.getText().trim();
-
-        if (tel.length() < 10) {
-            javax.swing.JOptionPane.showMessageDialog(this, "El teléfono debe tener 10 dígitos.", "Error de formato", javax.swing.JOptionPane.ERROR_MESSAGE);
-
-        } else if (!correo.contains("@") || !correo.contains(".")) {
-            javax.swing.JOptionPane.showMessageDialog(this, "Error de formato, asegurate que el correo contenga '@' y un dominio.", "Correo inválido", javax.swing.JOptionPane.ERROR_MESSAGE);
-        }
     }//GEN-LAST:event_JBTguardarActionPerformed
 
     private void JTFempresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFempresaActionPerformed

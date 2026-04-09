@@ -230,15 +230,6 @@ public class NuevoUsuario2 extends javax.swing.JFrame {
 
     private void JBNGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBNGuardarActionPerformed
         // TODO add your handling code here:
-        String correo = JTFCorreo.getText().trim();
-        String tel = JTFTelefono.getText().trim();
-
-        if (tel.length() < 10) {
-            javax.swing.JOptionPane.showMessageDialog(this, "El teléfono debe tener 10 dígitos.", "Error de formato", javax.swing.JOptionPane.ERROR_MESSAGE);
-
-        } else if (!correo.contains("@") || !correo.contains(".")) {
-            javax.swing.JOptionPane.showMessageDialog(this, "Error de formato, asegurate que el correo contenga '@' y un dominio.", "Correo inválido", javax.swing.JOptionPane.ERROR_MESSAGE);
-        }
     }//GEN-LAST:event_JBNGuardarActionPerformed
 
     private void JBNCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBNCancelarActionPerformed
@@ -295,7 +286,7 @@ public class NuevoUsuario2 extends javax.swing.JFrame {
 
     private void JTFCorreoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFCorreoFocusGained
         // TODO add your handling code here:
-        if (JTFCorreo.getText().equals("Correo")) {
+        if (JTFCorreo.getText().equals("Correo electrónico")) {
             JTFCorreo.setText("");
             JTFCorreo.setForeground(new java.awt.Color(205, 205, 205));
         }
@@ -304,14 +295,14 @@ public class NuevoUsuario2 extends javax.swing.JFrame {
     private void JTFCorreoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFCorreoFocusLost
         // TODO add your handling code here:
         if (JTFCorreo.getText().isEmpty()) {
-            JTFCorreo.setText("Correo");
+            JTFCorreo.setText("Correo electrónico");
             JTFCorreo.setForeground(new java.awt.Color(153, 153, 153));
         }
     }//GEN-LAST:event_JTFCorreoFocusLost
 
     private void JTFTelefonoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFTelefonoFocusGained
         // TODO add your handling code here:
-        if (JTFTelefono.getText().equals("Telefono")) {
+        if (JTFTelefono.getText().equals("Teléfono")) {
             JTFTelefono.setText("");
             JTFTelefono.setForeground(new java.awt.Color(205, 205, 205));
         }
@@ -320,7 +311,7 @@ public class NuevoUsuario2 extends javax.swing.JFrame {
     private void JTFTelefonoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFTelefonoFocusLost
         // TODO add your handling code here:
         if (JTFTelefono.getText().isEmpty()) {
-            JTFTelefono.setText("Telefono");
+            JTFTelefono.setText("Teléfono");
             JTFTelefono.setForeground(new java.awt.Color(153, 153, 153));
         }
     }//GEN-LAST:event_JTFTelefonoFocusLost

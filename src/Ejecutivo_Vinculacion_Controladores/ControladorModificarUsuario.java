@@ -306,6 +306,21 @@ public class ControladorModificarUsuario implements ActionListener, ItemListener
                     JOptionPane.WARNING_MESSAGE);
             return;
         }
+        if (telefono.length() != 10) {
+            JOptionPane.showMessageDialog(vista,
+                    "El teléfono debe tener 10 dígitos.",
+                    "Error de formato",
+                    JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        if (!correo.contains("@") || !correo.contains(".")) {
+            JOptionPane.showMessageDialog(vista,
+                    "Correo inválido. Asegúrate de incluir '@' y dominio.",
+                    "Error de formato",
+                    JOptionPane.ERROR_MESSAGE);
+            return;
+        }
 
         String sql = "UPDATE usuario " +
                      "SET nombresU = ?, apellidosU = ?, locacionU = ?, correoU = ?, telefonoU = ? " +

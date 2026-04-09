@@ -62,9 +62,27 @@ private void registrarPoliza() {
     if (empresa.isEmpty() || direccion.isEmpty() || telefono.isEmpty() || correo.isEmpty()
             || fechaVencimientoTexto.equals("Fecha")) {
         JOptionPane.showMessageDialog(vista,
-                "Llene todos los campos.",
+                "Complete todos los campos.",
                 "Aviso",
                 JOptionPane.WARNING_MESSAGE);
+        return;
+    }
+
+    // 2. VALIDACIÓN: Formato de Teléfono (10 dígitos)
+    if (telefono.length() != 10) {
+        JOptionPane.showMessageDialog(vista,
+                "El teléfono debe tener 10 dígitos.",
+                "Error de formato",
+                JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+
+    // 3. VALIDACIÓN: Formato de Correo
+    if (!correo.contains("@") || !correo.contains(".")) {
+        JOptionPane.showMessageDialog(vista,
+                "Correo inválido. Asegúrate de incluir '@' y dominio.",
+                "Error de formato",
+                JOptionPane.ERROR_MESSAGE);
         return;
     }
 
@@ -172,7 +190,7 @@ private void registrarPoliza() {
             System.out.println("Plan: " + nombrePlan);
 
             JOptionPane.showMessageDialog(vista,
-                    "Póliza registrada correctamente.");
+                    "Póliza registrada correctamente, numero de póliza asignado:  " + idPolizaGenerada );
 
             limpiarCampos();
             volverAPaso1();
