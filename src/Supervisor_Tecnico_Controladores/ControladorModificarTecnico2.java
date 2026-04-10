@@ -147,6 +147,22 @@ public class ControladorModificarTecnico2 implements ActionListener, ItemListene
                     JOptionPane.WARNING_MESSAGE);
             return;
         }
+        
+        if (telefono.length() != 10) {
+            JOptionPane.showMessageDialog(vista,
+                    "El teléfono debe tener 10 dígitos.",
+                    "Error de formato",
+                    JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        if (!correo.contains("@") || !correo.contains(".")) {
+            JOptionPane.showMessageDialog(vista,
+                    "Error de formato, asegúrate que el correo contenga '@' y un dominio.",
+                    "Correo inválido",
+                    JOptionPane.ERROR_MESSAGE);
+            return;
+        }
 
         String sql = "UPDATE empleado " +
                      "SET nombresEmp = ?, apellidosEmp = ?, telefonoEmp = ?, emailEmp = ?, especialidad = ? " +

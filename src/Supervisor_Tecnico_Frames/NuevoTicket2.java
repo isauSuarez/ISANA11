@@ -217,6 +217,7 @@ public class NuevoTicket2 extends javax.swing.JFrame {
 
     private void JTFdescripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFdescripcionActionPerformed
         // TODO add your handling code here:
+        JTFdescripcion.addActionListener(e -> JTADescripcion2.requestFocus());
    
     }//GEN-LAST:event_JTFdescripcionActionPerformed
 
@@ -245,7 +246,7 @@ public class NuevoTicket2 extends javax.swing.JFrame {
 
     private void JTADescripcion2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTADescripcion2KeyTyped
         // TODO add your handling code here:
-                if (((javax.swing.JTextArea) evt.getSource()).getText().length() >= 350) {
+                if (((javax.swing.JTextArea) evt.getSource()).getText().length() >= 240) {
             evt.consume();
         }
     }//GEN-LAST:event_JTADescripcion2KeyTyped

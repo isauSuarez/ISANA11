@@ -250,15 +250,6 @@ public class ModificarTecnico2 extends javax.swing.JFrame {
 
     private void JBNGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBNGuardarActionPerformed
         // TODO add your handling code here:
-        String correo = JTFCorreo.getText().trim();
-        String tel = JTFTelefono.getText().trim();
-
-        if (tel.length() < 10) {
-            javax.swing.JOptionPane.showMessageDialog(this, "El teléfono debe tener 10 dígitos.", "Error de formato", javax.swing.JOptionPane.ERROR_MESSAGE);
-
-        } else if (!correo.contains("@") || !correo.contains(".")) {
-            javax.swing.JOptionPane.showMessageDialog(this, "Error de formato, asegurate que el correo contenga '@' y un dominio.", "Correo inválido", javax.swing.JOptionPane.ERROR_MESSAGE);
-        }
     }//GEN-LAST:event_JBNGuardarActionPerformed
 
     /**

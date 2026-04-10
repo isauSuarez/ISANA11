@@ -237,12 +237,12 @@ public class ModificarCliente extends javax.swing.JFrame {
 
         JLBATelefono.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
         JLBATelefono.setForeground(new java.awt.Color(102, 102, 102));
-        JLBATelefono.setText("Telefono");
+        JLBATelefono.setText("Teléfono");
         JPFondo.add(JLBATelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, 100, 40));
 
         JTFTelefono.setForeground(new java.awt.Color(153, 153, 153));
         JTFTelefono.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        JTFTelefono.setText("Telefono");
+        JTFTelefono.setText("Teléfono");
         JTFTelefono.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(200, 200, 200), 1, true));
         JTFTelefono.setMargin(new java.awt.Insets(5, 10, 5, 10));
         JTFTelefono.setMinimumSize(new java.awt.Dimension(350, 40));
@@ -460,7 +460,7 @@ public class ModificarCliente extends javax.swing.JFrame {
 
     private void JTFTelefonoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFTelefonoFocusGained
         // TODO add your handling code here:
-        if (JTFTelefono.getText().equals("Telefono")) {
+        if (JTFTelefono.getText().equals("Teléfono")) {
             JTFTelefono.setText("");
             JTFTelefono.setForeground(new java.awt.Color(205, 205, 205));
         }
@@ -469,7 +469,7 @@ public class ModificarCliente extends javax.swing.JFrame {
     private void JTFTelefonoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFTelefonoFocusLost
         // TODO add your handling code here:
         if (JTFTelefono.getText().isEmpty()) {
-            JTFTelefono.setText("Telefono");
+            JTFTelefono.setText("Teléfono");
             JTFTelefono.setForeground(new java.awt.Color(153, 153, 153));
         }
     }//GEN-LAST:event_JTFTelefonoFocusLost
@@ -485,7 +485,7 @@ public class ModificarCliente extends javax.swing.JFrame {
     private void JTFCorreoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFCorreoFocusLost
         // TODO add your handling code here:
         if (JTFCorreo.getText().isEmpty()) {
-            JTFCorreo.setText("Correo");
+            JTFCorreo.setText("Correo electrónico");
             JTFCorreo.setForeground(new java.awt.Color(153, 153, 153));
         }
     }//GEN-LAST:event_JTFCorreoFocusLost

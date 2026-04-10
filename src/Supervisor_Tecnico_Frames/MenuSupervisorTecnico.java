@@ -37,7 +37,7 @@ public class MenuSupervisorTecnico extends javax.swing.JFrame {
         JLBBienvenido = new javax.swing.JLabel();
         JLBSupervisorTecnico = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        JBNAsignarTicket = new javax.swing.JButton();
+        JBNEditarTicket = new javax.swing.JButton();
         JBNNuevoTicket = new javax.swing.JButton();
         JMBSupervisorTecnico = new javax.swing.JMenuBar();
         JMNSTTickets = new javax.swing.JMenu();
@@ -69,14 +69,14 @@ public class MenuSupervisorTecnico extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ETS MINI2.png"))); // NOI18N
         JPFondo.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
-        JBNAsignarTicket.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos90/asignarticket90.png"))); // NOI18N
-        JBNAsignarTicket.setToolTipText("");
-        JBNAsignarTicket.addActionListener(new java.awt.event.ActionListener() {
+        JBNEditarTicket.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos90/EditarTicket90.png"))); // NOI18N
+        JBNEditarTicket.setToolTipText("");
+        JBNEditarTicket.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JBNAsignarTicketActionPerformed(evt);
+                JBNEditarTicketActionPerformed(evt);
             }
         });
-        JPFondo.add(JBNAsignarTicket, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 250, 140, 150));
+        JPFondo.add(JBNEditarTicket, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 250, 140, 150));
 
         JBNNuevoTicket.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos90/nuevoticket90.png"))); // NOI18N
         JPFondo.add(JBNNuevoTicket, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 250, 140, 150));
@@ -123,9 +123,9 @@ public class MenuSupervisorTecnico extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_JMINuevoTicketActionPerformed
 
-    private void JBNAsignarTicketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBNAsignarTicketActionPerformed
+    private void JBNEditarTicketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBNEditarTicketActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_JBNAsignarTicketActionPerformed
+    }//GEN-LAST:event_JBNEditarTicketActionPerformed
 
     /**
      * @param args the command line arguments
@@ -165,7 +165,7 @@ public class MenuSupervisorTecnico extends javax.swing.JFrame {
 }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton JBNAsignarTicket;
+    public javax.swing.JButton JBNEditarTicket;
     public javax.swing.JButton JBNNuevoTicket;
     public javax.swing.JLabel JLBBienvenido;
     public javax.swing.JLabel JLBSupervisorTecnico;

@@ -47,13 +47,13 @@ public class CambioPass extends javax.swing.JFrame {
         jLabel2.setText("Escribe la nueva contraseña");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 182, -1));
 
-        JPWCambio.setText("jPasswordField1");
+        JPWCambio.addActionListener(this::JPWCambioActionPerformed);
         getContentPane().add(JPWCambio, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, 190, 30));
 
         jLabel3.setText("Confirma tu nueva contraseña");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, -1));
 
-        JPWConfirmacion.setText("jPasswordField1");
+        JPWConfirmacion.addActionListener(this::JPWConfirmacionActionPerformed);
         getContentPane().add(JPWConfirmacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 180, 190, 30));
 
         JBNConfirmar.setText("Confirmar");
@@ -65,12 +65,27 @@ public class CambioPass extends javax.swing.JFrame {
         jLabel4.setText("Contraseña Actual");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, -1, -1));
 
-        JPWPassActual.setText("jPasswordField1");
+        JPWPassActual.addActionListener(this::JPWPassActualActionPerformed);
         getContentPane().add(JPWPassActual, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, 200, -1));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void JPWPassActualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JPWPassActualActionPerformed
+        // TODO add your handling code here:
+        JPWPassActual.addActionListener(e -> JPWCambio.requestFocus());
+    }//GEN-LAST:event_JPWPassActualActionPerformed
+
+    private void JPWCambioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JPWCambioActionPerformed
+        // TODO add your handling code here:
+        JPWCambio.addActionListener(e -> JPWConfirmacion.requestFocus());
+    }//GEN-LAST:event_JPWCambioActionPerformed
+
+    private void JPWConfirmacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JPWConfirmacionActionPerformed
+        // TODO add your handling code here:
+        JPWConfirmacion.addActionListener(e -> JBNConfirmar.doClick());
+    }//GEN-LAST:event_JPWConfirmacionActionPerformed
 
     /**
      * @param args the command line arguments

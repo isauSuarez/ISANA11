@@ -17,6 +17,7 @@ public class ControladorMenuSupervisor implements ActionListener {
         this.vistaMenu = vistaMenu;
 
         this.vistaMenu.JBNNuevoTicket.addActionListener(this);
+        this.vistaMenu.JBNEditarTicket.addActionListener(this);
         this.vistaMenu.JMINuevoTicket.addActionListener(this);
         this.vistaMenu.JMIEditarTicket.addActionListener(this);
         this.vistaMenu.JMIEditarTecnico.addActionListener(this);
@@ -33,7 +34,7 @@ public class ControladorMenuSupervisor implements ActionListener {
             vistaMenu.dispose();
         }
 
-        else if (e.getSource() == vistaMenu.JMIEditarTicket) {
+        else if (e.getSource() == vistaMenu.JMIEditarTicket || e.getSource() == vistaMenu.JBNEditarTicket) {
             ModificarTicket vista = new ModificarTicket();
             new ControladorModificarTicket(vista);
             vista.setVisible(true);

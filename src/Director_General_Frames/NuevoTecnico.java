@@ -47,7 +47,6 @@ public class NuevoTecnico extends javax.swing.JFrame {
         JBNGuardar = new javax.swing.JButton();
         JBNCancelar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
 
         jLabel2.setText("jLabel2");
 
@@ -67,12 +66,21 @@ public class NuevoTecnico extends javax.swing.JFrame {
         JLBNombre.setText("Nombre (s)");
         JPFondo.add(JLBNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 110, 40));
 
-        JTFNombre.setBackground(new java.awt.Color(204, 204, 204));
+        JTFNombre.setBackground(new java.awt.Color(255, 255, 255));
         JTFNombre.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         JTFNombre.setForeground(new java.awt.Color(153, 153, 153));
         JTFNombre.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        JTFNombre.setText("Nombre (s)");
         JTFNombre.setBorder(null);
         JTFNombre.setPreferredSize(new java.awt.Dimension(350, 40));
+        JTFNombre.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                JTFNombreFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                JTFNombreFocusLost(evt);
+            }
+        });
         JTFNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTFNombreActionPerformed(evt);
@@ -90,11 +98,20 @@ public class NuevoTecnico extends javax.swing.JFrame {
         JLBApellido.setText("Apellido (s)");
         JPFondo.add(JLBApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 100, 40));
 
-        JTFApellido.setBackground(new java.awt.Color(204, 204, 204));
+        JTFApellido.setBackground(new java.awt.Color(255, 255, 255));
         JTFApellido.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         JTFApellido.setForeground(new java.awt.Color(153, 153, 153));
         JTFApellido.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        JTFApellido.setText("Apellido (s)");
         JTFApellido.setBorder(null);
+        JTFApellido.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                JTFApellidoFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                JTFApellidoFocusLost(evt);
+            }
+        });
         JTFApellido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTFApellidoActionPerformed(evt);
@@ -112,11 +129,20 @@ public class NuevoTecnico extends javax.swing.JFrame {
         JLBATelefono.setText("Telefono");
         JPFondo.add(JLBATelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 100, 40));
 
-        JTFTelefono.setBackground(new java.awt.Color(204, 204, 204));
+        JTFTelefono.setBackground(new java.awt.Color(255, 255, 255));
         JTFTelefono.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         JTFTelefono.setForeground(new java.awt.Color(153, 153, 153));
         JTFTelefono.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        JTFTelefono.setText("Teléfono");
         JTFTelefono.setBorder(null);
+        JTFTelefono.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                JTFTelefonoFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                JTFTelefonoFocusLost(evt);
+            }
+        });
         JTFTelefono.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTFTelefonoActionPerformed(evt);
@@ -134,11 +160,20 @@ public class NuevoTecnico extends javax.swing.JFrame {
         JLBCorreo.setText("Correo");
         JPFondo.add(JLBCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 100, 40));
 
-        JTFCorreo1.setBackground(new java.awt.Color(204, 204, 204));
+        JTFCorreo1.setBackground(new java.awt.Color(255, 255, 255));
         JTFCorreo1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         JTFCorreo1.setForeground(new java.awt.Color(153, 153, 153));
         JTFCorreo1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        JTFCorreo1.setText("Correo electrónico");
         JTFCorreo1.setBorder(null);
+        JTFCorreo1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                JTFCorreo1FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                JTFCorreo1FocusLost(evt);
+            }
+        });
         JTFCorreo1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTFCorreo1ActionPerformed(evt);
@@ -156,7 +191,7 @@ public class NuevoTecnico extends javax.swing.JFrame {
         JLBEspecialidad.setText("Especialidad");
         JPFondo.add(JLBEspecialidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 450, 110, 40));
 
-        JCBEspecialidades.setBackground(new java.awt.Color(204, 204, 204));
+        JCBEspecialidades.setBackground(new java.awt.Color(255, 255, 255));
         JCBEspecialidades.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         JCBEspecialidades.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Soporte técnico general", "Soporte de redes", "Soporte de impresoras", "Soporte de portatiles", "Soporte de equipos", "Cableado estructurado" }));
         JCBEspecialidades.setBorder(null);
@@ -191,11 +226,6 @@ public class NuevoTecnico extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo ETS 75 px.png"))); // NOI18N
         JPFondo.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 550, -1, -1));
-
-        jLabel3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel3.setText("Contraseña");
-        JPFondo.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, 110, 40));
 
         getContentPane().add(JPFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 590, 650));
 
@@ -266,6 +296,70 @@ public class NuevoTecnico extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_JTFCorreo1KeyTyped
 
+    private void JTFNombreFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFNombreFocusGained
+        // TODO add your handling code here:
+        if (JTFNombre.getText().equals("Nombre (s)")) {
+            JTFNombre.setText("");
+            JTFNombre.setForeground(new java.awt.Color(205, 205, 205));
+        }
+    }//GEN-LAST:event_JTFNombreFocusGained
+
+    private void JTFNombreFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFNombreFocusLost
+        // TODO add your handling code here:
+        if (JTFNombre.getText().isEmpty()) {
+            JTFNombre.setText("Nombre (s)");
+            JTFNombre.setForeground(new java.awt.Color(153, 153, 153));
+        }
+    }//GEN-LAST:event_JTFNombreFocusLost
+
+    private void JTFApellidoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFApellidoFocusGained
+        // TODO add your handling code here:
+        if (JTFApellido.getText().equals("Apellido (s)")) {
+            JTFApellido.setText("");
+            JTFApellido.setForeground(new java.awt.Color(205, 205, 205));
+        }
+    }//GEN-LAST:event_JTFApellidoFocusGained
+
+    private void JTFApellidoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFApellidoFocusLost
+        // TODO add your handling code here:
+        if (JTFApellido.getText().isEmpty()) {
+            JTFApellido.setText("Apellido (s)");
+            JTFApellido.setForeground(new java.awt.Color(153, 153, 153));
+        }
+    }//GEN-LAST:event_JTFApellidoFocusLost
+
+    private void JTFTelefonoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFTelefonoFocusGained
+        // TODO add your handling code here:
+        if (JTFTelefono.getText().equals("Teléfono")) {
+            JTFTelefono.setText("");
+            JTFTelefono.setForeground(new java.awt.Color(205, 205, 205));
+        }
+    }//GEN-LAST:event_JTFTelefonoFocusGained
+
+    private void JTFTelefonoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFTelefonoFocusLost
+        // TODO add your handling code here:
+        if (JTFTelefono.getText().isEmpty()) {
+            JTFTelefono.setText("Teléfono");
+            JTFTelefono.setForeground(new java.awt.Color(153, 153, 153));
+        }
+    }//GEN-LAST:event_JTFTelefonoFocusLost
+
+    private void JTFCorreo1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFCorreo1FocusGained
+        // TODO add your handling code here:
+        if (JTFCorreo1.getText().equals("Correo electrónico")) {
+            JTFCorreo1.setText("");
+            JTFCorreo1.setForeground(new java.awt.Color(205, 205, 205));
+        }
+    }//GEN-LAST:event_JTFCorreo1FocusGained
+
+    private void JTFCorreo1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFCorreo1FocusLost
+        // TODO add your handling code here:
+        if (JTFCorreo1.getText().isEmpty()) {
+            JTFCorreo1.setText("Correo electrónico");
+            JTFCorreo1.setForeground(new java.awt.Color(153, 153, 153));
+        }
+    }//GEN-LAST:event_JTFCorreo1FocusLost
+
     /**
      * @param args the command line arguments
      */
@@ -318,6 +412,5 @@ public class NuevoTecnico extends javax.swing.JFrame {
     public javax.swing.JTextField JTFTelefono;
     public javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 }

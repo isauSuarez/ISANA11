@@ -48,7 +48,7 @@ public class ModificarTicket extends javax.swing.JFrame {
         JTFUsuario.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
         JTFUsuario.setForeground(new java.awt.Color(153, 153, 153));
         JTFUsuario.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        JTFUsuario.setText("usuario");
+        JTFUsuario.setText("Usuario");
         JTFUsuario.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         JTFUsuario.setPreferredSize(new java.awt.Dimension(150, 30));
         JTFUsuario.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -126,7 +126,15 @@ public class ModificarTicket extends javax.swing.JFrame {
         JCBUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         getContentPane().add(JCBUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 152, 180, 40));
 
-        JTFEmpresa.setText("empresa");
+        JTFEmpresa.setText("Empresa");
+        JTFEmpresa.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                JTFEmpresaFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                JTFEmpresaFocusLost(evt);
+            }
+        });
         getContentPane().add(JTFEmpresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 210, 120, 40));
 
         pack();
@@ -135,7 +143,7 @@ public class ModificarTicket extends javax.swing.JFrame {
     private void JTFUsuarioFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFUsuarioFocusGained
         if (JTFUsuario.getText().equals("Usuario")) {
             JTFUsuario.setText("");
-            JTFUsuario.setForeground(new java.awt.Color(51, 51, 51)); // Letra oscura al escribir
+            JTFUsuario.setForeground(new java.awt.Color(205, 205, 205)); // Letra oscura al escribir
         }
     }//GEN-LAST:event_JTFUsuarioFocusGained
 
@@ -157,6 +165,22 @@ public class ModificarTicket extends javax.swing.JFrame {
     private void JBNSiguienteLS3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBNSiguienteLS3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_JBNSiguienteLS3ActionPerformed
+
+    private void JTFEmpresaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFEmpresaFocusGained
+        // TODO add your handling code here:
+        if (JTFEmpresa.getText().equals("Empresa")) {
+            JTFEmpresa.setText("");
+            JTFEmpresa.setForeground(new java.awt.Color(205, 205, 205)); // Letra oscura al escribir
+        }
+    }//GEN-LAST:event_JTFEmpresaFocusGained
+
+    private void JTFEmpresaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFEmpresaFocusLost
+        // TODO add your handling code here:
+        if (JTFEmpresa.getText().isEmpty()) {
+            JTFEmpresa.setText("Empresa");
+            JTFEmpresa.setForeground(new java.awt.Color(153, 153, 153)); // Vuelve al gris claro
+        }
+    }//GEN-LAST:event_JTFEmpresaFocusLost
 
     /**
      * @param args the command line arguments

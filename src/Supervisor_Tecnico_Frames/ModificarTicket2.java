@@ -68,6 +68,11 @@ public class ModificarTicket2 extends javax.swing.JFrame {
                 JTADescripcionActionPerformed(evt);
             }
         });
+        JTADescripcion.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                JTADescripcionKeyTyped(evt);
+            }
+        });
         getContentPane().add(JTADescripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, 600, 129));
 
         JLBDescripcion3.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
@@ -146,7 +151,22 @@ public class ModificarTicket2 extends javax.swing.JFrame {
         getContentPane().add(JBNSiguienteJLS3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 540, 200, 42));
 
         JTFConcepto.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        JTFConcepto.setText("concepto");
+        JTFConcepto.setText("Concepto");
+        JTFConcepto.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                JTFConceptoFocusGained(evt);
+            }
+        });
+        JTFConcepto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JTFConceptoActionPerformed(evt);
+            }
+        });
+        JTFConcepto.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                JTFConceptoKeyTyped(evt);
+            }
+        });
         getContentPane().add(JTFConcepto, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 250, 400, -1));
 
         jLabel1.setText("Concepto");
@@ -213,6 +233,30 @@ public class ModificarTicket2 extends javax.swing.JFrame {
     private void JTADescripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTADescripcionActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_JTADescripcionActionPerformed
+
+    private void JTFConceptoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTFConceptoKeyTyped
+        // TODO add your handling code here:
+        if (((javax.swing.JTextField) evt.getSource()).getText().length() >= 100) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_JTFConceptoKeyTyped
+
+    private void JTFConceptoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFConceptoFocusGained
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_JTFConceptoFocusGained
+
+    private void JTFConceptoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFConceptoActionPerformed
+        // TODO add your handling code here:
+        JTFConcepto.addActionListener(e -> JTADescripcion.requestFocus());
+    }//GEN-LAST:event_JTFConceptoActionPerformed
+
+    private void JTADescripcionKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTADescripcionKeyTyped
+        // TODO add your handling code here:
+        if (((javax.swing.JTextArea) evt.getSource()).getText().length() >= 240) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_JTADescripcionKeyTyped
 
     /**
      * @param args the command line arguments
