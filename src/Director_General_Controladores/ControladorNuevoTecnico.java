@@ -38,7 +38,7 @@ public class ControladorNuevoTecnico implements ActionListener {
         String especialidad = vista.JCBEspecialidades.getSelectedItem().toString().trim();
         String rol = "Tecnico";
 
-        String password = generarPasswordTemporal(nombres, apellidos);
+        String password = generarPasswordTemporal(apellidos);
 
         if (nombres.isEmpty() || apellidos.isEmpty() || telefono.isEmpty() || correo.isEmpty()) {
             JOptionPane.showMessageDialog(vista,
@@ -116,8 +116,8 @@ public class ControladorNuevoTecnico implements ActionListener {
         }
     }
 
-    private String generarPasswordTemporal(String nombres, String apellidos) {
-        String base = (nombres + apellidos).toLowerCase().replaceAll("\\s+", "");
+    private String generarPasswordTemporal(String apellidos) {
+        String base = (apellidos).toLowerCase().replaceAll("\\s+", "");
         return base + "123";
     }
 
