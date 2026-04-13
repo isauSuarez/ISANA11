@@ -16,7 +16,60 @@ public class GenerarReporteporCliente extends javax.swing.JFrame {
     public GenerarReporteporCliente() {
         initComponents();
         new Director_General_Controladores.ControladorReporteCliente(this);
+        JPFiltros2.setVisible(false);
+        JPBusqueda2.setVisible(false);
+        JMIAlternarFiltros2.setText("Mostrar filtros");
+
+        
     }
+    
+                private void toggleFiltros() {
+                if (JPFiltros2.isVisible()&& JPBusqueda2.isVisible()) {
+                    ocultarFiltros();
+                } else {
+                    mostrarFiltros();
+                }
+            }
+                
+                private void mostrarFiltros() {
+                JPFiltros2.setVisible(true);
+                JPBusqueda2.setVisible(true);
+
+                getContentPane().remove(JLBTitulo2);
+                getContentPane().add(JLBTitulo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 30, 330, 30));
+                
+                getContentPane().remove(jScrollPane2);
+                getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 100, 980, 240));
+
+   
+                 JMIAlternarFiltros2.setText("Ocultar filtros");
+
+                getContentPane().revalidate();
+                getContentPane().repaint();
+            }
+                
+                
+                
+                private void ocultarFiltros() {
+                JPFiltros2.setVisible(false);
+                JPBusqueda2.setVisible(false);
+
+                getContentPane().remove(JLBTitulo2);
+                getContentPane().add(JLBTitulo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 20, 330, 20));
+                
+                getContentPane().remove(jScrollPane2);
+                getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 1100, 280));
+
+   
+                 JMIAlternarFiltros2.setText("Ocultar filtros");
+
+                getContentPane().revalidate();
+                getContentPane().repaint();
+            }
+    
+    
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -27,21 +80,40 @@ public class GenerarReporteporCliente extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        JBGFechas2 = new javax.swing.ButtonGroup();
+        JLBTitulo2 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         JBNRegresar = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        JTBClientes = new javax.swing.JTable();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        JSPTabla2 = new javax.swing.JTable();
+        JPBusqueda2 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        JTFBuscador2 = new javax.swing.JTextField();
+        JCBSeleccionador2 = new javax.swing.JComboBox<>();
+        JPFiltros2 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        JCBInactiva2 = new javax.swing.JCheckBox();
+        JCBActiva2 = new javax.swing.JCheckBox();
+        JRBTiempoMayor = new javax.swing.JRadioButton();
+        JRBTiempoMenor = new javax.swing.JRadioButton();
+        jLabel4 = new javax.swing.JLabel();
+        JBNAplicarFiltros2 = new javax.swing.JButton();
+        JBNLimpiarFiltros2 = new javax.swing.JButton();
+        jMenuBar2 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        JMIAlternarFiltros2 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Montserrat", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Generar reporte por cliente");
+        JLBTitulo2.setFont(new java.awt.Font("Montserrat", 1, 24)); // NOI18N
+        JLBTitulo2.setForeground(new java.awt.Color(153, 153, 153));
+        JLBTitulo2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        JLBTitulo2.setText("Generar reporte por cliente");
+        getContentPane().add(JLBTitulo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 30, 420, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo ETS 75 px.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 330, -1, -1));
 
         JBNRegresar.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
         JBNRegresar.setText("Regresar");
@@ -51,8 +123,9 @@ public class GenerarReporteporCliente extends javax.swing.JFrame {
                 JBNRegresarActionPerformed(evt);
             }
         });
+        getContentPane().add(JBNRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 347, 69, 29));
 
-        JTBClientes.setModel(new javax.swing.table.DefaultTableModel(
+        JSPTabla2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
@@ -60,52 +133,81 @@ public class GenerarReporteporCliente extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Nombre Cliente", "Solicitante", "Empresa", "Modalidad Atencion", "Status", "Correo", "Telefono"
+                "Estado de la Póliza", "Nombre Cliente", "Empresa", "Solicitante de servicio", "Tiempo de poliza act ", "Correo del Cliente", "Teléfono del Cliente"
             }
         ));
-        JTBClientes.setShowGrid(true);
-        jScrollPane2.setViewportView(JTBClientes);
+        JSPTabla2.setShowGrid(true);
+        jScrollPane2.setViewportView(JSPTabla2);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 140, 640, 240));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(JBNRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 562, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(247, 247, 247))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(537, 537, 537))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(JBNRegresar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addGap(38, 38, 38))
-        );
+        JPBusqueda2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        JPBusqueda2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel3.setText("Buscar por");
+        JPBusqueda2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 80, 20));
+
+        JTFBuscador2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JTFBuscador2ActionPerformed(evt);
+            }
+        });
+        JPBusqueda2.add(JTFBuscador2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 270, -1));
+
+        JCBSeleccionador2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tipo de Busqueda", "---------------------", "Nombre del Cliente", "---------------------", "Empresa", "---------------------", "Solicitante de servicio", "Correo del Cliente" }));
+        JCBSeleccionador2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JCBSeleccionador2ActionPerformed(evt);
+            }
+        });
+        JPBusqueda2.add(JCBSeleccionador2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, 130, 20));
+
+        getContentPane().add(JPBusqueda2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 310, 80));
+
+        JPFiltros2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        JPFiltros2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setText("Estado de la poliza");
+        JPFiltros2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        JCBInactiva2.setText("Inactivas");
+        JPFiltros2.add(JCBInactiva2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, -1, -1));
+
+        JCBActiva2.setText("Activas");
+        JPFiltros2.add(JCBActiva2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, -1, 20));
+
+        JBGFechas2.add(JRBTiempoMayor);
+        JRBTiempoMayor.setText("Tiempo Mayor");
+        JPFiltros2.add(JRBTiempoMayor, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 30, -1, -1));
+
+        JBGFechas2.add(JRBTiempoMenor);
+        JRBTiempoMenor.setText("Tiempo Menor");
+        JPFiltros2.add(JRBTiempoMenor, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 50, -1, -1));
+
+        jLabel4.setText("Organizar por:");
+        JPFiltros2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, -1, -1));
+
+        JBNAplicarFiltros2.setText("Aplicar Filtros");
+        JPFiltros2.add(JBNAplicarFiltros2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 20, 110, -1));
+
+        JBNLimpiarFiltros2.setText("Limpiar Filtros");
+        JPFiltros2.add(JBNLimpiarFiltros2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 50, -1, -1));
+
+        getContentPane().add(JPFiltros2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 10, 420, 80));
+
+        jMenu1.setText("Ver");
+
+        JMIAlternarFiltros2.setText("Mostrar filtros");
+        JMIAlternarFiltros2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JMIAlternarFiltros2ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(JMIAlternarFiltros2);
+
+        jMenuBar2.add(jMenu1);
+
+        setJMenuBar(jMenuBar2);
 
         pack();
         setLocationRelativeTo(null);
@@ -114,6 +216,19 @@ public class GenerarReporteporCliente extends javax.swing.JFrame {
     private void JBNRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBNRegresarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_JBNRegresarActionPerformed
+
+    private void JTFBuscador2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFBuscador2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JTFBuscador2ActionPerformed
+
+    private void JCBSeleccionador2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCBSeleccionador2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JCBSeleccionador2ActionPerformed
+
+    private void JMIAlternarFiltros2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMIAlternarFiltros2ActionPerformed
+        // TODO add your handling code here:
+        toggleFiltros();
+    }//GEN-LAST:event_JMIAlternarFiltros2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -151,11 +266,27 @@ public class GenerarReporteporCliente extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.ButtonGroup JBGFechas2;
+    public javax.swing.JButton JBNAplicarFiltros2;
+    public javax.swing.JButton JBNLimpiarFiltros2;
     public javax.swing.JButton JBNRegresar;
-    public javax.swing.JTable JTBClientes;
-    private javax.swing.JComboBox<String> jComboBox1;
-    public javax.swing.JLabel jLabel1;
+    public javax.swing.JCheckBox JCBActiva2;
+    public javax.swing.JCheckBox JCBInactiva2;
+    public javax.swing.JComboBox<String> JCBSeleccionador2;
+    public javax.swing.JLabel JLBTitulo2;
+    private javax.swing.JMenuItem JMIAlternarFiltros2;
+    private javax.swing.JPanel JPBusqueda2;
+    private javax.swing.JPanel JPFiltros2;
+    public javax.swing.JRadioButton JRBTiempoMayor;
+    public javax.swing.JRadioButton JRBTiempoMenor;
+    public javax.swing.JTable JSPTabla2;
+    public javax.swing.JTextField JTFBuscador2;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenuBar jMenuBar2;
     public javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
 }

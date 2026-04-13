@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -18,81 +19,155 @@ public class ControladorReporteConsumos implements ActionListener {
 
     public ControladorReporteConsumos(ConsultarConsumos vista) {
         this.vista = vista;
+
+        this.vista.JBNAplicarFiltros3.addActionListener(this);
+        this.vista.JBNLimpiarFiltros3.addActionListener(this);
         this.vista.JBNRegresar.addActionListener(this);
+
         cargarReporteConsumos();
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == vista.JBNRegresar) {
+        if (e.getSource() == vista.JBNAplicarFiltros3) {
+            cargarReporteConsumos();
+        } else if (e.getSource() == vista.JBNLimpiarFiltros3) {
+            limpiarFiltros();
+            cargarReporteConsumos();
+        } else if (e.getSource() == vista.JBNRegresar) {
             volverAlMenu();
         }
     }
 
     private void cargarReporteConsumos() {
-    String[] columnas = {
-        "Cliente", "Empresa", "Tipo de Plan",
-        "Consumo Pres.", "Restante Pres.",
-        "Consumo Rem", "Restante Rem",
-        "Consumo Ase", "Restante Ase"
-    };
+        String[] columnas = {
+            "Cliente", "Empresa", "Tipo de Plan", "Consumo total", "% de uso"
+        };
 
-    DefaultTableModel modelo = new DefaultTableModel(null, columnas) {
-        @Override
-        public boolean isCellEditable(int row, int column) {
-            return false;
-        }
-    };
+        DefaultTableModel modelo = new DefaultTableModel(null, columnas) {
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                return false;
+            }
+        };
 
-    String sql = "SELECT " +
-                 "CONCAT(c.nombreC, ' ', c.apellidoC) AS cliente, " +
-                 "p.nombreEmpresaP, " +
-                 "pl.nombreP AS tipoPlan, " +
-                 "SUM(CASE WHEN t.statusT = 'CERRADO' AND t.modalidadAtencionT = 'PRESENCIAL' THEN 1 ELSE 0 END) AS consumidoPres, " +
-                 "GREATEST(0, pl.maxPres - SUM(CASE WHEN t.statusT = 'CERRADO' AND t.modalidadAtencionT = 'PRESENCIAL' THEN 1 ELSE 0 END)) AS restantePres, " +
-                 "SUM(CASE WHEN t.statusT = 'CERRADO' AND t.modalidadAtencionT = 'REMOTO' THEN 1 ELSE 0 END) AS consumidoRem, " +
-                 "GREATEST(0, pl.maxRem - SUM(CASE WHEN t.statusT = 'CERRADO' AND t.modalidadAtencionT = 'REMOTO' THEN 1 ELSE 0 END)) AS restanteRem, " +
-                 "SUM(CASE WHEN t.statusT = 'CERRADO' AND t.modalidadAtencionT = 'ASESORIA' THEN 1 ELSE 0 END) AS consumidoAse, " +
-                 "GREATEST(0, pl.maxAse - SUM(CASE WHEN t.statusT = 'CERRADO' AND t.modalidadAtencionT = 'ASESORIA' THEN 1 ELSE 0 END)) AS restanteAse " +
-                 "FROM poliza p " +
-                 "JOIN cliente c ON p.idCliente = c.idCliente " +
-                 "JOIN plan pl ON pl.idPoliza = p.idPoliza " +
-                 "LEFT JOIN ticket t ON t.idPoliza = p.idPoliza " +
-                 "WHERE p.estadoP = 'ACTIVA' " +
-                 "GROUP BY p.idPoliza, c.nombreC, c.apellidoC, p.nombreEmpresaP, pl.nombreP, pl.maxPres, pl.maxRem, pl.maxAse";
+        String sqlBase =
+            "SELECT cliente, empresa, tipoPlan, consumoTotal, porcentajeUso " +
+            "FROM vista_consumo_clientes ";
 
-    try (Connection con = Conexion.getConexion();
-         PreparedStatement ps = con.prepareStatement(sql);
-         ResultSet rs = ps.executeQuery()) {
+        StringBuilder where = new StringBuilder("WHERE 1=1 ");
+        StringBuilder order = new StringBuilder();
+        ArrayList<String> parametros = new ArrayList<>();
 
-        System.out.println("Conexion correcta. Cargando reporte de consumos...");
+        // -------- FILTRO POR PLAN --------
+        ArrayList<String> planes = new ArrayList<>();
+        if (vista.JCBEsencial3.isSelected()) planes.add("Esencial");
+        if (vista.JCBProfesional3.isSelected()) planes.add("Profesional");
+        if (vista.JCBEmpresarial3.isSelected()) planes.add("Empresarial");
 
-        while (rs.next()) {
-            Object[] fila = {
-                rs.getString("cliente"),
-                rs.getString("nombreEmpresaP"),
-                rs.getString("tipoPlan"),
-                rs.getInt("consumidoPres"),
-                rs.getInt("restantePres"),
-                rs.getInt("consumidoRem"),
-                rs.getInt("restanteRem"),
-                rs.getInt("consumidoAse"),
-                rs.getInt("restanteAse")
-            };
-            modelo.addRow(fila);
+        if (!planes.isEmpty()) {
+            where.append("AND tipoPlan IN (");
+            for (int i = 0; i < planes.size(); i++) {
+                where.append("?");
+                if (i < planes.size() - 1) {
+                    where.append(", ");
+                }
+                parametros.add(planes.get(i));
+            }
+            where.append(") ");
         }
 
-        vista.JTBConsumos.setModel(modelo);
-        System.out.println("Reporte de consumos cargado correctamente.");
+        // -------- BÚSQUEDA --------
+        String textoBusqueda = vista.JTFBuscador3.getText().trim();
+        String tipoBusqueda = vista.JCBSeleccionador3.getSelectedItem().toString();
 
-    } catch (SQLException ex) {
-        System.out.println("Error al cargar reporte de consumos: " + ex.getMessage());
-        JOptionPane.showMessageDialog(vista,
-                "Hubo un error al cargar el reporte: " + ex.getMessage(),
-                "Error",
-                JOptionPane.ERROR_MESSAGE);
+        if (!textoBusqueda.isEmpty()
+                && !tipoBusqueda.equalsIgnoreCase("Tipo de Busqueda")
+                && !tipoBusqueda.equalsIgnoreCase("Tipo de Búsqueda")) {
+
+            switch (tipoBusqueda) {
+                case "Cliente":
+                    where.append("AND cliente LIKE ? ");
+                    parametros.add("%" + textoBusqueda + "%");
+                    break;
+
+                case "Empresa":
+                    where.append("AND empresa LIKE ? ");
+                    parametros.add("%" + textoBusqueda + "%");
+                    break;
+
+            }
+        }
+
+        // -------- ORGANIZAR --------
+        String organizador = vista.JCBrganizador.getSelectedItem().toString();
+
+        switch (organizador) {
+            case "Mayor consumo total":
+                order.append("ORDER BY consumoTotal DESC, porcentajeUso DESC ");
+                break;
+
+            case "Menor consumo total":
+                order.append("ORDER BY consumoTotal ASC, porcentajeUso ASC ");
+                break;
+
+            case "Mayor % de uso":
+                order.append("ORDER BY porcentajeUso DESC, consumoTotal DESC ");
+                break;
+
+            case "Menor % de uso":
+                order.append("ORDER BY porcentajeUso ASC, consumoTotal ASC ");
+                break;
+
+            default:
+                order.append("ORDER BY cliente ASC ");
+                break;
+        }
+
+        String sqlFinal = sqlBase + where.toString() + order.toString();
+        System.out.println("SQL REPORTE CONSUMOS: " + sqlFinal);
+
+        try (Connection con = Conexion.getConexion();
+             PreparedStatement ps = con.prepareStatement(sqlFinal)) {
+
+            for (int i = 0; i < parametros.size(); i++) {
+                ps.setString(i + 1, parametros.get(i));
+            }
+
+            try (ResultSet rs = ps.executeQuery()) {
+                while (rs.next()) {
+                    Object[] fila = {
+                        rs.getString("cliente"),
+                        rs.getString("empresa"),
+                        rs.getString("tipoPlan"),
+                        rs.getInt("consumoTotal"),
+                        rs.getDouble("porcentajeUso") + "%"
+                    };
+                    modelo.addRow(fila);
+                }
+            }
+
+            vista.JTBConsumos.setModel(modelo);
+            System.out.println("Reporte de consumos cargado correctamente.");
+
+        } catch (SQLException ex) {
+            System.out.println("Error al cargar reporte de consumos: " + ex.getMessage());
+            JOptionPane.showMessageDialog(vista,
+                    "Hubo un error al cargar el reporte: " + ex.getMessage(),
+                    "Error",
+                    JOptionPane.ERROR_MESSAGE);
+        }
     }
-}
+
+    private void limpiarFiltros() {
+        vista.JCBEsencial3.setSelected(false);
+        vista.JCBProfesional3.setSelected(false);
+        vista.JCBEmpresarial3.setSelected(false);
+
+        vista.JTFBuscador3.setText("");
+        vista.JCBSeleccionador3.setSelectedIndex(0);
+        vista.JCBrganizador.setSelectedIndex(0);
+    }
 
     private void volverAlMenu() {
         Menu_Director_General menu = new Menu_Director_General();

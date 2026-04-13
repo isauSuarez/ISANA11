@@ -16,7 +16,55 @@ public class ConsultarConsumos extends javax.swing.JFrame {
     public ConsultarConsumos() {
         initComponents();
         new Director_General_Controladores.ControladorReporteConsumos(this);
+        JPFiltros3.setVisible(false);
+        JPBusqueda3.setVisible(false);
+        JMIAlternarFiltros3.setText("Mostrar filtros");
     }
+    
+    private void toggleFiltros() {
+                if (JPFiltros3.isVisible()&& JPBusqueda3.isVisible()) {
+                    ocultarFiltros();
+                } else {
+                    mostrarFiltros();
+                }
+            }
+            
+            private void mostrarFiltros() {
+                JPFiltros3.setVisible(true);
+                JPBusqueda3.setVisible(true);
+
+                getContentPane().remove(JLBTitulo3);
+                getContentPane().add(JLBTitulo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 30, 330, 30));
+                
+                getContentPane().remove(JSPTabla3);
+                getContentPane().add(JSPTabla3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 100, 980, 240));
+
+   
+                 JMIAlternarFiltros3.setText("Ocultar filtros");
+
+                getContentPane().revalidate();
+                getContentPane().repaint();
+            }
+
+            private void ocultarFiltros() {
+                JPFiltros3.setVisible(false);
+                JPBusqueda3.setVisible(false);
+                
+                getContentPane().remove(JLBTitulo3);
+                getContentPane().add(JLBTitulo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 20, 330, 20));
+
+                getContentPane().remove(JSPTabla3);
+                getContentPane().add(JSPTabla3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 1100, 280));
+
+                 JMIAlternarFiltros3.setText("Mostrar filtros");
+                 
+                JTFBuscador3.setText("");
+                JCBSeleccionador3.setSelectedIndex(0);
+
+                getContentPane().revalidate();
+                getContentPane().repaint();
+            }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -27,34 +75,55 @@ public class ConsultarConsumos extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        JLBTitulo3 = new javax.swing.JLabel();
+        JSPTabla3 = new javax.swing.JScrollPane();
         JTBConsumos = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
         JBNRegresar = new javax.swing.JButton();
+        JPBusqueda3 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        JTFBuscador3 = new javax.swing.JTextField();
+        JCBSeleccionador3 = new javax.swing.JComboBox<>();
+        JPFiltros3 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        JCBEsencial3 = new javax.swing.JCheckBox();
+        JCBProfesional3 = new javax.swing.JCheckBox();
+        JCBEmpresarial3 = new javax.swing.JCheckBox();
+        jLabel5 = new javax.swing.JLabel();
+        JBNLimpiarFiltros3 = new javax.swing.JButton();
+        JBNAplicarFiltros3 = new javax.swing.JButton();
+        JCBrganizador = new javax.swing.JComboBox<>();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        JMVista3 = new javax.swing.JMenu();
+        JMIAlternarFiltros3 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Montserrat", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Consultar consumo de servicios por cliente");
+        JLBTitulo3.setFont(new java.awt.Font("Montserrat", 1, 24)); // NOI18N
+        JLBTitulo3.setForeground(new java.awt.Color(153, 153, 153));
+        JLBTitulo3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        JLBTitulo3.setText("Consultar consumo de servicios por cliente");
+        getContentPane().add(JLBTitulo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 40, 562, -1));
 
         JTBConsumos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Cliente", "Empresa", "Tipo de Plan", "Consumo Pres.", "Restante Pres.", "Consumo Rem", "Restante Rem", "Consumo Ase", "Restante Ase"
+                "Cliente", "Empresa", "Tipo de Plan", "Consumo total", "% de uso"
             }
         ));
         JTBConsumos.setShowGrid(true);
-        jScrollPane1.setViewportView(JTBConsumos);
+        JSPTabla3.setViewportView(JTBConsumos);
+
+        getContentPane().add(JSPTabla3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 130, 920, 220));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo ETS 75 px.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, -1, -1));
 
         JBNRegresar.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
         JBNRegresar.setText("Regresar");
@@ -64,42 +133,73 @@ public class ConsultarConsumos extends javax.swing.JFrame {
                 JBNRegresarActionPerformed(evt);
             }
         });
+        getContentPane().add(JBNRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1079, 314, 69, 29));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(JBNRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1121, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(292, 292, 292)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 562, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 15, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 227, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(JBNRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18))))
-        );
+        JPBusqueda3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        JPBusqueda3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel3.setText("Buscar por");
+        JPBusqueda3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 90, 20));
+
+        JTFBuscador3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JTFBuscador3ActionPerformed(evt);
+            }
+        });
+        JPBusqueda3.add(JTFBuscador3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 190, -1));
+
+        JCBSeleccionador3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tipo de Busqueda", "Cliente", "Empresa" }));
+        JCBSeleccionador3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JCBSeleccionador3ActionPerformed(evt);
+            }
+        });
+        JPBusqueda3.add(JCBSeleccionador3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, 130, 20));
+
+        getContentPane().add(JPBusqueda3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, 250, 100));
+
+        JPFiltros3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        JPFiltros3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel4.setText("Tipo de plan");
+        JPFiltros3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, -1, 20));
+
+        JCBEsencial3.setText("Esencial");
+        JPFiltros3.add(JCBEsencial3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, -1, 20));
+
+        JCBProfesional3.setText("Profesional");
+        JPFiltros3.add(JCBProfesional3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, 20));
+
+        JCBEmpresarial3.setText("Empresarial");
+        JPFiltros3.add(JCBEmpresarial3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, 20));
+
+        jLabel5.setText("Organizar por ");
+        JPFiltros3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 80, -1));
+
+        JBNLimpiarFiltros3.setText("Limpiar Filtros");
+        JPFiltros3.add(JBNLimpiarFiltros3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 110, -1));
+
+        JBNAplicarFiltros3.setText("Aplicar Filtros");
+        JPFiltros3.add(JBNAplicarFiltros3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 110, -1));
+
+        JCBrganizador.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccion", "Mayor consumo total", "Menor consumo total", "Mayor % de uso", "Menor % de uso" }));
+        JPFiltros3.add(JCBrganizador, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 130, -1));
+
+        getContentPane().add(JPFiltros3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 130, 330));
+
+        JMVista3.setText("Ver");
+
+        JMIAlternarFiltros3.setText("Mostrar filtros");
+        JMIAlternarFiltros3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JMIAlternarFiltros3ActionPerformed(evt);
+            }
+        });
+        JMVista3.add(JMIAlternarFiltros3);
+
+        jMenuBar1.add(JMVista3);
+
+        setJMenuBar(jMenuBar1);
 
         pack();
         setLocationRelativeTo(null);
@@ -108,6 +208,19 @@ public class ConsultarConsumos extends javax.swing.JFrame {
     private void JBNRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBNRegresarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_JBNRegresarActionPerformed
+
+    private void JTFBuscador3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFBuscador3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JTFBuscador3ActionPerformed
+
+    private void JCBSeleccionador3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCBSeleccionador3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JCBSeleccionador3ActionPerformed
+
+    private void JMIAlternarFiltros3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMIAlternarFiltros3ActionPerformed
+        // TODO add your handling code here:
+        toggleFiltros();
+    }//GEN-LAST:event_JMIAlternarFiltros3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -145,10 +258,26 @@ public class ConsultarConsumos extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton JBNAplicarFiltros3;
+    public javax.swing.JButton JBNLimpiarFiltros3;
     public javax.swing.JButton JBNRegresar;
+    public javax.swing.JCheckBox JCBEmpresarial3;
+    public javax.swing.JCheckBox JCBEsencial3;
+    public javax.swing.JCheckBox JCBProfesional3;
+    public javax.swing.JComboBox<String> JCBSeleccionador3;
+    public javax.swing.JComboBox<String> JCBrganizador;
+    public javax.swing.JLabel JLBTitulo3;
+    private javax.swing.JMenuItem JMIAlternarFiltros3;
+    private javax.swing.JMenu JMVista3;
+    private javax.swing.JPanel JPBusqueda3;
+    private javax.swing.JPanel JPFiltros3;
+    public javax.swing.JScrollPane JSPTabla3;
     public javax.swing.JTable JTBConsumos;
-    public javax.swing.JLabel jLabel1;
+    public javax.swing.JTextField JTFBuscador3;
     private javax.swing.JLabel jLabel2;
-    public javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JMenuBar jMenuBar1;
     // End of variables declaration//GEN-END:variables
 }
