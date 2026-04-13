@@ -17,6 +17,9 @@ public class CambioPass extends javax.swing.JFrame {
      */
     public CambioPass() {
         initComponents();
+        this.setSize(800, 580); // Fuerza el tamaño exacto
+        this.setResizable(false);
+        this.setLocationRelativeTo(null); // Centra la ventana en tu monitor
     }
 
     /**
@@ -28,45 +31,135 @@ public class CambioPass extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        JPFondo = new ImagenPanel_T("/imagenes/FondoETS.jpg");
         jLabel2 = new javax.swing.JLabel();
         JPWCambio = new javax.swing.JPasswordField();
         jLabel3 = new javax.swing.JLabel();
         JPWConfirmacion = new javax.swing.JPasswordField();
         JBNConfirmar = new javax.swing.JButton();
         JBNcancelar = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
         JPWPassActual = new javax.swing.JPasswordField();
+        JLBRegistrarCliente = new javax.swing.JLabel();
+        JLBBusqueda = new javax.swing.JLabel();
+        jSeparator2 = new javax.swing.JSeparator();
+        jSeparator3 = new javax.swing.JSeparator();
+        jLabel5 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        JLBBusqueda1 = new javax.swing.JLabel();
+        jSeparator4 = new javax.swing.JSeparator();
+        jSeparator5 = new javax.swing.JSeparator();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jSeparator6 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("Cambio de contraseña");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 29, 164, -1));
+        JPFondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setText("Escribe la nueva contraseña");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 182, -1));
+        jLabel2.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel2.setText("Escribe la nueva contraseña:");
+        JPFondo.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 230, 40));
 
+        JPWCambio.setForeground(new java.awt.Color(102, 102, 102));
+        JPWCambio.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        JPWCambio.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(200, 200, 200), 1, true));
         JPWCambio.addActionListener(this::JPWCambioActionPerformed);
-        getContentPane().add(JPWCambio, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, 190, 30));
+        JPFondo.add(JPWCambio, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 300, 500, 40));
 
-        jLabel3.setText("Confirma tu nueva contraseña");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, -1));
+        jLabel3.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel3.setText("Confirma tu nueva contraseña:");
+        JPFondo.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, 230, 40));
 
+        JPWConfirmacion.setForeground(new java.awt.Color(102, 102, 102));
+        JPWConfirmacion.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        JPWConfirmacion.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(200, 200, 200), 1, true));
         JPWConfirmacion.addActionListener(this::JPWConfirmacionActionPerformed);
-        getContentPane().add(JPWConfirmacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 180, 190, 30));
+        JPFondo.add(JPWConfirmacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 360, 500, 40));
 
-        JBNConfirmar.setText("Confirmar");
-        getContentPane().add(JBNConfirmar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 260, 110, 40));
+        JBNConfirmar.setBackground(new java.awt.Color(0, 153, 102));
+        JBNConfirmar.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        JBNConfirmar.setForeground(new java.awt.Color(255, 255, 255));
+        JBNConfirmar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/guardar3.png"))); // NOI18N
+        JBNConfirmar.setText("Guardar");
+        JBNConfirmar.setBorder(null);
+        JBNConfirmar.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        JBNConfirmar.setIconTextGap(15);
+        JPFondo.add(JBNConfirmar, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 470, 225, 45));
 
+        JBNcancelar.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        JBNcancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/cancelar2.png"))); // NOI18N
         JBNcancelar.setText("Cancelar");
-        getContentPane().add(JBNcancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 280, -1, -1));
+        JBNcancelar.setBorder(null);
+        JBNcancelar.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        JBNcancelar.setIconTextGap(10);
+        JBNcancelar.addActionListener(this::JBNcancelarActionPerformed);
+        JPFondo.add(JBNcancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(645, 490, 125, 40));
 
-        jLabel4.setText("Contraseña Actual");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, -1, -1));
-
+        JPWPassActual.setForeground(new java.awt.Color(102, 102, 102));
+        JPWPassActual.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        JPWPassActual.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(200, 200, 200), 1, true));
         JPWPassActual.addActionListener(this::JPWPassActualActionPerformed);
-        getContentPane().add(JPWPassActual, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, 200, -1));
+        JPFondo.add(JPWPassActual, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 750, 40));
+
+        JLBRegistrarCliente.setFont(new java.awt.Font("Montserrat", 1, 24)); // NOI18N
+        JLBRegistrarCliente.setForeground(new java.awt.Color(102, 102, 102));
+        JLBRegistrarCliente.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        JLBRegistrarCliente.setText("Cambio de Contraseña");
+        JPFondo.add(JLBRegistrarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 790, 40));
+
+        JLBBusqueda.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        JLBBusqueda.setForeground(new java.awt.Color(102, 102, 102));
+        JLBBusqueda.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        JLBBusqueda.setText("Contraseña Actual");
+        JPFondo.add(JLBBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 150, 40));
+
+        jSeparator2.setAlignmentX(1.0F);
+        jSeparator2.setAlignmentY(1.0F);
+        JPFondo.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 90, 620, 10));
+
+        jSeparator3.setAlignmentX(1.0F);
+        jSeparator3.setAlignmentY(1.0F);
+        JPFondo.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 20, 10));
+
+        jLabel5.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel5.setText("Introduce la contraseña que te fue proporcionada al momento de tu registro en la plataforma");
+        JPFondo.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 630, 30));
+
+        jSeparator1.setAlignmentX(1.0F);
+        jSeparator1.setAlignmentY(1.0F);
+        JPFondo.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 420, 790, 10));
+
+        JLBBusqueda1.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        JLBBusqueda1.setForeground(new java.awt.Color(102, 102, 102));
+        JLBBusqueda1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        JLBBusqueda1.setText("Nueva Contraseña");
+        JPFondo.add(JLBBusqueda1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 150, 40));
+
+        jSeparator4.setAlignmentX(1.0F);
+        jSeparator4.setAlignmentY(1.0F);
+        JPFondo.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 240, 620, 10));
+
+        jSeparator5.setAlignmentX(1.0F);
+        jSeparator5.setAlignmentY(1.0F);
+        JPFondo.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 20, 10));
+
+        jLabel7.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel7.setText("Registra una nueva contraseña (Con ella iniciaras sesion la proxima vez que ingreses a la plataforma)");
+        JPFondo.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 630, 30));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo ETS 75 px.png"))); // NOI18N
+        JPFondo.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 470, -1, -1));
+
+        jSeparator6.setAlignmentX(1.0F);
+        jSeparator6.setAlignmentY(1.0F);
+        JPFondo.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 790, 10));
+
+        getContentPane().add(JPFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
         setLocationRelativeTo(null);
@@ -86,6 +179,10 @@ public class CambioPass extends javax.swing.JFrame {
         // TODO add your handling code here:
         JPWConfirmacion.addActionListener(e -> JBNConfirmar.doClick());
     }//GEN-LAST:event_JPWConfirmacionActionPerformed
+
+    private void JBNcancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBNcancelarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JBNcancelarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -115,12 +212,23 @@ public class CambioPass extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton JBNConfirmar;
     public javax.swing.JButton JBNcancelar;
+    public javax.swing.JLabel JLBBusqueda;
+    public javax.swing.JLabel JLBBusqueda1;
+    public javax.swing.JLabel JLBRegistrarCliente;
+    private javax.swing.JPanel JPFondo;
     public javax.swing.JPasswordField JPWCambio;
     public javax.swing.JPasswordField JPWConfirmacion;
     public javax.swing.JPasswordField JPWPassActual;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    public javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JSeparator jSeparator6;
     // End of variables declaration//GEN-END:variables
 }

@@ -59,7 +59,6 @@ public class CancelarPolizaN extends javax.swing.JFrame {
 
         JTFNumPoliza.setForeground(new java.awt.Color(102, 102, 102));
         JTFNumPoliza.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        JTFNumPoliza.setText("Núm. Poliza");
         JTFNumPoliza.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(200, 200, 200), 1, true));
         JTFNumPoliza.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -77,26 +76,32 @@ public class CancelarPolizaN extends javax.swing.JFrame {
         JPFondo.add(JTFNumPoliza, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 510, 40));
 
         JBNCancelar.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        JBNCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/cancelar2.png"))); // NOI18N
         JBNCancelar.setText("Cancelar");
         JBNCancelar.setBorder(null);
+        JBNCancelar.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        JBNCancelar.setIconTextGap(10);
         JBNCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JBNCancelarActionPerformed(evt);
             }
         });
-        JPFondo.add(JBNCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 620, 100, 30));
+        JPFondo.add(JBNCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 610, 125, 40));
 
         JBNConfirmar.setBackground(new java.awt.Color(0, 153, 102));
         JBNConfirmar.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
         JBNConfirmar.setForeground(new java.awt.Color(255, 255, 255));
-        JBNConfirmar.setText("Confirmar");
+        JBNConfirmar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/guardar3.png"))); // NOI18N
+        JBNConfirmar.setText("Guardar");
         JBNConfirmar.setBorder(null);
+        JBNConfirmar.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        JBNConfirmar.setIconTextGap(15);
         JBNConfirmar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JBNConfirmarActionPerformed(evt);
             }
         });
-        JPFondo.add(JBNConfirmar, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 590, 225, 45));
+        JPFondo.add(JBNConfirmar, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 580, 225, 45));
 
         JTAinfo.setColumns(20);
         JTAinfo.setRows(5);
@@ -152,7 +157,7 @@ public class CancelarPolizaN extends javax.swing.JFrame {
         jSeparator5.setAlignmentY(1.0F);
         JPFondo.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 30, 10));
 
-        getContentPane().add(JPFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 690, 670));
+        getContentPane().add(JPFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 690, 660));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

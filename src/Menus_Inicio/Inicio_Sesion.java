@@ -62,7 +62,8 @@ public class Inicio_Sesion extends javax.swing.JFrame {
         lblBienvenido.setText("¡Bienvenido!");
         JPFondo.add(lblBienvenido, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 90, -1, -1));
 
-        txtUsuario.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        txtUsuario.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
+        txtUsuario.setForeground(new java.awt.Color(153, 153, 153));
         txtUsuario.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtUsuario.setText("Usuario");
         txtUsuario.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 153, 153), 2, true));
@@ -82,7 +83,8 @@ public class Inicio_Sesion extends javax.swing.JFrame {
         });
         JPFondo.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 350, -1));
 
-        pwdContrasena.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        pwdContrasena.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
+        pwdContrasena.setForeground(new java.awt.Color(153, 153, 153));
         pwdContrasena.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         pwdContrasena.setText("Contraseña");
         pwdContrasena.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 153, 153), 2, true));
@@ -102,25 +104,24 @@ public class Inicio_Sesion extends javax.swing.JFrame {
         });
         JPFondo.add(pwdContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 350, -1));
 
-        btnAcceder.setBackground(new java.awt.Color(59, 129, 88));
-        btnAcceder.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
+        btnAcceder.setBackground(new java.awt.Color(0, 153, 102));
+        btnAcceder.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
         btnAcceder.setForeground(new java.awt.Color(255, 255, 255));
         btnAcceder.setText("Acceder");
-        btnAcceder.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(39, 174, 96), 1, true));
+        btnAcceder.setBorder(null);
         btnAcceder.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btnAcceder.setOpaque(true);
         btnAcceder.setPreferredSize(new java.awt.Dimension(100, 25));
         btnAcceder.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAccederActionPerformed(evt);
             }
         });
-        JPFondo.add(btnAcceder, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 270, -1, -1));
+        JPFondo.add(btnAcceder, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 280, 100, 30));
 
         lblInstrucciones.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         lblInstrucciones.setForeground(new java.awt.Color(153, 153, 153));
         lblInstrucciones.setText("Ingresa tu usuario y contraseña");
-        JPFondo.add(lblInstrucciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 320, 200, -1));
+        JPFondo.add(lblInstrucciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 330, 200, -1));
 
         lblAyuda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/signo-de-pregunta.png"))); // NOI18N
         lblAyuda.setToolTipText("Si olvidaste tu contraseña, contacta al administrador de sistemas.");

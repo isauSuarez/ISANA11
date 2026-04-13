@@ -15,7 +15,8 @@ public class ModificarTicket extends javax.swing.JFrame {
      */
     public ModificarTicket() {
         initComponents();
-        this.setSize(495, 550); // Fuerza el tamaño exacto
+        this.setSize(700, 585); // Fuerza el tamaño exacto
+        this.setResizable(false);
         this.setLocationRelativeTo(null); // Centra la ventana en tu monitor
     }
 
@@ -28,28 +29,37 @@ public class ModificarTicket extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        JPFondo = new ImagenPanel_ST("/imagenes/FondoETS.jpg");
         JTFUsuario = new javax.swing.JTextField();
-        JLBLogo = new javax.swing.JLabel();
         JBNCancelar = new javax.swing.JButton();
         JLBEditarTicket = new javax.swing.JLabel();
-        JLBDescripcion1 = new javax.swing.JLabel();
-        JLBDescripcion2 = new javax.swing.JLabel();
         JBNSiguienteLS3 = new javax.swing.JButton();
         JCBEmpresa = new javax.swing.JComboBox<>();
         JCBTicket = new javax.swing.JComboBox<>();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         JCBUsuario = new javax.swing.JComboBox<>();
         JTFEmpresa = new javax.swing.JTextField();
+        JLBLogo = new javax.swing.JLabel();
+        JLBBusqueda = new javax.swing.JLabel();
+        jSeparator2 = new javax.swing.JSeparator();
+        jSeparator3 = new javax.swing.JSeparator();
+        jLabel4 = new javax.swing.JLabel();
+        JLBEmpresa = new javax.swing.JLabel();
+        JLBUsuario = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        JLBBusqueda1 = new javax.swing.JLabel();
+        jSeparator4 = new javax.swing.JSeparator();
+        jSeparator5 = new javax.swing.JSeparator();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        JTFUsuario.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
-        JTFUsuario.setForeground(new java.awt.Color(153, 153, 153));
+        JPFondo.setForeground(new java.awt.Color(102, 102, 102));
+        JPFondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        JTFUsuario.setForeground(new java.awt.Color(102, 102, 102));
         JTFUsuario.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        JTFUsuario.setText("Usuario");
-        JTFUsuario.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        JTFUsuario.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(200, 200, 200), 1, true));
         JTFUsuario.setPreferredSize(new java.awt.Dimension(150, 30));
         JTFUsuario.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -64,69 +74,57 @@ public class ModificarTicket extends javax.swing.JFrame {
                 JTFUsuarioActionPerformed(evt);
             }
         });
-        getContentPane().add(JTFUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 150, 120, 40));
-
-        JLBLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo ETS 75 px.png"))); // NOI18N
-        getContentPane().add(JLBLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 430, -1, -1));
+        JPFondo.add(JTFUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 140, 200, 30));
 
         JBNCancelar.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        JBNCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/cancelar2.png"))); // NOI18N
         JBNCancelar.setText("Cancelar");
-        JBNCancelar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        JBNCancelar.setBorder(null);
+        JBNCancelar.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        JBNCancelar.setIconTextGap(10);
         JBNCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JBNCancelarActionPerformed(evt);
             }
         });
-        getContentPane().add(JBNCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 470, 80, 30));
+        JPFondo.add(JBNCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 490, 125, 40));
 
-        JLBEditarTicket.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        JLBEditarTicket.setFont(new java.awt.Font("Montserrat", 1, 24)); // NOI18N
         JLBEditarTicket.setForeground(new java.awt.Color(102, 102, 102));
+        JLBEditarTicket.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         JLBEditarTicket.setText("Editar Ticket");
-        getContentPane().add(JLBEditarTicket, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, -1, -1));
-
-        JLBDescripcion1.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
-        JLBDescripcion1.setForeground(new java.awt.Color(153, 153, 153));
-        JLBDescripcion1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        JLBDescripcion1.setText("Ingrese o seleccione de la lista");
-        getContentPane().add(JLBDescripcion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 60, 300, -1));
-
-        JLBDescripcion2.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
-        JLBDescripcion2.setForeground(new java.awt.Color(153, 153, 153));
-        JLBDescripcion2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        JLBDescripcion2.setText("El numero de ticket a editar");
-        getContentPane().add(JLBDescripcion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 300, -1));
+        JPFondo.add(JLBEditarTicket, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 680, 40));
 
         JBNSiguienteLS3.setBackground(new java.awt.Color(0, 153, 102));
         JBNSiguienteLS3.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
         JBNSiguienteLS3.setForeground(new java.awt.Color(255, 255, 255));
+        JBNSiguienteLS3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/siguiente1.png"))); // NOI18N
         JBNSiguienteLS3.setText("Siguiente");
-        JBNSiguienteLS3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(39, 174, 96), 1, true));
+        JBNSiguienteLS3.setBorder(null);
         JBNSiguienteLS3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        JBNSiguienteLS3.setOpaque(true);
+        JBNSiguienteLS3.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        JBNSiguienteLS3.setIconTextGap(15);
         JBNSiguienteLS3.setPreferredSize(new java.awt.Dimension(100, 25));
         JBNSiguienteLS3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JBNSiguienteLS3ActionPerformed(evt);
             }
         });
-        getContentPane().add(JBNSiguienteLS3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 420, 200, 42));
+        JPFondo.add(JBNSiguienteLS3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 460, 225, 45));
 
-        JCBEmpresa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        getContentPane().add(JCBEmpresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 210, 180, 40));
+        JCBEmpresa.setForeground(new java.awt.Color(102, 102, 102));
+        JPFondo.add(JCBEmpresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 190, 200, 30));
 
-        JCBTicket.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        getContentPane().add(JCBTicket, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 300, 210, 40));
+        JCBTicket.setForeground(new java.awt.Color(102, 102, 102));
+        JCBTicket.setBorder(null);
+        JPFondo.add(JCBTicket, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, 630, 50));
 
-        jLabel1.setText("usuario que lo solicito");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 150, -1));
+        JCBUsuario.setForeground(new java.awt.Color(102, 102, 102));
+        JPFondo.add(JCBUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 190, 200, 30));
 
-        jLabel3.setText("Ticket a editar");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, -1, -1));
-
-        JCBUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        getContentPane().add(JCBUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 152, 180, 40));
-
-        JTFEmpresa.setText("Empresa");
+        JTFEmpresa.setForeground(new java.awt.Color(102, 102, 102));
+        JTFEmpresa.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        JTFEmpresa.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(200, 200, 200), 1, true));
         JTFEmpresa.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 JTFEmpresaFocusGained(evt);
@@ -135,7 +133,64 @@ public class ModificarTicket extends javax.swing.JFrame {
                 JTFEmpresaFocusLost(evt);
             }
         });
-        getContentPane().add(JTFEmpresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 210, 120, 40));
+        JPFondo.add(JTFEmpresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 140, 200, 30));
+
+        JLBLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo ETS 75 px.png"))); // NOI18N
+        JPFondo.add(JLBLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 470, -1, -1));
+
+        JLBBusqueda.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        JLBBusqueda.setForeground(new java.awt.Color(102, 102, 102));
+        JLBBusqueda.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        JLBBusqueda.setText("Busqueda de Ticket (Usuario o Empresa)");
+        JPFondo.add(JLBBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 310, 40));
+
+        jSeparator2.setAlignmentX(1.0F);
+        jSeparator2.setAlignmentY(1.0F);
+        JPFondo.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 80, 360, 10));
+
+        jSeparator3.setAlignmentX(1.0F);
+        jSeparator3.setAlignmentY(1.0F);
+        JPFondo.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 20, 10));
+
+        jLabel4.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel4.setText("Realiza la búsqueda seleccionando el usuario, la empresa o ambas opciones para encontrar el ticket");
+        JPFondo.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 630, 30));
+
+        JLBEmpresa.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
+        JLBEmpresa.setForeground(new java.awt.Color(102, 102, 102));
+        JLBEmpresa.setText("Empresa");
+        JPFondo.add(JLBEmpresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 70, 30));
+
+        JLBUsuario.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
+        JLBUsuario.setForeground(new java.awt.Color(102, 102, 102));
+        JLBUsuario.setText("Usuario");
+        JPFondo.add(JLBUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 140, 60, 30));
+
+        jSeparator1.setAlignmentX(1.0F);
+        jSeparator1.setAlignmentY(1.0F);
+        JPFondo.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 690, 10));
+
+        JLBBusqueda1.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        JLBBusqueda1.setForeground(new java.awt.Color(102, 102, 102));
+        JLBBusqueda1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        JLBBusqueda1.setText("Selección de Ticket");
+        JPFondo.add(JLBBusqueda1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 160, 40));
+
+        jSeparator4.setAlignmentX(1.0F);
+        jSeparator4.setAlignmentY(1.0F);
+        JPFondo.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 290, 510, 10));
+
+        jSeparator5.setAlignmentX(1.0F);
+        jSeparator5.setAlignmentY(1.0F);
+        JPFondo.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 20, 10));
+
+        jLabel5.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel5.setText("Selecciona en la lista el ticket que desea editar");
+        JPFondo.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 630, 30));
+
+        getContentPane().add(JPFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 690, 550));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -224,13 +279,21 @@ public class ModificarTicket extends javax.swing.JFrame {
     public javax.swing.JComboBox<String> JCBEmpresa;
     public javax.swing.JComboBox<String> JCBTicket;
     public javax.swing.JComboBox<String> JCBUsuario;
-    public javax.swing.JLabel JLBDescripcion1;
-    public javax.swing.JLabel JLBDescripcion2;
+    public javax.swing.JLabel JLBBusqueda;
+    public javax.swing.JLabel JLBBusqueda1;
     public javax.swing.JLabel JLBEditarTicket;
+    private javax.swing.JLabel JLBEmpresa;
     public javax.swing.JLabel JLBLogo;
+    private javax.swing.JLabel JLBUsuario;
+    private javax.swing.JPanel JPFondo;
     public javax.swing.JTextField JTFEmpresa;
     public javax.swing.JTextField JTFUsuario;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
     // End of variables declaration//GEN-END:variables
 }

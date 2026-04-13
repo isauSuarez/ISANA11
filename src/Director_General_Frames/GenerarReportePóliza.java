@@ -130,10 +130,10 @@ public class GenerarReportePóliza extends javax.swing.JFrame {
         JTBPolizas.setShowGrid(true);
         JSPTabla.setViewportView(JTBPolizas);
 
-        getContentPane().add(JSPTabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 1020, 260));
+        getContentPane().add(JSPTabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 1020, 260));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo ETS 75 px.png"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 340, 110, 80));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 400, 110, 80));
 
         JBNRegresar.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
         JBNRegresar.setText("Regresar");

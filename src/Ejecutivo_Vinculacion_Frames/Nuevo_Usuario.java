@@ -62,13 +62,12 @@ public class Nuevo_Usuario extends javax.swing.JFrame {
         lblTituloNU.setForeground(new java.awt.Color(102, 102, 102));
         lblTituloNU.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTituloNU.setText("Nuevo Usuario");
-        JPFondo.add(lblTituloNU, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 680, 40));
+        JPFondo.add(lblTituloNU, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 690, 40));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ETS MINI2.png"))); // NOI18N
         JPFondo.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 530, -1, -1));
 
-        JCBClientes.setForeground(new java.awt.Color(153, 153, 153));
-        JCBClientes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Clientes registrados..." }));
+        JCBClientes.setForeground(new java.awt.Color(102, 102, 102));
         JCBClientes.setBorder(null);
         JCBClientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -78,20 +77,26 @@ public class Nuevo_Usuario extends javax.swing.JFrame {
         JPFondo.add(JCBClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, 600, 40));
 
         JBNSiguiente.setBackground(new java.awt.Color(0, 153, 102));
-        JBNSiguiente.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        JBNSiguiente.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
         JBNSiguiente.setForeground(new java.awt.Color(255, 255, 255));
+        JBNSiguiente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/siguiente1.png"))); // NOI18N
         JBNSiguiente.setText("Siguiente");
         JBNSiguiente.setBorder(null);
         JBNSiguiente.setBorderPainted(false);
         JBNSiguiente.setFocusPainted(false);
+        JBNSiguiente.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        JBNSiguiente.setIconTextGap(15);
         JPFondo.add(JBNSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 530, 225, 45));
 
-        JBNCancelar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        JBNCancelar.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        JBNCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/cancelar2.png"))); // NOI18N
         JBNCancelar.setText("Cancelar");
         JBNCancelar.setBorder(null);
         JBNCancelar.setBorderPainted(false);
         JBNCancelar.setFocusPainted(false);
-        JPFondo.add(JBNCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 560, 100, 30));
+        JBNCancelar.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        JBNCancelar.setIconTextGap(10);
+        JPFondo.add(JBNCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 560, 125, 40));
 
         lblInstruccionesNU1.setBackground(new java.awt.Color(255, 255, 255));
         lblInstruccionesNU1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -101,9 +106,8 @@ public class Nuevo_Usuario extends javax.swing.JFrame {
         lblInstruccionesNU1.setToolTipText("");
         JPFondo.add(lblInstruccionesNU1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 680, 30));
 
-        JTFcliente.setForeground(new java.awt.Color(153, 153, 153));
+        JTFcliente.setForeground(new java.awt.Color(102, 102, 102));
         JTFcliente.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        JTFcliente.setText("Nombre");
         JTFcliente.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(200, 200, 200), 1, true));
         JTFcliente.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -118,16 +122,15 @@ public class Nuevo_Usuario extends javax.swing.JFrame {
                 JTFclienteKeyTyped(evt);
             }
         });
-        JPFondo.add(JTFcliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, 600, 40));
+        JPFondo.add(JTFcliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, 600, 40));
 
-        JTEmpresa.setForeground(new java.awt.Color(153, 153, 153));
-        JTEmpresa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Empresas registradas..." }));
+        JTEmpresa.setForeground(new java.awt.Color(102, 102, 102));
         JTEmpresa.setBorder(null);
         JPFondo.add(JTEmpresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 420, 600, 40));
 
         jSeparator3.setAlignmentX(1.0F);
         jSeparator3.setAlignmentY(1.0F);
-        JPFondo.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 30, 10));
+        JPFondo.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 30, 10));
 
         jSeparator1.setAlignmentX(1.0F);
         jSeparator1.setAlignmentY(1.0F);
@@ -135,13 +138,13 @@ public class Nuevo_Usuario extends javax.swing.JFrame {
 
         jSeparator2.setAlignmentX(1.0F);
         jSeparator2.setAlignmentY(1.0F);
-        JPFondo.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, 490, 10));
+        JPFondo.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 140, 490, 10));
 
         JLBBusqueda.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
         JLBBusqueda.setForeground(new java.awt.Color(102, 102, 102));
         JLBBusqueda.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         JLBBusqueda.setText("Nombre del Cliente");
-        JPFondo.add(JLBBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 170, 40));
+        JPFondo.add(JLBBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 170, 40));
 
         jSeparator4.setAlignmentX(1.0F);
         jSeparator4.setAlignmentY(1.0F);
@@ -164,7 +167,7 @@ public class Nuevo_Usuario extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(153, 153, 153));
         jLabel2.setText("Ingrese el nombre del cliente (Previamente debe estar registrado)");
-        JPFondo.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 600, 40));
+        JPFondo.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 600, 40));
 
         jSeparator7.setAlignmentX(1.0F);
         jSeparator7.setAlignmentY(1.0F);
