@@ -19,9 +19,9 @@ public class NuevoCliente extends javax.swing.JFrame {
      */
     public NuevoCliente() {
         initComponents();
-        this.setSize(610, 550); // Fuerza el tamaño exacto
+        this.setSize(800, 580); // Fuerza el tamaño exacto
+        this.setResizable(false);
         this.setLocationRelativeTo(null); // Centra la ventana en tu monitor
-        
     }
 
     /**
@@ -46,32 +46,33 @@ public class NuevoCliente extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         JTFApellido = new javax.swing.JTextField();
+        JLBNombre1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         JPFondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        JLBRegistrarCliente.setFont(new java.awt.Font("Montserrat", 1, 36)); // NOI18N
+        JLBRegistrarCliente.setFont(new java.awt.Font("Montserrat", 1, 24)); // NOI18N
         JLBRegistrarCliente.setForeground(new java.awt.Color(102, 102, 102));
         JLBRegistrarCliente.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        JLBRegistrarCliente.setText("Registrar Cliente:");
-        JPFondo.add(JLBRegistrarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 660, 50));
+        JLBRegistrarCliente.setText("Registrar Nuevo Cliente");
+        JPFondo.add(JLBRegistrarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 780, 40));
 
         JLBATelefono.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
-        JLBATelefono.setForeground(new java.awt.Color(153, 153, 153));
+        JLBATelefono.setForeground(new java.awt.Color(102, 102, 102));
         JLBATelefono.setText("Telefono");
-        JPFondo.add(JLBATelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, 100, 50));
+        JPFondo.add(JLBATelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 150, 40));
 
         JLBCorreo.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
-        JLBCorreo.setForeground(new java.awt.Color(153, 153, 153));
+        JLBCorreo.setForeground(new java.awt.Color(102, 102, 102));
         JLBCorreo.setText("Correo");
-        JPFondo.add(JLBCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, 100, 50));
+        JPFondo.add(JLBCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, 150, 40));
 
         JLBNombre.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
-        JLBNombre.setForeground(new java.awt.Color(153, 153, 153));
+        JLBNombre.setForeground(new java.awt.Color(102, 102, 102));
         JLBNombre.setText("Nombre (s)");
-        JPFondo.add(JLBNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 100, 50));
+        JPFondo.add(JLBNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 150, 40));
 
         JBNGuardar.setBackground(new java.awt.Color(0, 153, 102));
         JBNGuardar.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
@@ -83,21 +84,23 @@ public class NuevoCliente extends javax.swing.JFrame {
                 JBNGuardarActionPerformed(evt);
             }
         });
-        JPFondo.add(JBNGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 430, 190, 50));
+        JPFondo.add(JBNGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 460, 225, 45));
 
         JBNCancelar.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
         JBNCancelar.setText("Cancelar");
-        JBNCancelar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        JBNCancelar.setBorder(null);
         JBNCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JBNCancelarActionPerformed(evt);
             }
         });
-        JPFondo.add(JBNCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 480, 100, 30));
+        JPFondo.add(JBNCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 490, 100, 30));
 
         JTFNombre.setForeground(new java.awt.Color(153, 153, 153));
         JTFNombre.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         JTFNombre.setText("Nombre (s)");
+        JTFNombre.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(200, 200, 200), 1, true));
+        JTFNombre.setPreferredSize(new java.awt.Dimension(550, 40));
         JTFNombre.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 JTFNombreFocusGained(evt);
@@ -116,11 +119,12 @@ public class NuevoCliente extends javax.swing.JFrame {
                 JTFNombreKeyTyped(evt);
             }
         });
-        JPFondo.add(JTFNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, 420, 50));
+        JPFondo.add(JTFNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, 550, 40));
 
         JTFTelefono.setForeground(new java.awt.Color(153, 153, 153));
         JTFTelefono.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         JTFTelefono.setText("Telefono");
+        JTFTelefono.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(200, 200, 200), 1, true));
         JTFTelefono.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 JTFTelefonoFocusGained(evt);
@@ -139,11 +143,12 @@ public class NuevoCliente extends javax.swing.JFrame {
                 JTFTelefonoKeyTyped(evt);
             }
         });
-        JPFondo.add(JTFTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 260, 420, 50));
+        JPFondo.add(JTFTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 280, 550, 40));
 
         JTFCorreo.setForeground(new java.awt.Color(153, 153, 153));
         JTFCorreo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         JTFCorreo.setText("Correo");
+        JTFCorreo.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(200, 200, 200), 1, true));
         JTFCorreo.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 JTFCorreoFocusGained(evt);
@@ -162,16 +167,21 @@ public class NuevoCliente extends javax.swing.JFrame {
                 JTFCorreoKeyTyped(evt);
             }
         });
-        JPFondo.add(JTFCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 330, 420, 50));
+        JPFondo.add(JTFCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 350, 550, 40));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo ETS 75 px.png"))); // NOI18N
-        JPFondo.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 450, -1, -1));
+        JPFondo.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 460, -1, -1));
 
+        jLabel1.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(102, 102, 102));
         jLabel1.setText("Apellido (s)");
-        JPFondo.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 210, -1, -1));
+        JPFondo.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 150, 40));
 
+        JTFApellido.setForeground(new java.awt.Color(153, 153, 153));
         JTFApellido.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         JTFApellido.setText("Apellido (s)");
+        JTFApellido.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(200, 200, 200), 1, true));
+        JTFApellido.setPreferredSize(new java.awt.Dimension(550, 40));
         JTFApellido.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 JTFApellidoFocusGained(evt);
@@ -190,9 +200,15 @@ public class NuevoCliente extends javax.swing.JFrame {
                 JTFApellidoKeyTyped(evt);
             }
         });
-        JPFondo.add(JTFApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, 420, 40));
+        JPFondo.add(JTFApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 210, 550, 40));
 
-        getContentPane().add(JPFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 4, 660, 540));
+        JLBNombre1.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        JLBNombre1.setForeground(new java.awt.Color(153, 153, 153));
+        JLBNombre1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        JLBNombre1.setText("Ingrese los datos del cliente que desea registrar");
+        JPFondo.add(JLBNombre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 780, -1));
+
+        getContentPane().add(JPFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 4, 790, 540));
 
         pack();
         setLocationRelativeTo(null);
@@ -412,6 +428,7 @@ public class NuevoCliente extends javax.swing.JFrame {
     public javax.swing.JLabel JLBATelefono;
     public javax.swing.JLabel JLBCorreo;
     public javax.swing.JLabel JLBNombre;
+    public javax.swing.JLabel JLBNombre1;
     public javax.swing.JLabel JLBRegistrarCliente;
     private javax.swing.JPanel JPFondo;
     public javax.swing.JTextField JTFApellido;

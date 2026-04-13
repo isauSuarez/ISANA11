@@ -15,7 +15,7 @@ public class CancelarPolizaN extends javax.swing.JFrame {
      */
     public CancelarPolizaN() {
         initComponents();
-        this.setSize(550, 500); // Fuerza el tamaño exacto
+        this.setSize(700, 700); // Fuerza el tamaño exacto
         this.setResizable(false);
         this.setLocationRelativeTo(null); // Centra la ventana en tu monitor
     }
@@ -29,34 +29,38 @@ public class CancelarPolizaN extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        JPFondo = new ImagenPanel_EV("/imagenes/FondoETS.jpg");
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         JTFNumPoliza = new javax.swing.JTextField();
         JBNCancelar = new javax.swing.JButton();
         JBNConfirmar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         JTAinfo = new javax.swing.JTextArea();
-        lblLogoInicio = new javax.swing.JLabel();
         JBNConsultar = new javax.swing.JButton();
+        JLBLogo = new javax.swing.JLabel();
+        JLBBusqueda = new javax.swing.JLabel();
+        jSeparator2 = new javax.swing.JSeparator();
+        jSeparator3 = new javax.swing.JSeparator();
+        jLabel3 = new javax.swing.JLabel();
+        JLBBusqueda1 = new javax.swing.JLabel();
+        jSeparator4 = new javax.swing.JSeparator();
+        jSeparator5 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        JPFondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Montserrat", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(102, 102, 102));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Cancelar Póliza");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 530, 40));
-
-        jLabel2.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Ingrese el numero de póliza que sera cancelado.");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 530, 20));
+        JPFondo.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 690, 40));
 
         JTFNumPoliza.setForeground(new java.awt.Color(102, 102, 102));
         JTFNumPoliza.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         JTFNumPoliza.setText("Núm. Poliza");
+        JTFNumPoliza.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(200, 200, 200), 1, true));
         JTFNumPoliza.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 JTFNumPolizaFocusGained(evt);
@@ -70,7 +74,7 @@ public class CancelarPolizaN extends javax.swing.JFrame {
                 JTFNumPolizaActionPerformed(evt);
             }
         });
-        getContentPane().add(JTFNumPoliza, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, 330, 40));
+        JPFondo.add(JTFNumPoliza, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 510, 40));
 
         JBNCancelar.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
         JBNCancelar.setText("Cancelar");
@@ -80,7 +84,7 @@ public class CancelarPolizaN extends javax.swing.JFrame {
                 JBNCancelarActionPerformed(evt);
             }
         });
-        getContentPane().add(JBNCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 420, 100, 30));
+        JPFondo.add(JBNCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 620, 100, 30));
 
         JBNConfirmar.setBackground(new java.awt.Color(0, 153, 102));
         JBNConfirmar.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
@@ -92,16 +96,13 @@ public class CancelarPolizaN extends javax.swing.JFrame {
                 JBNConfirmarActionPerformed(evt);
             }
         });
-        getContentPane().add(JBNConfirmar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 390, 160, 40));
+        JPFondo.add(JBNConfirmar, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 590, 225, 45));
 
         JTAinfo.setColumns(20);
         JTAinfo.setRows(5);
         jScrollPane1.setViewportView(JTAinfo);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 510, 160));
-
-        lblLogoInicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Logo ETS 75 px.png"))); // NOI18N
-        getContentPane().add(lblLogoInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 380, -1, -1));
+        JPFondo.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 650, 290));
 
         JBNConsultar.setBackground(new java.awt.Color(0, 153, 102));
         JBNConsultar.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
@@ -113,7 +114,45 @@ public class CancelarPolizaN extends javax.swing.JFrame {
                 JBNConsultarActionPerformed(evt);
             }
         });
-        getContentPane().add(JBNConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 160, 160, 40));
+        JPFondo.add(JBNConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 150, 120, 40));
+
+        JLBLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo ETS 75 px.png"))); // NOI18N
+        JPFondo.add(JLBLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 590, -1, -1));
+
+        JLBBusqueda.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        JLBBusqueda.setForeground(new java.awt.Color(102, 102, 102));
+        JLBBusqueda.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        JLBBusqueda.setText("Número de Póliza");
+        JPFondo.add(JLBBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 150, 40));
+
+        jSeparator2.setAlignmentX(1.0F);
+        jSeparator2.setAlignmentY(1.0F);
+        JPFondo.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, 510, 10));
+
+        jSeparator3.setAlignmentX(1.0F);
+        jSeparator3.setAlignmentY(1.0F);
+        JPFondo.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 30, 10));
+
+        jLabel3.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel3.setText("Ingrese el número de Poliza que desea cancelar");
+        JPFondo.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 600, 30));
+
+        JLBBusqueda1.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        JLBBusqueda1.setForeground(new java.awt.Color(102, 102, 102));
+        JLBBusqueda1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        JLBBusqueda1.setText("Pólizas Activas");
+        JPFondo.add(JLBBusqueda1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 120, 40));
+
+        jSeparator4.setAlignmentX(1.0F);
+        jSeparator4.setAlignmentY(1.0F);
+        JPFondo.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, 540, 10));
+
+        jSeparator5.setAlignmentX(1.0F);
+        jSeparator5.setAlignmentY(1.0F);
+        JPFondo.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 30, 10));
+
+        getContentPane().add(JPFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 690, 670));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -189,11 +228,18 @@ public class CancelarPolizaN extends javax.swing.JFrame {
     public javax.swing.JButton JBNCancelar;
     public javax.swing.JButton JBNConfirmar;
     public javax.swing.JButton JBNConsultar;
+    public javax.swing.JLabel JLBBusqueda;
+    public javax.swing.JLabel JLBBusqueda1;
+    public javax.swing.JLabel JLBLogo;
+    private javax.swing.JPanel JPFondo;
     public javax.swing.JTextArea JTAinfo;
     public javax.swing.JTextField JTFNumPoliza;
     public javax.swing.JLabel jLabel1;
-    public javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
-    public javax.swing.JLabel lblLogoInicio;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
     // End of variables declaration//GEN-END:variables
 }

@@ -84,7 +84,7 @@ public class EditarPoliza extends javax.swing.JFrame {
                 JBNCancelarActionPerformed(evt);
             }
         });
-        JPFondo.add(JBNCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 560, 90, 30));
+        JPFondo.add(JBNCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 560, 100, 30));
 
         JTFNumPoliza.setForeground(new java.awt.Color(102, 102, 102));
         JTFNumPoliza.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -137,7 +137,7 @@ public class EditarPoliza extends javax.swing.JFrame {
         JTFDireccion.setText("Direccíon");
         JTFDireccion.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(200, 200, 200), 1, true));
         JTFDireccion.setMargin(new java.awt.Insets(5, 10, 5, 10));
-        JTFDireccion.setPreferredSize(new java.awt.Dimension(350, 40));
+        JTFDireccion.setPreferredSize(new java.awt.Dimension(520, 40));
         JTFDireccion.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 JTFDireccionFocusGained(evt);
@@ -248,7 +248,7 @@ public class EditarPoliza extends javax.swing.JFrame {
                 JBNGuardarActionPerformed(evt);
             }
         });
-        JPFondo.add(JBNGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 520, 224, 42));
+        JPFondo.add(JBNGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 530, 225, 45));
 
         JLBBusqueda.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
         JLBBusqueda.setForeground(new java.awt.Color(102, 102, 102));

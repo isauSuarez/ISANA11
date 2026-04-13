@@ -75,10 +75,11 @@ public class NuevaPoliza extends javax.swing.JFrame {
         JLBNombre.setForeground(new java.awt.Color(153, 153, 153));
         JLBNombre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         JLBNombre.setText("Seleccione al cliente que desea adquirir una nueva póliza");
-        JPFondo.add(JLBNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 780, -1));
+        JPFondo.add(JLBNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 780, 20));
 
         JCBClientes.setForeground(new java.awt.Color(153, 153, 153));
         JCBClientes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cliente" }));
+        JCBClientes.setBorder(null);
         JCBClientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JCBClientesActionPerformed(evt);
@@ -128,7 +129,7 @@ public class NuevaPoliza extends javax.swing.JFrame {
                 JBNSiguienteActionPerformed(evt);
             }
         });
-        JPFondo.add(JBNSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 490, 224, 42));
+        JPFondo.add(JBNSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 490, 225, 45));
 
         JBNCancelar.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
         JBNCancelar.setText("Cancelar");
@@ -138,12 +139,13 @@ public class NuevaPoliza extends javax.swing.JFrame {
                 JBNCancelarActionPerformed(evt);
             }
         });
-        JPFondo.add(JBNCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 520, 90, 30));
+        JPFondo.add(JBNCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 520, 100, 30));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo ETS 75 px.png"))); // NOI18N
         JPFondo.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 490, -1, -1));
 
         JTFBusqueda.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        JTFBusqueda.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(200, 200, 200), 1, true));
         JTFBusqueda.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 JTFBusquedaFocusGained(evt);

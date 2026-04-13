@@ -203,12 +203,12 @@ public class ModificarUsuario extends javax.swing.JFrame {
         JBTguardar.setText("Guardar");
         JBTguardar.setBorder(null);
         JBTguardar.addActionListener(this::JBTguardarActionPerformed);
-        JPFondo.add(JBTguardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 580, 224, 42));
+        JPFondo.add(JBTguardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 590, 224, 42));
 
         JBTcancelar.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
         JBTcancelar.setText("Cancelar");
         JBTcancelar.setBorder(null);
-        JPFondo.add(JBTcancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 610, 90, 30));
+        JPFondo.add(JBTcancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 610, 100, 30));
 
         JTFcliente.setForeground(new java.awt.Color(153, 153, 153));
         JTFcliente.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -240,7 +240,7 @@ public class ModificarUsuario extends javax.swing.JFrame {
         JPFondo.add(JTFempresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, 200, 30));
 
         JCBcliente.setForeground(new java.awt.Color(153, 153, 153));
-        JCBcliente.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        JCBcliente.setBorder(null);
         JCBcliente.addActionListener(this::JCBclienteActionPerformed);
         JPFondo.add(JCBcliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 150, 200, 30));
 
@@ -255,7 +255,7 @@ public class ModificarUsuario extends javax.swing.JFrame {
         JPFondo.add(JLBEmpresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 70, 30));
 
         JCBempresa.setForeground(new java.awt.Color(153, 153, 153));
-        JCBempresa.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        JCBempresa.setBorder(null);
         JPFondo.add(JCBempresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, 200, 30));
 
         JLBTitulo.setFont(new java.awt.Font("Montserrat", 1, 24)); // NOI18N
