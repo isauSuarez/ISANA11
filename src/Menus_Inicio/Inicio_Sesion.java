@@ -123,7 +123,7 @@ public class Inicio_Sesion extends javax.swing.JFrame {
         lblInstrucciones.setText("Ingresa tu usuario y contraseña");
         JPFondo.add(lblInstrucciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 330, 200, -1));
 
-        lblAyuda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/signo-de-pregunta.png"))); // NOI18N
+        lblAyuda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/signo-de-pregunta.png"))); // NOI18N
         lblAyuda.setToolTipText("Si olvidaste tu contraseña, contacta al administrador de sistemas.");
         lblAyuda.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         lblAyuda.addMouseListener(new java.awt.event.MouseAdapter() {
