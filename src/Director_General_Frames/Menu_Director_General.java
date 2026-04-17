@@ -98,7 +98,7 @@ public class Menu_Director_General extends javax.swing.JFrame {
 
         jMenu1.setText("Reportes     ");
 
-        JMIReporteTecnico.setText("Reporte Tecnico");
+        JMIReporteTecnico.setText("Reporte Tickets");
         jMenu1.add(JMIReporteTecnico);
 
         JMIReporteCliente.setText("Reporte Cliente");

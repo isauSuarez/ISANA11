@@ -78,7 +78,7 @@ public class ControladorReporteTicket implements ActionListener {
                 modelo.addRow(fila);
             }
 
-            vista.JTBTecnicos.setModel(modelo);
+            vista.JTBtickets.setModel(modelo);
             System.out.println("Reporte por tecnico cargado correctamente.");
 
         } catch (SQLException ex) {
