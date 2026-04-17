@@ -71,7 +71,7 @@ public class NuevoTecnico extends javax.swing.JFrame {
         JTFNombre.setForeground(new java.awt.Color(153, 153, 153));
         JTFNombre.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         JTFNombre.setText("Nombre (s)");
-        JTFNombre.setBorder(null);
+        JTFNombre.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         JTFNombre.setPreferredSize(new java.awt.Dimension(350, 40));
         JTFNombre.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -103,7 +103,7 @@ public class NuevoTecnico extends javax.swing.JFrame {
         JTFApellido.setForeground(new java.awt.Color(153, 153, 153));
         JTFApellido.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         JTFApellido.setText("Apellido (s)");
-        JTFApellido.setBorder(null);
+        JTFApellido.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         JTFApellido.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 JTFApellidoFocusGained(evt);
@@ -134,7 +134,7 @@ public class NuevoTecnico extends javax.swing.JFrame {
         JTFTelefono.setForeground(new java.awt.Color(153, 153, 153));
         JTFTelefono.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         JTFTelefono.setText("Teléfono");
-        JTFTelefono.setBorder(null);
+        JTFTelefono.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         JTFTelefono.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 JTFTelefonoFocusGained(evt);
@@ -165,7 +165,7 @@ public class NuevoTecnico extends javax.swing.JFrame {
         JTFCorreo1.setForeground(new java.awt.Color(153, 153, 153));
         JTFCorreo1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         JTFCorreo1.setText("Correo electrónico");
-        JTFCorreo1.setBorder(null);
+        JTFCorreo1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         JTFCorreo1.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 JTFCorreo1FocusGained(evt);
@@ -300,7 +300,7 @@ public class NuevoTecnico extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (JTFNombre.getText().equals("Nombre (s)")) {
             JTFNombre.setText("");
-            JTFNombre.setForeground(new java.awt.Color(205, 205, 205));
+            JTFNombre.setForeground(new java.awt.Color(0, 0, 0));
         }
     }//GEN-LAST:event_JTFNombreFocusGained
 
@@ -308,7 +308,7 @@ public class NuevoTecnico extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (JTFNombre.getText().isEmpty()) {
             JTFNombre.setText("Nombre (s)");
-            JTFNombre.setForeground(new java.awt.Color(153, 153, 153));
+            JTFNombre.setForeground(new java.awt.Color(0, 0, 0));
         }
     }//GEN-LAST:event_JTFNombreFocusLost
 
@@ -316,7 +316,7 @@ public class NuevoTecnico extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (JTFApellido.getText().equals("Apellido (s)")) {
             JTFApellido.setText("");
-            JTFApellido.setForeground(new java.awt.Color(205, 205, 205));
+            JTFApellido.setForeground(new java.awt.Color(0, 0, 0));
         }
     }//GEN-LAST:event_JTFApellidoFocusGained
 
@@ -332,7 +332,7 @@ public class NuevoTecnico extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (JTFTelefono.getText().equals("Teléfono")) {
             JTFTelefono.setText("");
-            JTFTelefono.setForeground(new java.awt.Color(205, 205, 205));
+            JTFTelefono.setForeground(new java.awt.Color(0, 0, 0));
         }
     }//GEN-LAST:event_JTFTelefonoFocusGained
 
@@ -348,7 +348,7 @@ public class NuevoTecnico extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (JTFCorreo1.getText().equals("Correo electrónico")) {
             JTFCorreo1.setText("");
-            JTFCorreo1.setForeground(new java.awt.Color(205, 205, 205));
+            JTFCorreo1.setForeground(new java.awt.Color(0, 0, 0));
         }
     }//GEN-LAST:event_JTFCorreo1FocusGained
 

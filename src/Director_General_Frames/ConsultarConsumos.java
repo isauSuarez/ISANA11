@@ -33,11 +33,11 @@ public class ConsultarConsumos extends javax.swing.JFrame {
                 JPFiltros3.setVisible(true);
                 JPBusqueda3.setVisible(true);
 
-                getContentPane().remove(JLBTitulo3);
-                getContentPane().add(JLBTitulo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 30, 330, 30));
+                JPFondo.remove(JLBTitulo3);
+                JPFondo.add(JLBTitulo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 1160, -1));
                 
-                getContentPane().remove(JSPTabla3);
-                getContentPane().add(JSPTabla3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 100, 980, 240));
+                JPFondo.remove(JSPTabla3);
+                JPFondo.add(JSPTabla3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, 940, 360));
 
    
                  JMIAlternarFiltros3.setText("Ocultar filtros");
@@ -50,11 +50,11 @@ public class ConsultarConsumos extends javax.swing.JFrame {
                 JPFiltros3.setVisible(false);
                 JPBusqueda3.setVisible(false);
                 
-                getContentPane().remove(JLBTitulo3);
-                getContentPane().add(JLBTitulo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 20, 330, 20));
+                JPFondo.remove(JLBTitulo3);
+                JPFondo.add(JLBTitulo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 1160, -1));
 
-                getContentPane().remove(JSPTabla3);
-                getContentPane().add(JSPTabla3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 1100, 280));
+                JPFondo.remove(JSPTabla3);
+                JPFondo.add(JSPTabla3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 1080, 360));
 
                  JMIAlternarFiltros3.setText("Mostrar filtros");
                  
@@ -75,6 +75,7 @@ public class ConsultarConsumos extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        JPFondo = new ImagenPanel_DG("/imagenes/FondoETS.jpg");
         JLBTitulo3 = new javax.swing.JLabel();
         JSPTabla3 = new javax.swing.JScrollPane();
         JTBConsumos = new javax.swing.JTable();
@@ -98,14 +99,18 @@ public class ConsultarConsumos extends javax.swing.JFrame {
         JMIAlternarFiltros3 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        JLBTitulo3.setFont(new java.awt.Font("Montserrat", 1, 24)); // NOI18N
-        JLBTitulo3.setForeground(new java.awt.Color(153, 153, 153));
-        JLBTitulo3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        JLBTitulo3.setText("Consultar consumo de servicios por cliente");
-        getContentPane().add(JLBTitulo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 40, 562, -1));
+        JPFondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        JLBTitulo3.setFont(new java.awt.Font("Montserrat", 1, 36)); // NOI18N
+        JLBTitulo3.setForeground(new java.awt.Color(102, 102, 102));
+        JLBTitulo3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        JLBTitulo3.setText("Consumo de Servicios");
+        JPFondo.add(JLBTitulo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 1160, -1));
+
+        JTBConsumos.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
         JTBConsumos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
@@ -117,15 +122,16 @@ public class ConsultarConsumos extends javax.swing.JFrame {
                 "Cliente", "Empresa", "Tipo de Plan", "Consumo total", "% de uso"
             }
         ));
+        JTBConsumos.setRowHeight(25);
         JTBConsumos.setShowGrid(true);
         JSPTabla3.setViewportView(JTBConsumos);
 
-        getContentPane().add(JSPTabla3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 130, 920, 220));
+        JPFondo.add(JSPTabla3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 1080, 360));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo ETS 75 px.png"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, -1, -1));
+        JPFondo.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
-        JBNRegresar.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
+        JBNRegresar.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
         JBNRegresar.setText("Regresar");
         JBNRegresar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         JBNRegresar.addActionListener(new java.awt.event.ActionListener() {
@@ -133,20 +139,22 @@ public class ConsultarConsumos extends javax.swing.JFrame {
                 JBNRegresarActionPerformed(evt);
             }
         });
-        getContentPane().add(JBNRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1079, 314, 69, 29));
+        JPFondo.add(JBNRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 500, 100, 30));
 
-        JPBusqueda3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        JPBusqueda3.setBackground(new java.awt.Color(255, 255, 255, 180));
+        JPBusqueda3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Búsqueda Rápida", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Montserrat", 1, 12))); // NOI18N
         JPBusqueda3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel3.setText("Buscar por");
-        JPBusqueda3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 90, 20));
+        jLabel3.setFont(new java.awt.Font("Montserrat", 0, 11)); // NOI18N
+        jLabel3.setText("Buscar por:");
+        JPBusqueda3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 90, 20));
 
         JTFBuscador3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTFBuscador3ActionPerformed(evt);
             }
         });
-        JPBusqueda3.add(JTFBuscador3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 190, -1));
+        JPBusqueda3.add(JTFBuscador3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 45, 290, -1));
 
         JCBSeleccionador3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tipo de Busqueda", "Cliente", "Empresa" }));
         JCBSeleccionador3.addActionListener(new java.awt.event.ActionListener() {
@@ -154,38 +162,46 @@ public class ConsultarConsumos extends javax.swing.JFrame {
                 JCBSeleccionador3ActionPerformed(evt);
             }
         });
-        JPBusqueda3.add(JCBSeleccionador3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, 130, 20));
+        JPBusqueda3.add(JCBSeleccionador3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, 130, 20));
 
-        getContentPane().add(JPBusqueda3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, 250, 100));
+        JPFondo.add(JPBusqueda3, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 480, 310, 80));
 
-        JPFiltros3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        JPFiltros3.setBackground(new java.awt.Color(255, 255, 255, 180));
+        JPFiltros3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Filtros", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Montserrat", 1, 12))); // NOI18N
         JPFiltros3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel4.setText("Tipo de plan");
-        JPFiltros3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, -1, 20));
+        jLabel4.setFont(new java.awt.Font("Montserrat", 1, 11)); // NOI18N
+        jLabel4.setText("Tipo de plan:");
+        JPFiltros3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, 20));
 
         JCBEsencial3.setText("Esencial");
-        JPFiltros3.add(JCBEsencial3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, -1, 20));
+        JCBEsencial3.setOpaque(false);
+        JPFiltros3.add(JCBEsencial3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, 20));
 
         JCBProfesional3.setText("Profesional");
-        JPFiltros3.add(JCBProfesional3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, 20));
+        JCBProfesional3.setOpaque(false);
+        JPFiltros3.add(JCBProfesional3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, 20));
 
         JCBEmpresarial3.setText("Empresarial");
-        JPFiltros3.add(JCBEmpresarial3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, 20));
+        JCBEmpresarial3.setOpaque(false);
+        JPFiltros3.add(JCBEmpresarial3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, 20));
 
-        jLabel5.setText("Organizar por ");
-        JPFiltros3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 80, -1));
+        jLabel5.setFont(new java.awt.Font("Montserrat", 1, 11)); // NOI18N
+        jLabel5.setText("Organizar por:");
+        JPFiltros3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 20, 100, -1));
 
-        JBNLimpiarFiltros3.setText("Limpiar Filtros");
-        JPFiltros3.add(JBNLimpiarFiltros3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 110, -1));
+        JBNLimpiarFiltros3.setText("Limpiar");
+        JPFiltros3.add(JBNLimpiarFiltros3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, 100, -1));
 
-        JBNAplicarFiltros3.setText("Aplicar Filtros");
-        JPFiltros3.add(JBNAplicarFiltros3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 110, -1));
+        JBNAplicarFiltros3.setText("Aplicar");
+        JPFiltros3.add(JBNAplicarFiltros3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 100, -1));
 
         JCBrganizador.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccion", "Mayor consumo total", "Menor consumo total", "Mayor % de uso", "Menor % de uso" }));
-        JPFiltros3.add(JCBrganizador, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 130, -1));
+        JPFiltros3.add(JCBrganizador, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 40, 130, -1));
 
-        getContentPane().add(JPFiltros3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 130, 330));
+        JPFondo.add(JPFiltros3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 260, 150));
+
+        getContentPane().add(JPFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1160, 580));
 
         JMVista3.setText("Ver");
 
@@ -271,6 +287,7 @@ public class ConsultarConsumos extends javax.swing.JFrame {
     private javax.swing.JMenu JMVista3;
     private javax.swing.JPanel JPBusqueda3;
     private javax.swing.JPanel JPFiltros3;
+    private javax.swing.JPanel JPFondo;
     public javax.swing.JScrollPane JSPTabla3;
     public javax.swing.JTable JTBConsumos;
     public javax.swing.JTextField JTFBuscador3;

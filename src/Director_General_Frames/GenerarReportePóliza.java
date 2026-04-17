@@ -37,11 +37,11 @@ public class GenerarReportePóliza extends javax.swing.JFrame {
                 JPFiltros.setVisible(true);
                 JPBusqueda.setVisible(true);
 
-                getContentPane().remove(JLBTitulo);
-                getContentPane().add(JLBTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 30, 330, 30));
+                JPFondo.remove(JLBTitulo);
+                JPFondo.add(JLBTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 1160, -1));
                 
-                getContentPane().remove(JSPTabla);
-                getContentPane().add(JSPTabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 100, 980, 240));
+                JPFondo.remove(JSPTabla);
+                JPFondo.add(JSPTabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, 940, 360));
 
    
                  JMIAlternarFiltros.setText("Ocultar filtros");
@@ -54,11 +54,11 @@ public class GenerarReportePóliza extends javax.swing.JFrame {
                 JPFiltros.setVisible(false);
                 JPBusqueda.setVisible(false);
                 
-                getContentPane().remove(JLBTitulo);
-                getContentPane().add(JLBTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 20, 330, 20));
+                JPFondo.remove(JLBTitulo);
+                JPFondo.add(JLBTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 1160, -1));
 
-                getContentPane().remove(JSPTabla);
-                getContentPane().add(JSPTabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 1100, 280));
+                JPFondo.remove(JSPTabla);
+                JPFondo.add(JSPTabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 1080, 360));
 
                  JMIAlternarFiltros.setText("Mostrar filtros");
                  
@@ -81,6 +81,7 @@ public class GenerarReportePóliza extends javax.swing.JFrame {
     private void initComponents() {
 
         JBGFechas = new javax.swing.ButtonGroup();
+        JPFondo = new ImagenPanel_DG("/imagenes/FondoETS.jpg");
         JLBTitulo = new javax.swing.JLabel();
         JSPTabla = new javax.swing.JScrollPane();
         JTBPolizas = new javax.swing.JTable();
@@ -108,14 +109,18 @@ public class GenerarReportePóliza extends javax.swing.JFrame {
         JMIAlternarFiltros = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        JLBTitulo.setFont(new java.awt.Font("Montserrat", 1, 24)); // NOI18N
-        JLBTitulo.setForeground(new java.awt.Color(153, 153, 153));
-        JLBTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        JLBTitulo.setText("Generar reporte póliza ");
-        getContentPane().add(JLBTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 30, 330, -1));
+        JPFondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        JLBTitulo.setFont(new java.awt.Font("Montserrat", 1, 36)); // NOI18N
+        JLBTitulo.setForeground(new java.awt.Color(102, 102, 102));
+        JLBTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        JLBTitulo.setText("Reporte de Pólizas");
+        JPFondo.add(JLBTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 1160, -1));
+
+        JTBPolizas.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
         JTBPolizas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
@@ -127,96 +132,90 @@ public class GenerarReportePóliza extends javax.swing.JFrame {
                 "Estado", "Plan", "Fecha Inicio", "Fecha Vencimiento", "Nombre Cliente", "Correo"
             }
         ));
+        JTBPolizas.setRowHeight(25);
         JTBPolizas.setShowGrid(true);
         JSPTabla.setViewportView(JTBPolizas);
 
-        getContentPane().add(JSPTabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 1020, 260));
+        JPFondo.add(JSPTabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 1080, 360));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo ETS 75 px.png"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 400, 110, 80));
+        JPFondo.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
-        JBNRegresar.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
+        JBNRegresar.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
         JBNRegresar.setText("Regresar");
         JBNRegresar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        JBNRegresar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JBNRegresarActionPerformed(evt);
-            }
-        });
-        getContentPane().add(JBNRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 360, 79, 29));
+        JPFondo.add(JBNRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 500, 100, 30));
 
-        JPFiltros.setBorder(new javax.swing.border.MatteBorder(null));
+        JPFiltros.setBackground(new java.awt.Color(255, 255, 255, 180));
+        JPFiltros.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Filtros Avanzados", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Montserrat", 1, 12))); // NOI18N
         JPFiltros.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         JCBActiva.setText("Activas");
-        JPFiltros.add(JCBActiva, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, -1, 20));
+        JCBActiva.setOpaque(false);
+        JPFiltros.add(JCBActiva, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, 20));
 
         JCBInactiva.setText("Inactivas");
-        JPFiltros.add(JCBInactiva, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, -1, -1));
+        JCBInactiva.setOpaque(false);
+        JPFiltros.add(JCBInactiva, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, -1));
 
         JCBEsencial.setText("Esencial");
-        JPFiltros.add(JCBEsencial, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, -1, -1));
+        JCBEsencial.setOpaque(false);
+        JPFiltros.add(JCBEsencial, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, -1));
 
         JCBProfesional.setText("Profesional");
-        JPFiltros.add(JCBProfesional, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, -1, -1));
+        JCBProfesional.setOpaque(false);
+        JPFiltros.add(JCBProfesional, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, -1));
 
         JCBEmpresarial.setText("Empresarial");
-        JPFiltros.add(JCBEmpresarial, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, -1, -1));
+        JCBEmpresarial.setOpaque(false);
+        JPFiltros.add(JCBEmpresarial, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, -1, -1));
 
         JBGFechas.add(JRBInicioMasActual);
         JRBInicioMasActual.setText("Mas Actual");
-        JRBInicioMasActual.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JRBInicioMasActualActionPerformed(evt);
-            }
-        });
-        JPFiltros.add(JRBInicioMasActual, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, -1, -1));
+        JRBInicioMasActual.setOpaque(false);
+        JPFiltros.add(JRBInicioMasActual, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, -1, -1));
 
         JBGFechas.add(JRBInicioMasAntigua);
         JRBInicioMasAntigua.setText("Mas Antigua");
-        JPFiltros.add(JRBInicioMasAntigua, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, -1, -1));
+        JRBInicioMasAntigua.setOpaque(false);
+        JPFiltros.add(JRBInicioMasAntigua, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, -1, -1));
 
         JBGFechas.add(JRBVenceMasPronta);
         JRBVenceMasPronta.setText("Vence Mas Pronta");
-        JPFiltros.add(JRBVenceMasPronta, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, -1, -1));
+        JRBVenceMasPronta.setOpaque(false);
+        JPFiltros.add(JRBVenceMasPronta, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, -1, -1));
 
         JBGFechas.add(JRBVenceMasLejana);
         JRBVenceMasLejana.setText("Vence Mas Lejana");
-        JPFiltros.add(JRBVenceMasLejana, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, -1, -1));
+        JRBVenceMasLejana.setOpaque(false);
+        JPFiltros.add(JRBVenceMasLejana, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, -1, -1));
 
         JCBOrdenCliente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Orden Cliente", "A-Z", "Z-A" }));
-        JPFiltros.add(JCBOrdenCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 110, -1));
+        JPFiltros.add(JCBOrdenCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 130, -1));
 
-        JBNAplicarFiltros.setText("Aplicar Filtros");
-        JPFiltros.add(JBNAplicarFiltros, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, -1, -1));
+        JBNAplicarFiltros.setText("Aplicar");
+        JPFiltros.add(JBNAplicarFiltros, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, 130, -1));
 
-        JBNLimpiarFiltros.setText("Limpiar Filtros");
-        JPFiltros.add(JBNLimpiarFiltros, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, -1, -1));
+        JBNLimpiarFiltros.setText("Limpiar");
+        JPFiltros.add(JBNLimpiarFiltros, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, 130, -1));
 
-        getContentPane().add(JPFiltros, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 130, 360));
+        JPFondo.add(JPFiltros, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 160, 360));
 
-        JPBusqueda.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        JPBusqueda.setBackground(new java.awt.Color(255, 255, 255, 180));
+        JPBusqueda.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Búsqueda Rápida", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Montserrat", 1, 12))); // NOI18N
         JPBusqueda.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel3.setText("Buscar por nombre o correo");
-        JPBusqueda.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 160, 20));
-
-        JTFBuscador.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JTFBuscadorActionPerformed(evt);
-            }
-        });
-        JPBusqueda.add(JTFBuscador, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 270, -1));
+        jLabel3.setFont(new java.awt.Font("Montserrat", 0, 11)); // NOI18N
+        jLabel3.setText("Criterio:");
+        JPBusqueda.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, 20));
+        JPBusqueda.add(JTFBuscador, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 45, 290, -1));
 
         JCBSeleccionador.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tipo de Busqueda", "Nombre", "Correo" }));
-        JCBSeleccionador.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JCBSeleccionadorActionPerformed(evt);
-            }
-        });
-        JPBusqueda.add(JCBSeleccionador, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, 130, 20));
+        JPBusqueda.add(JCBSeleccionador, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, 130, 20));
 
-        getContentPane().add(JPBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, 310, 80));
+        JPFondo.add(JPBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 480, 310, 80));
+
+        getContentPane().add(JPFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1160, 580));
 
         JMVista.setText("Ver");
 
@@ -309,6 +308,7 @@ public class GenerarReportePóliza extends javax.swing.JFrame {
     private javax.swing.JMenu JMVista;
     private javax.swing.JPanel JPBusqueda;
     public javax.swing.JPanel JPFiltros;
+    private javax.swing.JPanel JPFondo;
     public javax.swing.JRadioButton JRBInicioMasActual;
     public javax.swing.JRadioButton JRBInicioMasAntigua;
     public javax.swing.JRadioButton JRBVenceMasLejana;

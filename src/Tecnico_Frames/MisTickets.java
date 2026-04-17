@@ -15,8 +15,9 @@ public class MisTickets extends javax.swing.JFrame {
      */
     public MisTickets() {
         initComponents();
-        this.setSize(595, 650); // Fuerza el tamaño exacto
-        this.setLocationRelativeTo(null); // Centra la ventana en tu monitor
+        this.setSize(800, 600); // Tamaño estándar para coherencia
+        this.setResizable(false);
+        this.setLocationRelativeTo(null); // Centra la ventana
     }
 
     /**
@@ -28,157 +29,149 @@ public class MisTickets extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        JPFondo = new ImagenPanel_T("/imagenes/FondoETS.jpg");
         JLBMisTickets = new javax.swing.JLabel();
-        JCBTicketsR = new javax.swing.JComboBox<>();
-        JBNCancelar = new javax.swing.JButton();
-        JBNSiguienteLS4 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        jLabel2 = new javax.swing.JLabel();
+        JCBTicketsR = new javax.swing.JComboBox<>();
+        JBNSiguienteLS4 = new javax.swing.JButton();
+        JBNCancelar = new javax.swing.JButton();
+        
+        // Paneles de organización
+        JPFiltrosServicio = new javax.swing.JPanel();
         JLBNombre2 = new javax.swing.JLabel();
-        JRBPresencial2 = new javax.swing.JRadioButton();
-        JRBRemoto = new javax.swing.JRadioButton();
-        JRBAsesoria = new javax.swing.JRadioButton();
         JLBNombre3 = new javax.swing.JLabel();
+        JRBPresencial2 = new javax.swing.JRadioButton();
         JLBNombre4 = new javax.swing.JLabel();
+        JRBRemoto = new javax.swing.JRadioButton();
         JLBNombre5 = new javax.swing.JLabel();
+        JRBAsesoria = new javax.swing.JRadioButton();
+
+        JPStatus = new javax.swing.JPanel();
+        jLabelStatus = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         JRBAsignado = new javax.swing.JRadioButton();
-        JRBProceso = new javax.swing.JRadioButton();
         jLabel4 = new javax.swing.JLabel();
+        JRBProceso = new javax.swing.JRadioButton();
         jLabel5 = new javax.swing.JLabel();
         JRBCerrados = new javax.swing.JRadioButton();
+
+        jComboBox1 = new javax.swing.JComboBox<>();
         jLabel6 = new javax.swing.JLabel();
         JLBNombreTec = new javax.swing.JLabel();
+        jLabelLogo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        JLBMisTickets.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        JPFondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        JLBMisTickets.setFont(new java.awt.Font("Montserrat", 1, 36)); // NOI18N
         JLBMisTickets.setForeground(new java.awt.Color(102, 102, 102));
+        JLBMisTickets.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         JLBMisTickets.setText("Mis Tickets");
-        getContentPane().add(JLBMisTickets, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 10, -1, -1));
+        JPFondo.add(JLBMisTickets, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 800, -1));
+
+        JLBNombreTec.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        JLBNombreTec.setForeground(new java.awt.Color(0, 153, 102));
+        JLBNombreTec.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        JLBNombreTec.setText("Técnico: [Nombre]");
+        JPFondo.add(JLBNombreTec, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 10, 250, 30));
+
+        jLabelLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo ETS 75 px.png"))); // NOI18N
+        JPFondo.add(jLabelLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        // Panel Filtros de Servicio
+        JPFiltrosServicio.setBackground(new java.awt.Color(255, 255, 255, 180));
+        JPFiltrosServicio.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Tipo de Servicio", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Montserrat", 1, 12))); // NOI18N
+        JPFiltrosServicio.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        JLBNombre3.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
+        JLBNombre3.setText("Presencial");
+        JPFiltrosServicio.add(JLBNombre3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 100, 20));
+        JRBPresencial2.setOpaque(false);
+        JPFiltrosServicio.add(JRBPresencial2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, -1, -1));
+
+        JLBNombre4.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
+        JLBNombre4.setText("Remoto");
+        JPFiltrosServicio.add(JLBNombre4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 100, 20));
+        JRBRemoto.setOpaque(false);
+        JPFiltrosServicio.add(JRBRemoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, -1, -1));
+
+        JLBNombre5.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
+        JLBNombre5.setText("Asesoría");
+        JPFiltrosServicio.add(JLBNombre5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 100, 20));
+        JRBAsesoria.setOpaque(false);
+        JPFiltrosServicio.add(JRBAsesoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, -1, -1));
+
+        JPFondo.add(JPFiltrosServicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 170, 130));
+
+        // Panel Status
+        JPStatus.setBackground(new java.awt.Color(255, 255, 255, 180));
+        JPStatus.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Estado del Ticket", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Montserrat", 1, 12))); // NOI18N
+        JPStatus.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
+        jLabel1.setText("Asignados");
+        JPStatus.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 100, -1));
+        JRBAsignado.setOpaque(false);
+        JPStatus.add(JRBAsignado, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, -1, -1));
+
+        jLabel4.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
+        jLabel4.setText("En Proceso");
+        JPStatus.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 100, -1));
+        JRBProceso.setOpaque(false);
+        JPStatus.add(JRBProceso, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, -1, -1));
+
+        jLabel5.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
+        jLabel5.setText("Cerrados");
+        JPStatus.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 100, -1));
+        JRBCerrados.setOpaque(false);
+        JPStatus.add(JRBCerrados, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, -1, -1));
+
+        JPFondo.add(JPStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 130, 170, 130));
+
+        // Filtros adicionales
+        jLabel6.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
+        jLabel6.setText("Filtros Adicionales:");
+        JPFondo.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 140, -1, -1));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Todos", "Urgentes", "Esta Semana", "Mes Actual" }));
+        JPFondo.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 160, 200, 35));
+
+        // Selector de Tickets
+        jLabel2.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel2.setText("Seleccione el Ticket para trabajar:");
+        JPFondo.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 300, 300, -1));
 
         JCBTicketsR.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
-        JCBTicketsR.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 153, 153), 2, true));
-        JCBTicketsR.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JCBTicketsRActionPerformed(evt);
-            }
-        });
-        getContentPane().add(JCBTicketsR, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 310, 400, 50));
-
-        JBNCancelar.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
-        JBNCancelar.setText("Cancelar");
-        JBNCancelar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        JBNCancelar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JBNCancelarActionPerformed(evt);
-            }
-        });
-        getContentPane().add(JBNCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 470, 90, 30));
+        JCBTicketsR.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+        JPFondo.add(JCBTicketsR, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 330, 680, 50));
 
         JBNSiguienteLS4.setBackground(new java.awt.Color(0, 153, 102));
-        JBNSiguienteLS4.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        JBNSiguienteLS4.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
         JBNSiguienteLS4.setForeground(new java.awt.Color(255, 255, 255));
-        JBNSiguienteLS4.setText("Siguiente");
+        JBNSiguienteLS4.setText("ATENDER TICKET");
         JBNSiguienteLS4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(39, 174, 96), 1, true));
-        JBNSiguienteLS4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        JBNSiguienteLS4.setOpaque(true);
-        JBNSiguienteLS4.setPreferredSize(new java.awt.Dimension(100, 25));
-        JBNSiguienteLS4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JBNSiguienteLS4ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(JBNSiguienteLS4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 450, 200, 42));
+        JBNSiguienteLS4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        JPFondo.add(JBNSiguienteLS4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 430, 300, 50));
 
-        jLabel2.setText("Concepto del Ticket");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 280, 130, -1));
+        JBNCancelar.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
+        JBNCancelar.setText("REGRESAR");
+        JBNCancelar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        JPFondo.add(JBNCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 510, 100, 30));
 
-        jLabel3.setText("Ticket Status");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 70, 80, 20));
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 130, 140, 50));
-
-        JLBNombre2.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
-        JLBNombre2.setForeground(new java.awt.Color(153, 153, 153));
-        JLBNombre2.setText("Tipo de Servicio");
-        getContentPane().add(JLBNombre2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, -1, -1));
-
-        JRBPresencial2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JRBPresencial2ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(JRBPresencial2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, -1, -1));
-
-        getContentPane().add(JRBRemoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, -1, -1));
-
-        getContentPane().add(JRBAsesoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 190, -1, -1));
-
-        JLBNombre3.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
-        JLBNombre3.setText("Presencial");
-        getContentPane().add(JLBNombre3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 120, 20));
-
-        JLBNombre4.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
-        JLBNombre4.setText("Remoto");
-        getContentPane().add(JLBNombre4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, 120, 20));
-
-        JLBNombre5.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
-        JLBNombre5.setText("Asesoria");
-        getContentPane().add(JLBNombre5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, 120, 20));
-
-        jLabel1.setText("Asignados");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 110, -1, -1));
-
-        getContentPane().add(JRBAsignado, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 110, -1, -1));
-
-        getContentPane().add(JRBProceso, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 150, -1, -1));
-
-        jLabel4.setText("En Proceso");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 150, -1, -1));
-
-        jLabel5.setText("Cerrados");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 190, -1, -1));
-
-        getContentPane().add(JRBCerrados, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 190, -1, -1));
-
-        jLabel6.setText("Filtrados Adicionales");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 100, -1, -1));
-
-        JLBNombreTec.setText("Nombre");
-        getContentPane().add(JLBNombreTec, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 10, 100, 30));
+        getContentPane().add(JPFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 600));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void JBNCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBNCancelarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_JBNCancelarActionPerformed
-
-    private void JBNSiguienteLS4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBNSiguienteLS4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_JBNSiguienteLS4ActionPerformed
-
-    private void JCBTicketsRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCBTicketsRActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_JCBTicketsRActionPerformed
-
-    private void JRBPresencial2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRBPresencial2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_JRBPresencial2ActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -186,18 +179,10 @@ public class MisTickets extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MisTickets.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MisTickets.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MisTickets.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (Exception ex) {
             java.util.logging.Logger.getLogger(MisTickets.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
 
-        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new MisTickets().setVisible(true);
@@ -222,11 +207,16 @@ public class MisTickets extends javax.swing.JFrame {
     public javax.swing.JRadioButton JRBProceso;
     public javax.swing.JRadioButton JRBRemoto;
     public javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JPanel JPFondo;
+    private javax.swing.JPanel JPFiltrosServicio;
+    private javax.swing.JPanel JPStatus;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabelLogo;
+    private javax.swing.JLabel jLabelStatus;
     // End of variables declaration//GEN-END:variables
 }
