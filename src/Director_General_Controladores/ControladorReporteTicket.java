@@ -1,7 +1,7 @@
 package Director_General_Controladores;
 
 import Conexion_BD.Conexion;
-import Director_General_Frames.GenerarReporteporTécnico;
+import Director_General_Frames.GenerarReporteporTicket;
 import Director_General_Frames.Menu_Director_General;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -12,11 +12,11 @@ import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-public class ControladorReporteTecnicos implements ActionListener {
+public class ControladorReporteTicket implements ActionListener {
 
-    private GenerarReporteporTécnico vista;
+    private GenerarReporteporTicket vista;
 
-    public ControladorReporteTecnicos(GenerarReporteporTécnico vista) {
+    public ControladorReporteTicket(GenerarReporteporTicket vista) {
         this.vista = vista;
         this.vista.JBNRegresar.addActionListener(this);
         cargarReporteTecnicos();

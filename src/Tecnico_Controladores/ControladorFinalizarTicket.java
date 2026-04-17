@@ -98,67 +98,65 @@ public class ControladorFinalizarTicket implements ActionListener {
         }
     }
 
-    private void guardarCambios() {
-        String notas = vista.JTANotas.getText().trim();
-        String nuevoStatus = statusActual;
-        Date fechaCierre = null;
+private void guardarCambios() {
+    String notas = vista.JTANotas.getText().trim();
+    String nuevoStatus = statusActual;
+    Date fechaCierre = null;
 
-        if (vista.JCBProceso.isSelected() && vista.JCBFinalizado.isSelected()) {
-            JOptionPane.showMessageDialog(vista,
-                    "Seleccione solo una opción: En Proceso o Finalizar Ticket.",
-                    "Aviso",
-                    JOptionPane.WARNING_MESSAGE);
-            return;
+    if (vista.JCBProceso.isSelected() && vista.JCBFinalizado.isSelected()) {
+        JOptionPane.showMessageDialog(vista,
+                "Seleccione solo una opción: En Proceso o Finalizar Ticket.",
+                "Aviso",
+                JOptionPane.WARNING_MESSAGE);
+        return;
+    }
+
+    if (vista.JCBFinalizado.isSelected()) {
+        nuevoStatus = "Cerrado";
+        fechaCierre = new Date(System.currentTimeMillis());
+    } else if (vista.JCBProceso.isSelected()) {
+        nuevoStatus = "Proceso";
+        fechaCierre = null;
+    }
+
+    String sql = "UPDATE ticket "
+            + "SET notasTecnico = ?, statusT = ?, fechaCierreT = ? "
+            + "WHERE idTicket = ? AND idEmpleado = ?";
+
+    try (Connection con = Conexion.getConexion();
+         PreparedStatement ps = con.prepareStatement(sql)) {
+
+        ps.setString(1, notas);
+        ps.setString(2, nuevoStatus);
+
+        if (fechaCierre != null) {
+            ps.setDate(3, fechaCierre);
+        } else {
+            ps.setNull(3, Types.DATE);
         }
 
-        if (vista.JCBFinalizado.isSelected()) {
-            nuevoStatus = "Cerrado";
-            fechaCierre = new Date(System.currentTimeMillis());
-        } else if (vista.JCBProceso.isSelected()) {
-            nuevoStatus = "Proceso";
-            fechaCierre = null;
-        }
+        ps.setInt(4, idTicket);
+        ps.setInt(5, idEmpleado);
 
-        String sql = "UPDATE ticket "
-                + "SET notasTecnico = ?, statusT = ?, fechaCierreT = ? "
-                + "WHERE idTicket = ? AND idEmpleado = ?";
+        int filas = ps.executeUpdate();
 
-        try (Connection con = Conexion.getConexion();
-             PreparedStatement ps = con.prepareStatement(sql)) {
-
-            ps.setString(1, notas);
-            ps.setString(2, nuevoStatus);
-
-            if (fechaCierre == null) {
-                ps.setNull(3, Types.DATE);
-            } else {
-                ps.setDate(3, fechaCierre);
-            }
-
-            ps.setInt(4, idTicket);
-            ps.setInt(5, idEmpleado);
-
-            int filas = ps.executeUpdate();
-
-            if (filas > 0) {
-                JOptionPane.showMessageDialog(vista,
-                        "Ticket actualizado correctamente.");
-                volverAMisTickets();
-            } else {
-                JOptionPane.showMessageDialog(vista,
-                        "No se pudo actualizar el ticket.",
-                        "Error",
-                        JOptionPane.ERROR_MESSAGE);
-            }
-
-        } catch (SQLException ex) {
-            System.out.println("Error al actualizar ticket: " + ex.getMessage());
+        if (filas > 0) {
+            JOptionPane.showMessageDialog(vista, "Ticket actualizado correctamente.");
+            volverAMisTickets();
+        } else {
             JOptionPane.showMessageDialog(vista,
-                    "Hubo un error con la BD: " + ex.getMessage(),
+                    "No se pudo actualizar el ticket.",
                     "Error",
                     JOptionPane.ERROR_MESSAGE);
         }
+
+    } catch (SQLException ex) {
+        JOptionPane.showMessageDialog(vista,
+                "Hubo un error con la BD: " + ex.getMessage(),
+                "Error",
+                JOptionPane.ERROR_MESSAGE);
     }
+}
 
     private void volverAMisTickets() {
         MisTickets vistaTickets = new MisTickets();

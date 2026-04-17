@@ -8,14 +8,14 @@ package Director_General_Frames;
  *
  * @author suare
  */
-public class GenerarReporteporTécnico extends javax.swing.JFrame {
+public class GenerarReporteporTicket extends javax.swing.JFrame {
 
     /**
      * Creates new form GenerarReporteporTécnico
      */
-    public GenerarReporteporTécnico() {
+    public GenerarReporteporTicket() {
         initComponents();
-        new Director_General_Controladores.ControladorReporteTecnicos(this);
+        new Director_General_Controladores.ControladorReporteTicket(this);
 
     }
 
@@ -28,7 +28,6 @@ public class GenerarReporteporTécnico extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        JPFondo = new ImagenPanel_DG("/imagenes/FondoETS.jpg");
         jScrollPane1 = new javax.swing.JScrollPane();
         JTBTecnicos = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
@@ -36,12 +35,7 @@ public class GenerarReporteporTécnico extends javax.swing.JFrame {
         JBNRegresar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setResizable(false);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        JPFondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        JTBTecnicos.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
         JTBTecnicos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null},
@@ -53,22 +47,17 @@ public class GenerarReporteporTécnico extends javax.swing.JFrame {
                 "Técnico", "Modalidad", "Fecha Creación", "Fecha Cierre", "Status", "Empresa", "Solicitante", "Descripción"
             }
         ));
-        JTBTecnicos.setRowHeight(25);
         JTBTecnicos.setShowGrid(true);
         jScrollPane1.setViewportView(JTBTecnicos);
 
-        JPFondo.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 1080, 360));
-
-        jLabel1.setFont(new java.awt.Font("Montserrat", 1, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel1.setFont(new java.awt.Font("Montserrat", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(153, 153, 153));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Reporte de Tickets por Técnico");
-        JPFondo.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 1160, -1));
+        jLabel1.setText("Generar reporte de tickets");
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo ETS 75 px.png"))); // NOI18N
-        JPFondo.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
-        JBNRegresar.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
+        JBNRegresar.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
         JBNRegresar.setText("Regresar");
         JBNRegresar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         JBNRegresar.addActionListener(new java.awt.event.ActionListener() {
@@ -76,9 +65,38 @@ public class GenerarReporteporTécnico extends javax.swing.JFrame {
                 JBNRegresarActionPerformed(evt);
             }
         });
-        JPFondo.add(JBNRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 500, 100, 30));
 
-        getContentPane().add(JPFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1160, 580));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 131, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(JBNRegresar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 739, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(19, 19, 19))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(186, 186, 186)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 562, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 109, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(33, 33, 33)
+                        .addComponent(JBNRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addContainerGap())
+        );
 
         pack();
         setLocationRelativeTo(null);
@@ -105,26 +123,26 @@ public class GenerarReporteporTécnico extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(GenerarReporteporTécnico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GenerarReporteporTicket.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(GenerarReporteporTécnico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GenerarReporteporTicket.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(GenerarReporteporTécnico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GenerarReporteporTicket.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(GenerarReporteporTécnico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GenerarReporteporTicket.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new GenerarReporteporTécnico().setVisible(true);
+                new GenerarReporteporTicket().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel JPFondo;
     public javax.swing.JButton JBNRegresar;
     public javax.swing.JTable JTBTecnicos;
     public javax.swing.JLabel jLabel1;
