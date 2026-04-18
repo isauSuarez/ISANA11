@@ -77,7 +77,7 @@ public class NuevaPoliza extends javax.swing.JFrame {
         JLBNombre.setText("Seleccione al cliente que desea adquirir una nueva póliza");
         JPFondo.add(JLBNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 780, 20));
 
-        JCBClientes.setForeground(new java.awt.Color(102, 102, 102));
+        JCBClientes.setForeground(new java.awt.Color(51, 51, 51));
         JCBClientes.setBorder(null);
         JCBClientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -149,7 +149,7 @@ public class NuevaPoliza extends javax.swing.JFrame {
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo ETS 75 px.png"))); // NOI18N
         JPFondo.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 490, -1, -1));
 
-        JTFBusqueda.setForeground(new java.awt.Color(102, 102, 102));
+        JTFBusqueda.setForeground(new java.awt.Color(51, 51, 51));
         JTFBusqueda.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         JTFBusqueda.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(200, 200, 200), 1, true));
         JTFBusqueda.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -173,7 +173,7 @@ public class NuevaPoliza extends javax.swing.JFrame {
         JPFondo.add(JTFBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 370, 40));
 
         jLabel1.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel1.setForeground(new java.awt.Color(51, 51, 51));
         jLabel1.setText("Seleccione al cliente deseado");
         JPFondo.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 370, 40));
 

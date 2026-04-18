@@ -121,7 +121,7 @@ public class Inicio_Sesion extends javax.swing.JFrame {
         lblInstrucciones.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         lblInstrucciones.setForeground(new java.awt.Color(153, 153, 153));
         lblInstrucciones.setText("Ingresa tu usuario y contraseña");
-        JPFondo.add(lblInstrucciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 330, 200, -1));
+        JPFondo.add(lblInstrucciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 330, 210, -1));
 
         lblAyuda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/signo-de-pregunta.png"))); // NOI18N
         lblAyuda.setToolTipText("Si olvidaste tu contraseña, contacta al administrador de sistemas.");

@@ -102,7 +102,7 @@ public class NuevoCliente extends javax.swing.JFrame {
         });
         JPFondo.add(JBNCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 490, 125, 40));
 
-        JTFNombre.setForeground(new java.awt.Color(102, 102, 102));
+        JTFNombre.setForeground(new java.awt.Color(51, 51, 51));
         JTFNombre.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         JTFNombre.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(200, 200, 200), 1, true));
         JTFNombre.setPreferredSize(new java.awt.Dimension(550, 40));
@@ -126,7 +126,7 @@ public class NuevoCliente extends javax.swing.JFrame {
         });
         JPFondo.add(JTFNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, 590, 40));
 
-        JTFTelefono.setForeground(new java.awt.Color(102, 102, 102));
+        JTFTelefono.setForeground(new java.awt.Color(51, 51, 51));
         JTFTelefono.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         JTFTelefono.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(200, 200, 200), 1, true));
         JTFTelefono.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -149,7 +149,7 @@ public class NuevoCliente extends javax.swing.JFrame {
         });
         JPFondo.add(JTFTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, 590, 40));
 
-        JTFCorreo.setForeground(new java.awt.Color(102, 102, 102));
+        JTFCorreo.setForeground(new java.awt.Color(51, 51, 51));
         JTFCorreo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         JTFCorreo.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(200, 200, 200), 1, true));
         JTFCorreo.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -180,7 +180,7 @@ public class NuevoCliente extends javax.swing.JFrame {
         jLabel1.setText("Apellido (s):");
         JPFondo.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 110, 40));
 
-        JTFApellido.setForeground(new java.awt.Color(102, 102, 102));
+        JTFApellido.setForeground(new java.awt.Color(51, 51, 51));
         JTFApellido.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         JTFApellido.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(200, 200, 200), 1, true));
         JTFApellido.setPreferredSize(new java.awt.Dimension(550, 40));
@@ -304,7 +304,7 @@ public class NuevoCliente extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (JTFNombre.getText().isEmpty()) {
             JTFNombre.setText("Nombre (s)");
-            JTFNombre.setForeground(new java.awt.Color(153, 153, 153)); 
+            JTFNombre.setForeground(new java.awt.Color(205, 205, 205)); 
         }
         
         /**
@@ -336,7 +336,7 @@ public class NuevoCliente extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (JTFTelefono.getText().isEmpty()) {
             JTFTelefono.setText("Telefono");
-            JTFTelefono.setForeground(new java.awt.Color(153, 153, 153));
+            JTFTelefono.setForeground(new java.awt.Color(205, 205, 205));
         }
     }//GEN-LAST:event_JTFTelefonoFocusLost
 
@@ -352,7 +352,7 @@ public class NuevoCliente extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (JTFCorreo.getText().isEmpty()) {
             JTFCorreo.setText("Correo");
-            JTFCorreo.setForeground(new java.awt.Color(153, 153, 153));
+            JTFCorreo.setForeground(new java.awt.Color(205, 205, 205));
         }
     }//GEN-LAST:event_JTFCorreoFocusLost
 
@@ -373,7 +373,7 @@ public class NuevoCliente extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (JTFApellido.getText().isEmpty()) {
             JTFApellido.setText("Apellido (s)");
-            JTFApellido.setForeground(new java.awt.Color(153, 153, 153));
+            JTFApellido.setForeground(new java.awt.Color(205, 205, 205));
         }
     }//GEN-LAST:event_JTFApellidoFocusLost
 

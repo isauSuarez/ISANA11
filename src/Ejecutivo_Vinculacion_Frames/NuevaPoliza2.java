@@ -78,7 +78,7 @@ public class NuevaPoliza2 extends javax.swing.JFrame {
         jLabel13.setText("Fecha de vencimiento:");
         JPFondo.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 400, 210, 40));
 
-        JTFEmpresa1.setForeground(new java.awt.Color(102, 102, 102));
+        JTFEmpresa1.setForeground(new java.awt.Color(51, 51, 51));
         JTFEmpresa1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         JTFEmpresa1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(200, 200, 200), 1, true));
         JTFEmpresa1.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -101,7 +101,7 @@ public class NuevaPoliza2 extends javax.swing.JFrame {
         });
         JPFondo.add(JTFEmpresa1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 120, 550, 40));
 
-        JTFDireccion1.setForeground(new java.awt.Color(102, 102, 102));
+        JTFDireccion1.setForeground(new java.awt.Color(51, 51, 51));
         JTFDireccion1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         JTFDireccion1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(200, 200, 200), 1, true));
         JTFDireccion1.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -124,7 +124,7 @@ public class NuevaPoliza2 extends javax.swing.JFrame {
         });
         JPFondo.add(JTFDireccion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 190, 550, 40));
 
-        JTFTelefono1.setForeground(new java.awt.Color(102, 102, 102));
+        JTFTelefono1.setForeground(new java.awt.Color(51, 51, 51));
         JTFTelefono1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         JTFTelefono1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(200, 200, 200), 1, true));
         JTFTelefono1.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -147,7 +147,7 @@ public class NuevaPoliza2 extends javax.swing.JFrame {
         });
         JPFondo.add(JTFTelefono1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 260, 550, 40));
 
-        JTFCorreo1.setForeground(new java.awt.Color(102, 102, 102));
+        JTFCorreo1.setForeground(new java.awt.Color(51, 51, 51));
         JTFCorreo1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         JTFCorreo1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(200, 200, 200), 1, true));
         JTFCorreo1.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -170,7 +170,7 @@ public class NuevaPoliza2 extends javax.swing.JFrame {
         });
         JPFondo.add(JTFCorreo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 330, 550, 40));
 
-        JCBFechaVencimiento1.setForeground(new java.awt.Color(102, 102, 102));
+        JCBFechaVencimiento1.setForeground(new java.awt.Color(51, 51, 51));
         JCBFechaVencimiento1.setBorder(null);
         JCBFechaVencimiento1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -239,7 +239,7 @@ public class NuevaPoliza2 extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (JTFEmpresa1.getText().isEmpty()) {
             JTFEmpresa1.setText("Empresa");
-            JTFEmpresa1.setForeground(new java.awt.Color(153, 153, 153));
+            JTFEmpresa1.setForeground(new java.awt.Color(205, 205, 205));
         }
     }//GEN-LAST:event_JTFEmpresa1FocusLost
 
@@ -267,7 +267,7 @@ public class NuevaPoliza2 extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (JTFDireccion1.getText().isEmpty()) {
             JTFDireccion1.setText("Dirección");
-            JTFDireccion1.setForeground(new java.awt.Color(153, 153, 153));
+            JTFDireccion1.setForeground(new java.awt.Color(205, 205, 205));
         }
     }//GEN-LAST:event_JTFDireccion1FocusLost
 
@@ -290,7 +290,7 @@ public class NuevaPoliza2 extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (JTFTelefono1.getText().isEmpty()) {
             JTFTelefono1.setText("Telefono");
-            JTFTelefono1.setForeground(new java.awt.Color(153, 153, 153));
+            JTFTelefono1.setForeground(new java.awt.Color(205, 205, 205));
         }
     }//GEN-LAST:event_JTFTelefono1FocusLost
 
@@ -314,7 +314,7 @@ public class NuevaPoliza2 extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (JTFCorreo1.getText().isEmpty()) {
             JTFCorreo1.setText("Correo");
-            JTFCorreo1.setForeground(new java.awt.Color(153, 153, 153));
+            JTFCorreo1.setForeground(new java.awt.Color(205, 205, 205));
         }
     }//GEN-LAST:event_JTFCorreo1FocusLost
 
