@@ -15,6 +15,9 @@ public class GenerarReporteporTicket extends javax.swing.JFrame {
      */
     public GenerarReporteporTicket() {
         initComponents();
+        this.setSize(1125,725 ); // Fuerza el tamaño exacto
+        this.setResizable(false);
+        this.setLocationRelativeTo(null); // Centra la ventana en tu monitor
         new Director_General_Controladores.ControladorReporteTicket(this);
         
         JPFiltros4.setVisible(false);
@@ -27,7 +30,7 @@ public class GenerarReporteporTicket extends javax.swing.JFrame {
     }
     
     
-                private void toggleFiltros() {
+               private void toggleFiltros() {
                 if (JPFiltros4.isVisible()&& JPBusqueda4.isVisible()) {
                     ocultarFiltros();
                 } else {
@@ -43,7 +46,7 @@ public class GenerarReporteporTicket extends javax.swing.JFrame {
                 getContentPane().add(JLBTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 1160, -1));
                 
                 getContentPane().remove(jScrollPane1);
-                getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, 940, 360));
+                getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 1070, 320));
 
    
                  JMIAlternarFiltros4.setText("Ocultar filtros");
@@ -52,7 +55,7 @@ public class GenerarReporteporTicket extends javax.swing.JFrame {
                 getContentPane().repaint();
             }
 
-            private void ocultarFiltros() {
+           private void ocultarFiltros() {
                 JPFiltros4.setVisible(false);
                 JPBusqueda4.setVisible(false);
                 
@@ -60,12 +63,12 @@ public class GenerarReporteporTicket extends javax.swing.JFrame {
                 getContentPane().add(JLBTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 1160, -1));
 
                 getContentPane().remove(jScrollPane1);
-                getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 1080, 360));
+                getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 1070, 600));
 
                  JMIAlternarFiltros4.setText("Mostrar filtros");
                  
                 JTFBuscador4.setText("");
-                JCBSeleccionador4.setSelectedIndex(0);
+              // JCBSeleccionador4.setSelectedIndex(0);
 
                 getContentPane().revalidate();
                 getContentPane().repaint();
@@ -82,26 +85,140 @@ public class GenerarReporteporTicket extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        JTBtickets = new javax.swing.JTable();
-        JLBTitulo = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        JBNRegresar = new javax.swing.JButton();
         JPFiltros4 = new javax.swing.JPanel();
         JBNAplicarFiltros = new javax.swing.JButton();
         JBNLimpiarFiltros = new javax.swing.JButton();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
+        jRadioButton3 = new javax.swing.JRadioButton();
+        jLabel1 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox();
+        jLabel4 = new javax.swing.JLabel();
+        jComboBox2 = new javax.swing.JComboBox();
+        jRadioButton4 = new javax.swing.JRadioButton();
+        jRadioButton5 = new javax.swing.JRadioButton();
+        jRadioButton6 = new javax.swing.JRadioButton();
         JPBusqueda4 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         JTFBuscador4 = new javax.swing.JTextField();
-        JCBSeleccionador4 = new javax.swing.JComboBox<>();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        JLBTitulo = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        JBNRegresar = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        JBTtickets1 = new javax.swing.JTable();
         jMenuBar1 = new javax.swing.JMenuBar();
         JMVista4 = new javax.swing.JMenu();
         JMIAlternarFiltros4 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1000, 750));
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        JTBtickets.setModel(new javax.swing.table.DefaultTableModel(
+        JPFiltros4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        JPFiltros4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        JBNAplicarFiltros.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        JBNAplicarFiltros.setText("Aplicar Filtros");
+        JBNAplicarFiltros.setBorder(null);
+        JPFiltros4.add(JBNAplicarFiltros, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 30, 125, 30));
+
+        JBNLimpiarFiltros.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        JBNLimpiarFiltros.setText("Limpiar Filtros");
+        JBNLimpiarFiltros.setBorder(null);
+        JPFiltros4.add(JBNLimpiarFiltros, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 80, 125, 30));
+
+        jRadioButton1.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
+        jRadioButton1.setForeground(new java.awt.Color(102, 102, 102));
+        jRadioButton1.setText("Asesoria");
+        JPFiltros4.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 90, 100, 40));
+
+        jRadioButton2.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
+        jRadioButton2.setForeground(new java.awt.Color(102, 102, 102));
+        jRadioButton2.setText("Remoto");
+        JPFiltros4.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 60, 100, 40));
+
+        jRadioButton3.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
+        jRadioButton3.setForeground(new java.awt.Color(102, 102, 102));
+        jRadioButton3.setText("Presencial");
+        JPFiltros4.add(jRadioButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 30, 100, 40));
+
+        jLabel1.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
+        jLabel1.setText("Estatus del Ticket");
+        JPFiltros4.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 10, -1, -1));
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        JPFiltros4.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 220, 30));
+
+        jLabel4.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
+        jLabel4.setText("Filtrar por Tècnico");
+        JPFiltros4.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
+
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        JPFiltros4.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 220, 30));
+
+        jRadioButton4.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
+        jRadioButton4.setForeground(new java.awt.Color(102, 102, 102));
+        jRadioButton4.setText("Cerrado");
+        JPFiltros4.add(jRadioButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 60, 100, 40));
+
+        jRadioButton5.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
+        jRadioButton5.setForeground(new java.awt.Color(102, 102, 102));
+        jRadioButton5.setText("Proceso");
+        JPFiltros4.add(jRadioButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 30, 100, 40));
+
+        jRadioButton6.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
+        jRadioButton6.setForeground(new java.awt.Color(102, 102, 102));
+        jRadioButton6.setText("Asignado");
+        JPFiltros4.add(jRadioButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 90, 100, 40));
+
+        JPBusqueda4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        JPBusqueda4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel3.setText("Buscar por Ticket");
+        JPBusqueda4.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, 160, 20));
+
+        JTFBuscador4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JTFBuscador4ActionPerformed(evt);
+            }
+        });
+        JPBusqueda4.add(JTFBuscador4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 270, -1));
+
+        JPFiltros4.add(JPBusqueda4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 350, 310, 90));
+
+        jLabel5.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
+        jLabel5.setText("Filtrar por empresa");
+        JPFiltros4.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+
+        jLabel6.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
+        jLabel6.setText("Tipo de Poliza");
+        JPFiltros4.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 10, -1, -1));
+
+        getContentPane().add(JPFiltros4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 90, 830, 140));
+
+        JLBTitulo.setFont(new java.awt.Font("Montserrat", 1, 36)); // NOI18N
+        JLBTitulo.setForeground(new java.awt.Color(153, 153, 153));
+        JLBTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        JLBTitulo.setText("Generar reporte de tickets");
+        getContentPane().add(JLBTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 1030, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo ETS 75 px.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 580, -1, -1));
+
+        JBNRegresar.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
+        JBNRegresar.setText("Regresar");
+        JBNRegresar.setBorder(null);
+        JBNRegresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBNRegresarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(JBNRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 610, 125, 40));
+
+        JBTtickets1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null},
@@ -112,63 +229,10 @@ public class GenerarReporteporTicket extends javax.swing.JFrame {
                 "Técnico", "Modalidad", "Fecha Creación", "Fecha Cierre", "Status", "Empresa", "Solicitante", "Descripción"
             }
         ));
-        JTBtickets.setShowGrid(true);
-        jScrollPane1.setViewportView(JTBtickets);
+        JBTtickets1.setShowGrid(true);
+        jScrollPane1.setViewportView(JBTtickets1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 162, 570, 180));
-
-        JLBTitulo.setFont(new java.awt.Font("Montserrat", 1, 24)); // NOI18N
-        JLBTitulo.setForeground(new java.awt.Color(153, 153, 153));
-        JLBTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        JLBTitulo.setText("Generar reporte de tickets");
-        getContentPane().add(JLBTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(186, 6, 562, -1));
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo ETS 75 px.png"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 380, -1, -1));
-
-        JBNRegresar.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
-        JBNRegresar.setText("Regresar");
-        JBNRegresar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        JBNRegresar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JBNRegresarActionPerformed(evt);
-            }
-        });
-        getContentPane().add(JBNRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(895, 360, 69, 29));
-
-        JPFiltros4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        JPFiltros4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        JBNAplicarFiltros.setText("Aplicar Filtros");
-        JPFiltros4.add(JBNAplicarFiltros, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, -1, -1));
-
-        JBNLimpiarFiltros.setText("Limpiar Filtros");
-        JPFiltros4.add(JBNLimpiarFiltros, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, -1, -1));
-
-        getContentPane().add(JPFiltros4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 140, 340));
-
-        JPBusqueda4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        JPBusqueda4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel3.setText("Buscar por nombre o correo");
-        JPBusqueda4.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 160, 20));
-
-        JTFBuscador4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JTFBuscador4ActionPerformed(evt);
-            }
-        });
-        JPBusqueda4.add(JTFBuscador4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 270, -1));
-
-        JCBSeleccionador4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tipo de Busqueda", "Nombre", "Correo" }));
-        JCBSeleccionador4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JCBSeleccionador4ActionPerformed(evt);
-            }
-        });
-        JPBusqueda4.add(JCBSeleccionador4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, 130, 20));
-
-        getContentPane().add(JPBusqueda4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 40, 350, 100));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 1070, 490));
 
         JMVista4.setText("Ver");
 
@@ -195,10 +259,6 @@ public class GenerarReporteporTicket extends javax.swing.JFrame {
     private void JTFBuscador4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFBuscador4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_JTFBuscador4ActionPerformed
-
-    private void JCBSeleccionador4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCBSeleccionador4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_JCBSeleccionador4ActionPerformed
 
     private void JMIAlternarFiltros4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMIAlternarFiltros4ActionPerformed
         // TODO add your handling code here:
@@ -246,17 +306,28 @@ public class GenerarReporteporTicket extends javax.swing.JFrame {
     public javax.swing.JButton JBNAplicarFiltros;
     public javax.swing.JButton JBNLimpiarFiltros;
     public javax.swing.JButton JBNRegresar;
-    public javax.swing.JComboBox<String> JCBSeleccionador4;
+    public javax.swing.JTable JBTtickets1;
     public javax.swing.JLabel JLBTitulo;
     private javax.swing.JMenuItem JMIAlternarFiltros4;
     private javax.swing.JMenu JMVista4;
     private javax.swing.JPanel JPBusqueda4;
     private javax.swing.JPanel JPFiltros4;
-    public javax.swing.JTable JTBtickets;
     public javax.swing.JTextField JTFBuscador4;
+    public javax.swing.JComboBox jComboBox1;
+    public javax.swing.JComboBox jComboBox2;
+    private javax.swing.JLabel jLabel1;
     public javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JMenuBar jMenuBar1;
+    public javax.swing.JRadioButton jRadioButton1;
+    public javax.swing.JRadioButton jRadioButton2;
+    public javax.swing.JRadioButton jRadioButton3;
+    public javax.swing.JRadioButton jRadioButton4;
+    public javax.swing.JRadioButton jRadioButton5;
+    public javax.swing.JRadioButton jRadioButton6;
     public javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }
